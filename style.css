@@ -53,7 +53,7 @@ header { width: 100%; height: 4rem; border-bottom: 1px solid #ccc; display: flex
 .img-container { width: 100%; height: clamp(8rem, 17vw, 17rem); border-radius: 8px; overflow: hidden; margin-bottom: 10px; background: #f0f0f0; }
 .iimg { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-.variant-selector { display: flex; justify-content: center; flex-direction: column; flex-wrap: wrap; gap: 5px; margin: 10px 0; height: clamp(6rem, 8vw, 8rem); margin: 0px; padding: 0px;}
+.variant-selector { display: flex; justify-content: center; flex-direction: column; flex-wrap: wrap; gap: 5px; margin: 10px 0; height: clamp(5rem, 8vw, 8rem); margin: 0px; padding: 0px; border-top: 1px solid purple; border-bottom: 1px solid purple; }
 .variant-btn { display: flex; justify-content: space-between; gap: 10px; padding: 4px 10px; font-size: 0.7rem; border: 1px solid #ccc; background: white; border-radius: 20px; cursor: pointer; min-width: 100px;}
 .variant-btn.active { background: green; color: white; border-color: #333; }
 .variant-btn span { font-size: 1rem; }
@@ -82,8 +82,9 @@ header { width: 100%; height: 4rem; border-bottom: 1px solid #ccc; display: flex
 .close-btn { background: rgb(216, 213, 213); border: 1px solid black; font-size: clamp(1.5rem, 2vw, 2rem); cursor: pointer; float: right; border-radius: 5px; padding: 1rem;}
 
 .cart-popup { border: 1px solid purple; background-color: rgb(132, 247, 132); position: fixed; bottom: 15px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 320px; padding: 10px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.2); display: flex; flex-direction: column; align-items: center; z-index: 1500; cursor: pointer; }
+.cart-popup p{font-weight: bolder; padding: 0px; margin: 0px;}
 .popup-images { display: flex; gap: 4px; margin-bottom: 6px; }
-.cart-popup img { width: 30px; height: 30px; object-fit: cover; border-radius: 4px; }
+.cart-popup img { width: 50px; height: 50px; object-fit: cover; border-radius: 4px; border: 0.5px solid purple;}
 #popup-count{margin:0; font-size: 1.1rem;}
 
 .hidden { display: none !important; }
