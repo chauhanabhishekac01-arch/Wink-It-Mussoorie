@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="image-preview-box">
                     ${c.previews.map(img => `<div class="image-preview-card"><img src="${img}" alt="preview"></div>`).join('')}
                 </div>
-                <h3 style="margin: 5px 0 0 0; font-size: 1.5rem;">${c.name}</h3>
+                <h3>${c.name}</h3>
             </div>
         `).join('');
     }
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderProducts(catId) {
         const filtered = products.filter(p => p.cat === catId);
         if (filtered.length === 0) {
-            productGrid.innerHTML = `<p style="grid-column: 1/-1; padding: 50px; text-align: center;">Empty for now.</p>`;
+            productGrid.innerHTML = `<p class="empty-msg">Empty for now.</p>`;
             return;
         }
         productGrid.innerHTML = filtered.map(p => {
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="img-container">
                         <img src="${p.image}" class="iimg" alt="${p.name}">
                     </div>
-                    <h4 style="margin: 5px 0; font-size: 1.2rem;">${p.name}</h4>
+                    <h4>${p.name}</h4>
                     <div class="variant-selector">
                         ${Object.keys(p.variants).map(v => `
                             <button class="variant-btn ${p.selectedVariant === v ? 'active' : ''}" 
@@ -80,12 +80,12 @@ document.addEventListener('DOMContentLoaded', () => {
                             </button>
                         `).join('')}
                     </div>
-                    <p style="margin: 5px 0; font-size: 1.3rem"><strong>Rs ${currentVar.price}</strong></p>
+                    <p class="price-tag">Rs ${currentVar.price}</p>
                     <div class="controls">
                         <button class="add-btn ${currentVar.count > 0 ? 'hidden' : ''}" data-product-id="${p.id}">Add</button>
                         <div class="qty-controls ${currentVar.count > 0 ? '' : 'hidden'}">
                             <button class="qty-btn" data-product-id="${p.id}" data-change="-1">-</button>
-                            <span style="margin: 0 8px; font-weight: bold;">${currentVar.count}</span>
+                            <span>${currentVar.count}</span>
                             <button class="qty-btn" data-product-id="${p.id}" data-change="1">+</button>
                         </div>
                     </div>
@@ -277,15 +277,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (total == "0") { alert("Cart is empty!"); return; }
         if (!name || !address) { alert("Please enter Name and Address."); return; }
 
-        const now = new Date();
-        const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-        
         let msg = `*🛍️ NEW ORDER - WINK IT* %0A`;
         msg += `--------------------------%0A`;
         msg += `*👤 Name:* ${name}%0A`;
         msg += `*📍 Address:* ${address}%0A`;
         
         if (userCoords) {
+            // Updated link to a standard maps link to satisfy CSP and validity
             msg += `*🗺️ Location:* https://www.google.com/maps?q=${userCoords.lat},${userCoords.lon}%0A`;
         }
         
@@ -304,6 +302,12 @@ document.addEventListener('DOMContentLoaded', () => {
         msg += `_Cash On Delivery_`;
 
         window.location.href = `https://api.whatsapp.com/send?phone=917983427187&text=${msg}`;
+    });
+
+    // Static Link Event Listeners
+    document.getElementById('map-link').addEventListener('click', (e) => {
+        e.preventDefault();
+        window.location.href = "https://www.google.com/maps/place/Mussoorie,+Uttarakhand+248179";
     });
 
     // Init

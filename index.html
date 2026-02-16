@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Wink It Mussoorie</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: https://nominatim.openstreetmap.org; connect-src 'self' https://nominatim.openstreetmap.org;">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div id="cart-popup" class="cart-popup hidden">
         <div id="popup-images-container" class="popup-images"></div>
-        <p style="margin:0; font-size: 1.1rem;"><span id="popup-count">0</span> items in cart</p>
+        <p><span id="popup-count">0</span> items in cart</p>
     </div>
 
     <header>
@@ -31,13 +32,13 @@
     </header>
 
     <main id="collection-view">
-        <h1>Collections</h1>
+        <h1 class="main-title">Collections</h1>
         <div class="collection-grid" id="collection-grid"></div>
     </main>
 
     <div id="product-slider">
         <div class="slider-header">
-            <h2 id="slider-title" style="margin: 0; color: white;">Collection</h2>
+            <h2 id="slider-title">Collection</h2>
             <button class="back-btn" id="close-slider">✕</button>
         </div>
         <div id="product-grid"></div>
@@ -54,12 +55,14 @@
             <h3>Total Amount: Rs <span id="total-price">0</span></h3>
             <div class="address-section">
                 <input type="text" id="cust-name" placeholder="Your Name">
-                <textarea id="cust-address" rows="3" placeholder="Address" ></textarea>
+                <textarea id="cust-address" rows="3" placeholder="Address"></textarea>
                 <h6>OR</h6>
                 <button id="location-btn" class="loc-btn">📍 Share Current Location</button>
                 <span id="location-display"></span>
             </div>
-            <button class="checkout-btn" id="checkout-whatsapp"><p>🔒 </p>Order via WhatsApp</button>
+            <button class="checkout-btn" id="checkout-whatsapp">
+                <span class="lock-icon">🔒</span> Order via WhatsApp
+            </button>
         </div>
     </div>
 
@@ -91,7 +94,7 @@
                     <a href="https://www.instagram.com/wink_it_mussoorie"><img title="Instagram" src="insta.jpg" alt="Instagram"></a>
                 </div>
             </div>
-            <a href="https://maps.app.goo.gl/p84zXdeQ9H3k5zSR8"><img class="cimg" src="map.jpg" alt="Map"></a>
+            <a href="#" id="map-link"><img class="cimg" src="map.jpg" alt="Map"></a>
         </div>
     </div>
 
