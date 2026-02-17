@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>WinkIt Mussoorie</title>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: https://nominatim.openstreetmap.org; connect-src 'self' https://nominatim.openstreetmap.org;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://nominatim.openstreetmap.org; connect-src 'self' https://nominatim.openstreetmap.org;">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,6 +19,7 @@
         
         <div class="search-container">
             <input type="text" id="product-search" placeholder="Search product...">
+            <span id="clear-search" class="clear-btn hidden">✕</span>
             <button class="search-btn" id="search-btn">🔍</button>
             <div id="search-suggestions"></div>
         </div>
