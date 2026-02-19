@@ -70,14 +70,15 @@ document.addEventListener('DOMContentLoaded', () => {
            /*Cold Drink*/{ id: 5, name: "Pepsi",                                    image: "dpepsi.jpg",            cat: "beverages",       subcat: "Cold Drink",       selectedVariant: "S",           variants: { "S":        { price: 40, count: 0, unit: "750ml" }, "L": { price: 90, count: 0, unit: "2L" } } },
                          { id: 7, name: "Maaza",                                    image: "dmaaza.jpg",            cat: "beverages",       subcat: "Cold Drink",       selectedVariant: "S",           variants: { "S":        { price: 40, count: 0, unit: "600ml" }, "L": { price: 80, count: 0, unit: "1.75L" } } },
                          { id: 8, name: "Frooti Mango",                             image: "dfrooti.jpg",           cat: "beverages",       subcat: "Cold Drink",       selectedVariant: "S",           variants: { "S":        { price: 10, count: 0, unit: "150ml" }, "L": { price: 105, count: 0, unit: "2L" } } },
-                         { id: 9, name: "Amul Kool Kesar",                          image: "damulk.jpg",            cat: "beverages",       subcat: "Cold Drink",       selectedVariant: "S",           variants: { "S":        { price: 25, count: 0, unit: "180ml" } } },
+                         { id: 2, name: "Coca-Cola Bottle",                         image: "dcokeb.jpg",            cat: "beverages",       subcat: "Cold Drink",       selectedVariant: "S",           variants: { "S":        { price: 40, count: 0, unit: "750ml" }, "L": { price: 90, count: 0, unit: "2L" } } },
 
-                /*Juice*/{ id: 6, name: "Pepsi Zero Sugar",                         image: "dpepsiz.jpg",           cat: "beverages",       subcat: "Juice",            selectedVariant: "S",           variants: { "S":        { price: 40, count: 0, unit: "300ml" } } },
-
+                 /*Milk*/{ id: 9, name: "Amul Kool Kesar",                          image: "damulk.jpg",            cat: "beverages",       subcat: "Milk",             selectedVariant: "S",           variants: { "S":        { price: 25, count: 0, unit: "180ml" } } },
+                 
                 /*Water*/{ id: 1, name: "Mineral Water",                            image: "dwater.jpg",            cat: "beverages",       subcat: "Water",            selectedVariant: "S",           variants: { "S":        { price: 20, count: 0, unit: "1L" }, "L": { price: 70, count: 0, unit: "5L" } } },
-                         { id: 2, name: "Coca-Cola Bottle",                         image: "dcokeb.jpg",            cat: "beverages",       subcat: "Water",            selectedVariant: "S",           variants: { "S":        { price: 40, count: 0, unit: "750ml" }, "L": { price: 90, count: 0, unit: "2L" } } },
+                         
                          { id: 3, name: "Coca-Cola Can",                            image: "dcokec.jpg",            cat: "beverages",       subcat: "Water",            selectedVariant: "S",           variants: { "S":        { price: 40, count: 0, unit: "300ml" } } },
                          { id: 4, name: "Dite Coke Can",                            image: "dcoked.jpg",            cat: "beverages",       subcat: "Water",            selectedVariant: "S",           variants: { "S":        { price: 40, count: 0, unit: "500ml" } } },
+                         { id: 6, name: "Pepsi Zero Sugar",                         image: "dpepsiz.jpg",           cat: "beverages",       subcat: "Can",              selectedVariant: "S",           variants: { "S":        { price: 40, count: 0, unit: "300ml" } } },
                 
 /* Chocolates */
                 /*Bars*/{ id: 2001, name: "Crispello",                              image: "chcrispello.jpg",       cat: "chocolates",      subcat: "Bars",             selectedVariant: "Wgt.",        variants: { "Wgt.":     { price: 40, count: 0, unit: "35g" } } },
@@ -486,27 +487,38 @@ document.addEventListener('DOMContentLoaded', () => {
     if (total == "0") { alert("Cart is empty!"); return; }
     if (!name || !address) { alert("Please enter Name and Address."); return; }
     
-    const locationLink = userCoords ? `https://www.google.com/maps?q=${userCoords.lat},${userCoords.lon}` : `(Location not tagged)`;
+    // Date & Time formatting
+    const now = new Date();
+    const dateStr = now.toLocaleDateString('en-GB'); 
+    const timeStr = now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+
+    const locationLink = userCoords ? `http://googleusercontent.com/maps.google.com/${userCoords.lat},${userCoords.lon}` : `(Location not tagged)`;
+    const divider = "--------------------------%0A";
     
-    let msg = `🛍️ *NEW ORDER - WINK IT* %0A`;
+    let msg = `🛍️ *NEW ORDER - WINK IT*%0A`;
+    msg += divider;
+    msg += `📅 Date: ${dateStr} | ${timeStr}%0A`;
     msg += `👤 Name: ${name}%0A📍 Address: ${address}%0A🗺️ Location: ${locationLink}%0A%0A`;
     msg += `🛒 *ITEMS:*%0A`;
     
-    // 1. Initialize the counter
     let itemIndex = 1;
-
     products.forEach(p => {
         Object.keys(p.variants).forEach(vName => {
             const v = p.variants[vName];
             if (v.count > 0) {
-                // 2. Add the number (itemIndex) and increment it (++)
                 msg += `${itemIndex}. ${p.name} (${v.unit}) x${v.count} - ₹${v.price * v.count}%0A`;
                 itemIndex++; 
             }
         });
     });
-    
-    msg += `%0ASubtotal: ₹${subtotal}%0ADelivery: ₹${delivery}%0A*TOTAL: ₹${total}*`;
+
+    msg += divider;
+    msg += `Subtotal: ₹${subtotal}%0A`;
+    msg += `Delivery: ₹${delivery}%0A`;
+    // THIS LINE MAKES IT BOLD:
+    msg += `*TOTAL AMOUNT: ₹${total}*%0A`; 
+    msg += divider;
+    msg += `Cash on Delivery, our delivery partner will call you shortly.`;
     
     window.location.href = `https://api.whatsapp.com/send?phone=917983427187&text=${msg}`;
 });
