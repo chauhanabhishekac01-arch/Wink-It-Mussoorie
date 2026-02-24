@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const products = [
 /*Drink*/               { id: 1,   name: "Bottle-Pepsi",                                                             image: "dpepsi.jpg",            cat: "beverages",       subcat: "Cold Drink",                   selectedVariant: "S",           variants: { "S":        { price: 40, count: 0, unit: "750ml" }, "L": { price: 90, count: 0, unit: "2L" } } },
-                        { id: 2,   name: "Bottle-Coca-Cola",                                                  image: "dcokeb.jpg",            cat: "beverages",       subcat: "Cold Drink",                   selectedVariant: "S",           variants: { "S":        { price: 40, count: 0, unit: "750ml" }, "L": { price: 90, count: 0, unit: "2L" } } },
+{ id: 2,   name: "Bottle-Coca-Cola",                                                  image: "dcokeb.jpg",            cat: "beverages",       subcat: "Cold Drink",                   selectedVariant: "S",           variants: { "S":        { price: 40, count: 0, unit: "750ml" }, "L": { price: 90, count: 0, unit: "2L" } } },
                         { id: 3,   name: "Sprite",                                                           image: "dsprite.jpg",           cat: "beverages",       subcat: "Cold Drink",                   selectedVariant: "S",           variants: { "S":        { price: 40, count: 0, unit: "750ml" }, "L": { price: 90, count: 0, unit: "2L" } } },
                         { id: 31,  name: "Can-Coca-Cola",                                                   image: "dcokec.jpg",            cat: "beverages",       subcat: "Cold Drink",                          selectedVariant: "S",           variants: { "S":        { price: 40, count: 0, unit: "300ml" } } },
                         { id: 32,  name: "Can-Dite Coke",                                                   image: "dcoked.jpg",            cat: "beverages",       subcat: "Cold Drink",                          selectedVariant: "S",           variants: { "S":        { price: 40, count: 0, unit: "500ml" } } },
@@ -204,6 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
       /*Surface Cleaners*/{ id: 6007, name: "Colin Glass Cleaner ",                                          image: "clcolin.jpg",        cat: "cleaningessentials",        subcat: "Surface Cleaners",   selectedVariant: "Qty",        variants: { "Qty":     { price: 120, count: 0, unit: "500ml" } } },
                           { id: 6008, name: "Lizol Disinfectant Surface & Floor Cleaner ",                   image: "cllizol.jpg",        cat: "cleaningessentials",        subcat: "Surface Cleaners",   selectedVariant: "Qty",        variants: { "Qty":     { price: 260, count: 0, unit: "1L" } } },
                           { id: 6009, name: "Feather's Premium Paper Napkin(ply 2) ",                        image: "clfeathern.jpg",       cat: "cleaningessentials",        subcat: "Surface Cleaners",   selectedVariant: "Qty",        variants: { "Qty":     { price: 90, count: 0, unit: "105gm" } } },
+                        
     ];
 
     let recentAdditions = [];
@@ -590,6 +591,22 @@ if (statsSection) {
             `).join('');
             searchSuggestions.style.display = "block";
         } else { searchSuggestions.style.display = "none"; }
+    });
+    // --- CLICK HANDLER FOR SEARCH SUGGESTIONS ---
+    searchSuggestions.addEventListener('click', (e) => {
+        const item = e.target.closest('.suggestion-item');
+        if (item) {
+            const productId = item.dataset.id;
+            const catId = item.dataset.cat;
+            
+            // 1. Execute your existing open and highlight logic
+            openAndHighlight(productId, catId);
+            
+            // 2. Clear the search and hide suggestions
+            searchInput.value = "";
+            searchSuggestions.style.display = "none";
+            clearSearch.classList.add('hidden');
+        }
     });
 
     document.getElementById('location-btn').addEventListener('click', async () => {
