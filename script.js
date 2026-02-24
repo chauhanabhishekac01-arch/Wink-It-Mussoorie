@@ -608,6 +608,19 @@ if (statsSection) {
             clearSearch.classList.add('hidden');
         }
     });
+    clearSearch.addEventListener('click', () => {
+    // 1. Empty the input field
+    searchInput.value = "";
+    
+    // 2. Hide the suggestions box
+    searchSuggestions.style.display = "none";
+    
+    // 3. Hide the clear button itself
+    clearSearch.classList.add('hidden');
+    
+    // 4. Return focus to the input (optional but better UX)
+    searchInput.focus();
+});
 
     document.getElementById('location-btn').addEventListener('click', async () => {
         const display = document.getElementById('location-display');
