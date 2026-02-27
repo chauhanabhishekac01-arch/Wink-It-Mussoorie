@@ -36,20 +36,18 @@ document.addEventListener('DOMContentLoaded', () => {
         { q: "7. Do you delivery Grocery?", a: "No, we shall never buy grocery on our behalf, we can pick the grocery package from a grocer." },
         { q: "8. On what metric do you count the delivery charge?", a: "The price is calculate depending the Total bill amount and the weight of the delivery. If the delivery package exceeds 3 Kg, price of Rs 10 shall be added for any added kg" },
         { q: "9. What else services do you provide?", a: "At Wink It, we always encourage our cutomers to ask before they assume, the 'Request' button is a custom button for you to explore." },
-        { q: "10. How do you earn?", a: "Everything will be bought and on MRP, our only earning is the delivery charges." }
+        { q: "10. I Can't find a product of my size or preference?", a: "No problem! If a product of your preference was not listed tell us about in 'Request' if possible we shall arrange and delivery it to you." }
     ];
     const collections = [
         { id: "beverages", name: "Beverages", previews: ["dwater.jpg", "dcokeb.jpg", "dcokec.jpg", "dpepsi.jpg"] },
         { id: "snacks", name: "Snacks", previews: ["ssalted.jpg", "skurkurem.jpg", "slaysg.jpg", "skurkurec.jpg"] },
         { id: "biscuits", name: "Biscuits", previews: ["bicrakjack.jpg", "biparleg.jpg", "bihideandseek.jpg", "bioreo.jpg"] },
         { id: "chocolates", name: "Chocolates", previews: ["chdc.jpg", "chcrispello.jpg", "chfruitnnut.jpg", "chkinderjoy.jpg"] },
-        { id: "instant", name: "Instant Food", previews: ["imaggie.jpg","ikhnsv.jpg","imvp.jpg","iy.jpg"] },
-        { id: "ration", name: "Ration", previews: ["chmd.jpg","regg.jpg","rananda.jpg","rfsl.jpg"] },
         { id: "cleaningessentials", name: "Cleaning", previews: ["clarielb.jpg", "clharpic.jpg", "clodonill.jpg", "clfeathern.jpg"] },
         { id: "personal", name: "Personal Care", previews: ["pccomb.jpg", "pcalmond.jpg", "pcgillette.jpg", "pctowel.jpg"] },
-        { id: "chemist", name: "Chemist", previews: ["chks.jpg", "chpampers.jpg","chsls.jpg","chvw.jpg"] }
-        
-        
+        { id: "chemist", name: "Chemist", previews: ["sun.jpg", "sun.jpg", "sun.jpg", "sun.jpg"] },
+        { id: "ration", name: "Ration", previews: ["sun.jpg", "sun.jpg", "sun.jpg", "sun.jpg"] },
+        { id: "instant", name: "Instant Food", previews: ["sun.jpg", "sun.jpg", "sun.jpg", "sun.jpg"] }
     ];
 
     const products = [
@@ -185,11 +183,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         { id: 4020, name: "Haldirams Gup Shup",                                             image: "sgup.jpg",              cat: "snacks",                    subcat: "Haldiram's",          selectedVariant: "S",           variants: { "S":        { price: 20, count: 0, unit: "75g" }, "L": { price: 55, count: 0, unit: "200g" } } },
                         { id: 4021, name: "Haldirams Moong Dal",                                            image: "shaldirammd.jpg",       cat: "snacks",                    subcat: "Haldiram's",          selectedVariant: "S",           variants: { "S":        { price: 20, count: 0, unit: "75g" }, "L": { price: 60, count: 0, unit: "200g" } } },
                         { id: 4022, name: "Haldirams Lite Mixture",                                         image: "shaldiramlm.jpg",       cat: "snacks",                    subcat: "Haldiram's",          selectedVariant: "S",           variants: { "S":        { price: 20, count: 0, unit: "75g" }, "L": { price: 40, count: 0, unit: "150g" } } },
-                        { id: 4023, name: "Haldirams Lite Mixture",                                         image: "shcb.jpg",       cat: "snacks",                    subcat: "Haldiram's",          selectedVariant: "L",           variants: { "L": { price: 50, count: 0, unit: "95gg" } } },
-
-                        { id: 4024, name: "Crax Curls Chatpata Masala",                                         image: "scc.jpg",       cat: "snacks",                    subcat: "Crax",          selectedVariant: "L",           variants: {  "L": { price: 60, count: 0, unit: "88g" } } },
-                        { id: 4025, name: "Crax Crunchy Pipes Salted ",                                         image: "sccp.jpg",       cat: "snacks",                    subcat: "Crax",          selectedVariant: "L",           variants: { "L": { price: 60, count: 0, unit: "73g" } } },
-                        { id: 4026, name: "Crax Natkhat Classic",                                         image: "scnk.jpg",       cat: "snacks",                    subcat: "Crax",          selectedVariant: "L",           variants: { "L": { price: 60, count: 0, unit: "73g" } } },
                 
 /* Personal */
                 /*Hair*/{ id: 5001, name: "Comb 15cm",                                                      image: "pccomb.jpg",            cat: "personal",                  subcat: "Hair",                selectedVariant: "Size",        variants: { "Size":     { price: 50, count: 0, unit: "20cm" } } },
@@ -204,8 +197,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 /*Face*/{ id: 5007, name: "Cetaphil",                                                       image: "pccleanser.jpg",        cat: "personal",                  subcat: "Face",               selectedVariant: "Piece",       variants: { "Piece":    { price: 405, count: 0, unit: "118ml" } } },
                         { id: 5008, name: "Minimilist Vitamin b5 10%",                                      image: "pcmoist.jpg",           cat: "personal",                  subcat: "Face",               selectedVariant: "Piece",       variants: { "Piece":    { price: 350, count: 0, unit: "50g" } } },
                         { id: 5009, name: "Himalaya Lip Balm",                                              image: "pclb.jpg",              cat: "personal",                  subcat: "Face",               selectedVariant: "Piece",       variants: { "Piece":    { price: 350, count: 0, unit: "50g" } } },
-                        { id: 5016, name: "Gillette Presto",                                                image: "chgillet.jpg",       cat: "personal",        subcat: "Face.",   selectedVariant: "Qty",        variants: { "Qty":     { price: 25, count: 0, unit: "1pc." } } },
-                        { id: 5017, name: "Garnier Men Acno Fight Anti-Pimple Face Wash ",                  image: "chgarniersh.jpg",       cat: "personal",        subcat: "Face",   selectedVariant: "Qty",        variants: { "Qty":     { price: 125, count: 0, unit: "50g" } } },
+                        { id: 7001, name: "Gillette Presto",                                                image: "chgillet.jpg",       cat: "personal",        subcat: "Face.",   selectedVariant: "Qty",        variants: { "Qty":     { price: 25, count: 0, unit: "1pc." } } },
+                        { id: 7001, name: "Garnier Men Acno Fight Anti-Pimple Face Wash ",                  image: "chgarniersh.jpg",       cat: "personal",        subcat: "Face",   selectedVariant: "Qty",        variants: { "Qty":     { price: 125, count: 0, unit: "50g" } } },
 
 
             /*Grooming*/{ id: 5010, name: "Scissors 2 X 4.25inch",                                          image: "pcscissors.jpg",        cat: "personal",                  subcat: "Grooming",           selectedVariant: "Size",        variants: { "Size":     { price: 50, count: 0, unit: "2x4inch" } } },
@@ -231,88 +224,85 @@ document.addEventListener('DOMContentLoaded', () => {
                           { id: 6008, name: "Lizol Disinfectant Surface & Floor Cleaner ",                   image: "cllizol.jpg",        cat: "cleaningessentials",        subcat: "Surface Cleaners",   selectedVariant: "Qty",        variants: { "Qty":     { price: 260, count: 0, unit: "1L" } } },
                           { id: 6009, name: "Feather's Premium Paper Napkin(ply 2) ",                        image: "clfeathern.jpg",       cat: "cleaningessentials",        subcat: "Surface Cleaners",   selectedVariant: "Qty",        variants: { "Qty":     { price: 90, count: 0, unit: "105gm" } } },
 
-/*Chemist*/  /*Misc.*/    { id: 7001, name: "KamaSutra Longlast Condom",                                     image: "chks.jpg",       cat: "chemist",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 240, count: 0, unit: "12p" } } },
-                          { id: 7002, name: "KamaSutra Skinfeel Condom",                                     image: "chkss.jpg",       cat: "chemist",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 150, count: 0, unit: "12p" } } },
-                          { id: 7003, name: "Moov Instant Pain Relief Spray",                                image: "chmoov.jpg",       cat: "chemist",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 230, count: 0, unit: "50g" } } },
-                          { id: 7004, name: "Volini Activ Pain Relief Spray",                                image: "chvo.jpg",       cat: "chemist",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 190, count: 0, unit: "50g" } } },
-                          { id: 7005, name: "Dabur Glucoplus C - Orange",                                    image: "chgo.jpg",       cat: "chemist",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 190, count: 0, unit: "50g" } } },
-                          { id: 7006, name: "Dabur Glucoplus C - Lemon ",                                    image: "chgl.jpg",       cat: "chemist",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 60, count: 0, unit: "120g" } } },
+/*Chemist*/  /*Misc.*/    { id: 7001, name: "KamaSutra Longlast Condom",                                                 image: "chks.jpg",       cat: "chemist",        subcat: "Misc.",   selectedVariant: "Qty",        variants: { "Qty":     { price: 240, count: 0, unit: "12p" } } },
+                          { id: 7001, name: "KamaSutra Skinfeel Condom",                                            image: "chkss.jpg",       cat: "chemist",        subcat: "Misc.",   selectedVariant: "Qty",        variants: { "Qty":     { price: 150, count: 0, unit: "12p" } } },
+                          { id: 7001, name: "Moov Instant Pain Relief Spray",                                            image: "chmoov.jpg",       cat: "chemist",        subcat: "Misc.",   selectedVariant: "Qty",        variants: { "Qty":     { price: 230, count: 0, unit: "50g" } } },
+                          { id: 7001, name: "Volini Activ Pain Relief Spray",                                     image: "chvo.jpg",       cat: "chemist",        subcat: "Misc.",   selectedVariant: "Qty",        variants: { "Qty":     { price: 190, count: 0, unit: "50g" } } },
+                          { id: 7001, name: "Dabur Glucoplus C - Orange",                                    image: "chgo.jpg",       cat: "chemist",        subcat: "Misc.",   selectedVariant: "Qty",        variants: { "Qty":     { price: 190, count: 0, unit: "50g" } } },
+                          { id: 7001, name: "Dabur Glucoplus C - Lemon ",                                    image: "chgl.jpg",       cat: "chemist",        subcat: "Misc.",   selectedVariant: "Qty",        variants: { "Qty":     { price: 60, count: 0, unit: "120g" } } },
                           
-            /*Baby Care*/ { id: 7007, name: "Pampers (12-17 Kg: XL) 6pc.",                                  image: "chpampers.jpg",       cat: "chemist",        subcat: "Baby Care",   selectedVariant: "Qty",        variants: { "Qty":     { price: 230, count: 0, unit: "1pk." } } },
-                          { id: 7008, name: "Pampers (9-14 Kg: L) 13pc.",                                   image: "chpampers.jpg",       cat: "chemist",        subcat: "Baby Care",   selectedVariant: "Qty",        variants: { "Qty":     { price: 210, count: 0, unit: "1pk." } } },
-                          { id: 7009, name: "Pampers (7-12Kg: M) 8pc.",                                     image: "chpampers.jpg",       cat: "chemist",        subcat: "Baby Care",   selectedVariant: "Qty",        variants: { "Qty":     { price: 105, count: 0, unit: "1pk." } } },
-                          { id: 7010, name: "Pampers (4-8 Kg: 6) 40pc.",                                    image: "chpampers.jpg",       cat: "chemist",        subcat: "Baby Care",   selectedVariant: "Qty",        variants: { "Qty":     { price: 400, count: 0, unit: "1pk." } } },
+            /*Baby Care*/ { id: 7001, name: "Pampers (12-17 Kg: XL) 6pc.",                                  image: "chpampers.jpg",       cat: "chemist",        subcat: "Baby Care",   selectedVariant: "Qty",        variants: { "Qty":     { price: 230, count: 0, unit: "1pk." } } },
+                          { id: 7001, name: "Pampers (9-14 Kg: L) 13pc.",                                   image: "chpampers.jpg",       cat: "chemist",        subcat: "Baby Care",   selectedVariant: "Qty",        variants: { "Qty":     { price: 210, count: 0, unit: "1pk." } } },
+                          { id: 7001, name: "Pampers (7-12Kg: M) 8pc.",                                     image: "chpampers.jpg",       cat: "chemist",        subcat: "Baby Care",   selectedVariant: "Qty",        variants: { "Qty":     { price: 105, count: 0, unit: "1pk." } } },
+                          { id: 7001, name: "Pampers (4-8 Kg: 6) 40pc.",                                    image: "chpampers.jpg",       cat: "chemist",        subcat: "Baby Care",   selectedVariant: "Qty",        variants: { "Qty":     { price: 400, count: 0, unit: "1pk." } } },
                           
-        /*Femal Wellness*/{ id: 7011, name: "Prega News Pregnancy Test Kit,",                               image: "chprega.jpg",       cat: "chemist",        subcat: "Female Wellness",   selectedVariant: "Qty",        variants: { "Qty":     { price: 60, count: 0, unit: "1pc" } } },
-                          { id: 7012, name: "Unwanted-Mankind",                                             image: "chunwanted.jpg",       cat: "chemist",        subcat: "Female Wellness",   selectedVariant: "Qty",        variants: { "Qty":     { price: 80, count: 0, unit: "60" } } },
-                          { id: 7013, name: "VWash Plus Expert Hygiene Intimate Wash",                      image: "chvw.jpg",       cat: "chemist",        subcat: "Female Wellness",   selectedVariant: "Qty",        variants: { "Qty":     { price: 200, count: 0, unit: "100ml" } } },
-                          { id: 7014, name: "Whisper Choice Ultra Sanitary Pads (XL: 6pc)",                 image: "chwcu.jpg",       cat: "chemist",        subcat: "Female Wellness",   selectedVariant: "Qty",        variants: { "Qty":     { price: 50, count: 0, unit: "1pk." } } },
-                          { id: 7015, name: "Whisper Ultra Soft Air Fresh Pores Sanitary Pads (XL+: 6pc)",  image: "chsls.jpg",       cat: "chemist",        subcat: "Female Wellness",   selectedVariant: "Qty",        variants: { "Qty":     { price: 95, count: 0, unit: "1pk." } } },
-                          { id: 7016, name: "Whisper Bindazzz Nights Sanitary Pads(XXL: 7pc)",              image: "chbn.jpg",       cat: "chemist",        subcat: "Female Wellness",   selectedVariant: "Qty",        variants: { "Qty":     { price: 155, count: 0, unit: "1pk." } } },
-                          { id: 7017, name: "Whispers No Gap No Leaks Sanitary Pads(XL+: 7pc)",             image: "chngnl.jpg",       cat: "chemist",        subcat: "Female Wellness",   selectedVariant: "Qty",        variants: { "Qty":     { price: 95, count: 0, unit: "1pk." } } },
+        /*Femal Wellness*/{ id: 7001, name: "Prega News Pregnancy Test Kit,",                               image: "chprega.jpg",       cat: "chemist",        subcat: "Female Wellness",   selectedVariant: "Qty",        variants: { "Qty":     { price: 60, count: 0, unit: "1pc" } } },
+                          { id: 7001, name: "Unwanted-Mankind",                                             image: "chunwanted.jpg",       cat: "chemist",        subcat: "Female Wellness",   selectedVariant: "Qty",        variants: { "Qty":     { price: 80, count: 0, unit: "60" } } },
+                          { id: 7001, name: "VWash Plus Expert Hygiene Intimate Wash",                                                       image: "chvw.jpg",       cat: "chemist",        subcat: "Female Wellness",   selectedVariant: "Qty",        variants: { "Qty":     { price: 200, count: 0, unit: "100ml" } } },
+                          { id: 7001, name: "Whisper Choice Ultra Sanitary Pads (XL: 6pc)",                                    image: "chwcu.jpg",       cat: "chemist",        subcat: "Female Wellness",   selectedVariant: "Qty",        variants: { "Qty":     { price: 50, count: 0, unit: "1pk." } } },
+                          { id: 7001, name: "Whisper Ultra Soft Air Fresh Pores Sanitary Pads (XL+: 6pc)",                          image: "chsls.jpg",       cat: "chemist",        subcat: "Female Wellness",   selectedVariant: "Qty",        variants: { "Qty":     { price: 95, count: 0, unit: "1pk." } } },
+                          { id: 7001, name: "Whisper Bindazzz Nights Sanitary Pads(XXL: 7pc)",                            image: "chbn.jpg",       cat: "chemist",        subcat: "Female Wellness",   selectedVariant: "Qty",        variants: { "Qty":     { price: 155, count: 0, unit: "1pk." } } },
+                          { id: 7001, name: "Whispers No Gap No Leaks Sanitary Pads(XL+: 7pc)",                           image: "chngnl.jpg",       cat: "chemist",        subcat: "Female Wellness",   selectedVariant: "Qty",        variants: { "Qty":     { price: 95, count: 0, unit: "1pk." } } },
 
 
 
 /*Ration*/               
-                  /*dal*/{ id: 8001, name: "Arhar-Barik Dal",                                                   image: "rdar.jpg",       cat: "ration",        subcat: "Dal",   selectedVariant: "Qty",        variants: { "Qty":     { price: 185, count: 0, unit: "1kg" } } },
-                         { id: 8002, name: "Arhar-Moti",                                                    image: "rdar.jpg",       cat: "ration",        subcat: "Dal",   selectedVariant: "Qty",        variants: { "Qty":     { price: 175, count: 0, unit: "1kg" } } },
-                         { id: 8003, name: "Chana-Dal",                                                     image: "rchana.jpg",       cat: "ration",        subcat: "Dal",   selectedVariant: "Qty",        variants: { "Qty":     { price: 110, count: 0, unit: "1kg" } } },
-                         { id: 8004, name: "Kale Chane",                                                    image: "rkalachana.jpg",       cat: "ration",        subcat: "Dal",   selectedVariant: "Qty",        variants: { "Qty":     { price: 110, count: 0, unit: "1kg" } } },
-                         { id: 8005, name: "Urad-Chilka",                                                   image: "ruradc.jpg",       cat: "ration",        subcat: "Dal",   selectedVariant: "Qty",        variants: { "Qty":     { price: 150, count: 0, unit: "1kg" } } },
-                         { id: 8006, name: "Urad-Sabut",                                                    image: "rurads.jpg",       cat: "ration",        subcat: "Dal",   selectedVariant: "Qty",        variants: { "Qty":     { price: 155, count: 0, unit: "1kg" } } },
-                         { id: 8007, name: "Urad-Dhuli",                                                    image: "ruradd.jpg",       cat: "ration",        subcat: "Dal",   selectedVariant: "Qty",        variants: { "Qty":     { price: 160, count: 0, unit: "1kg" } } },
-                         { id: 8008, name: "Masoor-Barik",                                                  image: "rmasoor.jpg",       cat: "ration",        subcat: "Dal",   selectedVariant: "Qty",        variants: { "Qty":     { price: 120, count: 0, unit: "1kg" } } },
-                         { id: 8009, name: "Masoor-Moti",                                                   image: "rmasoor.jpg",       cat: "ration",        subcat: "Dal",   selectedVariant: "Qty",        variants: { "Qty":     { price: 115, count: 0, unit: "1kg" } } },
-                         { id: 8010, name: "Moong-Chilka",                                                  image: "rmoongc.jpg",       cat: "ration",        subcat: "Dal",   selectedVariant: "Qty",        variants: { "Qty":     { price: 130, count: 0, unit: "1kg" } } },
-                         { id: 8011, name: "Moong-Dhuli",                                                   image: "rmoongd.jpg",       cat: "ration",        subcat: "Dal",   selectedVariant: "Qty",        variants: { "Qty":     { price: 140, count: 0, unit: "1kg" } } },
-                         { id: 8012, name: "Moong-Sabut",                                                   image: "rmoongs.jpg",       cat: "ration",        subcat: "Dal",   selectedVariant: "Qty",        variants: { "Qty":     { price: 125, count: 0, unit: "1kg" } } },
-                         { id: 8013, name: "Rajma-Pahadi",                                                  image: "rrp.jpg",       cat: "ration",        subcat: "Dal",   selectedVariant: "Qty",        variants: { "Qty":     { price: 210, count: 0, unit: "1kg" } } },
-                         { id: 8014, name: "Rajma-Chitra",                                                  image: "rrc.jpg",       cat: "ration",        subcat: "Dal",   selectedVariant: "Qty",        variants: { "Qty":     { price: 165, count: 0, unit: "1kg" } } },
-                         { id: 8015, name: "Kulat",                                                         image: "rkulat.jpg",       cat: "ration",        subcat: "Dal",   selectedVariant: "Qty",        variants: { "Qty":     { price: 110, count: 0, unit: "1kg" } } },
+                  /*dal*/{ id: 8001, name: "Arhar-Barik",                                                   image: "rdar.jpg",       cat: "ration",        subcat: "Dal",   selectedVariant: "On MRP",        variants: { "On MRP":     { price: 1, count: 0, unit: "1kg" } } },
+                         { id: 8001, name: "Arhar-Moti",                                                    image: "rdar.jpg",       cat: "ration",        subcat: "Dal",   selectedVariant: "On MRP",        variants: { "On MRP":     { price: 1, count: 0, unit: "1kg" } } },
+                         { id: 8001, name: "Chana-Dal",                                                     image: "rchana.jpg",       cat: "ration",        subcat: "Dal",   selectedVariant: "On MRP",        variants: { "On MRP":     { price: 1, count: 0, unit: "1kg" } } },
+                         { id: 8001, name: "Kale Chane",                                                    image: "rkalachana.jpg",       cat: "ration",        subcat: "Dal",   selectedVariant: "On MRP",        variants: { "On MRP":     { price: 1, count: 0, unit: "1kg" } } },
+                         { id: 8001, name: "Urad-Chilka",                                                   image: "ruradc.jpg",       cat: "ration",        subcat: "Dal",   selectedVariant: "On MRP",        variants: { "On MRP":     { price: 1, count: 0, unit: "1kg" } } },
+                         { id: 8001, name: "Urad-Sabut",                                                    image: "rurads.jpg",       cat: "ration",        subcat: "Dal",   selectedVariant: "On MRP",        variants: { "On MRP":     { price: 1, count: 0, unit: "1kg" } } },
+                         { id: 8001, name: "Urad-Dhuli",                                                    image: "ruradd.jpg",       cat: "ration",        subcat: "Dal",   selectedVariant: "On MRP",        variants: { "On MRP":     { price: 1, count: 0, unit: "1kg" } } },
+                         { id: 8001, name: "Masoor-Barik",                                                  image: "rmasoor.jpg",       cat: "ration",        subcat: "Dal",   selectedVariant: "On MRP",        variants: { "On MRP":     { price: 1, count: 0, unit: "1kg" } } },
+                         { id: 8001, name: "Masoor-Moti",                                                   image: "rmasoor.jpg",       cat: "ration",        subcat: "Dal",   selectedVariant: "On MRP",        variants: { "On MRP":     { price: 1, count: 0, unit: "1kg" } } },
+                         { id: 8001, name: "Moong-Chilka",                                                  image: "rmoongc.jpg",       cat: "ration",        subcat: "Dal",   selectedVariant: "On MRP",        variants: { "On MRP":     { price: 1, count: 0, unit: "1kg" } } },
+                         { id: 8001, name: "Moong-Dhuli",                                                   image: "rmoongd.jpg",       cat: "ration",        subcat: "Dal",   selectedVariant: "On MRP",        variants: { "On MRP":     { price: 1, count: 0, unit: "1kg" } } },
+                         { id: 8001, name: "Moong-Sabut",                                                   image: "rmoongs.jpg",       cat: "ration",        subcat: "Dal",   selectedVariant: "On MRP",        variants: { "On MRP":     { price: 1, count: 0, unit: "1kg" } } },
+                         { id: 8001, name: "Rajma-Pahadi",                                                  image: "rrp.jpg",       cat: "ration",        subcat: "Dal",   selectedVariant: "On MRP",        variants: { "On MRP":     { price: 1, count: 0, unit: "1kg" } } },
+                         { id: 8001, name: "Rajma-Chitra",                                                  image: "rrc.jpg",       cat: "ration",        subcat: "Dal",   selectedVariant: "On MRP",        variants: { "On MRP":     { price: 1, count: 0, unit: "1kg" } } },
+                         { id: 8001, name: "Kulat",                                                         image: "rkulat.jpg",       cat: "ration",        subcat: "Dal",   selectedVariant: "On MRP",        variants: { "On MRP":     { price: 1, count: 0, unit: "1kg" } } },
 
-                 /*Atta*/{ id: 8016, name: "Chandan Bhog",                                                  image: "rchandan.png",       cat: "ration",        subcat: "Atta",   selectedVariant: "Qty",        variants: { "Qty":     { price: 250, count: 0, unit: "5kg" } } },
-                         { id: 8017, name: "Fortune Atta",                                                  image: "rfortune.jpg",       cat: "ration",        subcat: "Atta",   selectedVariant: "Qty",        variants: { "Qty":     { price: 240, count: 0, unit: "5kg" } } },
-                         { id: 8018, name: "Ashirwad Atta",                                                 image: "rashirwad.jpg",       cat: "ration",        subcat: "Atta",   selectedVariant: "Qty",        variants: { "Qty":     { price: 255, count: 0, unit: "5kg" } } },
+                 /*Atta*/{ id: 8001, name: "Chandan Bhog",                                                  image: "rchandan.png",       cat: "ration",        subcat: "Atta",   selectedVariant: "On MRP",        variants: { "On MRP":     { price: 1, count: 0, unit: "5kg" } } },
+                         { id: 8001, name: "Fortune Atta",                                                       image: "rfortune.jpg",       cat: "ration",        subcat: "Atta",   selectedVariant: "On MRP",        variants: { "On MRP":     { price: 1, count: 0, unit: "5kg" } } },
+                         { id: 8001, name: "Ashirwad Atta",                                                      image: "rashirwad.jpg",       cat: "ration",        subcat: "Atta",   selectedVariant: "On MRP",        variants: { "On MRP":     { price: 1, count: 0, unit: "5kg" } } },
 
-                 /*Rice*/{ id: 8019, name: "Khanda Rice",                                                   image: "rrice.jpg",       cat: "ration",        subcat: "Rice",   selectedVariant: "Qty",        variants: { "Qty":     { price: 50, count: 0, unit: "1kg" } } },
-                         { id: 8020, name: "Parmal Rice",                                                   image: "rrice.jpg",       cat: "ration",        subcat: "Rice",   selectedVariant: "Qty",        variants: { "Qty":     { price: 60, count: 0, unit: "1kg" } } },
+                 /*Rice*/{ id: 8001, name: "Khanda Rice",                                                        image: "rrice.jpg",       cat: "ration",        subcat: "Rice",   selectedVariant: "On MRP",        variants: { "On MRP":     { price: 1, count: 0, unit: "5kg" } } },
+                         { id: 8001, name: "Parmal Rice",                                                        image: "rrice.jpg",       cat: "ration",        subcat: "Rice",   selectedVariant: "On MRP",        variants: { "On MRP":     { price: 1, count: 0, unit: "5kg" } } },
 
-                /*Oil*/ { id: 8021, name: "Fortune Kachi Ghani Oil",                                        image: "rfkg.jpg",       cat: "ration",        subcat: "Oil",   selectedVariant: "L",        variants: { "L":     { price: 220, count: 0, unit: "910g" } } },
-                 /*Oil*/ { id: 8022, name: "Fortune Soya Bean Oil",                                         image: "rsbo.jpg",       cat: "ration",        subcat: "Oil",   selectedVariant: "L",        variants: { "L":     { price: 145, count: 0, unit: "750g" } } },              
-                 /*Oil*/ { id: 8023, name: "Fortune Rice Bran Oil",                                         image: "rrbo.jpg",       cat: "ration",        subcat: "Oil",   selectedVariant: "L",        variants: { "L":     { price: 200, count: 0, unit: "870g" } } },
-                 /*Oil*/ { id: 8024, name: "Fortune Sunflower Oil",                                         image: "rfsl.jpg",       cat: "ration",        subcat: "Oil",   selectedVariant: "L",        variants: { "L":     { price: 185, count: 0, unit: "800g" } } },
+                /*Oil*/ { id: 8001, name: "Fortune Kachi Ghani Oil",                                                        image: "rfkg.jpg",       cat: "ration",        subcat: "Oil",   selectedVariant: "L",        variants: { "L":     { price: 220, count: 0, unit: "910g" } } },
+                 /*Oil*/ { id: 8001, name: "Fortune Soya Bean Oil",                                                        image: "rsbo.jpg",       cat: "ration",        subcat: "Oil",   selectedVariant: "L",        variants: { "L":     { price: 145, count: 0, unit: "750g" } } },              
+                 /*Oil*/ { id: 8001, name: "Fortune Rice Bran Oil",                                                        image: "rrbo.jpg",       cat: "ration",        subcat: "Oil",   selectedVariant: "L",        variants: { "L":     { price: 200, count: 0, unit: "870g" } } },
+                 /*Oil*/ { id: 8001, name: "Fortune Sunflower Oil",                                                        image: "rfsl.jpg",       cat: "ration",        subcat: "Oil",   selectedVariant: "L",        variants: { "L":     { price: 185, count: 0, unit: "800g" } } },
 
-              /*General*/{ id: 8025, name: "Poha",                                                          image: "rpoha.jpg",       cat: "ration",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 60, count: 0, unit: "1kg" } } },
-                         { id: 8026, name: "Dalia",                                                         image: "rdalia.jpg",       cat: "ration",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 55, count: 0, unit: "1kg" } } },
-                         { id: 8027, name: "Besan",                                                         image: "rbesan.jpg",       cat: "ration",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 110, count: 0, unit: "1kg" } } },
-                         { id: 8028, name: "Maida",                                                         image: "rmaida.jpg",       cat: "ration",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 50, count: 0, unit: "1kg" } } },
-                         { id: 8029, name: "Suji",                                                          image: "rsuji.jpg",       cat: "ration",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 55, count: 0, unit: "1kg" } } },
-                         { id: 8030, name: "Nutri",                                                         image: "rnutri.jpg",       cat: "ration",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 110, count: 0, unit: "1kg" } } },
-                         { id: 8031, name: "Raw Penuts",                                                    image: "rrawp.jpg",       cat: "ration",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 180, count: 0, unit: "1kg" } } },
-                         { id: 8032, name: "Salt",                                                          image: "rtsalt.jpg",       cat: "ration",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 25, count: 0, unit: "1kg" } } },
-                         { id: 8033, name: "Sugar",                                                         image: "rsugar.jpg",       cat: "ration",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 50, count: 0, unit: "1kg" } } },
+              /*General*/{ id: 8001, name: "Poha",                                                          image: "rpoha.jpg",       cat: "ration",        subcat: "General",   selectedVariant: "On MRP",        variants: { "On MRP":     { price: 1, count: 0, unit: "1kg" } } },
+                         { id: 8001, name: "Dalia",                                                         image: "rdalia.jpg",       cat: "ration",        subcat: "General",   selectedVariant: "On MRP",        variants: { "On MRP":     { price: 1, count: 0, unit: "1kg" } } },
+                         { id: 8001, name: "Besan",                                                         image: "rbesan.jpg",       cat: "ration",        subcat: "General",   selectedVariant: "On MRP",        variants: { "On MRP":     { price: 1, count: 0, unit: "1kg" } } },
+                         { id: 8001, name: "Maida",                                                         image: "rmaida.jpg",       cat: "ration",        subcat: "General",   selectedVariant: "On MRP",        variants: { "On MRP":     { price: 1, count: 0, unit: "1kg" } } },
+                         { id: 8001, name: "Suji",                                                          image: "rsuji.jpg",       cat: "ration",        subcat: "General",   selectedVariant: "On MRP",        variants: { "On MRP":     { price: 1, count: 0, unit: "1kg" } } },
+                         { id: 8001, name: "Nutri",                                                         image: "rnutri.jpg",       cat: "ration",        subcat: "General",   selectedVariant: "On MRP",        variants: { "On MRP":     { price: 1, count: 0, unit: "1kg" } } },
+                         { id: 8001, name: "Raw Penuts",                                                    image: "rrawp.jpg",       cat: "ration",        subcat: "General",   selectedVariant: "On MRP",        variants: { "On MRP":     { price: 1, count: 0, unit: "1kg" } } },
+                         { id: 8001, name: "Salt",                                                          image: "rtsalt.jpg",       cat: "ration",        subcat: "General",   selectedVariant: "On MRP",        variants: { "On MRP":     { price: 25, count: 0, unit: "1kg" } } },
+                         { id: 8001, name: "Sugar",                                                         image: "rsugar.jpg",       cat: "ration",        subcat: "General",   selectedVariant: "On MRP",        variants: { "On MRP":     { price: 50, count: 0, unit: "1kg" } } },
 
-                 /*Milk*/{ id: 8034, name: "Ananda Full cream-Milk",                                             image: "rananda.jpg",       cat: "ration",        subcat: "All",   selectedVariant: "Qty",        variants: { "Qty":     { price: 35, count: 0, unit: "1pkt" } } },
-                 /*Milk*/{ id: 8035, name: "Ananda-Milk",                                                        image: "rananda.jpg",       cat: "ration",        subcat: "All",   selectedVariant: "Qty",        variants: { "Qty":     { price: 22, count: 0, unit: "1pkt" } } },
-                 /*Milk*/{ id: 8036, name: "Egg Crate",                                                     image: "regg.jpg",       cat: "ration",        subcat: "All",   selectedVariant: "Qty",        variants: { "Qty":     { price: 190, count: 0, unit: "1crt" } } },
-                 /*Milk*/{ id: 8037, name: "White Bread",                                                     image: "rbreadw.jpg",       cat: "ration",        subcat: "All",   selectedVariant: "Qty",        variants: { "Qty":     { price: 25, count: 0, unit: "350g" } } },
-                        
+                 /*Milk*/{ id: 8001, name: "Ananda Full cream",                                                        image: "rananda.jpg",       cat: "ration",        subcat: "Milk",   selectedVariant: "M",        variants: { "M":     { price: 35, count: 0, unit: "1pkt" } } },
+                 /*Milk*/{ id: 8001, name: "Ananda",                                                        image: "rananda.jpg",       cat: "ration",        subcat: "Milk",   selectedVariant: "M",        variants: { "M":     { price: 22, count: 0, unit: "1pkt" } } },
 
 
 
 /*Instant Food*/           
                 /*Noodles*/{ id: 9001, name: "Maggie",                                                      image: "imaggie.jpg",       cat: "instant",        subcat: "Noodles",   selectedVariant: "Qty",        variants: { "Qty":     { price: 10, count: 0, unit: "70g" } } },
-                           { id: 9002, name: "Wai Wai Ready To Eat Veg Noodels",                            image: "iwiev.jpg",       cat: "instant",        subcat: "Noodles",   selectedVariant: "Qty",        variants: { "Qty":     { price: 15, count: 0, unit: "65g" } } },
-                           { id: 9003, name: "Wai Wai Non-Veg",                                             image: "iwienv.jpg",       cat: "instant",        subcat: "Noodles",   selectedVariant: "Qty",        variants: { "Qty":     { price: 15, count: 0, unit: "65" } } },
-                           { id: 9004, name: "Yippee Magic Masala Noodles",                                 image: "iy.jpg",       cat: "instant",        subcat: "Noodles",   selectedVariant: "Qty",        variants: { "Qty":     { price: 25, count: 0, unit: "120g" } } },
+                           { id: 9001, name: "Wai Wai Ready To Eat Veg Noodels",                                                 image: "iwiev.jpg",       cat: "instant",        subcat: "Noodles",   selectedVariant: "Qty",        variants: { "Qty":     { price: 15, count: 0, unit: "65g" } } },
+                           { id: 9001, name: "Wai Wai Non-Veg",                                             image: "iwienv.jpg",       cat: "instant",        subcat: "Noodles",   selectedVariant: "Qty",        variants: { "Qty":     { price: 15, count: 0, unit: "65" } } },
+                           { id: 9001, name: "Yippee Magic Masala Noodles",                                                      image: "iy.jpg",       cat: "instant",        subcat: "Noodles",   selectedVariant: "Qty",        variants: { "Qty":     { price: 25, count: 0, unit: "120g" } } },
 
-                  /*Knorr*/{ id: 9005, name: "Knorr Hot & Sour Soup",                                       image: "ikhnsv.jpg",       cat: "instant",        subcat: "Soup",   selectedVariant: "Qty",        variants: { "Qty":     { price: 10, count: 0, unit: "11g" } } },
-                           { id: 9006, name: "Knorr Sweet Corn Vegetable Soup",                             image: "iksc.jpg",       cat: "instant",        subcat: "Soup",   selectedVariant: "Qty",        variants: { "Qty":     { price: 10, count: 0, unit: "11g" } } },
+                  /*Knorr*/{ id: 9001, name: "Knorr Hot & Sour Soup",                                        image: "ikhnsv.jpg",       cat: "instant",        subcat: "Soup",   selectedVariant: "Qty",        variants: { "Qty":     { price: 10, count: 0, unit: "11g" } } },
+                           { id: 9001, name: "Knorr Sweet Corn Vegetable Soup",                             image: "ikscvs.jpg",       cat: "instant",        subcat: "Soup",   selectedVariant: "Qty",        variants: { "Qty":     { price: 10, count: 0, unit: "11g" } } },
 
-                 /*McCain*/{ id: 9007, name: "MaCain Variety Pack",                                         image: "imvp.jpg",       cat: "instant",        subcat: "MaCain",   selectedVariant: "Qty",        variants: { "Qty":     { price: 180, count: 0, unit: "550g" } } },
-                           { id: 9008, name: "MaCain Mini Samosa Cheese Pizza Style Filling",                                          image: "imminisamosa.jpg",       cat: "instant",        subcat: "MaCain",   selectedVariant: "Qty",        variants: { "Qty":     { price: 160, count: 0, unit: "240g" } } },
-                           { id: 9009, name: "MaCain French Fries",                                         image: "imff.jpg",       cat: "instant",        subcat: "MaCain",   selectedVariant: "Qty",        variants: { "Qty":     { price: 120, count: 0, unit: "420g" } } },
-                           { id: 9010, name: "MaCain Veggie Fingers",                                       image: "mcvf.jpg",       cat: "instant",        subcat: "MaCain",   selectedVariant: "Qty",        variants: { "Qty":     { price: 180, count: 0, unit: "400" } } }
+                 /*McCain*/{ id: 9001, name: "MaCain Variety Pack",                                         image: "imvp.jpg",       cat: "instant",        subcat: "MaCain",   selectedVariant: "Qty",        variants: { "Qty":     { price: 180, count: 0, unit: "550g" } } },
+                           { id: 9001, name: "MaCain Mini Samosa Cheese Pizza Style Filling",                                          image: "imminisamosa.jpg",       cat: "instant",        subcat: "MaCain",   selectedVariant: "Qty",        variants: { "Qty":     { price: 160, count: 0, unit: "240g" } } },
+                           { id: 9001, name: "MaCain French Fries",                                         image: "imff.jpg",       cat: "instant",        subcat: "MaCain",   selectedVariant: "Qty",        variants: { "Qty":     { price: 120, count: 0, unit: "420g" } } },
+                           { id: 9001, name: "MaCain Veggie Fingers",                                       image: "mcvf.jpg",       cat: "instant",        subcat: "MaCain",   selectedVariant: "Qty",        variants: { "Qty":     { price: 180, count: 0, unit: "400" } } }
 
                         
     ];
@@ -329,21 +319,11 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 splash.classList.add('fade-out');
                 body.classList.remove('no-scroll');
-                
-                // --- TRIGGER THEME POPUP HERE ---
-                const currentModeText = document.body.classList.contains('dark-mode') ? "☀️ Light Mode" : "🌙 Dark Mode";
-                showThemePopup(currentModeText);
-                
                 setTimeout(() => { splash.remove(); }, 1000);
             }, 3300);
         }
     } else {
-        if (splash) {
-            splash.remove();
-            // Show popup immediately on desktop since there is no splash
-            const currentModeText = document.body.classList.contains('dark-mode') ? "☀️ Light Mode" : "🌙 Dark Mode";
-            showThemePopup(currentModeText);
-        }
+        if (splash) splash.remove();
     }
     // --- FAQ LOGIC ---
     const faqWrapper = document.getElementById('faq-wrapper');
@@ -592,65 +572,54 @@ if (statsSection) {
     }
 
     function updateCount() {
-        const randomPeople = Math.floor(Math.random() * 11) + 5;
+        const randomPeople = Math.floor(Math.random() * 10) + 1;
         if (countElement) countElement.textContent = randomPeople;
     }
 
     function updateSidebar() {
-    let itemsTotal = 0, totalItems = 0;
-    let html = "";
-
-    products.forEach(p => {
-        Object.keys(p.variants).forEach(vName => {
-            const v = p.variants[vName];
-            if (v.count > 0) {
-                itemsTotal += (v.count * v.price);
-                totalItems += v.count;
-
-                html += `
-                    <div class="order-item-detail">
-                        <img src="${p.image}" alt="item">
-                        <div>
-                            <strong>${p.name} (${v.unit})</strong><br>
-                            Rs ${v.price}
-                            <div class="sidebar-controls">
-                                <button class="side-qty-btn" data-id="${p.id}" data-var="${vName}" data-chg="-1">-</button>
-                                <span>${v.count}</span>
-                                <button class="side-qty-btn" data-id="${p.id}" data-var="${vName}" data-chg="1">+</button>
+        let itemsTotal = 0, totalItems = 0;
+        let html = "";
+        products.forEach(p => {
+            Object.keys(p.variants).forEach(vName => {
+                const v = p.variants[vName];
+                if (v.count > 0) {
+                    itemsTotal += (v.count * v.price);
+                    totalItems += v.count;
+                    html += `
+                        <div class="order-item-detail">
+                            <img src="${p.image}" alt="item">
+                            <div>
+                                <strong>${p.name} (${v.unit})</strong><br>
+                                Rs ${v.price}
+                                <div class="sidebar-controls">
+                                    <button class="side-qty-btn" data-id="${p.id}" data-var="${vName}" data-chg="-1">-</button>
+                                    <span>${v.count}</span>
+                                    <button class="side-qty-btn" data-id="${p.id}" data-var="${vName}" data-chg="1">+</button>
+                                </div>
                             </div>
-                        </div>
-                    </div>`;
-            }
+                        </div>`;
+                }
+            });
         });
-    });
 
-    // Base Delivery Logic
-    let delivery = itemsTotal > 0 ? (itemsTotal < 300 ? 50 : (itemsTotal <= 1000 ? 100 : 200)) : 0;
+        let delivery = itemsTotal > 0 ? (itemsTotal < 300 ? 50 : (itemsTotal <= 1000 ? 100 : 200)) : 0;
+        document.getElementById('sidebar-content').innerHTML = html || "<p>Cart is empty</p>";
+        document.getElementById('subtotal-val').innerText = itemsTotal;
+        document.getElementById('delivery-val').innerText = delivery;
+        document.getElementById('total-price').innerText = itemsTotal + delivery;
+        const cartCount = document.getElementById('cart-count');
+        if (cartCount) cartCount.innerText = totalItems;
+        
+        document.body.style.marginBottom = totalItems > 0 ? "7rem" : "0";
 
-    document.getElementById('sidebar-content').innerHTML = html || "<p>Cart is empty</p>";
-    document.getElementById('subtotal-val').innerText = itemsTotal;
-    document.getElementById('delivery-val').innerText = delivery; 
-    document.getElementById('total-price').innerText = itemsTotal + delivery;
-
-    // Clean up the weight info display if it exists
-    const weightDisplay = document.getElementById('weight-info');
-    if(weightDisplay) {
-        weightDisplay.innerText = "";
+        if(totalItems > 0 && !orderSidebar.classList.contains('active')) {
+            cartPopup.classList.remove('hidden');
+            document.getElementById('popup-count').innerText = totalItems;
+            document.getElementById('popup-images-container').innerHTML = [...new Set(recentAdditions)].slice(0, 5).map(img => `<img src="${img}" alt="recent">`).join('');
+        } else { 
+            cartPopup.classList.add('hidden'); 
+        }
     }
-
-    const cartCount = document.getElementById('cart-count');
-    if (cartCount) cartCount.innerText = totalItems;
-    
-    document.body.style.marginBottom = totalItems > 0 ? "7rem" : "0";
-
-    if(totalItems > 0 && !orderSidebar.classList.contains('active')) {
-        cartPopup.classList.remove('hidden');
-        document.getElementById('popup-count').innerText = totalItems;
-        document.getElementById('popup-images-container').innerHTML = [...new Set(recentAdditions)].slice(0, 5).map(img => `<img src="${img}" alt="recent">`).join('');
-    } else { 
-        cartPopup.classList.add('hidden'); 
-    }
-}
 
     function openAndHighlight(productId, catId) {
         const col = collections.find(c => c.id === catId);
@@ -708,7 +677,6 @@ if (statsSection) {
     }
 });
 
-
    orderSidebar.addEventListener('click', (e) => {
     if (e.target.classList.contains('side-qty-btn')) {
         const btn = e.target;
@@ -759,11 +727,6 @@ if (statsSection) {
             searchSuggestions.style.display = "block";
         } else { searchSuggestions.style.display = "none"; }
     });
-    checkbox.addEventListener('change', () => {
-    const isDark = document.body.classList.toggle('dark-mode');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light'); // Save preference
-    showThemePopup(isDark ? "☀️ Light Mode" : "🌙 Dark Mode");
-    });
     // --- CLICK HANDLER FOR SEARCH SUGGESTIONS ---
     searchSuggestions.addEventListener('click', (e) => {
         const item = e.target.closest('.suggestion-item');
@@ -812,75 +775,48 @@ if (statsSection) {
             }, () => { display.innerText = "❌ Access Denied"; });
         }
     });
-    function showThemePopup(text) {
-    let popup = document.getElementById('theme-toast');
-    if (!popup) {
-        popup = document.createElement('div');
-        popup.id = 'theme-toast';
-        popup.className = 'theme-popup';
-        document.body.appendChild(popup);
-    }
-    
-    popup.innerText = text;
-    popup.classList.add('show');
-    
-    // Remove after 2 seconds
-    setTimeout(() => {
-        popup.classList.remove('show');
-    }, 2000);
-}
-
-// --- UPDATED THEME TOGGLE LOGIC ---
-checkbox.addEventListener('change', () => {
-    const isDark = document.body.classList.toggle('dark-mode');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light'); // Save preference
-    showThemePopup(isDark ? "☀️ Light Mode" : "🌙 Dark Mode");
-});
 
     whatsappBtn.addEventListener('click', () => {
         const name = custNameInput.value;
-    const address = custAddressInput.value;
-    const subtotal = document.getElementById('subtotal-val').innerText;
-    const delivery = document.getElementById('delivery-val').innerText;
-    const total = document.getElementById('total-price').innerText;
-    
-    if (total == "0") { alert("Cart is empty!"); return; }
-    if (!name || !address) { alert("Please enter Name and Address."); return; }
-    
-    const now = new Date();
-    const dateStr = now.toLocaleDateString('en-GB'); 
-    const timeStr = now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
-
-    // FIXED: Corrected the template literal for the location link
-    const locationLink = userCoords ? `https://www.google.com/maps?q=${userCoords.lat},${userCoords.lon}` : `(Location not tagged)`;
-    const divider = "--------------------------%0A";
-    
-    let msg = `🛍️ *NEW ORDER - WINK IT*%0A`;
-    msg += divider;
-    msg += `📅 Date: ${dateStr} | ${timeStr}%0A`;
-    msg += `👤 Name: ${name}%0A📍 Address: ${address}%0A🗺️ Location: ${locationLink}%0A%0A`;
-    msg += `🛒 *ITEMS:*%0A`;
-    
-    let itemIndex = 1;
-    products.forEach(p => {
-        Object.keys(p.variants).forEach(vName => {
-            const v = p.variants[vName];
-            if (v.count > 0) {
-                msg += `${itemIndex}. ${p.name} (${v.unit}) x${v.count} - ₹${v.price * v.count}%0A`;
-                itemIndex++; 
-            }
+        const address = custAddressInput.value;
+        const subtotal = document.getElementById('subtotal-val').innerText;
+        const delivery = document.getElementById('delivery-val').innerText;
+        const total = document.getElementById('total-price').innerText;
+        
+        if (total == "0") { alert("Cart is empty!"); return; }
+        if (!name || !address) { alert("Please enter Name and Address."); return; }
+        
+        const now = new Date();
+        const dateStr = now.toLocaleDateString('en-GB'); 
+        const timeStr = now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+        const locationLink = userCoords ? `https://www.google.com/maps?q=${userCoords.lat},${userCoords.lon}` : `(Location not tagged)`;
+        const divider = "--------------------------%0A";
+        
+        let msg = `🛍️ *NEW ORDER - WINK IT*%0A`;
+        msg += divider;
+        msg += `📅 Date: ${dateStr} | ${timeStr}%0A`;
+        msg += `👤 Name: ${name}%0A📍 Address: ${address}%0A🗺️ Location: ${locationLink}%0A%0A`;
+        msg += `🛒 *ITEMS:*%0A`;
+        
+        let itemIndex = 1;
+        products.forEach(p => {
+            Object.keys(p.variants).forEach(vName => {
+                const v = p.variants[vName];
+                if (v.count > 0) {
+                    msg += `${itemIndex}. ${p.name} (${v.unit}) x${v.count} - ₹${v.price * v.count}%0A`;
+                    itemIndex++; 
+                }
+            });
         });
-    });
 
-    msg += divider;
-    msg += `Subtotal: ₹${subtotal}%0A`;
-    msg += `Delivery: ₹${delivery}%0A`;
-    msg += `*TOTAL AMOUNT: ₹${total}*%0A`; 
-    msg += divider;
-    msg += `Cash on Delivery, our delivery partner will call you shortly.`;
-    
-    // Using encodeURIComponent is safer for special characters
-    window.location.href = `https://api.whatsapp.com/send?phone=917983427187&text=${msg}`;
+        msg += divider;
+        msg += `Subtotal: ₹${subtotal}%0A`;
+        msg += `Delivery: ₹${delivery}%0A`;
+        msg += `*TOTAL AMOUNT: ₹${total}*%0A`; 
+        msg += divider;
+        msg += `Cash on Delivery, our delivery partner will call you shortly.`;
+        
+        window.location.href = `https://api.whatsapp.com/send?phone=917983427187&text=${msg}`;
     });
     
     /** * Infinite Review Slider Module
@@ -994,18 +930,6 @@ reviewContainer.addEventListener('mousedown', () => {
     });
 
     // --- STARTUP ---// --- STARTUP ---
-    const savedTheme = localStorage.getItem('theme') || (currentTheme === 'dark' ? 'dark' : 'light');
-
-    if (savedTheme === 'dark' && checkbox) {
-        body.classList.add('dark-mode');
-        checkbox.checked = true;
-    }
-
-    // Show the popup on first load
-    setTimeout(() => {
-        const currentModeText = document.body.classList.contains('dark-mode') ? "🌙 Dark Mode" : "☀️ Light Mode";
-        showThemePopup(currentModeText);
-    }, 500);
     updateCount();
     updateDate();
     setInterval(updateCount, 60000);
