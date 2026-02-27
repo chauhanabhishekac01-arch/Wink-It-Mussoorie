@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
                          { id: 11,  name: "Hell Black Cherry",                                               image: "dhellbc.jpg",           cat: "beverages",       subcat: "Energy Drinks",                selectedVariant: "L",           variants: { "L":        { price: 60, count: 0, unit: "250ml" } } },
                          { id: 12,  name: "Red Bull",                                                       image: "dred.jpg",              cat: "beverages",       subcat: "Energy Drinks",                          selectedVariant: "S",           variants: { "S":        { price: 125, count: 0, unit: "300ml" } } },
                          { id: 13,  name: "Monster Zero Sugar Ultra",                                       image: "dmonster.jpg",              cat: "beverages",       subcat: "Energy Drinks",                selectedVariant: "S",           variants: { "S":        { price: 125, count: 0, unit: "350ml" } } },
-                         { id: 31,  name: "Monster Black",                                                  image: "bbm.jpg",              cat: "beverages",       subcat: "Energy Drinks",                selectedVariant: "S",           variants: { "S":        { price: 125, count: 0, unit: "350ml" } } },
+                         { id: 35,  name: "Monster Black",                                                  image: "bbm.jpg",              cat: "beverages",       subcat: "Energy Drinks",                selectedVariant: "S",           variants: { "S":        { price: 125, count: 0, unit: "350ml" } } },
 
             /*Mogu Mogu*/{ id: 14,  name: "Strawberry Fruit Drink",                                         image: "dmogus.jpg",            cat: "beverages",       subcat: "Mogu Mogu",                    selectedVariant: "S",           variants: { "S":        { price: 70, count: 0, unit: "320ml" } } },
                          { id: 15,  name: "Lychee Fruit Drink with Nata De Coco",                           image: "dmogul.jpg",            cat: "beverages",       subcat: "Mogu Mogu",                    selectedVariant: "S",           variants: { "S":        { price: 70, count: 0, unit: "320ml" } } },
@@ -1022,3 +1022,4 @@ reviewContainer.addEventListener('mousedown', () => {
 }
 
 });
+
