@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { q: "7. Do you delivery Grocery?", a: "No, we shall never buy grocery on our behalf, we can pick the grocery package from a grocer." },
         { q: "8. On what metric do you count the delivery charge?", a: "The price is calculate depending the Total bill amount and the weight of the delivery. If the delivery package exceeds 3 Kg, price of Rs 10 shall be added for any added kg" },
         { q: "9. What else services do you provide?", a: "At Wink It, we always encourage our cutomers to ask before they assume, the 'Request' button is a custom button for you to explore." },
-        { q: "10. How do you earn?", a: "Everything will be bought and on MRP, our only earning is the delivery charges." }
+        { q: "10. How do you earn?", a: "We shall only charge the delivery charges, rest everything is bought and delivered on MRP." }
     ];
     const collections = [
         { id: "beverages", name: "Beverages", previews: ["dwater.jpg", "dcokeb.jpg", "dcokec.jpg", "dpepsi.jpg"] },
@@ -894,9 +894,9 @@ checkbox.addEventListener('change', () => {
 /*☆*/
     const referenceDate = new Date("2026-02-19");
     const reviews = [
+        { name: "-Mahi Chauhan-", img: "r2.jpg", stars: "★★★★★(5/5)", text: "Our location was far from the main town, and some wellness products were needed urgently...", from: "Hatipaon, Mussoorie", date: "2026-08-20" },
         { name: "-Rohit Bisht-", img: "r5.jpeg", stars: "★★★★★(5/5)", text: "Fast Delivery", from: "Manjakot", date: "2026-02-26" },
         { name: "-Arun K-", img: "r1.jpg", stars: "★★★★☆(4/5)", text: "Great Service! Mere parents ko urgent Meds. deni thi, they delivered to their door step.", from: "Mallingar, Landour", date: "2026-02-20" },
-        { name: "-Mahi Chauhan-", img: "r2.jpg", stars: "★★★★★(5/5)", text: "Our location was far from the main town, and some wellness products were needed urgently...", from: "Hatipaon, Mussoorie", date: "2026-08-20" },
         { name: "-Mukul Thapli-", img: "r3.jpg", stars: "★★★★★(5/5)", text: "Late night delivery!.", from: "Nag Mandir, Mussoorie", date: "2026-02-23" },
         { name: "-Omkar-", img: "r4.jpg", stars: "★★★★☆(4/5)", text: "Kisi dost ne recomend kiya tha, wakey kafi achhi service h...", from: "Barlowganj, Mussoorie", date: "2026-02-25" }
         
@@ -1021,3 +1021,4 @@ reviewContainer.addEventListener('mousedown', () => {
 }
 
 });
+
