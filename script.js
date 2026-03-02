@@ -23,7 +23,66 @@ document.addEventListener('DOMContentLoaded', () => {
     const splash = document.getElementById('splash-screen');
     const currentTheme = localStorage.getItem('theme');
     const checkbox = document.getElementById('checkbox');
+     const slider = document.getElementById('slider');
+    const slides = document.querySelectorAll('.slider-wrapper img');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    // --- WINK IT CONFIGURATION ---
+    // These coordinates are set to the heart of Mussoorie (approx Kulri/Mall Rd area)
+    const SHOP_COORDS = { lat: 30.4528, lon: 78.086151 }; // F33P+4FJ Mussoorie
+    let currentDistance = 0; 
+    let locationTagged = false; // Global variable to hold the calculated distance
     const body = document.body;
+
+    // --- AUTO-PLAY CONFIGURATION ---
+let autoPlayInterval;
+let movingForward = true;
+const scrollDelay = 5000; // 5 seconds
+
+function startAutoPlay() {
+    // Clear any existing interval to avoid speed-stacking
+    stopAutoPlay(); 
+    
+    autoPlayInterval = setInterval(() => {
+        if (movingForward) {
+            // If at the last slide, switch to reverse
+            if (currentIndex === slides.length - 1) {
+                movingForward = false;
+                moveSlide(-1);
+            } else {
+                moveSlide(1);
+            }
+        } else {
+            // If at the first slide, switch to forward
+            if (currentIndex === 0) {
+                movingForward = true;
+                moveSlide(1);
+            } else {
+                moveSlide(-1);
+            }
+        }
+    }, scrollDelay);
+}
+
+function stopAutoPlay() {
+    clearInterval(autoPlayInterval);
+}
+
+// --- ATTACH STOP TRIGGERS ---
+// If the user clicks a button, stop auto-scroll
+[prevBtn, nextBtn].forEach(btn => {
+    btn.addEventListener('click', () => {
+        stopAutoPlay();
+        // moveSlide is already called via your existing listeners
+    });
+});
+
+// If the user swipes/drags, stop auto-scroll
+slider.addEventListener('touchstart', stopAutoPlay);
+slider.addEventListener('mousedown', stopAutoPlay);
+
+// --- START THE CYCLE ---
+startAutoPlay();
 
     // --- DATA ---
     const faqData = [
@@ -53,13 +112,13 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     const products = [
-/*Drink*/               { id: 1,   name: "Bottle-Pepsi",                                                             image: "dpepsi.jpg",            cat: "beverages",       subcat: "Cold Drink",                   selectedVariant: "S",           variants: { "S":        { price: 40, count: 0, unit: "750ml" }, "L": { price: 90, count: 0, unit: "2L" } } },
-                        { id: 2,   name: "Bottle-Coca-Cola",                                                  image: "dcokeb.jpg",            cat: "beverages",       subcat: "Cold Drink",                   selectedVariant: "S",           variants: { "S":        { price: 40, count: 0, unit: "750ml" }, "L": { price: 90, count: 0, unit: "2L" } } },
+/*Drink*/               { id: 1,   name: "Bottle-Pepsi",                                                     image: "dpepsi.jpg",            cat: "beverages",       subcat: "Cold Drink",                   selectedVariant: "S",           variants: { "S":        { price: 40, count: 0, unit: "750ml" }, "L": { price: 90, count: 0, unit: "2L" } } },
+                        { id: 2,   name: "Bottle-Coca-Cola",                                                 image: "dcokeb.jpg",            cat: "beverages",       subcat: "Cold Drink",                   selectedVariant: "S",           variants: { "S":        { price: 40, count: 0, unit: "750ml" }, "L": { price: 90, count: 0, unit: "2L" } } },
                         { id: 3,   name: "Sprite",                                                           image: "dsprite.jpg",           cat: "beverages",       subcat: "Cold Drink",                   selectedVariant: "S",           variants: { "S":        { price: 40, count: 0, unit: "750ml" }, "L": { price: 90, count: 0, unit: "2L" } } },
-                        { id: 31,  name: "Can-Coca-Cola",                                                   image: "dcokec.jpg",            cat: "beverages",       subcat: "Cold Drink",                          selectedVariant: "S",           variants: { "S":        { price: 40, count: 0, unit: "300ml" } } },
-                        { id: 32,  name: "Can-Dite Coke",                                                   image: "dcoked.jpg",            cat: "beverages",       subcat: "Cold Drink",                          selectedVariant: "S",           variants: { "S":        { price: 40, count: 0, unit: "500ml" } } },
-                        { id: 33,  name: "Can-Pepsi Zero Sugar",                                                image: "dpepsiz.jpg",           cat: "beverages",       subcat: "Cold Drink",                          selectedVariant: "S",           variants: { "S":        { price: 40, count: 0, unit: "300ml" } } },
-                        { id: 34,  name: "Can-Mountain Dew",                                                   image: "dmountain.jpg",         cat: "beverages",       subcat: "Cold Drink",                          selectedVariant: "S",           variants: { "S":        { price: 40, count: 0, unit: "300ml" } } },
+                        { id: 31,  name: "Can-Coca-Cola",                                                    image: "dcokec.jpg",            cat: "beverages",       subcat: "Cold Drink",                          selectedVariant: "S",           variants: { "S":        { price: 40, count: 0, unit: "300ml" } } },
+                        { id: 32,  name: "Can-Dite Coke",                                                    image: "dcoked.jpg",            cat: "beverages",       subcat: "Cold Drink",                          selectedVariant: "S",           variants: { "S":        { price: 40, count: 0, unit: "500ml" } } },
+                        { id: 33,  name: "Can-Pepsi Zero Sugar",                                             image: "dpepsiz.jpg",           cat: "beverages",       subcat: "Cold Drink",                          selectedVariant: "S",           variants: { "S":        { price: 40, count: 0, unit: "300ml" } } },
+                        { id: 34,  name: "Can-Mountain Dew",                                                 image: "dmountain.jpg",         cat: "beverages",       subcat: "Cold Drink",                          selectedVariant: "S",           variants: { "S":        { price: 40, count: 0, unit: "300ml" } } },
 
                 /*Juice*/{ id: 4,  name: "Frooti Mango",                                                    image: "dfrooti.jpg",           cat: "beverages",       subcat: "Juices",                       selectedVariant: "S",           variants: { "S":        { price: 10, count: 0, unit: "150ml" }, "L": { price: 105, count: 0, unit: "2L" } } },
                          { id: 5,  name: "Maaza",                                                           image: "dmaaza.jpg",            cat: "beverages",       subcat: "Juices",                       selectedVariant: "S",           variants: { "S":        { price: 40, count: 0, unit: "600ml" }, "L": { price: 80, count: 0, unit: "1.75L" } } },
@@ -89,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
                  
                 /*Water*/{ id: 24,  name: "Mineral Water",                                                   image: "dwater.jpg",            cat: "beverages",       subcat: "Water & Soda",                 selectedVariant: "S",           variants: { "S":        { price: 20, count: 0, unit: "1L" }, "L": { price: 70, count: 0, unit: "5L" } } },
                          { id: 25,  name: "Schweppes Indian Tonic Water",                                    image: "dschweppesi.jpg",       cat: "beverages",       subcat: "Water & Soda",                 selectedVariant: "S",           variants: { "S":        { price: 60, count: 0, unit: "300ml" } } },
-                         { id: 26,  name: "Duke's Club Soda Water",                                          image: "dsodad.jpg",       cat: "beverages",       subcat: "Water & Soda",                 selectedVariant: "S",           variants: { "S":        { price: 20, count: 0, unit: "750ml" } } },
+                         { id: 26,  name: "Duke's Club Soda Water",                                          image: "dsodad.jpg",            cat: "beverages",       subcat: "Water & Soda",                 selectedVariant: "S",           variants: { "S":        { price: 20, count: 0, unit: "750ml" } } },
                          { id: 27, name: "O'cean Pink Guava Water",                                         image: "dwog.jpg",              cat: "beverages",       subcat: "Water & Soda",                       selectedVariant: "S",           variants: { "S":        { price: 60, count: 0, unit: "500ml" } } },
                          { id: 28, name: "O'cean Peach & Passion Water",                                    image: "dwop.jpg",              cat: "beverages",       subcat: "Water & Soda",                       selectedVariant: "S",           variants: { "S":        { price: 60, count: 0, unit: "500ml" } } },
                          { id: 29, name: "O'cean Crispy Apple Water",                                       image: "dwoa.jpg",              cat: "beverages",       subcat: "Water & Soda",                       selectedVariant: "S",           variants: { "S":        { price: 60, count: 0, unit: "500ml" } } },
@@ -129,9 +188,14 @@ document.addEventListener('DOMContentLoaded', () => {
              
 
                 /*Kids*/{ id: 2018, name: "Kinder joy",                                                     image: "chkinderjoy.jpg",       cat: "chocolates",                subcat: "Kids",             selectedVariant: "Wgt.",        variants: { "Wgt.":     { price: 45, count: 0, unit: "20g" } } },
-                        { id: 2019, name: "Lotte Choco Pie Cake",                                           image: "clotte.jpg",       cat: "chocolates",                subcat: "Kids",             selectedVariant: "Qty.",        variants: { "Qty.":     { price: 10, count: 0, unit: "1pc" } } },
+                        { id: 2019, name: "Lotte Choco Pie Cake",                                           image: "clotte.jpg",            cat: "chocolates",                subcat: "Kids",             selectedVariant: "Qty.",        variants: { "Qty.":     { price: 10, count: 0, unit: "1pc" } } },
                         { id: 2020, name: "Twix Cookie Caramel Filled Bar",                                 image: "ctwix.jpg",             cat: "chocolates",                subcat: "Kids",             selectedVariant: "Qty.",        variants: { "Qty.":     { price: 100, count: 0, unit: "50g" } } },
                         { id: 2021, name: "Snickers Peanut Nougat & Caramel",                               image: "csnickers.jpg",         cat: "chocolates",                subcat: "Kids",             selectedVariant: "Wgt.",        variants: { "Wgt.":     { price: 30, count: 0, unit: "38.5g" } } },
+
+    /*Imported*/        { id: 2022, name: "Ferrero Rocher Chocolate (24 piece)",                            image: "cfr.jpg",              cat: "chocolates",                subcat: "Imported",             selectedVariant: "Qty.",        variants: { "Qty.":     { price: 880, count: 0, unit: "300g" } } },
+    /*Imported*/        { id: 2023, name: "Mars Premium Nougat and Caramel Filled Bar",                     image: "cm.jpg",               cat: "chocolates",                subcat: "Imported",             selectedVariant: "Qty.",        variants: { "Qty.":     { price: 100, count: 0, unit: "51g" } } },
+    /*Imported*/        { id: 2024, name: "Toblerone Milk Chocolate Bar",                                   image: "ctob.jpg",             cat: "chocolates",                subcat: "Imported",             selectedVariant: "Qty.",        variants: { "Qty.":     { price: 400, count: 0, unit: "100g" } } },
+                        
                         
                         
                 
@@ -186,11 +250,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         { id: 4020, name: "Haldirams Gup Shup",                                             image: "sgup.jpg",              cat: "snacks",                    subcat: "Haldiram's",          selectedVariant: "S",           variants: { "S":        { price: 20, count: 0, unit: "75g" }, "L": { price: 55, count: 0, unit: "200g" } } },
                         { id: 4021, name: "Haldirams Moong Dal",                                            image: "shaldirammd.jpg",       cat: "snacks",                    subcat: "Haldiram's",          selectedVariant: "S",           variants: { "S":        { price: 20, count: 0, unit: "75g" }, "L": { price: 60, count: 0, unit: "200g" } } },
                         { id: 4022, name: "Haldirams Lite Mixture",                                         image: "shaldiramlm.jpg",       cat: "snacks",                    subcat: "Haldiram's",          selectedVariant: "S",           variants: { "S":        { price: 20, count: 0, unit: "75g" }, "L": { price: 40, count: 0, unit: "150g" } } },
-                        { id: 4023, name: "Haldirams Lite Mixture",                                         image: "shcb.jpg",       cat: "snacks",                    subcat: "Haldiram's",          selectedVariant: "L",           variants: { "L": { price: 50, count: 0, unit: "95gg" } } },
+                        { id: 4023, name: "Haldirams Lite Mixture",                                         image: "shcb.jpg",              cat: "snacks",                    subcat: "Haldiram's",          selectedVariant: "L",           variants: { "L": { price: 50, count: 0, unit: "95gg" } } },
 
-                        { id: 4024, name: "Crax Curls Chatpata Masala",                                         image: "scc.jpg",       cat: "snacks",                    subcat: "Crax",          selectedVariant: "L",           variants: {  "L": { price: 60, count: 0, unit: "88g" } } },
-                        { id: 4025, name: "Crax Crunchy Pipes Salted ",                                         image: "sccp.jpg",       cat: "snacks",                    subcat: "Crax",          selectedVariant: "L",           variants: { "L": { price: 60, count: 0, unit: "73g" } } },
-                        { id: 4026, name: "Crax Natkhat Classic",                                         image: "scnk.jpg",       cat: "snacks",                    subcat: "Crax",          selectedVariant: "L",           variants: { "L": { price: 60, count: 0, unit: "73g" } } },
+                        { id: 4024, name: "Crax Curls Chatpata Masala",                                     image: "scc.jpg",               cat: "snacks",                    subcat: "Crax",          selectedVariant: "L",           variants: {  "L": { price: 60, count: 0, unit: "88g" } } },
+                        { id: 4025, name: "Crax Crunchy Pipes Salted ",                                     image: "sccp.jpg",              cat: "snacks",                    subcat: "Crax",          selectedVariant: "L",           variants: { "L": { price: 60, count: 0, unit: "73g" } } },
+                        { id: 4026, name: "Crax Natkhat Classic",                                           image: "scnk.jpg",              cat: "snacks",                    subcat: "Crax",          selectedVariant: "L",           variants: { "L": { price: 60, count: 0, unit: "73g" } } },
                 
 /* Personal */
                 /*Hair*/{ id: 5001, name: "Comb 15cm",                                                      image: "pccomb.jpg",            cat: "personal",                  subcat: "Hair",                selectedVariant: "Size",        variants: { "Size":     { price: 50, count: 0, unit: "20cm" } } },
@@ -205,8 +269,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 /*Face*/{ id: 5007, name: "Cetaphil",                                                       image: "pccleanser.jpg",        cat: "personal",                  subcat: "Face",               selectedVariant: "Piece",       variants: { "Piece":    { price: 405, count: 0, unit: "118ml" } } },
                         { id: 5008, name: "Minimilist Vitamin b5 10%",                                      image: "pcmoist.jpg",           cat: "personal",                  subcat: "Face",               selectedVariant: "Piece",       variants: { "Piece":    { price: 350, count: 0, unit: "50g" } } },
                         { id: 5009, name: "Himalaya Lip Balm",                                              image: "pclb.jpg",              cat: "personal",                  subcat: "Face",               selectedVariant: "Piece",       variants: { "Piece":    { price: 350, count: 0, unit: "50g" } } },
-                        { id: 5016, name: "Gillette Presto",                                                image: "chgillet.jpg",       cat: "personal",        subcat: "Face.",   selectedVariant: "Qty",        variants: { "Qty":     { price: 25, count: 0, unit: "1pc." } } },
-                        { id: 5017, name: "Garnier Men Acno Fight Anti-Pimple Face Wash ",                  image: "chgarniersh.jpg",       cat: "personal",        subcat: "Face",   selectedVariant: "Qty",        variants: { "Qty":     { price: 125, count: 0, unit: "50g" } } },
+                        { id: 5016, name: "Gillette Presto",                                                image: "chgillet.jpg",          cat: "personal",                  subcat: "Face.",   selectedVariant: "Qty",        variants: { "Qty":     { price: 25, count: 0, unit: "1pc." } } },
+                        { id: 5017, name: "Garnier Men Acno Fight Anti-Pimple Face Wash ",                  image: "chgarniersh.jpg",       cat: "personal",                  subcat: "Face",   selectedVariant: "Qty",        variants: { "Qty":     { price: 125, count: 0, unit: "50g" } } },
 
 
             /*Grooming*/{ id: 5010, name: "Scissors 2 X 4.25inch",                                          image: "pcscissors.jpg",        cat: "personal",                  subcat: "Grooming",           selectedVariant: "Size",        variants: { "Size":     { price: 50, count: 0, unit: "2x4inch" } } },
@@ -228,34 +292,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
         /*Room Freshners*/{ id: 6006, name: "Odonil Lavender Mist Room Freshener (Lavender)",                image: "clodonill.jpg",        cat: "cleaningessentials",        subcat: "Room Freshners",     selectedVariant: "Qty",        variants: { "Qty":     { price: 170, count: 0, unit: "220ml" } } },
         
-      /*Surface Cleaners*/{ id: 6007, name: "Colin Glass Cleaner ",                                          image: "clcolin.jpg",        cat: "cleaningessentials",        subcat: "Surface Cleaners",   selectedVariant: "Qty",        variants: { "Qty":     { price: 120, count: 0, unit: "500ml" } } },
-                          { id: 6008, name: "Lizol Disinfectant Surface & Floor Cleaner ",                   image: "cllizol.jpg",        cat: "cleaningessentials",        subcat: "Surface Cleaners",   selectedVariant: "Qty",        variants: { "Qty":     { price: 260, count: 0, unit: "1L" } } },
+      /*Surface Cleaners*/{ id: 6007, name: "Colin Glass Cleaner ",                                          image: "clcolin.jpg",          cat: "cleaningessentials",        subcat: "Surface Cleaners",   selectedVariant: "Qty",        variants: { "Qty":     { price: 120, count: 0, unit: "500ml" } } },
+                          { id: 6008, name: "Lizol Disinfectant Surface & Floor Cleaner ",                   image: "cllizol.jpg",          cat: "cleaningessentials",        subcat: "Surface Cleaners",   selectedVariant: "Qty",        variants: { "Qty":     { price: 260, count: 0, unit: "1L" } } },
                           { id: 6009, name: "Feather's Premium Paper Napkin(ply 2) ",                        image: "clfeathern.jpg",       cat: "cleaningessentials",        subcat: "Surface Cleaners",   selectedVariant: "Qty",        variants: { "Qty":     { price: 90, count: 0, unit: "105gm" } } },
 
-/*Chemist*/  /*Misc.*/    { id: 7001, name: "KamaSutra Longlast Condom",                                     image: "chks.jpg",       cat: "chemist",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 240, count: 0, unit: "12p" } } },
-                          { id: 7002, name: "KamaSutra Skinfeel Condom",                                     image: "chkss.jpg",       cat: "chemist",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 150, count: 0, unit: "12p" } } },
-                          { id: 7003, name: "Moov Instant Pain Relief Spray",                                image: "chmoov.jpg",       cat: "chemist",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 230, count: 0, unit: "50g" } } },
-                          { id: 7004, name: "Volini Activ Pain Relief Spray",                                image: "chvo.jpg",       cat: "chemist",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 190, count: 0, unit: "50g" } } },
-                          { id: 7005, name: "Dabur Glucoplus C - Orange",                                    image: "chgo.jpg",       cat: "chemist",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 190, count: 0, unit: "50g" } } },
-                          { id: 7006, name: "Dabur Glucoplus C - Lemon ",                                    image: "chgl.jpg",       cat: "chemist",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 60, count: 0, unit: "120g" } } },
+/*Chemist*/  /*Misc.*/    { id: 7001, name: "KamaSutra Longlast Condom",                                     image: "chks.jpg",            cat: "chemist",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 240, count: 0, unit: "12p" } } },
+                          { id: 7002, name: "KamaSutra Skinfeel Condom",                                     image: "chkss.jpg",           cat: "chemist",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 150, count: 0, unit: "12p" } } },
+                          { id: 7003, name: "Moov Instant Pain Relief Spray",                                image: "chmoov.jpg",          cat: "chemist",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 230, count: 0, unit: "50g" } } },
+                          { id: 7004, name: "Volini Activ Pain Relief Spray",                                image: "chvo.jpg",            cat: "chemist",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 190, count: 0, unit: "50g" } } },
+                          { id: 7005, name: "Dabur Glucoplus C - Orange",                                    image: "chgo.jpg",            cat: "chemist",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 190, count: 0, unit: "50g" } } },
+                          { id: 7006, name: "Dabur Glucoplus C - Lemon ",                                    image: "chgl.jpg",            cat: "chemist",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 60, count: 0, unit: "120g" } } },
                           
             /*Baby Care*/ { id: 7007, name: "Pampers (12-17 Kg: XL) 6pc.",                                  image: "chpampers.jpg",       cat: "chemist",        subcat: "Baby Care",   selectedVariant: "Qty",        variants: { "Qty":     { price: 230, count: 0, unit: "1pk." } } },
                           { id: 7008, name: "Pampers (9-14 Kg: L) 13pc.",                                   image: "chpampers.jpg",       cat: "chemist",        subcat: "Baby Care",   selectedVariant: "Qty",        variants: { "Qty":     { price: 210, count: 0, unit: "1pk." } } },
                           { id: 7009, name: "Pampers (7-12Kg: M) 8pc.",                                     image: "chpampers.jpg",       cat: "chemist",        subcat: "Baby Care",   selectedVariant: "Qty",        variants: { "Qty":     { price: 105, count: 0, unit: "1pk." } } },
                           { id: 7010, name: "Pampers (4-8 Kg: 6) 40pc.",                                    image: "chpampers.jpg",       cat: "chemist",        subcat: "Baby Care",   selectedVariant: "Qty",        variants: { "Qty":     { price: 400, count: 0, unit: "1pk." } } },
                           
-        /*Femal Wellness*/{ id: 7011, name: "Prega News Pregnancy Test Kit,",                               image: "chprega.jpg",       cat: "chemist",        subcat: "Female Wellness",   selectedVariant: "Qty",        variants: { "Qty":     { price: 60, count: 0, unit: "1pc" } } },
-                          { id: 7012, name: "Unwanted-Mankind",                                             image: "chunwanted.jpg",       cat: "chemist",        subcat: "Female Wellness",   selectedVariant: "Qty",        variants: { "Qty":     { price: 80, count: 0, unit: "60" } } },
-                          { id: 7013, name: "VWash Plus Expert Hygiene Intimate Wash",                      image: "chvw.jpg",       cat: "chemist",        subcat: "Female Wellness",   selectedVariant: "Qty",        variants: { "Qty":     { price: 200, count: 0, unit: "100ml" } } },
-                          { id: 7014, name: "Whisper Choice Ultra Sanitary Pads (XL: 6pc)",                 image: "chwcu.jpg",       cat: "chemist",        subcat: "Female Wellness",   selectedVariant: "Qty",        variants: { "Qty":     { price: 50, count: 0, unit: "1pk." } } },
-                          { id: 7015, name: "Whisper Ultra Soft Air Fresh Pores Sanitary Pads (XL+: 6pc)",  image: "chsls.jpg",       cat: "chemist",        subcat: "Female Wellness",   selectedVariant: "Qty",        variants: { "Qty":     { price: 95, count: 0, unit: "1pk." } } },
-                          { id: 7016, name: "Whisper Bindazzz Nights Sanitary Pads(XXL: 7pc)",              image: "chbn.jpg",       cat: "chemist",        subcat: "Female Wellness",   selectedVariant: "Qty",        variants: { "Qty":     { price: 155, count: 0, unit: "1pk." } } },
-                          { id: 7017, name: "Whispers No Gap No Leaks Sanitary Pads(XL+: 7pc)",             image: "chngnl.jpg",       cat: "chemist",        subcat: "Female Wellness",   selectedVariant: "Qty",        variants: { "Qty":     { price: 95, count: 0, unit: "1pk." } } },
+        /*Femal Wellness*/{ id: 7011, name: "Prega News Pregnancy Test Kit,",                               image: "chprega.jpg",         cat: "chemist",        subcat: "Female Wellness",   selectedVariant: "Qty",        variants: { "Qty":     { price: 60, count: 0, unit: "1pc" } } },
+                          { id: 7012, name: "Unwanted-Mankind",                                             image: "chunwanted.jpg",      cat: "chemist",        subcat: "Female Wellness",   selectedVariant: "Qty",        variants: { "Qty":     { price: 80, count: 0, unit: "60" } } },
+                          { id: 7013, name: "VWash Plus Expert Hygiene Intimate Wash",                      image: "chvw.jpg",            cat: "chemist",        subcat: "Female Wellness",   selectedVariant: "Qty",        variants: { "Qty":     { price: 200, count: 0, unit: "100ml" } } },
+                          { id: 7014, name: "Whisper Choice Ultra Sanitary Pads (XL: 6pc)",                 image: "chwcu.jpg",           cat: "chemist",        subcat: "Female Wellness",   selectedVariant: "Qty",        variants: { "Qty":     { price: 50, count: 0, unit: "1pk." } } },
+                          { id: 7015, name: "Whisper Ultra Soft Air Fresh Pores Sanitary Pads (XL+: 6pc)",  image: "chsls.jpg",           cat: "chemist",        subcat: "Female Wellness",   selectedVariant: "Qty",        variants: { "Qty":     { price: 95, count: 0, unit: "1pk." } } },
+                          { id: 7016, name: "Whisper Bindazzz Nights Sanitary Pads(XXL: 7pc)",              image: "chbn.jpg",            cat: "chemist",        subcat: "Female Wellness",   selectedVariant: "Qty",        variants: { "Qty":     { price: 155, count: 0, unit: "1pk." } } },
+                          { id: 7017, name: "Whispers No Gap No Leaks Sanitary Pads(XL+: 7pc)",             image: "chngnl.jpg",          cat: "chemist",        subcat: "Female Wellness",   selectedVariant: "Qty",        variants: { "Qty":     { price: 95, count: 0, unit: "1pk." } } },
 
 
 
 /*Ration*/               
-                  /*dal*/{ id: 8001, name: "Arhar-Barik Dal",                                                   image: "rdar.jpg",       cat: "ration",        subcat: "Dal",   selectedVariant: "Qty",        variants: { "Qty":     { price: 185, count: 0, unit: "1kg" } } },
+                  /*dal*/{ id: 8001, name: "Arhar-Barik Dal",                                               image: "rdar.jpg",       cat: "ration",        subcat: "Dal",   selectedVariant: "Qty",        variants: { "Qty":     { price: 185, count: 0, unit: "1kg" } } },
                          { id: 8002, name: "Arhar-Moti",                                                    image: "rdar.jpg",       cat: "ration",        subcat: "Dal",   selectedVariant: "Qty",        variants: { "Qty":     { price: 175, count: 0, unit: "1kg" } } },
                          { id: 8003, name: "Chana-Dal",                                                     image: "rchana.jpg",       cat: "ration",        subcat: "Dal",   selectedVariant: "Qty",        variants: { "Qty":     { price: 110, count: 0, unit: "1kg" } } },
                          { id: 8004, name: "Kale Chane",                                                    image: "rkalachana.jpg",       cat: "ration",        subcat: "Dal",   selectedVariant: "Qty",        variants: { "Qty":     { price: 110, count: 0, unit: "1kg" } } },
@@ -293,10 +357,13 @@ document.addEventListener('DOMContentLoaded', () => {
                          { id: 8032, name: "Salt",                                                          image: "rtsalt.jpg",       cat: "ration",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 25, count: 0, unit: "1kg" } } },
                          { id: 8033, name: "Sugar",                                                         image: "rsugar.jpg",       cat: "ration",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 50, count: 0, unit: "1kg" } } },
 
-                 /*Milk*/{ id: 8034, name: "Ananda Full cream-Milk",                                             image: "rananda.jpg",       cat: "ration",        subcat: "All",   selectedVariant: "Qty",        variants: { "Qty":     { price: 36, count: 0, unit: "1pkt" } } },
-                 /*Milk*/{ id: 8035, name: "Ananda-Milk",                                                        image: "rananda.jpg",       cat: "ration",        subcat: "All",   selectedVariant: "Qty",        variants: { "Qty":     { price: 22, count: 0, unit: "1pkt" } } },
+                 /*Milk*/{ id: 8034, name: "Ananda Full cream-Milk",                                        image: "rananda.jpg",       cat: "ration",        subcat: "All",   selectedVariant: "Qty",        variants: { "Qty":     { price: 36, count: 0, unit: "1pkt" } } },
+                 /*Milk*/{ id: 8035, name: "Ananda-Milk",                                                   image: "rananda.jpg",       cat: "ration",        subcat: "All",   selectedVariant: "Qty",        variants: { "Qty":     { price: 22, count: 0, unit: "1pkt" } } },
                  /*Milk*/{ id: 8036, name: "Egg Crate",                                                     image: "regg.jpg",       cat: "ration",        subcat: "All",   selectedVariant: "Qty",        variants: { "Qty":     { price: 190, count: 0, unit: "1crt" } } },
-                 /*Milk*/{ id: 8037, name: "White Bread",                                                     image: "rbreadw.jpg",       cat: "ration",        subcat: "All",   selectedVariant: "Qty",        variants: { "Qty":     { price: 25, count: 0, unit: "350g" } } },
+                 /*Milk*/{ id: 8037, name: "White Bread",                                                   image: "rbreadw.jpg",       cat: "ration",        subcat: "All",   selectedVariant: "Qty",        variants: { "Qty":     { price: 25, count: 0, unit: "350g" } } },
+
+                 /*Milk*/{ id: 8038, name: "Corn Flakes Kellogg's real strawberry puree",                   image: "rcfs.jpg",       cat: "ration",        subcat: "All",   selectedVariant: "Qty",        variants: { "Qty":     { price: 90, count: 0, unit: "251g" } } },
+                 /*Milk*/{ id: 8039, name: "Corn Flakes Kellogg's original",                                image: "rcfo.jpg",       cat: "ration",        subcat: "All",   selectedVariant: "Qty",        variants: { "Qty":     { price: 90, count: 0, unit: "251g" } } },
                         
 
 
@@ -306,14 +373,19 @@ document.addEventListener('DOMContentLoaded', () => {
                            { id: 9002, name: "Wai Wai Ready To Eat Veg Noodels",                            image: "iwiev.jpg",       cat: "instant",        subcat: "Noodles",   selectedVariant: "Qty",        variants: { "Qty":     { price: 15, count: 0, unit: "65g" } } },
                            { id: 9003, name: "Wai Wai Non-Veg",                                             image: "iwienv.jpg",       cat: "instant",        subcat: "Noodles",   selectedVariant: "Qty",        variants: { "Qty":     { price: 15, count: 0, unit: "65" } } },
                            { id: 9004, name: "Yippee Magic Masala Noodles",                                 image: "iy.jpg",       cat: "instant",        subcat: "Noodles",   selectedVariant: "Qty",        variants: { "Qty":     { price: 25, count: 0, unit: "120g" } } },
+                           { id: 9011, name: "Nissin Mazedar Masala Cup Noodles",                           image: "inn.jpg",       cat: "instant",        subcat: "Noodles",   selectedVariant: "Qty",        variants: { "Qty":     { price: 55, count: 0, unit: "70g" } } },
+                           { id: 9012, name: "Nissin Vegetable Manchow Cup Noodles",                        image: "innm.jpg",       cat: "instant",        subcat: "Noodles",   selectedVariant: "Qty",        variants: { "Qty":     { price: 55, count: 0, unit: "70g" } } },
+                           { id: 9013, name: "wickedgud Instant Desi Manchow Cup Noodles",                  image: "inwg.jpg",       cat: "instant",        subcat: "Noodles",   selectedVariant: "Qty",        variants: { "Qty":     { price: 60, count: 0, unit: "70g" } } },
+                           { id: 9014, name: "Good Seoul Korean Rice Cake Topokki Carbonara",               image: "ings.jpg",       cat: "instant",        subcat: "Noodles",   selectedVariant: "Qty",        variants: { "Qty":     { price: 600, count: 0, unit: "113g" } } },
 
                   /*Knorr*/{ id: 9005, name: "Knorr Hot & Sour Soup",                                       image: "ikhnsv.jpg",       cat: "instant",        subcat: "Soup",   selectedVariant: "Qty",        variants: { "Qty":     { price: 10, count: 0, unit: "11g" } } },
                            { id: 9006, name: "Knorr Sweet Corn Vegetable Soup",                             image: "iksc.jpg",       cat: "instant",        subcat: "Soup",   selectedVariant: "Qty",        variants: { "Qty":     { price: 10, count: 0, unit: "11g" } } },
 
                  /*McCain*/{ id: 9007, name: "MaCain Variety Pack",                                         image: "imvp.jpg",       cat: "instant",        subcat: "MaCain",   selectedVariant: "Qty",        variants: { "Qty":     { price: 180, count: 0, unit: "550g" } } },
-                           { id: 9008, name: "MaCain Mini Samosa Cheese Pizza Style Filling",                                          image: "imminisamosa.jpg",       cat: "instant",        subcat: "MaCain",   selectedVariant: "Qty",        variants: { "Qty":     { price: 160, count: 0, unit: "240g" } } },
+                           { id: 9008, name: "MaCain Mini Samosa Cheese Pizza Style Filling",               image: "imminisamosa.jpg",       cat: "instant",        subcat: "MaCain",   selectedVariant: "Qty",        variants: { "Qty":     { price: 160, count: 0, unit: "240g" } } },
                            { id: 9009, name: "MaCain French Fries",                                         image: "imff.jpg",       cat: "instant",        subcat: "MaCain",   selectedVariant: "Qty",        variants: { "Qty":     { price: 120, count: 0, unit: "420g" } } },
-                           { id: 9010, name: "MaCain Veggie Fingers",                                       image: "mcvf.jpg",       cat: "instant",        subcat: "MaCain",   selectedVariant: "Qty",        variants: { "Qty":     { price: 180, count: 0, unit: "400" } } }
+                           { id: 9010, name: "MaCain Veggie Fingers",                                       image: "mcvf.jpg",       cat: "instant",        subcat: "MaCain",   selectedVariant: "Qty",        variants: { "Qty":     { price: 180, count: 0, unit: "400g" } } },
+                           
 
                         
     ];
@@ -322,6 +394,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let activeCategory = "";
     let userCoords = null;
     const duration = 1000;
+    let currentIndex = 0;
+    let startX = 0;
+    let isDragging = false;
 
     // --- SPLASH SCREEN LOGIC ---
     if (window.innerWidth < 768) {
@@ -399,6 +474,58 @@ document.addEventListener('DOMContentLoaded', () => {
     body.classList.add('dark-mode');
     checkbox.checked = true; // ✅ FIXED
 }
+function calculateDistance(lat1, lon1, lat2, lon2) {
+    const R = 6371; 
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLon = (lon2 - lon1) * Math.PI / 180;
+    const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+              Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * Math.sin(dLon/2) * Math.sin(dLon/2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    
+    const crowFlies = R * c;
+    
+    // Add a 30% buffer to simulate road winding/turns
+    const estimatedRoadDistance = crowFlies * 1.5; 
+    
+    return estimatedRoadDistance; 
+}
+ function moveSlide(direction) {
+        const targetIndex = currentIndex + direction;
+        if (targetIndex >= 0 && targetIndex < slides.length) {
+            currentIndex = targetIndex;
+            updateUI();
+        }
+    }
+
+    function updateUI() {
+    // We use getBoundingClientRect for more precision than clientWidth
+    const width = slider.getBoundingClientRect().width;
+    
+    // Apply the move
+    slider.style.transform = `translateX(${-currentIndex * width}px)`;
+
+    // Button states
+    prevBtn.disabled = (currentIndex === 0);
+    nextBtn.disabled = (currentIndex === slides.length - 1);
+    
+    // Debugging: Uncomment the line below to see the width in your console (F12)
+    // console.log("Current Width:", width, "Index:", currentIndex);
+}
+
+// Ensure it runs only after images/styles are fully ready
+window.addEventListener('load', updateUI);
+window.addEventListener('resize', updateUI);
+
+    const getX = (e) => e.touches ? e.touches[0].clientX : e.clientX;
+    const startDrag = (e) => { startX = getX(e); isDragging = true; };
+    const endDrag = (e) => {
+        if (!isDragging) return;
+        const endX = e.changedTouches ? e.changedTouches[0].clientX : e.clientX;
+        const distance = startX - endX;
+        if (distance > 50) moveSlide(1);
+        if (distance < -50) moveSlide(-1);
+        isDragging = false;
+    };
 
     // --- UI RENDERING ---
     function renderCollections() {
@@ -411,6 +538,15 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `).join('');
     }
+    function calculateDistance(lat1, lon1, lat2, lon2) {
+    const R = 6371; // Earth's radius in km
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLon = (lon2 - lon1) * Math.PI / 180;
+    const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+              Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * Math.sin(dLon/2) * Math.sin(dLon/2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c; // returns distance in km
+    }   
     
 
     function startCounters() {
@@ -558,6 +694,10 @@ if (statsSection) {
             }
         }
     });
+    slider.addEventListener('touchstart', startDrag);
+    slider.addEventListener('touchend', endDrag);
+    slider.addEventListener('mousedown', startDrag);
+    slider.addEventListener('mouseup', endDrag);
     
  
 
@@ -584,6 +724,7 @@ if (statsSection) {
     });
 
     // --- UTILITIES ---
+    
     function updateDate() {
         const now = new Date();
         const day = String(now.getDate()).padStart(2, '0');
@@ -607,7 +748,6 @@ if (statsSection) {
             if (v.count > 0) {
                 itemsTotal += (v.count * v.price);
                 totalItems += v.count;
-
                 html += `
                     <div class="order-item-detail">
                         <img src="${p.image}" alt="item">
@@ -625,23 +765,55 @@ if (statsSection) {
         });
     });
 
-    // Base Delivery Logic
-    let delivery = itemsTotal > 0 ? (itemsTotal < 300 ? 50 : (itemsTotal <= 1000 ? 100 : 200)) : 0;
+    // --- 1. BASE DELIVERY LOGIC ---
+    // Standard rule: Under 300->50, 300-1000->100, 1000+ -> 200
+    let baseDelivery = itemsTotal > 0 ? (itemsTotal < 0 ? 0 : (itemsTotal <= 0 ? 0 : 0)) : 0;
 
-    document.getElementById('sidebar-content').innerHTML = html || "<p>Cart is empty</p>";
-    document.getElementById('subtotal-val').innerText = itemsTotal;
-    document.getElementById('delivery-val').innerText = delivery; 
-    document.getElementById('total-price').innerText = itemsTotal + delivery;
-
-    // Clean up the weight info display if it exists
-    const weightDisplay = document.getElementById('weight-info');
-    if(weightDisplay) {
-        weightDisplay.innerText = "";
+    // --- 2. KM BASED CHARGES ---
+    let kmCharges = 0;
+    
+    // Logic: Only calculate if items exist AND location is tagged
+    if (itemsTotal > 0 && locationTagged) {
+        if (currentDistance <= 2) kmCharges = 30;
+        else if (currentDistance <= 5) kmCharges = 50; 
+        else if (currentDistance <= 7) kmCharges = 80;
+        else if (currentDistance <= 9) kmCharges = 90;
+        else if (currentDistance <= 11) kmCharges = 100;
+        else kmCharges = 120; 
     }
 
+    // --- 3. NIGHT CHARGES LOGIC (8PM to 7AM) ---
+    let nightCharges = 0;
+    const now = new Date();
+    const hour = now.getHours(); 
+
+    if (itemsTotal > 0) {
+        if (hour >= 20) { 
+            nightCharges = Math.min((hour - 19) * 10, 50);
+        } else if (hour < 7) { 
+            nightCharges = 50;
+        }
+    }
+
+    const totalDelivery = baseDelivery + kmCharges + nightCharges;
+
+    // --- UPDATE UI ---
+    document.getElementById('sidebar-content').innerHTML = html || "<p>Cart is empty</p>";
+    document.getElementById('subtotal-val').innerText = itemsTotal;
+    
+    // Show a message if location isn't tagged yet
+    const deliveryDisplay = document.getElementById('delivery-val');
+    deliveryDisplay.innerText = locationTagged ? totalDelivery : "Tag Location";
+    deliveryDisplay.style.color = locationTagged ? "" : "#ff9800"; // Orange alert if not tagged
+
+    document.getElementById('total-price').innerText = itemsTotal + (locationTagged ? totalDelivery : 0);
+
+    // Store breakdown
+    window.deliveryBreakdown = { base: baseDelivery, km: kmCharges, night: nightCharges };
+
+    // Update Cart Counter & Popup
     const cartCount = document.getElementById('cart-count');
     if (cartCount) cartCount.innerText = totalItems;
-    
     document.body.style.marginBottom = totalItems > 0 ? "7rem" : "0";
 
     if(totalItems > 0 && !orderSidebar.classList.contains('active')) {
@@ -796,22 +968,32 @@ if (statsSection) {
 });
 
     document.getElementById('location-btn').addEventListener('click', async () => {
-        const display = document.getElementById('location-display');
-        if (navigator.geolocation) {
-            display.innerText = "Locating...";
-            navigator.geolocation.getCurrentPosition(async (pos) => {
-                userCoords = { lat: pos.coords.latitude, lon: pos.coords.longitude };
-                try {
-                    const res = await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${pos.coords.latitude}&lon=${pos.coords.longitude}`);
-                    const data = await res.json();
-                    custAddressInput.value = data.display_name || "Location Tagged";
-                    display.innerText = `✅ Location Tagged`;
-                } catch (e) { 
-                    custAddressInput.value = `Lat: ${userCoords.lat}, Lon: ${userCoords.lon}`;
-                    display.innerText = "✅ Coordinates Captured"; 
-                }
-            }, () => { display.innerText = "❌ Access Denied"; });
-        }
+    const display = document.getElementById('location-display');
+    if (navigator.geolocation) {
+        display.innerText = "Locating...";
+        navigator.geolocation.getCurrentPosition(async (pos) => {
+            userCoords = { lat: pos.coords.latitude, lon: pos.coords.longitude };
+            
+            // Calculate distance
+            currentDistance = calculateDistance(
+                SHOP_COORDS.lat, SHOP_COORDS.lon, 
+                userCoords.lat, userCoords.lon
+            );
+
+            locationTagged = true; // ✅ Mark location as fed
+            updateSidebar(); // ✅ Refresh sidebar with new charges
+
+            try {
+                const res = await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${pos.coords.latitude}&lon=${pos.coords.longitude}`);
+                const data = await res.json();
+                custAddressInput.value = data.display_name || "Location Tagged";
+                display.innerText = `✅ ${currentDistance.toFixed(1)} km from Wink It`;
+            } catch (e) { 
+                custAddressInput.value = `Lat: ${userCoords.lat}, Lon: ${userCoords.lon}`;
+                display.innerText = `✅ Tagged (${currentDistance.toFixed(1)} km)`; 
+            }
+        }, () => { display.innerText = "❌ Access Denied"; });
+    }
     });
     function showThemePopup(text) {
     let popup = document.getElementById('theme-toast');
@@ -1010,6 +1192,8 @@ reviewContainer.addEventListener('mousedown', () => {
     updateCount();
     updateDate();
     setInterval(updateCount, 60000);
+     window.addEventListener('resize', updateUI);
+    updateUI();
     
     // Sort and Render
     products.sort((a, b) => a.name.localeCompare(b.name));
@@ -1022,4 +1206,3 @@ reviewContainer.addEventListener('mousedown', () => {
 }
 
 });
-

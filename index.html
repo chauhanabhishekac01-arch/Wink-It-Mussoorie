@@ -18,7 +18,7 @@
 <body>
     <div id="splash-screen">
         <video id="intro-video" autoplay muted playsinline>
-            <source src="intro.mp4" type="video/mp4">
+            <source src="hintro.mp4" type="video/mp4">
             .
         </video>
     </div>
@@ -67,6 +67,25 @@
         <h1 class="main-title">Collections</h1>
         <div class="collection-grid" id="collection-grid"></div>
     </main>
+    <div class="ourservice"><h1 class="main-title">&lt; Our Services &gt;</h1></div>
+    
+    <div class="scmain">
+    <div class="slider-container">
+        
+        <a href="https://api.whatsapp.com/send?phone=917983427187&text=Hi,%20I'd%20like%20to%20request%20a%20service."> 
+                <div class="slider-wrapper" id="slider">
+                <img src="service3.jpg" alt="Slide 3">
+                <img src="service1.jpg" alt="Slide 1">
+                <img src="service2.jpg" alt="Slide 2">
+                <img src="service4.jpg" alt="Slide 4">
+                <img src="service5.jpg" alt="Slide 5">
+            </div>
+        </a>
+    <button class="btn left" id="prevBtn" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="btn right" id="nextBtn" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+    </div>
+
 
     <div id="product-slider">
         <div class="slider-header">
@@ -92,8 +111,8 @@
             <div class="address-section">
                 <input type="text" id="cust-name" placeholder="Your Name">
                 <button id="location-btn" class="loc-btn">📍 Share Current Location</button>
-                <h6>OR</h6>
-                <textarea id="cust-address" rows="3" placeholder="Address"></textarea>
+                
+                <textarea id="cust-address" rows="3" placeholder="Use 'Share Current Location''" readonly></textarea>
                 <span id="location-display"></span>
             </div>
             <button class="checkout-btn" id="checkout-whatsapp">

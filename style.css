@@ -100,6 +100,9 @@ header { width: 100%; height: 3.5rem; border-bottom: 1px solid #ccc; display: fl
 .image-preview-card { border: 0.5px solid #fff; aspect-ratio: 1/1; border-radius: 15px;}
 .image-preview-card img { width: 100%; height: 100%; display: block; object-fit: cover; border: 0.5px solid purple; border-radius: 15px;}
 
+.ourservice{width: 100%; display: flex; align-items: center; justify-content: center;}
+.scmain{display: flex; align-items: center; justify-content: center;}
+
 #product-slider { position: fixed; top: 4rem; padding-bottom: 10rem; left: 0; width: 100%; height: calc(100svh - 4rem); background-color: rgb(252, 241, 252); z-index: 1000; transform: translateX(-100%); transition: 0.4s ease-in-out; box-shadow: 5px 0 25px rgba(0,0,0,0.2); overflow-y: auto; border: 2px solid black;}
 #product-slider.active { transform: translateX(0); height: 100svh;}
 .slider-header { position: sticky; top: 0; background: rgb(197, 94, 197); padding: 15px 5%; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #ddd; z-index: 10; }
@@ -666,6 +669,7 @@ h6 { font-size: 1.3rem; margin: 0px; padding: 0px; text-align: center;}
     border-radius: 50px;
 }
 /* The track - Default (Light Mode / Left) */
+
 .slider {
     background-color: #FFD700; /* Bright Yellow */
     bottom: 0;
@@ -678,6 +682,40 @@ h6 { font-size: 1.3rem; margin: 0px; padding: 0px; text-align: center;}
     border-radius: 34px;
     border: 1px solid black; /* Optional: slightly darker yellow border */
 }
+.slider-container {
+            position: relative;
+            width: 90%;
+            /* This ensures the 2:1 ratio automatically */
+            aspect-ratio: 2 / 1; 
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+            background: #222;
+        }
+
+        .slider-wrapper {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            cursor: grab;
+            
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .slider-wrapper:active {
+            cursor: grabbing;
+        }
+
+        .slider-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Keeps image from stretching */
+            flex-shrink: 0;
+            user-select: none;
+        }
+
+        /* Navigation Buttons */
+        
 
 /* The sliding knob */
 .slider:before {
@@ -780,3 +818,4 @@ body.dark-mode .from-text { font-size: 0.8rem; color: green; font-weight: 600; m
 body.dark-mode .time-ago { font-size: 0.75rem; color: #a976fc; margin-top: 5px; font-weight: 400; font-weight: bold; }
 body.dark-mode .stars-container { color: #FFD700; margin-bottom: 15px; text-align: center;}
 body.dark-mode #popup-images-container{background-color: none; background: none;}
+body.dark-mode .scmain{background-color: black;}
