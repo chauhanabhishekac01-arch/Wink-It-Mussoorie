@@ -89,7 +89,7 @@ header { width: 100%; height: 3.5rem; border-bottom: 1px solid #ccc; display: fl
 
 #collection-view { padding: 1rem; width: 100%; scroll-margin-top: 80px;}
 #collection-view h1.main-title { margin: 0px 0px 16px 0px; padding: 0px; width: 100%; display: flex; justify-content: center; align-items: center; font-size: 2.5rem;}
-.heading { margin: 0px 0px 0px 0px; padding: 0px 0px 5px 0px; width: 100%; display: flex; justify-content: center; align-items: center; font-size: 2.5rem;}
+.heading { margin: 0px 0px 0px 0px; padding: 0px 0px 5px 0px; width: 100%; display: flex; justify-content: center; align-items: center; font-size: 2rem;}
 
 .collection-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(90%, 350px), 1fr)); gap: 20px; width: 100%;}
 .collection-card { background: rgb(223, 147, 223); border-radius: 12px; padding: 5px; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center;}

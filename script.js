@@ -296,17 +296,21 @@ startAutoPlay();
                           { id: 6008, name: "Lizol Disinfectant Surface & Floor Cleaner ",                   image: "cllizol.jpg",          cat: "cleaningessentials",        subcat: "Surface Cleaners",   selectedVariant: "Qty",        variants: { "Qty":     { price: 260, count: 0, unit: "1L" } } },
                           { id: 6009, name: "Feather's Premium Paper Napkin(ply 2) ",                        image: "clfeathern.jpg",       cat: "cleaningessentials",        subcat: "Surface Cleaners",   selectedVariant: "Qty",        variants: { "Qty":     { price: 90, count: 0, unit: "105gm" } } },
 
-/*Chemist*/  /*Misc.*/    { id: 7001, name: "KamaSutra Longlast Condom",                                     image: "chks.jpg",            cat: "chemist",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 240, count: 0, unit: "12p" } } },
-                          { id: 7002, name: "KamaSutra Skinfeel Condom",                                     image: "chkss.jpg",           cat: "chemist",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 150, count: 0, unit: "12p" } } },
+/*Chemist*/  /*Misc.*/    
                           { id: 7003, name: "Moov Instant Pain Relief Spray",                                image: "chmoov.jpg",          cat: "chemist",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 230, count: 0, unit: "50g" } } },
                           { id: 7004, name: "Volini Activ Pain Relief Spray",                                image: "chvo.jpg",            cat: "chemist",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 190, count: 0, unit: "50g" } } },
                           { id: 7005, name: "Dabur Glucoplus C - Orange",                                    image: "chgo.jpg",            cat: "chemist",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 190, count: 0, unit: "50g" } } },
                           { id: 7006, name: "Dabur Glucoplus C - Lemon ",                                    image: "chgl.jpg",            cat: "chemist",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 60, count: 0, unit: "120g" } } },
+                          { id: 7018, name: "Vicks Inhaler Keychain",                                    image: "chvi.jpg",            cat: "chemist",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 60, count: 0, unit: "0.5ml" } } },
+                          { id: 7019, name: "Cofsils Orange Flavour, 10 Lozenges",                                    image: "chcough.jpg",            cat: "chemist",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 35, count: 0, unit: "1pk" } } },
+                          { id: 7019, name: "Control D N95 Mask",                                    image: "chn95.jpg",            cat: "chemist",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 60, count: 0, unit: "1pc" } } },
+                          { id: 7001, name: "KamaSutra Longlast Condom",                                     image: "chks.jpg",            cat: "chemist",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 240, count: 0, unit: "12p" } } },
+                          { id: 7002, name: "KamaSutra Skinfeel Condom",                                     image: "chkss.jpg",           cat: "chemist",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 150, count: 0, unit: "12p" } } },
                           
             /*Baby Care*/ { id: 7007, name: "Pampers (12-17 Kg: XL) 6pc.",                                  image: "chpampers.jpg",       cat: "chemist",        subcat: "Baby Care",   selectedVariant: "Qty",        variants: { "Qty":     { price: 230, count: 0, unit: "1pk." } } },
                           { id: 7008, name: "Pampers (9-14 Kg: L) 13pc.",                                   image: "chpampers.jpg",       cat: "chemist",        subcat: "Baby Care",   selectedVariant: "Qty",        variants: { "Qty":     { price: 210, count: 0, unit: "1pk." } } },
                           { id: 7009, name: "Pampers (7-12Kg: M) 8pc.",                                     image: "chpampers.jpg",       cat: "chemist",        subcat: "Baby Care",   selectedVariant: "Qty",        variants: { "Qty":     { price: 105, count: 0, unit: "1pk." } } },
-                          { id: 7010, name: "Pampers (4-8 Kg: 6) 40pc.",                                    image: "chpampers.jpg",       cat: "chemist",        subcat: "Baby Care",   selectedVariant: "Qty",        variants: { "Qty":     { price: 400, count: 0, unit: "1pk." } } },
+                          { id: 7010, name: "Pampers (4-8 Kg: S) 40pc.",                                    image: "chpampers.jpg",       cat: "chemist",        subcat: "Baby Care",   selectedVariant: "Qty",        variants: { "Qty":     { price: 400, count: 0, unit: "1pk." } } },
                           
         /*Femal Wellness*/{ id: 7011, name: "Prega News Pregnancy Test Kit,",                               image: "chprega.jpg",         cat: "chemist",        subcat: "Female Wellness",   selectedVariant: "Qty",        variants: { "Qty":     { price: 60, count: 0, unit: "1pc" } } },
                           { id: 7012, name: "Unwanted-Mankind",                                             image: "chunwanted.jpg",      cat: "chemist",        subcat: "Female Wellness",   selectedVariant: "Qty",        variants: { "Qty":     { price: 80, count: 0, unit: "60" } } },
@@ -362,8 +366,7 @@ startAutoPlay();
                  /*Milk*/{ id: 8036, name: "Egg Crate",                                                     image: "regg.jpg",       cat: "ration",        subcat: "All",   selectedVariant: "Qty",        variants: { "Qty":     { price: 190, count: 0, unit: "1crt" } } },
                  /*Milk*/{ id: 8037, name: "White Bread",                                                   image: "rbreadw.jpg",       cat: "ration",        subcat: "All",   selectedVariant: "Qty",        variants: { "Qty":     { price: 25, count: 0, unit: "350g" } } },
 
-                 /*Milk*/{ id: 8038, name: "Corn Flakes Kellogg's real strawberry puree",                   image: "rcfs.jpg",       cat: "ration",        subcat: "All",   selectedVariant: "Qty",        variants: { "Qty":     { price: 90, count: 0, unit: "251g" } } },
-                 /*Milk*/{ id: 8039, name: "Corn Flakes Kellogg's original",                                image: "rcfo.jpg",       cat: "ration",        subcat: "All",   selectedVariant: "Qty",        variants: { "Qty":     { price: 90, count: 0, unit: "251g" } } },
+                 /*Milk*/
                         
 
 
@@ -385,6 +388,9 @@ startAutoPlay();
                            { id: 9008, name: "MaCain Mini Samosa Cheese Pizza Style Filling",               image: "imminisamosa.jpg",       cat: "instant",        subcat: "MaCain",   selectedVariant: "Qty",        variants: { "Qty":     { price: 160, count: 0, unit: "240g" } } },
                            { id: 9009, name: "MaCain French Fries",                                         image: "imff.jpg",       cat: "instant",        subcat: "MaCain",   selectedVariant: "Qty",        variants: { "Qty":     { price: 120, count: 0, unit: "420g" } } },
                            { id: 9010, name: "MaCain Veggie Fingers",                                       image: "mcvf.jpg",       cat: "instant",        subcat: "MaCain",   selectedVariant: "Qty",        variants: { "Qty":     { price: 180, count: 0, unit: "400g" } } },
+
+                           { id: 9011, name: "Corn Flakes Kellogg's real strawberry puree",                   image: "rcfs.jpg",       cat: "instant",        subcat: "All",   selectedVariant: "Qty",        variants: { "Qty":     { price: 90, count: 0, unit: "251g" } } },
+                  /*All*/  { id: 9012, name: "Corn Flakes Kellogg's original",                                image: "rcfo.jpg",       cat: "instant",        subcat: "All",   selectedVariant: "Qty",        variants: { "Qty":     { price: 90, count: 0, unit: "251g" } } },
                            
 
                         
@@ -527,7 +533,7 @@ window.addEventListener('resize', updateUI);
         isDragging = false;
     };
 
-    // --- UI RENDERING ---
+    // --- This is my collection card ---
     function renderCollections() {
         collectionGrid.innerHTML = collections.map(c => `
             <div class="collection-card" data-id="${c.id}" data-name="${c.name}">
