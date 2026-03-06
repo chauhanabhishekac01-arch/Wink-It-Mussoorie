@@ -998,7 +998,7 @@ if (statsSection) {
                 custAddressInput.value = `Lat: ${userCoords.lat}, Lon: ${userCoords.lon}`;
                 display.innerText = `✅ Tagged (${currentDistance.toFixed(1)} km)`; 
             }
-        }, () => { display.innerText = "❌ Access Denied"; });
+        }, () => { display.innerText = "ℹ️ Please turn on Location/GPS and Try again"; });
     }
     });
     function showThemePopup(text) {
@@ -1212,3 +1212,4 @@ reviewContainer.addEventListener('mousedown', () => {
 }
 
 });
+
