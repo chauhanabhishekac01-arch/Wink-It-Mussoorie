@@ -189,14 +189,27 @@ startAutoPlay();
 
              
 
-                /*Kids*/{ id: 2018, name: "Kinder joy",                                                     image: "chkinderjoy.jpg",       cat: "chocolates",                subcat: "Kids",             selectedVariant: "Wgt.",        variants: { "Wgt.":     { price: 45, count: 0, unit: "20g" } } },
+                { id: 2018, name: "Kinder joy",                                                     image: "chkinderjoy.jpg",       cat: "chocolates",                subcat: "Kids",             selectedVariant: "Wgt.",        variants: { "Wgt.":     { price: 45, count: 0, unit: "20g" } } },
                         { id: 2019, name: "Lotte Choco Pie Cake",                                           image: "clotte.jpg",            cat: "chocolates",                subcat: "Kids",             selectedVariant: "Qty.",        variants: { "Qty.":     { price: 10, count: 0, unit: "1pc" } } },
                         { id: 2020, name: "Twix Cookie Caramel Filled Bar",                                 image: "ctwix.jpg",             cat: "chocolates",                subcat: "Kids",             selectedVariant: "Qty.",        variants: { "Qty.":     { price: 100, count: 0, unit: "50g" } } },
                         { id: 2021, name: "Snickers Peanut Nougat & Caramel",                               image: "csnickers.jpg",         cat: "chocolates",                subcat: "Kids",             selectedVariant: "Wgt.",        variants: { "Wgt.":     { price: 30, count: 0, unit: "38.5g" } } },
+                        { id: 2022, name: "Kinder Happy Hippo Cocoa Milk 5pc",                               image: "ckhh.jpg",         cat: "chocolates",                subcat: "Kids",             selectedVariant: "Wgt.",        variants: { "Wgt.":     { price: 600, count: 0, unit: "103g" } } },
 
-    /*Imported*/        { id: 2022, name: "Ferrero Rocher Chocolate (24 piece)",                            image: "cfr.jpg",              cat: "chocolates",                subcat: "Imported",             selectedVariant: "Qty.",        variants: { "Qty.":     { price: 880, count: 0, unit: "300g" } } },
-    /*Imported*/        { id: 2023, name: "Mars Premium Nougat and Caramel Filled Bar",                     image: "cm.jpg",               cat: "chocolates",                subcat: "Imported",             selectedVariant: "Qty.",        variants: { "Qty.":     { price: 100, count: 0, unit: "51g" } } },
-    /*Imported*/        { id: 2024, name: "Toblerone Milk Chocolate Bar",                                   image: "ctob.jpg",             cat: "chocolates",                subcat: "Imported",             selectedVariant: "Qty.",        variants: { "Qty.":     { price: 400, count: 0, unit: "100g" } } },
+                        { id: 2023, name: "Bounty Coconut Filled Bar",                               image: "cbc.jpg",         cat: "chocolates",                subcat: "Imported",             selectedVariant: "Wgt.",        variants: { "Wgt.":     { price: 100, count: 0, unit: "50g" } } },
+                        { id: 2024, name: "Hubba Bubba Fruit Flavour Chewing Gum",                               image: "ccg.jpg",         cat: "chocolates",                subcat: "Imported",             selectedVariant: "Wgt.",        variants: { "Wgt.":     { price: 100, count: 0, unit: "50g" } } },
+                        
+    /*Imported*/        { id: 2025, name: "Ferrero Rocher Chocolate (24 piece)",                            image: "cfr.jpg",              cat: "chocolates",                subcat: "Imported",             selectedVariant: "Qty.",        variants: { "Qty.":     { price: 880, count: 0, unit: "300g" } } },
+    /*Imported*/        { id: 2026, name: "Mars Premium Nougat and Caramel Filled Bar",                     image: "cm.jpg",               cat: "chocolates",                subcat: "Imported",             selectedVariant: "Qty.",        variants: { "Qty.":     { price: 100, count: 0, unit: "51g" } } },
+    /*Imported*/        { id: 2027, name: "Toblerone Milk Chocolate Bar",                                   image: "ctob.jpg",             cat: "chocolates",                subcat: "Imported",             selectedVariant: "Qty.",        variants: { "Qty.":     { price: 400, count: 0, unit: "100g" } } },
+    /*Imported*/        { id: 2028, name: "NERDS Grape & Strawberry Toffee",                                   image: "cngs.jpg",             cat: "chocolates",                subcat: "Imported",             selectedVariant: "Qty.",        variants: { "Qty.":     { price: 270, count: 0, unit: "141g" } } },
+    /*Imported*/        { id: 2029, name: "NERDS Watermelon & Cherry Tofee",                                   image: "cnwc.jpg",             cat: "chocolates",                subcat: "Imported",             selectedVariant: "Qty.",        variants: { "Qty.":     { price: 180, count: 0, unit: "46g" } } },
+    /*Imported*/        { id: 2030, name: "Pocky Chocolate Biscuit Sticks",                                   image: "cpockyred.jpg",             cat: "chocolates",                subcat: "Imported",             selectedVariant: "Qty.",        variants: { "Qty.":     { price: 170, count: 0, unit: "47g" } } },
+    /*Imported*/        { id: 2031, name: "Pocky Strawberry Biscuit Sticks",                                   image: "cpockys.jpg",             cat: "chocolates",                subcat: "Imported",             selectedVariant: "Qty.",        variants: { "Qty.":     { price: 170, count: 0, unit: "45g" } } },
+    /*Imported*/        { id: 2032, name: "Pocky Double Chocolate Biscuit Sticks",                                   image: "cpockydc.jpg",             cat: "chocolates",                subcat: "Imported",             selectedVariant: "Qty.",        variants: { "Qty.":     { price: 180, count: 0, unit: "47g" } } },
+    /*Imported*/        { id: 2033, name: "M&M's Peanut Candy",                                   image: "cmnmp.jpg",             cat: "chocolates",                subcat: "Imported",             selectedVariant: "Qty.",        variants: { "Qty.":     { price: 180, count: 0, unit: "45g" } } },
+    /*Imported*/        { id: 2034, name: "M&M's Chocolate Candy",                                   image: "cmnmc.jpg",             cat: "chocolates",                subcat: "Imported",             selectedVariant: "Qty.",        variants: { "Qty.":     { price: 180, count: 0, unit: "45g" } } },
+    /*Imported*/        { id: 2035, name: "Skittles Wild Berry Bite Size Fruit Toffee",                                   image: "cskittlew.jpg",             cat: "chocolates",                subcat: "Imported",             selectedVariant: "Qty.",        variants: { "Qty.":     { price: 50, count: 0, unit: "27g" } } },
+    /*Imported*/        { id: 2036, name: "Skittles Original Bite-size Fruit Toffee",                                   image: "cskittler.jpg",             cat: "chocolates",                subcat: "Imported",             selectedVariant: "Qty.",        variants: { "Qty.":     { price: 50, count: 0, unit: "27g" } } },
                         
                         
                         
@@ -1214,6 +1227,7 @@ reviewContainer.addEventListener('mousedown', () => {
 }
 
 });
+
 
 
 
