@@ -145,6 +145,8 @@ startAutoPlay();
                  /*Milk*/{ id: 21,  name: "Amul Kool Kesar",                                                 image: "damulk.jpg",            cat: "beverages",       subcat: "Amul",                         selectedVariant: "S",           variants: { "S":        { price: 25, count: 0, unit: "180ml" } } },
                          { id: 22,  name: "Amul Masti Spiced Salted Buttermilk",                             image: "damulc.jpg",            cat: "beverages",       subcat: "Amul",                         selectedVariant: "S",           variants: { "S":        { price: 15, count: 0, unit: "200ml" } } },
                          { id: 23,  name: "Amul Lassi",                                                      image: "damull.jpg",            cat: "beverages",       subcat: "Amul",                         selectedVariant: "S",           variants: { "S":        { price: 25, count: 0, unit: "200ml" } } },
+                         { id: 35,  name: "Amul Kool Cafe Milk 'n' Coffee-Can",                             image: "damulcc.jpg",            cat: "beverages",       subcat: "Amul",                         selectedVariant: "S",           variants: { "S":        { price: 35, count: 0, unit: "200ml" } } },
+                         { id: 36,  name: "Amul Kool Koko Chocolate",                                       image: "damulcl.jpg",            cat: "beverages",       subcat: "Amul",                         selectedVariant: "S",           variants: { "S":        { price: 35, count: 0, unit: "200ml" } } },
                  
                 /*Water*/{ id: 24,  name: "Mineral Water",                                                   image: "dwater.jpg",            cat: "beverages",       subcat: "Water & Soda",                 selectedVariant: "S",           variants: { "S":        { price: 20, count: 0, unit: "1L" }, "L": { price: 70, count: 0, unit: "5L" } } },
                          { id: 25,  name: "Schweppes Indian Tonic Water",                                    image: "dschweppesi.jpg",       cat: "beverages",       subcat: "Water & Soda",                 selectedVariant: "S",           variants: { "S":        { price: 60, count: 0, unit: "300ml" } } },
@@ -1212,4 +1214,5 @@ reviewContainer.addEventListener('mousedown', () => {
 }
 
 });
+
 
