@@ -234,7 +234,7 @@ startAutoPlay();
                         { id: 3015, name: "Good Day Fruit & Nut Cookies",                                   image: "bigooddayfn.jpg",       cat: "biscuits",                  subcat: "Britannia",          selectedVariant: "L",           variants: { "L":        { price: 100, count: 0, unit: "450g" } } },
                         { id: 3016, name: "Britannia Bourbon ",                                             image: "bibritanniab.jpg",      cat: "biscuits",                  subcat: "Britannia",          selectedVariant: "L",           variants: { "L":        { price: 35, count: 0, unit: "100g" } } },
                         { id: 3017, name: "Britannia Nice Time Coconut Biscuit",                            image: "bibritanniant.jpg",     cat: "biscuits",                  subcat: "Britannia",          selectedVariant: "L",           variants: { "L":        { price: 25, count: 0, unit: "136g" } } },
-                        { id: 2018, name: "Britannia Croissant",                                            image: "ccroissant.jpg",        cat: "biscuits",                  subcat: "Britannia",          selectedVariant: "L",           variants: { "L":        { price: 75, count: 0, unit: "240g" } } },
+                        { id: 3018, name: "Britannia Croissant",                                            image: "ccroissant.jpg",        cat: "biscuits",                  subcat: "Britannia",          selectedVariant: "L",           variants: { "L":        { price: 75, count: 0, unit: "240g" } } },
                         { id: 3019, name: "Britannia Marigold",                                             image: "bimari.jpg",            cat: "biscuits",                  subcat: "Britannia",          selectedVariant: "L",           variants: { "L":        { price: 40, count: 0, unit: "208g" } } },
                         { id: 3020, name: "Britannia Milk Bikis",                                           image: "bimb.jpg",              cat: "biscuits",                  subcat: "Britannia",          selectedVariant: "L",           variants: { "L":        { price: 70, count: 0, unit: "500g" } }  },
                 
@@ -1227,6 +1227,7 @@ reviewContainer.addEventListener('mousedown', () => {
 }
 
 });
+
 
 
 
