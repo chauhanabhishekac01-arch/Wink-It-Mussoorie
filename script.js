@@ -145,7 +145,7 @@ startAutoPlay();
                  /*Milk*/{ id: 21,  name: "Amul Kool Kesar",                                                 image: "damulk.jpg",            cat: "beverages",       subcat: "Amul",                         selectedVariant: "S",           variants: { "S":        { price: 25, count: 0, unit: "180ml" } } },
                          { id: 22,  name: "Amul Masti Spiced Salted Buttermilk",                             image: "damulc.jpg",            cat: "beverages",       subcat: "Amul",                         selectedVariant: "S",           variants: { "S":        { price: 15, count: 0, unit: "200ml" } } },
                          { id: 23,  name: "Amul Lassi",                                                      image: "damull.jpg",            cat: "beverages",       subcat: "Amul",                         selectedVariant: "S",           variants: { "S":        { price: 25, count: 0, unit: "200ml" } } },
-                         { id: 35,  name: "Amul Kool Cafe Milk 'n' Coffee-Can",                             image: "damulcc.jpg",            cat: "beverages",       subcat: "Amul",                         selectedVariant: "S",           variants: { "S":        { price: 35, count: 0, unit: "200ml" } } },
+                         { id: 37,  name: "Amul Kool Cafe Milk 'n' Coffee-Can",                             image: "damulcc.jpg",            cat: "beverages",       subcat: "Amul",                         selectedVariant: "S",           variants: { "S":        { price: 35, count: 0, unit: "200ml" } } },
                          { id: 36,  name: "Amul Kool Koko Chocolate",                                       image: "damulcl.jpg",            cat: "beverages",       subcat: "Amul",                         selectedVariant: "S",           variants: { "S":        { price: 35, count: 0, unit: "200ml" } } },
                  
                 /*Water*/{ id: 24,  name: "Mineral Water",                                                   image: "dwater.jpg",            cat: "beverages",       subcat: "Water & Soda",                 selectedVariant: "S",           variants: { "S":        { price: 20, count: 0, unit: "1L" }, "L": { price: 70, count: 0, unit: "5L" } } },
@@ -318,7 +318,7 @@ startAutoPlay();
                           { id: 7006, name: "Dabur Glucoplus C - Lemon ",                                    image: "chgl.jpg",            cat: "chemist",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 60, count: 0, unit: "120g" } } },
                           { id: 7018, name: "Vicks Inhaler Keychain",                                    image: "chvi.jpg",            cat: "chemist",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 60, count: 0, unit: "0.5ml" } } },
                           { id: 7019, name: "Cofsils Orange Flavour, 10 Lozenges",                                    image: "chcough.jpg",            cat: "chemist",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 35, count: 0, unit: "1pk" } } },
-                          { id: 7019, name: "Control D N95 Mask",                                    image: "chn95.jpg",            cat: "chemist",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 60, count: 0, unit: "1pc" } } },
+                          { id: 7020, name: "Control D N95 Mask",                                    image: "chn95.jpg",            cat: "chemist",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 60, count: 0, unit: "1pc" } } },
                           { id: 7001, name: "KamaSutra Longlast Condom",                                     image: "chks.jpg",            cat: "chemist",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 240, count: 0, unit: "12p" } } },
                           { id: 7002, name: "KamaSutra Skinfeel Condom",                                     image: "chkss.jpg",           cat: "chemist",        subcat: "General",   selectedVariant: "Qty",        variants: { "Qty":     { price: 150, count: 0, unit: "12p" } } },
                           
@@ -404,8 +404,8 @@ startAutoPlay();
                            { id: 9009, name: "MaCain French Fries",                                         image: "imff.jpg",       cat: "instant",        subcat: "MaCain",   selectedVariant: "Qty",        variants: { "Qty":     { price: 120, count: 0, unit: "420g" } } },
                            { id: 9010, name: "MaCain Veggie Fingers",                                       image: "mcvf.jpg",       cat: "instant",        subcat: "MaCain",   selectedVariant: "Qty",        variants: { "Qty":     { price: 180, count: 0, unit: "400g" } } },
 
-                           { id: 9011, name: "Corn Flakes Kellogg's real strawberry puree",                   image: "rcfs.jpg",       cat: "instant",        subcat: "All",   selectedVariant: "Qty",        variants: { "Qty":     { price: 90, count: 0, unit: "251g" } } },
-                  /*All*/  { id: 9012, name: "Corn Flakes Kellogg's original",                                image: "rcfo.jpg",       cat: "instant",        subcat: "All",   selectedVariant: "Qty",        variants: { "Qty":     { price: 90, count: 0, unit: "251g" } } },
+                           { id: 9015, name: "Corn Flakes Kellogg's real strawberry puree",                   image: "rcfs.jpg",       cat: "instant",        subcat: "All",   selectedVariant: "Qty",        variants: { "Qty":     { price: 90, count: 0, unit: "251g" } } },
+                  /*All*/  { id: 9016, name: "Corn Flakes Kellogg's original",                                image: "rcfo.jpg",       cat: "instant",        subcat: "All",   selectedVariant: "Qty",        variants: { "Qty":     { price: 90, count: 0, unit: "251g" } } },
                            
 
                         
@@ -1227,6 +1227,7 @@ reviewContainer.addEventListener('mousedown', () => {
 }
 
 });
+
 
 
 
