@@ -832,11 +832,11 @@ if (statsSection) {
     
     // Logic: Only calculate if items exist AND location is tagged
     if (itemsTotal > 0 && locationTagged) {
-        if (currentDistance <= 2) kmCharges = 30;
-        else if (currentDistance <= 5) kmCharges = 50; 
-        else if (currentDistance <= 7) kmCharges = 80;
-        else if (currentDistance <= 9) kmCharges = 90;
-        else if (currentDistance <= 11) kmCharges = 100;
+        if (currentDistance <= 1) kmCharges = 30;
+        else if (currentDistance <= 2) kmCharges = 50; 
+        else if (currentDistance <= 3) kmCharges = 80;
+        else if (currentDistance <= 4) kmCharges = 90;
+        else if (currentDistance <= 5) kmCharges = 100;
         else kmCharges = 120; 
     }
 
@@ -1283,4 +1283,5 @@ reviewContainer.addEventListener('mousedown', () => {
 }
 
 });
+
 
