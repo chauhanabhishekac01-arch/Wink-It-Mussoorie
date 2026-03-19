@@ -426,6 +426,7 @@ startAutoPlay();
               /*Desserts*/  { id: 1026,   name: "Brownie",                                                  image: "omib.jpg",              cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 80, count: 0, unit: "1pc" } } },
               /*Desserts*/  { id: 1027,   name: "Bal Mithai",                                               image: "omibm.jpg",             cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 300, count: 0, unit: "500g" }, "Qty.":        { price: 600, count: 0, unit: "1kg" } } },
               /*Desserts*/  { id: 1028,   name: "Pure Chocolate Barfi",                                     image: "omicb.jpg",             cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 300, count: 0, unit: "500g" }, "Qty.":        { price: 600, count: 0, unit: "1kg"         } } },
+              /*Desserts*/  { id: 1028,   name: "Plain Barfi",                                              image: "omipbarfi.jpg",         cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 150, count: 0, unit: "250g" }, "Qty.":        { price: 300, count: 0, unit: "500g"         } } },
         
               /*Snacks*/  { id: 1029,   name: "Samosa",                                                     image: "omisam.jpg",            cat: "partneromi",               subcat: "Snacks",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 25, count: 0, unit: "1pc" } } },        
               /*Snacks*/  { id: 1065,   name: "Aloo Patties",                                               image: "omiap.jpg",             cat: "partneromi",               subcat: "Snacks",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 30, count: 0, unit: "1pc" } } },        
@@ -454,7 +455,7 @@ startAutoPlay();
                           { id: 1052,   name: "Kaju Katli",                                                 image: "omikkatli.jpg",         cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 300, count: 0, unit: "250g" }, "Qty.": { price: 600, count: 0, unit: "500gm" } } },
                           { id: 1053,   name: "Plain Khoya Barfi",                                          image: "omipkb.jpg",            cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 300, count: 0, unit: "500gm" } } },
                           { id: 1054,   name: "Coconut Barfi",                                              image: "omicbar.jpg",           cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 300, count: 0, unit: "500g" } } },
-                          /*{ id: 1055,   name: "Mango Barfi",                                              image: "omimb.jpg",             cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 300, count: 0, unit: "500g" } } },*/
+                          { id: 1055,   name: "Mango Barfi",                                                image: "omimangob.jpg",         cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 300, count: 0, unit: "500g" } } },
                           { id: 1056,   name: "Peda",                                                       image: "omipeda.jpg",           cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 300, count: 0, unit: "500g" } } },
                           { id: 1057,   name: "Milk Cake",                                                  image: "omimcake.jpg",          cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 340, count: 0, unit: "500g" } } },
                           { id: 1058,   name: "Desi Ghee Atta Pinni",                                       image: "omiapinni.jpg",         cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 180, count: 0, unit: "250g" }, "Qty.": { price: 360, count: 0, unit: "500g" } } },
@@ -463,7 +464,6 @@ startAutoPlay();
                           { id: 1061,   name: "Malai Chop",                                                 image: "omimchop.jpg",          cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 35, count: 0, unit: "1pc" }, "Qty.": { price: 250, count: 0, unit: "500g" } } },
                           { id: 1062,   name: "Paan Petha",                                                 image: "omippetha.jpg",         cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 20, count: 0, unit: "1pc" }, "Qty.": { price: 55, count: 0, unit: "250g" } } },
                           { id: 1063,   name: "Rasmalai",                                                   image: "omirmalai.jpg",         cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 50, count: 0, unit: "1pc" } } },
-                          { id: 1064,   name: "Boondi Ladoo",                                               image: "omibladoo.jpg",         cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 80, count: 0, unit: "250g" }, "Qty.": { price: 320, count: 0, unit: "1kg" } } },
                           { id: 1066,   name: "Imarti",                                                     image: "omiimarti.jpg",         cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 25, count: 0, unit: "1pc" }, "Qty.": { price: 370, count: 0, unit: "1kg" } } },
                           { id: 1067,   name: "Mix Sweets",                                                 image: "omimsweet.jpg",         cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 250, count: 0, unit: "500g" }, "Qty.": { price: 500, count: 0, unit: "1kg" } } },
                           { id: 1068,   name: "Motichoor Ladoo",                                            image: "omimcl.jpg",            cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 50, count: 0, unit: "4pc" }, "Qty.": { price: 160, count: 0, unit: "500g" } } },
@@ -712,29 +712,52 @@ window.addEventListener('resize', updateUI);
     };
 
     collectionGrid.innerHTML = collections.map((c, i) => {
-        let cardHtml = '';
+    let cardHtml = '';
 
-        // Check if the current index has a defined heading in our map
-        if (sectionHeadings[i]) {
-            cardHtml += `<h2 class="grid-section-heading">${sectionHeadings[i]}</h2>`;
-        }
+    // Check if the current index has a defined heading in our map
+    if (sectionHeadings[i]) {
+        cardHtml += `<h2 class="grid-section-heading">${sectionHeadings[i]}</h2>`;
+    }
 
-        // Use only the first image from the previews array
-        const displayImage = c.previews.length > 0 ? c.previews[0] : 'placeholder.jpg';
+    // Use only the first image from the previews array
+    const displayImage = c.previews.length > 0 ? c.previews[0] : 'placeholder.jpg';
 
-        cardHtml += `
-            <div class="collection-card" data-id="${c.id}" data-name="${c.name}">
-                <div class="image-preview-box">
-                    <div class="image-preview-card">
-                        <img src="${displayImage}" alt="${c.name}" loading="lazy">
-                    </div>
+    // Added id="${c.id}" below to allow for direct HTTPS linking
+    cardHtml += `
+        <div class="collection-card" id="${c.id}" data-id="${c.id}" data-name="${c.name}">
+            <div class="image-preview-box">
+                <div class="image-preview-card">
+                    <img src="${displayImage}" alt="${c.name}" loading="lazy">
                 </div>
-                <h3>${c.name}</h3>
             </div>
-        `;
+            <h3>${c.name}</h3>
+        </div>
+    `;
 
-        return cardHtml;
-    }).join('');
+    return cardHtml;
+}).join('');
+window.addEventListener('load', () => {
+    // 200ms delay to ensure the DOM is ready for the slider
+    setTimeout(() => {
+        const hash = window.location.hash.replace('#', ''); 
+        
+        if (hash) {
+            // Find the object so we can get both the ID and the Name
+            const selectedCollection = collections.find(c => c.id === hash);
+            
+            if (selectedCollection) {
+                // We pass both 'id' and 'name' to match your function signature
+                openCollection(selectedCollection.id, selectedCollection.name); 
+                
+                // Optional: Scroll to the view if needed
+                const view = document.getElementById('collection-view');
+                if (view) {
+                    view.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        }
+    }, 200); 
+});
 }
     function calculateDistance(lat1, lon1, lat2, lon2) {
     const R = 6371; // Earth's radius in km
