@@ -98,6 +98,9 @@ startAutoPlay();
         { q: "10. How do you earn?", a: "Everything will be bought and on MRP, our only earning is the delivery charges." }
     ];
     const collections = [
+        { id: "partneromi", name: "Omi's Sweets",                   previews: ["omi.jpg"] },
+        { id: "partneromif", name: "Omi's Food",                    previews: ["omifo.jpg"] },
+        { id: "garrison", name: "The Garrison",                     previews: ["glogo.jpg"] },
         { id: "beverages", name: "Drinks and Juices",               previews: ["dj.jpg"] },
         { id: "snacks", name: "Chips and Namkeens",                 previews: ["cn.jpg"] },
         { id: "biscuits", name: "Bakery and Biscuits",              previews: ["bb.jpg"] },
@@ -114,8 +117,7 @@ startAutoPlay();
         { id: "face", name: "Face",                                 previews: ["f.jpg"] },
         { id: "g", name: "General",                                 previews: ["g.jpg"] },
         { id: "cleaningessentials", name: "Cleaners and Freshners", previews: ["cf.jpg"] },
-        { id: "partneromi", name: "Omi's Sweets",                   previews: ["omi.jpg"] },
-        { id: "partneromif", name: "Omi's Food",                    previews: ["omifo.jpg"] }
+        
         
         
         
@@ -177,9 +179,9 @@ startAutoPlay();
 
                         
 
-/*Amul*/                { id: 2008, name: "Amul Dark Chocolate",                                            image: "chdc.jpg",              cat: "chocolates",               subcat: "Amul",                        selectedVariant: "Wgt.",       variants: { "Wgt.":     { price: 180, count: 0, unit: "150g" } } },
-                        { id: 2009, name: "Amul Smooth and Creamy Milk",                                    image: "camulsc.jpg",           cat: "chocolates",               subcat: "Amul",                        selectedVariant: "Wgt.",       variants: { "Wgt.":     { price: 180, count: 0, unit: "125g" } } },
-                        { id: 2010, name: "Amul Belgian Smooth and Creamy Milk",                            image: "camulbc.jpg",           cat: "chocolates",               subcat: "Amul",                        selectedVariant: "Wgt.",       variants: { "Wgt.":     { price: 180, count: 0, unit: "150g" } } },
+/*Amul*/                { id: 2008, name: "Amul Dark Chocolate",                                            image: "chdc.jpg",              cat: "chocolates",               subcat: "Amul",                        selectedVariant: "Wgt.",       variants: { "Wgt.":     { price: 200, count: 0, unit: "150g" } } },
+                        { id: 2009, name: "Amul Smooth and Creamy Milk",                                    image: "camulsc.jpg",           cat: "chocolates",               subcat: "Amul",                        selectedVariant: "Wgt.",       variants: { "Wgt.":     { price: 160, count: 0, unit: "125g" } } },
+                        { id: 2010, name: "Amul Belgian Smooth and Creamy Milk",                            image: "camulbc.jpg",           cat: "chocolates",               subcat: "Amul",                        selectedVariant: "Wgt.",       variants: { "Wgt.":     { price: 200, count: 0, unit: "150g" } } },
                         { id: 2011, name: "Amul Velvett",                                                   image: "chvelvett.jpg",         cat: "chocolates",               subcat: "Amul",                        selectedVariant: "Wgt.",       variants: { "Wgt.":     { price: 50, count: 0, unit: "35g" } } },
 
 /*Hershey's*/           { id: 2012, name: "Hershey's Kisses Milk Pack",                                     image: "ckissesmc.jpg",         cat: "chocolates",               subcat: "Hershey's",                   selectedVariant: "Wgt.",       variants: { "Wgt.":     { price: 55, count: 0, unit: "36g" } } },
@@ -335,7 +337,7 @@ startAutoPlay();
                           { id: 7013, name: "VWash Plus Expert Hygiene Intimate Wash",                      image: "chvw.jpg",              cat: "fw",                       subcat: "Female Wellness",           selectedVariant: "Qty",          variants: { "Qty":      { price: 200, count: 0, unit: "100ml" } } },
                           { id: 7014, name: "Whisper Choice Ultra Sanitary Pads (XL: 6pc)",                 image: "chwcu.jpg",             cat: "fw",                       subcat: "Female Wellness",           selectedVariant: "Qty",          variants: { "Qty":      { price: 50, count: 0, unit: "1pk." } } },
                           { id: 7015, name: "Whisper Ultra Soft Air Fresh Pores (XL+: 6pc)",                image: "chsls.jpg",             cat: "fw",                       subcat: "Female Wellness",           selectedVariant: "Qty",          variants: { "Qty":      { price: 95, count: 0, unit: "1pk." } } },
-                          { id: 7016, name: "Whisper Bindazzz Nights Sanitary Pads(XXL: 7pc)",              image: "chbn.jpg",              cat: "fw",                       subcat: "Female Wellness",           selectedVariant: "Qty",          variants: { "Qty":      { price: 115, count: 0, unit: "1pk." } } },
+                          { id: 7016, name: "Whisper Bindazzz Nights Sanitary Pads(XXL: 7pc)",              image: "chbn.jpg",              cat: "fw",                       subcat: "Female Wellness",           selectedVariant: "Qty",          variants: { "Qty":      { price: 155, count: 0, unit: "1pk." } } },
                           { id: 7017, name: "Whispers No Gap No Leaks Sanitary Pads(XL+: 7pc)",             image: "chngnl.jpg",            cat: "fw",                       subcat: "Female Wellness",           selectedVariant: "Qty",          variants: { "Qty":      { price: 95, count: 0, unit: "1pk." } } },
 
             
@@ -383,7 +385,7 @@ startAutoPlay();
                          { id: 8037, name: "White Bread",                                                   image: "rbreadw.jpg",           cat: "dbm",                      subcat: "Bread",                     selectedVariant: "Qty",          variants: { "Qty":     { price: 25, count: 0, unit: "350g" } } },
 
                                    
-/*Noodles*/                { id: 9001, name: "Maggie",                                                      image: "imaggie.jpg",           cat: "instant",                  subcat: "Noodles",                   selectedVariant: "Qty",          variants: { "Qty":     { price: 10, count: 0, unit: "70g" } } },
+/*Noodles*/                { id: 9001, name: "Maggie",                                                      image: "ifmaggie.jpg",           cat: "instant",                  subcat: "Noodles",                   selectedVariant: "Qty",          variants: { "Qty":     { price: 10, count: 0, unit: "70g" } } },
                            { id: 9002, name: "Wai Wai Ready To Eat Veg Noodels",                            image: "iwiev.jpg",             cat: "instant",                  subcat: "Noodles",                   selectedVariant: "Qty",          variants: { "Qty":     { price: 15, count: 0, unit: "65g" } } },
                            { id: 9003, name: "Wai Wai Non-Veg",                                             image: "iwienv.jpg",            cat: "instant",                  subcat: "Noodles",                   selectedVariant: "Qty",          variants: { "Qty":     { price: 15, count: 0, unit: "65" } } },
                            { id: 9004, name: "Yippee Magic Masala Noodles",                                 image: "iy.jpg",                cat: "instant",                  subcat: "Noodles",                   selectedVariant: "Qty",          variants: { "Qty":     { price: 25, count: 0, unit: "120g" } } },
@@ -419,14 +421,16 @@ startAutoPlay();
         /*Namkeen*/       { id: 1020,   name: "Besan Sew",                                                  image: "omibsew.jpg",           cat: "partneromi",               subcat: "Namkeen",                   selectedVariant: "Qty",          variants: { "Qty":     { price: 60, count: 0, unit: "200g" } } },
                           { id: 1021,   name: "Traditional Namkeen",                                        image: "omint.jpg",             cat: "partneromi",               subcat: "Namkeen",                   selectedVariant: "Qty",          variants: { "Qty":     { price: 70, count: 0, unit: "250g" } } },
 
-              /*Desserts*/  { id: 1022,   name: "Gulab Jamun",                                              image: "omigj.jpg",             cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 25, count: 0, unit: "1pc" } } },
-              /*Desserts*/  { id: 1023,   name: "Rasgulla Sponge",                                          image: "omirs.jpg",             cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 25, count: 0, unit: "1pc" } } },
-              /*Desserts*/  { id: 1024,   name: "Pastry Pineapple",                                         image: "omipp.jpg",             cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 25, count: 0, unit: "1pc" } } },
-              /*Desserts*/  { id: 1025,   name: "Pastry Truffle",                                           image: "omitp.jpg",             cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 50, count: 0, unit: "1pc" } } },
-              /*Desserts*/  { id: 1026,   name: "Brownie",                                                  image: "omib.jpg",              cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 80, count: 0, unit: "1pc" } } },
-              /*Desserts*/  { id: 1027,   name: "Bal Mithai",                                               image: "omibm.jpg",             cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 300, count: 0, unit: "500g" }, "Qty.":        { price: 600, count: 0, unit: "1kg" } } },
-              /*Desserts*/  { id: 1028,   name: "Pure Chocolate Barfi",                                     image: "omicb.jpg",             cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 300, count: 0, unit: "500g" }, "Qty.":        { price: 600, count: 0, unit: "1kg"         } } },
-              /*Desserts*/  { id: 1028,   name: "Plain Barfi",                                              image: "omipbarfi.jpg",         cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 150, count: 0, unit: "250g" }, "Qty.":        { price: 300, count: 0, unit: "500g"         } } },
+            /*Desserts*/  { id: 1022,   name: "Gulab Jamun",                                                image: "omigj.jpg",             cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 25, count: 0, unit: "1pc" } } },
+            /*Desserts*/  { id: 1023,   name: "Rasgulla Sponge",                                            image: "omirs.jpg",             cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 25, count: 0, unit: "1pc" } } },
+            /*Desserts*/  { id: 1024,   name: "Pastry Pineapple",                                           image: "omipp.jpg",             cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 25, count: 0, unit: "1pc" } } },
+            /*Desserts*/  { id: 1025,   name: "Pastry Truffle",                                             image: "omitp.jpg",             cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 50, count: 0, unit: "1pc" } } },
+            /*Desserts*/  { id: 1026,   name: "Brownie",                                                    image: "omib.jpg",              cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 80, count: 0, unit: "1pc" } } },
+            /*Desserts*/  { id: 1027,   name: "Bal Mithai",                                                 image: "omibm.jpg",             cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 300, count: 0, unit: "500g" }, "Qty.":        { price: 600, count: 0, unit: "1kg" } } },
+            /*Desserts*/  { id: 1028,   name: "Pure Chocolate Barfi",                                       image: "omicb.jpg",             cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 300, count: 0, unit: "500g" }, "Qty.":        { price: 600, count: 0, unit: "1kg"         } } },
+
+            /*Desserts*/  { id: 1069,   name: "Pineapple Cake",                                             image: "omipcake.jpg",          cat: "partneromi",               subcat: "Cakes",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 280, count: 0, unit: "1 Pound" } } },
+            /*Desserts*/  { id: 1070,   name: "Black Forest Cake",                                          image: "omibfc.jpg",            cat: "partneromi",               subcat: "Cakes",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 300, count: 0, unit: "1 Pound" } } },
         
               /*Snacks*/  { id: 1029,   name: "Samosa",                                                     image: "omisam.jpg",            cat: "partneromi",               subcat: "Snacks",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 25, count: 0, unit: "1pc" } } },        
               /*Snacks*/  { id: 1065,   name: "Aloo Patties",                                               image: "omiap.jpg",             cat: "partneromi",               subcat: "Snacks",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 30, count: 0, unit: "1pc" } } },        
@@ -455,7 +459,7 @@ startAutoPlay();
                           { id: 1052,   name: "Kaju Katli",                                                 image: "omikkatli.jpg",         cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 300, count: 0, unit: "250g" }, "Qty.": { price: 600, count: 0, unit: "500gm" } } },
                           { id: 1053,   name: "Plain Khoya Barfi",                                          image: "omipkb.jpg",            cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 300, count: 0, unit: "500gm" } } },
                           { id: 1054,   name: "Coconut Barfi",                                              image: "omicbar.jpg",           cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 300, count: 0, unit: "500g" } } },
-                          { id: 1055,   name: "Mango Barfi",                                                image: "omimangob.jpg",         cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 300, count: 0, unit: "500g" } } },
+                          /*{ id: 1055,   name: "Mango Barfi",                                              image: "omimb.jpg",             cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 300, count: 0, unit: "500g" } } },*/
                           { id: 1056,   name: "Peda",                                                       image: "omipeda.jpg",           cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 300, count: 0, unit: "500g" } } },
                           { id: 1057,   name: "Milk Cake",                                                  image: "omimcake.jpg",          cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 340, count: 0, unit: "500g" } } },
                           { id: 1058,   name: "Desi Ghee Atta Pinni",                                       image: "omiapinni.jpg",         cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 180, count: 0, unit: "250g" }, "Qty.": { price: 360, count: 0, unit: "500g" } } },
@@ -464,6 +468,7 @@ startAutoPlay();
                           { id: 1061,   name: "Malai Chop",                                                 image: "omimchop.jpg",          cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 35, count: 0, unit: "1pc" }, "Qty.": { price: 250, count: 0, unit: "500g" } } },
                           { id: 1062,   name: "Paan Petha",                                                 image: "omippetha.jpg",         cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 20, count: 0, unit: "1pc" }, "Qty.": { price: 55, count: 0, unit: "250g" } } },
                           { id: 1063,   name: "Rasmalai",                                                   image: "omirmalai.jpg",         cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 50, count: 0, unit: "1pc" } } },
+                          /*{ id: 1064,   name: "Boondi Ladoo",                                               image: "omibladoo.jpg",         cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 80, count: 0, unit: "250g" }, "Qty.": { price: 320, count: 0, unit: "1kg" } } },*/
                           { id: 1066,   name: "Imarti",                                                     image: "omiimarti.jpg",         cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 25, count: 0, unit: "1pc" }, "Qty.": { price: 370, count: 0, unit: "1kg" } } },
                           { id: 1067,   name: "Mix Sweets",                                                 image: "omimsweet.jpg",         cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 250, count: 0, unit: "500g" }, "Qty.": { price: 500, count: 0, unit: "1kg" } } },
                           { id: 1068,   name: "Motichoor Ladoo",                                            image: "omimcl.jpg",            cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 50, count: 0, unit: "4pc" }, "Qty.": { price: 160, count: 0, unit: "500g" } } },
@@ -494,7 +499,7 @@ startAutoPlay();
 
                             { id: 1120,   name: "Gulab Jamun",                                              image: "omigj.jpg",             cat: "partneromif",              subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":      { price: 25, count: 0, unit: "1pc" } } },
                             { id: 1121,   name: "Rasgulla Sponge",                                          image: "omirs.jpg",             cat: "partneromif",              subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":      { price: 25, count: 0, unit: "1pc" } } },
-                            { id: 1122,   name: "Rasmalai",                                                 image: "omirmalai.jpg",         cat: "partneromif",              subcat: "Sweets",                    selectedVariant: "S",            variants: { "S":        { price: 50, count: 0, unit: "1pc" } } },
+                            { id: 1122,   name: "Rasmalai",                                                 image: "omirmalai.jpg",         cat: "partneromif",              subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":      { price: 50, count: 0, unit: "1pc" } } },
                             { id: 1123,   name: "Pastry Pineapple",                                         image: "omipp.jpg",             cat: "partneromif",              subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":      { price: 25, count: 0, unit: "1pc" } } },
               /*Desserts*/  { id: 1124,   name: "Pastry Truffle",                                           image: "omitp.jpg",             cat: "partneromif",              subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":      { price: 50, count: 0, unit: "1pc" } } },
                             { id: 1125,   name: "Brownie",                                                  image: "omib.jpg",              cat: "partneromif",              subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":      { price: 80, count: 0, unit: "1pc" } } },
@@ -534,6 +539,20 @@ startAutoPlay();
 
                             { id: 1153,   name: "Plain Tawa Roti",                                          image: "omitr.jpg",             cat: "partneromif",              subcat: "Roti",                     selectedVariant: "Qty",           variants: { "Qty":      { price: 20, count: 0, unit: "1pc" } } },
                             { id: 1154,   name: "Tawa Roti With Butter",                                    image: "omibroti.jpg",          cat: "partneromif",              subcat: "Roti",                     selectedVariant: "Qty",           variants: { "Qty":      { price: 25, count: 0, unit: "1pc" } } },
+
+                            { id: 1155,   name: "Classic Margerita",                                        image: "gcmp.jpg",              cat: "garrison",                 subcat: "Pizza",                    selectedVariant: "Qty",           variants: { "Qty":      { price: 485, count: 0, unit: "1" } } },
+                            { id: 1156,   name: "Pesto Veggie Delight Pizza",                               image: "gpvdp.jpg",             cat: "garrison",                 subcat: "Pizza",                    selectedVariant: "Qty",           variants: { "Qty":      { price: 545, count: 0, unit: "1" } } },
+                            { id: 1157,   name: "Loaded Veg Pizza",                                         image: "gvlp.jpg",              cat: "garrison",                 subcat: "Pizza",                    selectedVariant: "Qty",           variants: { "Qty":      { price: 520, count: 0, unit: "1" } } },
+                            { id: 1158,   name: "Paneer Tikka Pizza",                                       image: "gptp.jpg",              cat: "garrison",                 subcat: "Pizza",                    selectedVariant: "Qty",           variants: { "Qty":      { price: 520, count: 0, unit: "1" } } },
+                            { id: 1159,   name: "Chicken Tikka Pizza",                                      image: "gctp.jpg",              cat: "garrison",                 subcat: "Pizza",                    selectedVariant: "Qty",           variants: { "Qty":      { price: 525, count: 0, unit: "1" } } },
+                            { id: 1160,   name: "Peri-Peri Chicken",                                        image: "gppc.jpg",              cat: "garrison",                 subcat: "Pizza",                    selectedVariant: "Qty",           variants: { "Qty":      { price: 525, count: 0, unit: "1" } } },
+
+                            { id: 1161,   name: "Walnut Fudge Brownie",                                     image: "gwfb.jpg",               cat: "garrison",                 subcat: "Desserts",                 selectedVariant: "Qty",           variants: { "Qty":      { price: 245, count: 0, unit: "1" } } },
+                            { id: 1162,   name: "Lotus Biscoff Cheese Cake",                                image: "glbcc.jpg",              cat: "garrison",                 subcat: "Desserts",                 selectedVariant: "Qty",           variants: { "Qty":      { price: 275, count: 0, unit: "1" } } },
+                            { id: 1164,   name: "Tres Leches",                                              image: "gtl.jpg",                cat: "garrison",                 subcat: "Desserts",                 selectedVariant: "Qty",           variants: { "Qty":      { price: 265, count: 0, unit: "1" } } },
+                            { id: 1165,   name: "Yuzu Cheese Cake",                                         image: "gycc.jpg",               cat: "garrison",                 subcat: "Desserts",                 selectedVariant: "Qty",           variants: { "Qty":      { price: 245, count: 0, unit: "1" } } },
+                            { id: 1166,   name: "Chocolate Cake",                                           image: "gck.jpg",                cat: "garrison",                 subcat: "Desserts",                 selectedVariant: "Qty",           variants: { "Qty":      { price: 200, count: 0, unit: "1" } } },
+                            { id: 1167,   name: "Carrot Cheese Cake",                                       image: "gccc.jpg",               cat: "garrison",                 subcat: "Desserts",                 selectedVariant: "Qty",           variants: { "Qty":      { price: 240, count: 0, unit: "1" } } },
 
 /* need to know if omi is cool with this                { id: 1018,   name: "Hot Tea",                      image: "omiht.jpg",             cat: "partneromi",               subcat: "Beverages",                selectedVariant: "Qty",           variants: { "Qty":      { price: 42, count: 0, unit: "300ml" } } },
                               { id: 1019,   name: "Black Cofee",                                            image: "omibc.jpg",             cat: "partneromi",               subcat: "Beverages",                selectedVariant: "Qty",           variants: { "Qty":      { price: 52.5, count: 0, unit: "300ml" } } },
@@ -704,11 +723,11 @@ window.addEventListener('resize', updateUI);
     function renderCollections() {
     // Map the index to the heading you want displayed ABOVE that card
     const sectionHeadings = {
-        0: "Drinks & Snacks",
-        6: "Grocery & Kitchen",
-        9: "Beauty and Personal Care",
-        15: "House Hold Essentials",
-        16: "Collaborate Stores"
+        0: "Collaborate Stores",
+        3:  "Drinks & Snacks",
+        9:  "Grocery & Kitchen",
+        12: "Beauty and Personal Care",
+        18: "House Hold Essentials"
     };
 
     collectionGrid.innerHTML = collections.map((c, i) => {
@@ -736,6 +755,7 @@ window.addEventListener('resize', updateUI);
 
     return cardHtml;
 }).join('');
+}
 window.addEventListener('load', () => {
     // 200ms delay to ensure the DOM is ready for the slider
     setTimeout(() => {
@@ -758,7 +778,6 @@ window.addEventListener('load', () => {
         }
     }, 200); 
 });
-}
     function calculateDistance(lat1, lon1, lat2, lon2) {
     const R = 6371; // Earth's radius in km
     const dLat = (lat2 - lat1) * Math.PI / 180;
@@ -822,7 +841,7 @@ if (statsSection) {
     
     if (sliderTitle) {
     // Checks if the category is Omi's Sweets or Omi's Food to append the GST notice
-    if (catName === "Omi's Sweets" || catName === "Omi's Food") {
+    if (catName === "Omi's Sweets" || catName === "Omi's Food"|| catName === "The Garrison") {
         sliderTitle.innerText = catName + " (Store GST 5% will be added)";
     } else {
         sliderTitle.innerText = catName;
@@ -982,7 +1001,7 @@ if (statsSection) {
                 // Calculate 5% GST only for Omi's Sweets
                 let itemTax = 0;
                 // Checks if the category matches Sweets (partneromi) or Food (partneromifood)
-                if (p.cat === "partneromi" || p.cat === "partneromif") {
+                if (p.cat === "partneromi" || p.cat === "partneromif" || p.cat === "garrison") {
                     itemTax = lineTotal * 0.05;
                     totalTax += itemTax;
                 }
@@ -1008,11 +1027,16 @@ if (statsSection) {
     // Standard rule: Under 300->50, 300-1000->100, 1000+ -> 200
     let baseDelivery = itemsTotal > 0 ? (itemsTotal < 0 ? 0 : (itemsTotal <= 0 ? 0 : 0)) : 0;
 
-    // --- 2. KM BASED CHARGES ---
-    let kmCharges = 0;
-    
-    // Logic: Only calculate if items exist AND location is tagged
-    if (itemsTotal > 0 && locationTagged) {
+// --- 2. KM BASED CHARGES ---
+let kmCharges = 0;
+
+// Logic: Only calculate if items exist AND location is tagged
+if (itemsTotal > 0 && locationTagged) {
+    // Check if the location is Kharkuli or Bhatta first
+    if (firstLocationWord === "kharkuli" || firstLocationWord === "bhatta") {
+        kmCharges = 100;
+    } else {
+        // Standard distance-based logic
         if (currentDistance <= 1) kmCharges = 30;
         else if (currentDistance <= 2) kmCharges = 50; 
         else if (currentDistance <= 3) kmCharges = 80;
@@ -1020,48 +1044,46 @@ if (statsSection) {
         else if (currentDistance <= 5) kmCharges = 100;
         else kmCharges = 120; 
     }
+}
 
-    // --- 3. NIGHT CHARGES LOGIC (8PM to 7AM) ---
-    let nightCharges = 0;
-    const now = new Date();
-    const hour = now.getHours(); 
+// --- 3. NIGHT CHARGES LOGIC (8PM to 7AM) ---
+let nightCharges = 0;
+const now = new Date();
+const hour = now.getHours(); 
 
-    if (itemsTotal > 0) {
-        if (hour >= 20) { 
-            nightCharges = Math.min((hour - 19) * 10, 50);
-        } else if (hour < 7) { 
-            nightCharges = 50;
-        }
+if (itemsTotal > 0) {
+    if (hour >= 20) { 
+        nightCharges = Math.min((hour - 19) * 10, 50);
+    } else if (hour < 7) { 
+        nightCharges = 50;
     }
+}
 
-    const totalDelivery = baseDelivery + kmCharges + nightCharges;
-    const finalGrandTotal = itemsTotal + totalTax + (locationTagged ? totalDelivery : 0);
+const totalDelivery = baseDelivery + kmCharges + nightCharges;
+const finalGrandTotal = itemsTotal + totalTax + (locationTagged ? totalDelivery : 0);
 
-    // --- UPDATE UI ---
-    document.getElementById('sidebar-content').innerHTML = html || "<p>Cart is empty</p>";
-    document.getElementById('subtotal-val').innerText = itemsTotal.toFixed(2);
-    
-    // NEW: Update Tax UI
-    const taxValDisplay = document.getElementById('tax-val');
-    const taxRow = document.getElementById('tax-row');
-    if (taxValDisplay) {
-        taxValDisplay.innerText = totalTax.toFixed(2);
-    }
-    // Only show the tax row if tax is greater than 0
-    if (taxRow) {
-        taxRow.style.display = totalTax > 0 ? "block" : "none";
-    }
+// --- UPDATE UI ---
+document.getElementById('sidebar-content').innerHTML = html || "<p>Cart is empty</p>";
+document.getElementById('subtotal-val').innerText = itemsTotal.toFixed(2);
 
-    // Show a message if location isn't tagged yet
-    const deliveryDisplay = document.getElementById('delivery-val');
-    deliveryDisplay.innerText = locationTagged ? totalDelivery : "Tag Location";
-    deliveryDisplay.style.color = locationTagged ? "" : "#ff9800"; // Orange alert if not tagged
+const taxValDisplay = document.getElementById('tax-val');
+const taxRow = document.getElementById('tax-row');
+if (taxValDisplay) {
+    taxValDisplay.innerText = totalTax.toFixed(2);
+}
 
-    // Use toFixed(2) or Math.round based on your preference for the final total
-    document.getElementById('total-price').innerText = Math.round(finalGrandTotal);
+if (taxRow) {
+    taxRow.style.display = totalTax > 0 ? "block" : "none";
+}
 
-    // Store breakdown
-    window.deliveryBreakdown = { base: baseDelivery, km: kmCharges, night: nightCharges };
+const deliveryDisplay = document.getElementById('delivery-val');
+deliveryDisplay.innerText = locationTagged ? totalDelivery : "Tag Location";
+deliveryDisplay.style.color = locationTagged ? "" : "#ff9800"; 
+
+document.getElementById('total-price').innerText = Math.round(finalGrandTotal);
+
+// Store breakdown
+window.deliveryBreakdown = { base: baseDelivery, km: kmCharges, night: nightCharges };
 
     // Update Cart Counter & Popup
     const cartCount = document.getElementById('cart-count');
@@ -1219,7 +1241,10 @@ if (statsSection) {
     searchInput.focus();
 });
 
-    document.getElementById('location-btn').addEventListener('click', async () => {
+    // Variable to store the specific area name for pricing
+let firstLocationWord = ""; 
+
+document.getElementById('location-btn').addEventListener('click', async () => {
     const display = document.getElementById('location-display');
     
     if (navigator.geolocation) {
@@ -1244,24 +1269,33 @@ if (statsSection) {
             );
 
             locationTagged = true;
-            updateSidebar();
 
             try {
                 const res = await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${pos.coords.latitude}&lon=${pos.coords.longitude}`);
                 const data = await res.json();
-                custAddressInput.value = data.display_name || "Location Tagged";
+                
+                const fullAddress = data.display_name || "";
+                custAddressInput.value = fullAddress;
+
+                // Extract the first word (e.g., "Kharkuli") and clean it
+                if (fullAddress) {
+                    firstLocationWord = fullAddress.split(/[ ,]+/)[0].toLowerCase();
+                }
+
+                updateSidebar();
                 display.innerText = `✅ ${currentDistance.toFixed(1)} km from Wink It`;
             } catch (e) { 
                 custAddressInput.value = `Lat: ${userCoords.lat}, Lon: ${userCoords.lon}`;
                 display.innerText = `✅ Tagged (${currentDistance.toFixed(1)} km)`; 
+                updateSidebar(); // Ensure sidebar updates even on fetch error
             }
         }, () => { 
             // Stop the timer if there is an error
             clearInterval(timer);
             display.innerText = "ℹ️ Please turn on Location/GPS and Try again"; 
         }, {
-            enableHighAccuracy: true, // Optional: forces better GPS usage
-            timeout: 15000,           // Optional: stops trying after 15 seconds
+            enableHighAccuracy: true,
+            timeout: 15000,
             maximumAge: 0
         });
     }
@@ -1319,31 +1353,46 @@ whatsappBtn.addEventListener('click', () => {
     let itemIndex = 1;
     let totalGst = 0; 
 
-    products.forEach(p => {
-        Object.keys(p.variants).forEach(vName => {
-            const v = p.variants[vName];
-            if (v && v.count > 0) {
-                const linePrice = v.price * v.count;
-                let gstNote = "";
+    // 1. Define the mapping of IDs to friendly names
+const categoryNames = {
+    "partneromi": "Omi's Sweets",
+    "partneromifood": "Omi's Food",
+    "omipartnerf": "Omi's Food", // Assuming these are similar
+    "partneromif": "Omi's Sweets",
+    "garrison": "The Garrison"
+};
 
-                // FIX 2: Ensure all Omi IDs are captured
-                if (p.cat === "partneromi" || p.cat === "partneromifood" || p.cat === "omipartnerf" || p.cat === "partneromif") {
-                    const itemGst = linePrice * 0.05;
-                    totalGst += itemGst;
-                    gstNote = ` (Omi's Store GST 5%: ₹${itemGst.toFixed(2)})`;
-                }
+products.forEach(p => {
+    // 2. Get the display name based on p.cat, or use a default
+    const collectionName = categoryNames[p.cat] || "Store";
 
-                msg += `${itemIndex}. ${p.name} (${v.unit}) x${v.count} - ₹${linePrice}${gstNote}\n`;
-                itemIndex++; 
+    Object.keys(p.variants).forEach(vName => {
+        const v = p.variants[vName];
+        if (v && v.count > 0) {
+            const linePrice = v.price * v.count;
+            let gstNote = "";
+
+            // 3. Check if this category exists in our mapping for GST calculation
+            if (categoryNames.hasOwnProperty(p.cat)) {
+                const itemGst = linePrice * 0.05;
+                totalGst += itemGst;
+                
+                // Uses the mapped name (e.g., "Omi's Sweets") for the GST note
+                gstNote = ` (${collectionName} GST 5%: ₹${itemGst.toFixed(2)})`;
             }
-        });
+
+            // 4. Prepend the mapped Collection Name to the start of the item line
+            msg += `${itemIndex}. ${p.name} (${v.unit}) x${v.count} - ₹${linePrice}${gstNote}\n`;
+            itemIndex++; 
+        }
     });
+});
 
     msg += divider;
     msg += `Subtotal: ₹${subtotal}\n`;
     
     if (totalGst > 0) {
-        msg += `Omi's Store GST (5%): ₹${totalGst.toFixed(2)}\n`;
+        msg += `GST Total(5%): ₹${totalGst.toFixed(2)}\n`;
     }
     
     msg += `Delivery: ₹${delivery}\n`;
