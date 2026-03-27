@@ -88,8 +88,8 @@ header { width: 100%; height: 3.5rem; border-bottom: 1px solid #ccc; display: fl
 .order-trigger:hover { background-color: #25D366; }
 #cart-count { background-color: #ffeb3b; padding: 2px 6px; border-radius: 50%; }
 
-#collection-view { padding: 1rem; width: 100%; scroll-margin-top: 80px;}
-#collection-view h1.main-title { margin: 0px 0px 16px 0px; padding: 0px; width: 100%; display: flex; justify-content: center; align-items: center; font-size: 2.5rem;}
+#collection-view { padding: 0rem 1rem; width: 100%; scroll-margin-top: 80px;}
+#collection-view h1.main-title { margin: 0px 0px 0px 0px; padding: 0px; width: 100%; display: flex; justify-content: center; align-items: center; font-size: 2.5rem;}
 .heading { margin: 0px 0px 0px 0px; padding: 0px 0px 5px 0px; width: 100%; display: flex; justify-content: center; align-items: center; font-size: 2rem;}
 
 .collection-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(90%, 350px), 1fr)); gap: 20px; width: 100%; 
@@ -102,6 +102,8 @@ header { width: 100%; height: 3.5rem; border-bottom: 1px solid #ccc; display: fl
 .image-preview-card { border: 0.5px solid #fff; aspect-ratio: 1/1; border-radius: 15px;}
 .image-preview-card img { width: 100%; height: 100%; display: block; object-fit: cover; border: 0.5px solid purple; border-radius: 15px;}
 
+#prevBtn{display: none;}
+#nextBtn{display: none;}
 
 
 #product-slider { position: fixed; top: 3.5rem; padding-bottom: 10rem; left: 0; width: 100%; height: calc(100svh - 4rem); background-color: rgb(252, 241, 252); z-index: 1000; transform: translateX(-100%); transition: 0.4s ease-in-out; box-shadow: 5px 0 25px rgba(0,0,0,0.2); overflow-y: auto; border: 2px solid black;}
@@ -696,7 +698,7 @@ h6 { font-size: 1.3rem; margin: 0px; padding: 0px; text-align: center;}
 }
 /* The track - Default (Light Mode / Left) */
 .ourservice{width: 100%; display: flex; align-items: center; justify-content: center;}
-.scmain{display: flex; align-items: center; justify-content: center;}
+.scmain{display: flex; align-items: center; justify-content: center; flex-direction: column;}
 
 .slider {
     background-color: #FFD700; /* Bright Yellow */
@@ -714,21 +716,32 @@ h6 { font-size: 1.3rem; margin: 0px; padding: 0px; text-align: center;}
 .slider-container {
 position: relative;
     width: 90%; 
-    /* Remove the 'height: 40svh' you had before */
-    aspect-ratio: 4 / 3; 
-    
-    margin: 0 auto;
+    max-width: 800px; /* Optional: prevents the slider from being too giant on large monitors */
+    aspect-ratio: 4 / 3; /* Keeps a consistent shape */
+    margin: 0px auto 5px auto; /* Added 20px top/bottom margin for spacing */
     overflow: hidden;
     border-radius: 15px;
     background: #222;
+    /* Added to ensure buttons and wrapper align correctly */
+    display: flex;
+    align-items: center;
 }
 
         .slider-wrapper {
             display: flex;
-    width: 100%;
-    height: 100%; /* Inherits the 4:3 shape from the container */
-    cursor: grab;
-    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 100%;
+            height: 100%; /* Inherits the 4:3 shape from the container */
+            
+            /* Interactive States */
+            cursor: grab;
+            user-select: none; /* Prevents text/image highlighting while dragging */
+            
+            /* Smooth movement */
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            
+            /* Important: Ensures images don't wrap to the next line */
+            flex-direction: row;
+            will-change: transform;
         }
 
         .slider-wrapper:active {
@@ -736,9 +749,10 @@ position: relative;
         }
 
         .slider-wrapper img {
-           flex: 0 0 100%; /* Each image takes full width of the 4:3 box */
-            height: 100%;
-            object-fit: cover; /* Fills the 4:3 area perfectly */
+            flex: 0 0 100%; /* Each image takes exactly 100% of the container width */
+            width: 100%;    /* Ensures image stretches to the flex basis */
+            height: 100%;   /* Fills the 4:3 height */
+            object-fit: cover;/* Fills the 4:3 area perfectly */
         }
 
         /* Navigation Buttons */
@@ -777,6 +791,36 @@ input:checked + .slider:before {
     background-position: center;
     background-repeat: no-repeat;
     background-color: #fff; /* Keeping the knob off-white for contrast */
+}
+/* Center the container and align dots horizontally */
+.dota-container {
+    display: flex;            /* Key: Aligns children in a row */
+    justify-content: center;   /* Centers them on the screen */
+    align-items: center;
+    gap: 10px;                /* Space between the 7 dots */
+    padding: 5px 0;
+    width: 100%;
+}
+
+/* Base style for all 7 dots */
+.dota {
+    width: 10px;
+    height: 10px;
+    background-color: #bbb;   /* Inactive gray */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;    /* Backup for older browsers */
+}
+
+/* The "Red Bot" - Active State */
+.dota.active {
+    background-color: #2c96f8 !important; /* Bright Red */
+    transform: scale(1.3);                /* Slightly larger */
+    box-shadow: 0 0 8px rgba(248, 124, 242, 0.4); 
+}
+body.dark-mode .dota {
+    background-color: #bbb; 
 }
 
 /* --- Dark Mode Theme for the rest of the page --- */

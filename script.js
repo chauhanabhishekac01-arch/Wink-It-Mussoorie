@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const slides = document.querySelectorAll('.slider-wrapper img');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
+    const serviceDots = document.querySelectorAll('.dota');
     // --- WINK IT CONFIGUadc ---
     // These coordinates are set to the heart of Mussoorie (approx Kulri/Mall Rd area)
     const SHOP_COORDS = { lat: 30.4528, lon: 78.086151 }; // F33P+4FJ Mussoorie
@@ -428,7 +429,7 @@ startAutoPlay();
             /*Desserts*/  { id: 1026,   name: "Brownie",                                                    image: "omib.jpg",              cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 80, count: 0, unit: "1pc" } } },
             /*Desserts*/  { id: 1027,   name: "Bal Mithai",                                                 image: "omibm.jpg",             cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 300, count: 0, unit: "500g" }, "Qty.":        { price: 600, count: 0, unit: "1kg" } } },
             /*Desserts*/  { id: 1028,   name: "Pure Chocolate Barfi",                                       image: "omicb.jpg",             cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 300, count: 0, unit: "500g" }, "Qty.":        { price: 600, count: 0, unit: "1kg"         } } },
-        /*Desserts*/      { id: 1229,   name: "Legendry Desi Ghee Sohan Halwa",                             image: "omilbm.jpg",            cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 120, count: 0, unit: "2pc" }, "Qty.":        { price: 300, count: 0, unit: "250g"         } } },
+            /*Desserts*/  { id: 1229,   name: "Legendry Desi Ghee Sohan Halwa",                             image: "omilbm.jpg",            cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 120, count: 0, unit: "2pc" }, "Qty.":        { price: 300, count: 0, unit: "250g"         } } },
 
             /*Desserts*/  { id: 1069,   name: "Pineapple Cake",                                             image: "omipcake.jpg",          cat: "partneromi",               subcat: "Cakes",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 280, count: 0, unit: "1 Pound" } } },
             /*Desserts*/  { id: 1070,   name: "Black Forest Cake",                                          image: "omibfc.jpg",            cat: "partneromi",               subcat: "Cakes",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 300, count: 0, unit: "1 Pound" } } },
@@ -554,6 +555,10 @@ startAutoPlay();
                             { id: 1165,   name: "Yuzu Cheese Cake",                                         image: "gycc.jpg",               cat: "garrison",                 subcat: "Desserts",                 selectedVariant: "Qty",           variants: { "Qty":      { price: 245, count: 0, unit: "1" } } },
                             { id: 1166,   name: "Chocolate Cake",                                           image: "gck.jpg",                cat: "garrison",                 subcat: "Desserts",                 selectedVariant: "Qty",           variants: { "Qty":      { price: 200, count: 0, unit: "1" } } },
                             { id: 1167,   name: "Carrot Cheese Cake",                                       image: "gccc.jpg",               cat: "garrison",                 subcat: "Desserts",                 selectedVariant: "Qty",           variants: { "Qty":      { price: 240, count: 0, unit: "1" } } },
+                            { id: 1168,   name: "Tiramisu",                                                 image: "gtira.jpg",              cat: "garrison",                 subcat: "Desserts",                 selectedVariant: "Qty",           variants: { "Qty":      { price: 315, count: 0, unit: "1" } } },
+                          /*  { id: 1169,   name: "Banana Tea Cake",                                          image: "gbtc.jpg",               cat: "garrison",                 subcat: "Desserts",                 selectedVariant: "Qty",           variants: { "Qty":      { price: 315, count: 0, unit: "1" } } },
+
+                            { id: 1160,   name: "Veg Loaded Burger",                                        image: "gvlb.jpg",               cat: "garrison",                 subcat: "Burger",                 selectedVariant: "Qty",           variants: { "Qty":      { price: 315, count: 0, unit: "1" } } },
 
 /* need to know if omi is cool with this                { id: 1018,   name: "Hot Tea",                      image: "omiht.jpg",             cat: "partneromi",               subcat: "Beverages",                selectedVariant: "Qty",           variants: { "Qty":      { price: 42, count: 0, unit: "300ml" } } },
                               { id: 1019,   name: "Black Cofee",                                            image: "omibc.jpg",             cat: "partneromi",               subcat: "Beverages",                selectedVariant: "Qty",           variants: { "Qty":      { price: 52.5, count: 0, unit: "300ml" } } },
@@ -689,19 +694,31 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
     }
 
     function updateUI() {
-    // We use getBoundingClientRect for more precision than clientWidth
-    const width = slider.getBoundingClientRect().width;
-    
-    // Apply the move
-    slider.style.transform = `translateX(${-currentIndex * width}px)`;
+        if (!slider || slides.length === 0) return;
 
-    // Button states
-    prevBtn.disabled = (currentIndex === 0);
-    nextBtn.disabled = (currentIndex === slides.length - 1);
-    
-    // Debugging: Uncomment the line below to see the width in your console (F12)
-    // console.log("Current Width:", width, "Index:", currentIndex);
-}
+        // Move the slider
+        const width = slider.getBoundingClientRect().width;
+        slider.style.transform = `translateX(${-currentIndex * width}px)`;
+
+        // 2. Loop through all 7 dots and turn the current one Red
+        serviceDots.forEach((dot, index) => {
+            if (index === currentIndex) {
+                dot.classList.add("active");
+            } else {
+                dot.classList.remove("active");
+            }
+        });
+
+        // Handle button states
+        if (prevBtn) prevBtn.disabled = (currentIndex === 0);
+        if (nextBtn) nextBtn.disabled = (currentIndex === slides.length - 1);
+    }
+    serviceDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentIndex = index;
+            updateUI();
+        });
+    });
 
 // Ensure it runs only after images/styles are fully ready
 window.addEventListener('load', updateUI);
