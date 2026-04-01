@@ -96,7 +96,7 @@ startAutoPlay();
         { q: "7. Are Taxi and Scooty services available?", a: "Yes, the real value in booking through us is that we only connect you with the most reliable and high-quality services. We hand-pick partners who truly offer great value for your money and provide a warm sense of belonging that you won't find just anywhere." },
         { q: "8. What else services do you provide?", a: "At Wink It, we always encourage our cutomers to ask before they assume, the 'Request' button is a custom button for you to explore." },
         { q: "9. Who are you Collaborate Store?", a: "We have a wide variety of Collaboraters on of the most famouse are Omi's Sweets in Landour and Chacha ka Dhabba in Kulri." },
-        { q: "10. How do you earn?", a: "Everything will be bought and on MRP, our only earning is the delivery charges." }
+        { q: "10. Will the food be just as the images show?", a: "While the images provide you a general view of the product, we don't promise to deliver the exact thing shown in the images." }
     ];
     const collections = [
         { id: "partneromi", name: "Omi's Sweets",                   previews: ["omi.jpg"] },
