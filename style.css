@@ -177,10 +177,13 @@ header { width: 100%; height: 3.5rem; border-bottom: 1px solid #ccc; display: fl
     background-color: rgb(112, 238, 112) !important;
     transition: background-color 0.1s ease;
 }
+.download{
+    text-decoration: underline;
+}
 
 .subcat-nav-item img {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border-radius: 10px;
     object-fit: cover;
     margin-bottom: 5px;
@@ -761,6 +764,12 @@ position: relative;
     height: 100%;
     display: block;
     text-decoration: none;
+}
+pwa-install {
+    display: block !important;
+    visibility: visible !important;
+    background: white; /* Make it contrast against your site */
+    padding: 20px;
 }
 
 /* Ensure the wrapper fills the link container */

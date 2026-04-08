@@ -12,10 +12,16 @@
     <meta property="og:image" content="newlogo.jpg">
     <meta property="og:url" content="https://www.winkitmussoorie.com">
 
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#000000">
+    <link rel="apple-touch-icon" href="newlogo.jpg">
+
     <link rel="icon" type="image/x-icon" href="newlogo.ico">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+
     <div id="splash-screen">
         <video id="intro-video" autoplay muted playsinline>
             <source src="intro.mp4" type="video/mp4">
@@ -91,6 +97,17 @@
         <span class="dota"></span>
     </div>
 </div>
+<a class="download" href="https://drive.google.com/file/d/1XvTvtakRcwk-4GMVJizAHBrn1Y2eF7UC/view?usp=drive_link" download="Mussoorie Guide Book.pdf">
+   Download Mussoorie Guide Book
+</a>
+
+<div id="pwa-install-container" style="display: none; text-align: center; padding: 10px;">
+    <button id="pwa-install-btn" style="background-color: #000; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">
+        📲 Install Wink It App
+    </button>
+</div>
+
+
 
     
     
@@ -148,6 +165,7 @@
         </div>
     </div>
 
+    
     <div id="abt" class="about">
         <h1 class="heading">About Us</h1>
         <div class="abox">

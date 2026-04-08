@@ -1,3 +1,44 @@
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then(reg => console.log('Service Worker Registered!', reg))
+      .catch(err => console.log('Service Worker registration failed:', err));
+  });
+}
+let deferredPrompt;
+const installContainer = document.getElementById('pwa-install-container');
+const installBtn = document.getElementById('pwa-install-btn');
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  // Prevent Chrome 67 and earlier from automatically showing the prompt
+  e.preventDefault();
+  // Stash the event so it can be triggered later.
+  deferredPrompt = e;
+  // Show the install button container
+  installContainer.style.display = 'block';
+
+  installBtn.addEventListener('click', () => {
+    // Hide our custom install UI
+    installContainer.style.display = 'none';
+    // Show the browser's install prompt
+    deferredPrompt.prompt();
+    // Wait for the user to respond to the prompt
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('User accepted the install prompt');
+      } else {
+        console.log('User dismissed the install prompt');
+      }
+      deferredPrompt = null;
+    });
+  });
+});
+
+// Hide the button if the app is successfully installed
+window.addEventListener('appinstalled', (event) => {
+  console.log('Wink It was installed.');
+  installContainer.style.display = 'none';
+});
 document.addEventListener('DOMContentLoaded', () => {
     // --- INITIALIZATION ---
     if (!history.state) {
@@ -102,6 +143,7 @@ startAutoPlay();
         { id: "partneromi", name: "Omi's Sweets",                   previews: ["omi.jpg"] },
         { id: "partneromif", name: "Omi's Food",                    previews: ["omifo.jpg"] },
         { id: "garrison", name: "The Garrison",                     previews: ["glogo.jpg"] },
+        { id: "tou", name: "Taste of Uttarakhand",                     previews: ["gad.jpg"] },
         /*{ id: "aavi", name: "Aavi Everyday Store",                  previews: ["aavi.jpg"] },*/
         { id: "beverages", name: "Drinks and Juices",               previews: ["dj.jpg"] },
         { id: "snacks", name: "Chips and Namkeens",                 previews: ["cn.jpg"] },
@@ -158,17 +200,11 @@ startAutoPlay();
 
 /*Milk*/                 { id: 21,  name: "Amul Kool Kesar",                                                image: "damulk.jpg",            cat: "beverages",                subcat: "Amul",                        selectedVariant: "S",          variants: { "S":        { price: 25, count: 0, unit: "180ml" } } },
                          { id: 22,  name: "Amul Masti Spiced Salted Buttermilk",                            image: "damulc.jpg",            cat: "beverages",                subcat: "Amul",                        selectedVariant: "S",          variants: { "S":        { price: 15, count: 0, unit: "200ml" } } },
-                         { id: 36,  name: "Amul Kool Koko Chocolate",                                       image: "damulcl.jpg",           cat: "beverages",                subcat: "Amul",                        selectedVariant: "S",          variants: { "S":        { price: 35, count: 0, unit: "200ml" } } },
                          { id: 23,  name: "Amul Lassi",                                                     image: "damull.jpg",            cat: "beverages",                subcat: "Amul",                        selectedVariant: "S",          variants: { "S":        { price: 25, count: 0, unit: "200ml" } } },
-                         { id: 37,  name: "Amul Kool Cafe Milk 'n' Coffee-Can",                             image: "damulcc.jpg",           cat: "beverages",                subcat: "Amul",                        selectedVariant: "S",          variants: { "S":        { price: 35, count: 0, unit: "200ml" } } },
                  
 /*Water*/                { id: 24,  name: "Mineral Water",                                                  image: "dwater.jpg",            cat: "beverages",                subcat: "Water & Soda",                selectedVariant: "S",          variants: { "S":        { price: 20, count: 0, unit: "1L" }, "L": { price: 70, count: 0, unit: "5L" } } },
                          { id: 25,  name: "Schweppes Indian Tonic Water",                                   image: "dschweppesi.jpg",       cat: "beverages",                subcat: "Water & Soda",                selectedVariant: "S",          variants: { "S":        { price: 60, count: 0, unit: "300ml" } } },
                          { id: 26,  name: "Duke's Club Soda Water",                                         image: "dsodad.jpg",            cat: "beverages",                subcat: "Water & Soda",                selectedVariant: "S",          variants: { "S":        { price: 20, count: 0, unit: "750ml" } } },
-                         { id: 27, name: "O'cean Pink Guava Water",                                         image: "dwog.jpg",              cat: "beverages",                subcat: "Water & Soda",                selectedVariant: "S",          variants: { "S":        { price: 60, count: 0, unit: "500ml" } } },
-                         { id: 28, name: "O'cean Peach and Passion Water",                                  image: "dwop.jpg",              cat: "beverages",                subcat: "Water & Soda",                selectedVariant: "S",          variants: { "S":        { price: 60, count: 0, unit: "500ml" } } },
-                         { id: 29, name: "O'cean Crispy Apple Water",                                       image: "dwoa.jpg",              cat: "beverages",                subcat: "Water & Soda",                selectedVariant: "S",          variants: { "S":        { price: 60, count: 0, unit: "500ml" } } },
-                         { id: 30, name: "O'cean Lychee Flavoured Water",                                   image: "dwol.jpg",              cat: "beverages",                subcat: "Water & Soda",                selectedVariant: "S",          variants: { "S":        { price: 60, count: 0, unit: "500ml" } } },
                          
             
 /*Cadbury*/             { id: 2001, name: "Cadbury Dairy Milk Crackle Milk",                                image: "ccadburyc.jpg",         cat: "chocolates",               subcat: "Cadbury",                     selectedVariant: "Wgt.",       variants: { "Wgt.":     { price: 50, count: 0, unit: "36g" } } },
@@ -219,10 +255,10 @@ startAutoPlay();
                         { id: 2036, name: "Skittles Original Bite-size Fruit Toffee",                       image: "cskittler.jpg",         cat: "candies",                  subcat: "Skittles",                   selectedVariant: "Qty.",        variants: { "Qty.":     { price: 50, count: 0, unit: "27g" } } },
                         
                     
-/*sunfest*/             { id: 3001, name: "Dark Fantasy Choco Fills",                                       image: "bidf.jpg",              cat: "biscuits",                 subcat: "Sunfeast",                   selectedVariant: "L",           variants: { "L":        { price: 35, count: 0, unit: "69g" } } },
-                        { id: 3002, name: "Dark Fantasy Choco Nut Fills",                                   image: "bdfcnf.jpg",            cat: "biscuits",                 subcat: "Sunfeast",                   selectedVariant: "L",           variants: { "L":        { price: 35, count: 0, unit: "69g" } } },
-                        { id: 3003, name: "Dark Fantasy Dual Fills",                                        image: "bdfdf.jpg",             cat: "biscuits",                 subcat: "Sunfeast",                   selectedVariant: "L",           variants: { "L":        { price: 45, count: 0, unit: "69g" } } },
-                        { id: 3004, name: "Dark Fantasy Coffee Fills",                                      image: "bdfcf.jpg",             cat: "biscuits",                 subcat: "Sunfeast",                   selectedVariant: "L",           variants: { "L":        { price: 40, count: 0, unit: "75g" } } },
+/*sunfest*/             { id: 3001, name: "Dark Fantasy Choco Fills",                                       image: "bidf.jpg",              cat: "biscuits",                 subcat: "Sunfeast",                   selectedVariant: "L",           variants: { "L":        { price: 44, count: 0, unit: "69g" } } },
+                        { id: 3002, name: "Dark Fantasy Choco Nut Fills",                                   image: "bdfcnf.jpg",            cat: "biscuits",                 subcat: "Sunfeast",                   selectedVariant: "L",           variants: { "L":        { price: 44, count: 0, unit: "69g" } } },
+                        { id: 3003, name: "Dark Fantasy Dual Fills",                                        image: "bdfdf.jpg",             cat: "biscuits",                 subcat: "Sunfeast",                   selectedVariant: "L",           variants: { "L":        { price: 44, count: 0, unit: "69g" } } },
+                        { id: 3004, name: "Dark Fantasy Coffee Fills",                                      image: "bdfcf.jpg",             cat: "biscuits",                 subcat: "Sunfeast",                   selectedVariant: "L",           variants: { "L":        { price: 44, count: 0, unit: "75g" } } },
 
 /*Parle*/               { id: 3005, name: "Hide and Seek Coffee Chocolate",                                 image: "bihideandseekc.jpg",    cat: "biscuits",                 subcat: "Parle",                      selectedVariant: "L",           variants: { "L":        { price: 30, count: 0, unit: "100g" } } },
                         { id: 3008, name: "Parle-G",                                                        image: "biparleg.jpg",          cat: "biscuits",                 subcat: "Parle",                      selectedVariant: "L",           variants: { "L":        { price: 80, count: 0, unit: "800g" } } },
@@ -232,7 +268,6 @@ startAutoPlay();
 
 /*Britannia*/           { id: 3010, name: "Good Day Cashew Almond",                                         image: "bigooddayc.jpg",        cat: "biscuits",                 subcat: "Britannia",                  selectedVariant: "L",           variants: { "L":        { price: 40, count: 0, unit: "200g" } } },
                         { id: 3012, name: "Good Day Pista Badam",                                           image: "bigooddayp.jpg",        cat: "biscuits",                 subcat: "Britannia",                  selectedVariant: "L",           variants: { "L":        { price: 50, count: 0, unit: "200g" } } },
-                        { id: 3013, name: "Good Day ChocoChip",                                             image: "bigooddaychoco.jpg",    cat: "biscuits",                 subcat: "Britannia",                  selectedVariant: "L",           variants: { "L":        { price: 100, count: 0, unit: "444g" } } },
                         { id: 3014, name: "Good Day Butter",                                                image: "bigooddaybutter.jpg",   cat: "biscuits",                 subcat: "Britannia",                  selectedVariant: "L",           variants: { "L":        { price: 40, count: 0, unit: "200g" } } },
                         { id: 3015, name: "Good Day Fruit and Nut Cookies",                                 image: "bigooddayfn.jpg",       cat: "biscuits",                 subcat: "Britannia",                  selectedVariant: "L",           variants: { "L":        { price: 100, count: 0, unit: "450g" } } },
                         { id: 3016, name: "Britannia Bourbon ",                                             image: "bibritanniab.jpg",      cat: "biscuits",                 subcat: "Britannia",                  selectedVariant: "L",           variants: { "L":        { price: 35, count: 0, unit: "100g" } } },
@@ -268,7 +303,6 @@ startAutoPlay();
                         { id: 4020, name: "Haldirams Gup Shup",                                             image: "sgup.jpg",              cat: "snacks",                   subcat: "Haldiram's",                 selectedVariant: "S",           variants: { "S":        { price: 20, count: 0, unit: "75g" }, "L": { price: 55, count: 0, unit: "200g" } } },
                         { id: 4021, name: "Haldirams Moong Dal",                                            image: "shaldirammd.jpg",       cat: "snacks",                   subcat: "Haldiram's",                 selectedVariant: "S",           variants: { "S":        { price: 20, count: 0, unit: "75g" }, "L": { price: 60, count: 0, unit: "200g" } } },
                         { id: 4022, name: "Haldirams Lite Mixture",                                         image: "shaldiramlm.jpg",       cat: "snacks",                   subcat: "Haldiram's",                 selectedVariant: "S",           variants: { "S":        { price: 20, count: 0, unit: "75g" }, "L": { price: 40, count: 0, unit: "150g" } } },
-                        { id: 4023, name: "Haldirams Lite Mixture",                                         image: "shcb.jpg",              cat: "snacks",                   subcat: "Haldiram's",                 selectedVariant: "L",           variants: { "L":        { price: 50, count: 0, unit: "95gg" } } },
 
                         { id: 4024, name: "Crax Curls Chatpata Masala",                                     image: "scc.jpg",               cat: "snacks",                   subcat: "Crax",                       selectedVariant: "L",           variants: {  "L":       { price: 60, count: 0, unit: "88g" } } },
                         { id: 4025, name: "Crax Crunchy Pipes Salted ",                                     image: "sccp.jpg",              cat: "snacks",                   subcat: "Crax",                       selectedVariant: "L",           variants: { "L":        { price: 60, count: 0, unit: "73g" } } },
@@ -545,9 +579,9 @@ startAutoPlay();
                             { id: 1155,   name: "Classic Margerita",                                        image: "gcmp.jpg",              cat: "garrison",                 subcat: "Pizza",                    selectedVariant: "Qty",           variants: { "Qty":      { price: 485, count: 0, unit: "1" } } },
                             { id: 1156,   name: "Pesto Veggie Delight Pizza",                               image: "gpvdp.jpg",             cat: "garrison",                 subcat: "Pizza",                    selectedVariant: "Qty",           variants: { "Qty":      { price: 545, count: 0, unit: "1" } } },
                             { id: 1157,   name: "Loaded Veg Pizza",                                         image: "gvlp.jpg",              cat: "garrison",                 subcat: "Pizza",                    selectedVariant: "Qty",           variants: { "Qty":      { price: 520, count: 0, unit: "1" } } },
-                            { id: 1158,   name: "Paneer Tikka Pizza",                                       image: "gptp.jpg",              cat: "garrison",                 subcat: "Pizza",                    selectedVariant: "Qty",           variants: { "Qty":      { price: 520, count: 0, unit: "1" } } },
-                            { id: 1159,   name: "Chicken Tikka Pizza",                                      image: "gctp.jpg",              cat: "garrison",                 subcat: "Pizza",                    selectedVariant: "Qty",           variants: { "Qty":      { price: 525, count: 0, unit: "1" } } },
-                            { id: 1160,   name: "Peri-Peri Chicken",                                        image: "gppc.jpg",              cat: "garrison",                 subcat: "Pizza",                    selectedVariant: "Qty",           variants: { "Qty":      { price: 525, count: 0, unit: "1" } } },
+                            { id: 1158,   name: "Paneer Tikka Pizza",                                       image: "gptp.jpg",              cat: "garrison",                 subcat: "Pizza",                    selectedVariant: "Qty",           variants: { "Qty":      { price: 515, count: 0, unit: "1" } } },
+                            { id: 1159,   name: "Chicken Tikka Pizza",                                      image: "gctp.jpg",              cat: "garrison",                 subcat: "Pizza",                    selectedVariant: "Qty",           variants: { "Qty":      { price: 565, count: 0, unit: "1" } } },
+                            { id: 1160,   name: "Peri-Peri Chicken Pizza",                                        image: "gppc.jpg",              cat: "garrison",                 subcat: "Pizza",                    selectedVariant: "Qty",           variants: { "Qty":      { price: 565, count: 0, unit: "1" } } },
 
                             { id: 1161,   name: "Walnut Fudge Brownie",                                     image: "gwfb.jpg",               cat: "garrison",                 subcat: "Desserts",                 selectedVariant: "Qty",           variants: { "Qty":      { price: 245, count: 0, unit: "1" } } },
                             { id: 1162,   name: "Lotus Biscoff Cheese Cake",                                image: "glbcc.jpg",              cat: "garrison",                 subcat: "Desserts",                 selectedVariant: "Qty",           variants: { "Qty":      { price: 275, count: 0, unit: "1" } } },
@@ -578,6 +612,32 @@ startAutoPlay();
 
                             { id: 1178,   name: "Bus Pencil Box",                                           image: "aavipb.jpg",             cat: "aavi",                     subcat: "Pencil Box",                 description: "Length: 9.5 || Width: 2.5 || Compartment: 3 || Sharpner",                     gallery: ["aavipb.jpg", "aavipb1.jpg"],         selectedVariant: "Qty",        variants: { "Qty": { price: 200, count: 0, unit: "1" } } },
                             { id: 1179,   name: "Princess Pencil Box",                                      image: "aavipbp.jpg",            cat: "aavi",                     subcat: "Pencil Box",                 description: "Inbuilt sharpner || Inbuilt eraser || Compartment: 2 || Sharpner",                     gallery: ["aavipbp1.jpg", "aavipbp2.jpg", "aavipbp3.jpg", "aavipbp.jpg"],         selectedVariant: "Qty",        variants: { "Qty": { price: 250, count: 0, unit: "1" } } },
+
+
+                            { id: 1280,   name: "Jhangore Ki Kheer",                                      image: "toujkk.jpg",            cat: "tou",                     subcat: "Sweet",                 description: " Barnyard Millet || 2 Serving || Jaggery || Dry Fruit Garnish || Milk",                     gallery: ["toujkk.jpg"],         selectedVariant: "Qty",        variants: { "Qty":      { price: 100, count: 0, unit: "250g" } } },
+                            { id: 1281,   name: "Aarsa",                                      image: "touarsa.jpg",            cat: "tou",                     subcat: "Sweet",                 description: " Rice || Jaggery || Saunf || Safed Till",                     gallery: ["touarsa.jpg"],         selectedVariant: "Qty",        variants: { "Qty":      { price: 100, count: 0, unit: "4pc" }, "Qty.":        { price: 500, count: 0, unit: "1kg" } } },
+                            { id: 1282,   name: "Rotana",                                      image: "tourotana.jpg",            cat: "tou",                     subcat: "Sweet",                 description: " Atta || Saunf || Jaggary || Coconut ",                     gallery: ["tourotana.jpg"],         selectedVariant: "Qty",        variants: { "Qty":      { price: 100, count: 0, unit: "4pc" }, "Qty.":        { price: 500, count: 0, unit: "1kg" } } },
+
+                            { id: 1283,   name: "Pahadi Rajma",                                      image: "toupr.jpg",            cat: "tou",                     subcat: "Gravy",                 description: " Pahadi Rajma from Fields of Himalayas|| 2 Serving || Rich in taste and aroma || ",                     gallery: ["toupr.jpg"],         selectedVariant: "Qty",        variants: { "Qty":      { price: 200, count: 0, unit: "1 plt" } } },
+                            { id: 1284,   name: "Aloo and Muli mix thichwani",                                      image: "touamt.jpg",            cat: "tou",                     subcat: "Gravy",                 description: " Pahadi ALu and Muli|| 2 Serving || Season dish || ",                     gallery: ["touamt.jpg"],         selectedVariant: "Qty",        variants: { "Qty":      { price: 150, count: 0, unit: "1 plt" } } },
+                            { id: 1285,   name: "Fanu",                                      image: "toufanu.jpg",            cat: "tou",                     subcat: "Gravy",                 description: " Gahat Dal crushed and cooked into fine pieces|| 2 Serving || Jakhiya  || Garlic || Heeng",                     gallery: ["toufanu.jpg"],         selectedVariant: "Qty",        variants: { "Qty":      { price: 200, count: 0, unit: "1 plt" } } },
+                            { id: 1286,   name: "Chainsu",                                      image: "touchain.jpg",            cat: "tou",                     subcat: "Gravy",                 description: " Urad Dal crushed and cooked into fine pieces || 2 Serving ||  || ",                     gallery: ["touchain.jpg"],         selectedVariant: "Qty",        variants: { "Qty":      { price: 200, count: 0, unit: "1 plt" } } },
+
+                            { id: 1288,   name: "Rai Saag Bhuji",                                      image: "toursb.jpg",            cat: "tou",                     subcat: "Sabzi",                 description: " Himalayan Mustard Greens || 2 Serving ||  || ",                     gallery: ["toursb.jpg"],         selectedVariant: "Qty",        variants: { "Qty":      { price: 80, count: 0, unit: "1 plt" } } },
+                            { id: 1289,   name: "Kafuli",                                      image: "toukafuli.jpg",            cat: "tou",                     subcat: "Gravy",                 description: " The Greens: A blend of Spinach (Palak) and Fenugreek (Methi), often enriched with local wild greens or mustard leaves for a sharp, complex flavor.The Thickener: Traditionally uses Rice Flour (instead of maize flour), creating a uniquely smooth, silky, and velvety consistency. The Texture: A luscious, soupy gravy made by boiling and mashing the greens into a fine paste rather than leaving them chunky.|| 2 Serving ",                     gallery: ["toukafuli.jpg"],         selectedVariant: "Qty",        variants: { "Qty":      { price: 80, count: 0, unit: "1 plt" } } },
+                            { id: 1290,   name: "Pahadi Patta Gobi",                                      image: "touppg.jpg",            cat: "tou",                     subcat: "Sabzi",                 description: " Patta Gobi From the fiels of Himalayas || 2 Serving ",                     gallery: ["touppg.jpg"],         selectedVariant: "Qty",        variants: { "Qty":      { price: 80, count: 0, unit: "1 plt" } } },
+
+
+
+                            { id: 1291,   name: "Jhangoora Ka Bhaat",                                      image: "toujab.jpg",            cat: "tou",                     subcat: "Rice",                 description: " Barnyard Millet || 2 Serving|| To be eaten with gravy or sabji || Rich in Protien || ",                     gallery: ["toujab.jpg"],         selectedVariant: "Qty",        variants: { "Qty":      { price: 150, count: 0, unit: "1 plt" } } },
+                            { id: 1292,   name: "Lal Chawal",                                      image: "tourr.jpg",            cat: "tou",                     subcat: "Rice",                 description: "Red rice from the fields of Purola, Uttarkashi || 2 Serving|| Rich in Antioxidants || High Protien ",                     gallery: ["tourr.jpg"],         selectedVariant: "Qty",        variants: { "Qty":      { price: 150, count: 0, unit: "1 plt" } } },
+
+                            { id: 1293,   name: "Mandue / Koda Roti Tawa",                                      image: "toumkr.jpg",            cat: "tou",                     subcat: "Rice",                 description: " Ragi from the fiels of Himalayas || 1 Roti || High in Calcium || Gluten-Free ",                     gallery: ["toumkr.jpg"],         selectedVariant: "Qty",        variants: { "Qty":      { price: 35, count: 0, unit: "1" } } },
+                            { id: 1294,   name: "Mandue / Koda Roti Tawa - Butter",                                      image: "toumkrb.jpg",            cat: "tou",                     subcat: "Rice",                 description: " Ragi from the fiels of Himalayas || 1 Roti || High in Calcium || Gluten-Free ",                     gallery: ["toumkrb.jpg"],         selectedVariant: "Qty",        variants: { "Qty":      { price: 40, count: 0, unit: "1" } } },
+                            { id: 1295,   name: "Makki Roti Tawa",                                      image: "toumkkr.jpg",            cat: "tou",                     subcat: "Rice",                 description: " Basic Makki ki Roti || 1 Roti",                     gallery: ["toumkkr.jpg"],         selectedVariant: "Qty",        variants: { "Qty":      { price: 35, count: 0, unit: "1" } } }, 
+                            { id: 1296,   name: "Makki Roti Tawa - Butter",                                      image: "toumkkrb.jpg",            cat: "tou",                     subcat: "Rice",                 description: " Basic Makki ki Roti || 1 Roti",                     gallery: ["toumkkrb.jpg"],         selectedVariant: "Qty",        variants: { "Qty":      { price: 40, count: 0, unit: "1" } } },
+
+
 
 
 /* need to know if omi is cool with this                { id: 1018,   name: "Hot Tea",                      image: "omiht.jpg",             cat: "partneromi",               subcat: "Beverages",                selectedVariant: "Qty",           variants: { "Qty":      { price: 42, count: 0, unit: "300ml" } } },
@@ -740,6 +800,24 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
         });
     });
 
+let newWorker;
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js').then(reg => {
+    reg.addEventListener('updatefound', () => {
+      newWorker = reg.installing;
+      newWorker.addEventListener('statechange', () => {
+        // Check if the new service worker has finished downloading
+        if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+          showUpdateBanner();
+        }
+      });
+    });
+  });
+}
+
+
+
 // Ensure it runs only after images/styles are fully ready
 window.addEventListener('load', updateUI);
 window.addEventListener('resize', updateUI);
@@ -762,10 +840,10 @@ window.addEventListener('resize', updateUI);
     // Map the index to the heading you want displayed ABOVE that card
     const sectionHeadings = {
         0: "Collaborate Stores",
-        3:  "Drinks & Snacks", /*3 */
-        9:  "Grocery & Kitchen",/*9 */
-        12: "Beauty and Personal Care",/*10 */
-        18: "House Hold Essentials"/*18 */
+        4:  "Drinks & Snacks", /*3 */
+        10:  "Grocery & Kitchen",/*9 */
+        13: "Beauty and Personal Care",/*10 */
+        19: "House Hold Essentials"/*18 */
     };
 
     collectionGrid.innerHTML = collections.map((c, i) => {
@@ -881,9 +959,9 @@ if (statsSection) {
     if (catName === "Omi's Sweets" || catName === "Omi's Food" || catName === "The Garrison") {
         // Appends GST notice for food categories
         sliderTitle.innerText = catName + " (Store GST 5% will be added)";
-    } else if (catName === "Aavi Everyday Store") {
+    } else if (catName === "Aavi Everyday Store" || catName === "Taste of Uttarakhand") {
         // Appends info prompt for Aavi Everyday Store
-        sliderTitle.innerText = catName + " (tap image for more info)";
+        sliderTitle.innerText = catName + " (tap image for more info) Average Waiting time 5 hrs";
     } else {
         // Default behavior for all other categories
         sliderTitle.innerText = catName;
@@ -1201,7 +1279,7 @@ productGrid.addEventListener('click', (e) => {
     if (card && (target.classList.contains('iimg') || target.tagName === 'H4')) {
         const p = products.find(prod => prod.id == card.dataset.prodId);
         
-        if (p && p.cat === 'aavi') {
+        if (p && (p.cat === 'aavi' || p.cat === 'tou')) {
             activeGallery = p.gallery || [p.image]; 
             currentSlideIndex = 0;
             
