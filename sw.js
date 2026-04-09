@@ -1,3 +1,4 @@
+const GHPATH = '/Wink-It-Mussoorie';
 const CACHE_NAME = 'wink-it-v3'; // Increment this every time you change code!
 const ASSETS = [
   '/',
