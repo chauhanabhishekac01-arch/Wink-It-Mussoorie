@@ -1,3 +1,4 @@
+/* remove this for the code to work
 const GHPATH = '/Wink-It-Mussoorie';
 const CACHE_NAME = 'wink-it-v3'; // Increment this every time you change code!
 const ASSETS = [
@@ -27,3 +28,4 @@ self.addEventListener('fetch', (event) => {
     caches.match(event.request).then((response) => response || fetch(event.request))
   );
 });
+*/
