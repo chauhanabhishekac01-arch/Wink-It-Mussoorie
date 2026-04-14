@@ -1553,7 +1553,6 @@ whatsappBtn.addEventListener('click', () => {
     const delivery = document.getElementById('delivery-val').innerText;
     const total = document.getElementById('total-price').innerText;
     
-    
     if (total == "0" || total == "") { alert("Cart is empty!"); return; }
     if (!name || !address) { alert("Please enter both Name and Address."); return; }
     
@@ -1561,9 +1560,8 @@ whatsappBtn.addEventListener('click', () => {
     const dateStr = now.toLocaleDateString('en-GB'); 
     const timeStr = now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
 
-    // FIX 1: Cleaned up the Google Maps link syntax
     const locationLink = userCoords ? `https://www.google.com/maps?q=${userCoords.lat},${userCoords.lon}` : `(Location not tagged)`;
-    const divider = "--------------------------\n"; // Use actual newline here, encode later
+    const divider = "--------------------------\n"; 
     
     let msg = `🛍️ *NEW ORDER - WINK IT*\n`;
     msg += divider;
@@ -1573,59 +1571,61 @@ whatsappBtn.addEventListener('click', () => {
     
     let itemIndex = 1;
     let totalGst = 0; 
+    let itemsForSheet = ""; 
 
-    // 1. Define the mapping of IDs to friendly names
-const categoryNames = {
-    "partneromi": "Omi's Sweets",
-    "partneromifood": "Omi's Food",
-    "omipartnerf": "Omi's Food", // Assuming these are similar
-    "partneromif": "Omi's Sweets",
-    "garrison": "The Garrison"
-};
+    const categoryNames = {
+        "partneromi": "Omi's Sweets",
+        "partneromifood": "Omi's Food",
+        "omipartnerf": "Omi's Food",
+        "partneromif": "Omi's Sweets",
+        "garrison": "The Garrison"
+    };
 
-products.forEach(p => {
-    // 2. Get the display name based on p.cat, or use a default
-    const collectionName = categoryNames[p.cat] || "Store";
-
-    Object.keys(p.variants).forEach(vName => {
-        const v = p.variants[vName];
-        if (v && v.count > 0) {
-            const linePrice = v.price * v.count;
-            let gstNote = "";
-
-            // 3. Check if this category exists in our mapping for GST calculation
-            if (categoryNames.hasOwnProperty(p.cat)) {
-                const itemGst = linePrice * 0.05;
-                totalGst += itemGst;
-                
-                // Uses the mapped name (e.g., "Omi's Sweets") for the GST note
-                gstNote = ` (${collectionName} GST 5%: ₹${itemGst.toFixed(2)})`;
+    products.forEach(p => {
+        const collectionName = categoryNames[p.cat] || "Store";
+        Object.keys(p.variants).forEach(vName => {
+            const v = p.variants[vName];
+            if (v && v.count > 0) {
+                const linePrice = v.price * v.count;
+                let gstNote = "";
+                if (categoryNames.hasOwnProperty(p.cat)) {
+                    const itemGst = linePrice * 0.05;
+                    totalGst += itemGst;
+                    gstNote = ` (${collectionName} GST 5%: ₹${itemGst.toFixed(2)})`;
+                }
+                msg += `${itemIndex}. ${p.name} (${v.unit}) x${v.count} - ₹${linePrice}${gstNote}\n`;
+                itemsForSheet += `${p.name} (${v.unit}) x${v.count}; `;
+                itemIndex++; 
             }
-
-            // 4. Prepend the mapped Collection Name to the start of the item line
-            msg += `${itemIndex}. ${p.name} (${v.unit}) x${v.count} - ₹${linePrice}${gstNote}\n`;
-            itemIndex++; 
-        }
+        });
     });
-});
 
     msg += divider;
     msg += `Subtotal: ₹${subtotal}\n`;
-    
-    if (totalGst > 0) {
-        msg += `GST Total(5%): ₹${totalGst.toFixed(2)}\n`;
-    }
-    
+    if (totalGst > 0) msg += `GST Total(5%): ₹${totalGst.toFixed(2)}\n`;
     msg += `Delivery: ₹${delivery}\n`;
     msg += `*TOTAL AMOUNT: ₹${total}*\n`; 
     msg += divider;
     msg += `Cash on Delivery, our delivery partner will call you shortly.`;
+
+    // --- SAVE TO GOOGLE SHEETS ---
+    fetch('https://script.google.com/macros/s/AKfycbwa1ItNiI0pxItnMhMRr6WG2vmiJWz0rLbciDkKeP-se79yueaGSC_qfPl4_kxSuEOd/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            name: name,
+            address: address,
+            items: itemsForSheet,
+            delivery: delivery, // Added delivery here
+            total: total,
+            location: locationLink
+        })
+    });
     
-    // FIX 3: encodeURIComponent is mandatory to prevent the structure from breaking
     const encodedMsg = encodeURIComponent(msg);
     window.location.href = `https://api.whatsapp.com/send?phone=917983427187&text=${encodedMsg}`;
-});
-    
+});    
     /** * Infinite Review Slider Module
  */
 (function() {
