@@ -1235,16 +1235,9 @@ window.deliveryBreakdown = { base: baseDelivery, km: kmCharges, night: nightChar
 
     // --- HANDLERS ---
     collectionGrid.addEventListener('click', (e) => {
-    const card = e.target.closest('.collection-card');
-    if (card) {
-        // Trigger vibration for haptic feedback
-        if (navigator.vibrate) {
-            navigator.vibrate(30); // Short, sharp tap for navigation
-        }
-        
-        openCollection(card.dataset.id, card.dataset.name);
-    }
-});
+        const card = e.target.closest('.collection-card');
+        if (card) openCollection(card.dataset.id, card.dataset.name);
+    });
 
     let currentSlideIndex = 0;
 let activeGallery = [];
@@ -1322,39 +1315,33 @@ productGrid.addEventListener('click', (e) => {
 
     // 3. EXISTING ADD/QTY LOGIC (Grid & Lightbox)
     if (target.classList.contains('add-btn') || target.classList.contains('qty-btn')) {
-    const id = target.dataset.productId;
-    const amount = parseInt(target.dataset.change || 1);
-    const p = products.find(prod => prod.id == id);
-    
-    if (!p) return;
+        const id = target.dataset.productId;
+        const amount = parseInt(target.dataset.change || 1);
+        const p = products.find(prod => prod.id == id);
+        
+        if (!p) return;
 
-    // --- VIBRATION ADDITION ---
-    // Triggers a short 50ms vibration for haptic feedback
-    if (navigator.vibrate) {
-        navigator.vibrate(30);
+        const v = p.variants[p.selectedVariant];
+        v.count += amount;
+        if (v.count < 0) v.count = 0;
+
+        if (amount > 0) {
+            recentAdditions.unshift(p.image);
+        } else if (amount < 0) {
+            const index = recentAdditions.indexOf(p.image);
+            if (index > -1) recentAdditions.splice(index, 1);
+        }
+
+        if (recentAdditions.length > 5) recentAdditions.pop();
+
+        renderProducts(activeCategory);
+        updateSidebar();
+
+        // --- NEW: Refresh Lightbox controls if the item changed ---
+        if (!document.getElementById('lightbox').classList.contains('hidden')) {
+            renderLightboxControls(p);
+        }
     }
-    // --------------------------
-
-    const v = p.variants[p.selectedVariant];
-    v.count += amount;
-    if (v.count < 0) v.count = 0;
-
-    if (amount > 0) {
-        recentAdditions.unshift(p.image);
-    } else if (amount < 0) {
-        const index = recentAdditions.indexOf(p.image);
-        if (index > -1) recentAdditions.splice(index, 1);
-    }
-
-    if (recentAdditions.length > 5) recentAdditions.pop();
-
-    renderProducts(activeCategory);
-    updateSidebar();
-
-    if (!document.getElementById('lightbox').classList.contains('hidden')) {
-        renderLightboxControls(p);
-    }
-}
 });
 
 /** * EXTERNAL LIGHTBOX ADD BUTTON LISTENER
@@ -1419,28 +1406,11 @@ document.querySelector('.next-slide').addEventListener('click', () => {
         if (opening) history.pushState({ page: 'cart' }, document.title, location.href);
         updateSidebar();
     };
-// Open/Close Cart
-document.getElementById('cart-trigger').addEventListener('click', () => {
-    if (navigator.vibrate) navigator.vibrate(40);
-    toggleSidebar();
-});
 
-document.getElementById('cart-popup').addEventListener('click', () => {
-    if (navigator.vibrate) navigator.vibrate(40);
-    toggleSidebar();
-});
-
-// Close Sidebar (Back Navigation)
-document.getElementById('close-sidebar').addEventListener('click', () => {
-    if (navigator.vibrate) navigator.vibrate(30); // Slightly shorter for "exit" actions
-    history.back();
-});
-
-// Close Slider (Back Navigation)
-document.getElementById('close-slider').addEventListener('click', () => {
-    if (navigator.vibrate) navigator.vibrate(30);
-    history.back();
-});
+    document.getElementById('cart-trigger').addEventListener('click', toggleSidebar);
+    document.getElementById('cart-popup').addEventListener('click', toggleSidebar);
+    document.getElementById('close-sidebar').addEventListener('click', () => history.back());
+    document.getElementById('close-slider').addEventListener('click', () => history.back());
 
     searchInput.addEventListener('input', () => {
         const query = searchInput.value.toLowerCase().trim();
@@ -1496,11 +1466,6 @@ document.getElementById('close-slider').addEventListener('click', () => {
 let firstLocationWord = ""; 
 
 document.getElementById('location-btn').addEventListener('click', async () => {
-    // Trigger vibration for haptic feedback
-    if (navigator.vibrate) {
-        navigator.vibrate(30);
-    }
-
     const display = document.getElementById('location-display');
     
     if (navigator.geolocation) {
