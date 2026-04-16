@@ -894,19 +894,28 @@ window.addEventListener('resize', updateUI);
 }).join('');
 }
 window.addEventListener('load', () => {
-    // 200ms delay to ensure the DOM is ready for the slider
+    // 200ms delay to ensure the DOM and slider are ready
     setTimeout(() => {
         const hash = window.location.hash.replace('#', ''); 
         
         if (hash) {
-            // Find the object so we can get both the ID and the Name
+            // 1. Try to find the item in the products array first
+            // Using == to match string hash with numeric ID
+            const selectedProduct = products.find(p => p.id == hash);
+
+            if (selectedProduct) {
+                // If found, use your highlight function
+                // 'cat' in your product object matches the 'id' in collections
+                openAndHighlight(selectedProduct.id, selectedProduct.cat);
+                return; // Exit once handled
+            }
+
+            // 2. Fallback: Check if the hash is just a Collection ID
             const selectedCollection = collections.find(c => c.id === hash);
             
             if (selectedCollection) {
-                // We pass both 'id' and 'name' to match your function signature
                 openCollection(selectedCollection.id, selectedCollection.name); 
                 
-                // Optional: Scroll to the view if needed
                 const view = document.getElementById('collection-view');
                 if (view) {
                     view.scrollIntoView({ behavior: 'smooth' });
