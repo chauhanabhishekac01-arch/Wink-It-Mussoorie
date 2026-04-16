@@ -1479,10 +1479,18 @@ document.getElementById('close-slider').addEventListener('click', () => {
         } else { searchSuggestions.style.display = "none"; }
     });
     checkbox.addEventListener('change', () => {
+    // 1. Trigger vibration immediately for best response
+    if (navigator.vibrate) {
+        navigator.vibrate(30); 
+    }
+
+    // 2. Execute theme logic
     const isDark = document.body.classList.toggle('dark-mode');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light'); // Save preference
-    showThemePopup(isDark ? "☀️ Light Mode" : "🌙 Dark Mode");
-    });
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    
+    // 3. Show notification
+    showThemePopup(isDark ? "🌙 Dark Mode" : "☀️ Light Mode");
+});
     // --- CLICK HANDLER FOR SEARCH SUGGESTIONS ---
     searchSuggestions.addEventListener('click', (e) => {
         const item = e.target.closest('.suggestion-item');
