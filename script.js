@@ -69,6 +69,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
     const serviceDots = document.querySelectorAll('.dota');
+    const woodstockCheckbox = document.getElementById('woodstock-student');
+    const locationBtn = document.getElementById('location-btn');
     // --- WINK IT CONFIGUadc ---
     // These coordinates are set to the heart of Mussoorie (approx Kulri/Mall Rd area)
     const SHOP_COORDS = { lat: 30.4528, lon: 78.086151 }; // F33P+4FJ Mussoorie
@@ -140,6 +142,30 @@ function stopAutoPlay() {
     });
 });
 
+woodstockCheckbox.addEventListener('change', () => {
+    const display = document.getElementById('location-display');
+    
+    if (woodstockCheckbox.checked) {
+        // Disable and style the button
+        locationBtn.disabled = true;
+        locationBtn.classList.add('disabled-grey'); 
+        
+        locationTagged = true;
+        firstLocationWord = "woodstock";
+        custAddressInput.value = "Woodstock School, Mussoorie, 248179";
+        display.innerText = "✅ Woodstock Student Applied";
+    } else {
+        // Re-enable the button
+        locationBtn.disabled = false;
+        locationBtn.classList.remove('disabled-grey');
+        
+        locationTagged = false;
+        custAddressInput.value = "";
+        display.innerText = "";
+    }
+    updateSidebar();
+});
+
 // If the user swipes/drags, stop auto-scroll
 slider.addEventListener('touchstart', stopAutoPlay);
 slider.addEventListener('mousedown', stopAutoPlay);
@@ -172,7 +198,7 @@ startAutoPlay();
         { id: "chocolates", name: "Sweet and Chocolates",           previews: ["sc.jpg"] },
         { id: "instant", name: "Instant Food and Noodles",          previews: ["in.jpg"] },
         { id: "candies", name: "Candies",                           previews: ["c.jpg"] },
-        { id: "adc", name: "Atta, Dal, and Rice",                   previews: ["adr.jpg"] },
+        { id: "adc", name: "Aa, Dal, and Rice",                   previews: ["adr.jpg"] },
         { id: "dbm", name: "Dairy, Bread, and Milk",                previews: ["dbm.jpg"] },
         { id: "mo", name: "Masalas and Oils",                       previews: ["mo.jpg"] },
         { id: "bc", name: "Baby Care",                              previews: ["bc.jpg"] },
@@ -455,12 +481,21 @@ startAutoPlay();
                            { id: 9006, name: "Knorr Sweet Corn Vegetable Soup",                             image: "iksc.jpg",              cat: "instant",                  subcat: "Soup",                      selectedVariant: "Qty",          variants: { "Qty":     { price: 10, count: 0, unit: "11g" } } },
 
 /*McCain*/                 { id: 9007, name: "MaCain Variety Pack",                                         image: "imvp.jpg",              cat: "instant",                  subcat: "MaCain",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 180, count: 0, unit: "550g" } } },
-                           { id: 9008, name: "MaCain Mini Samosa Cheese Pizza Style Filling",               image: "imminisamosa.jpg",      cat: "instant",                  subcat: "MaCain",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 160, count: 0, unit: "240g" } } },
                            { id: 9009, name: "MaCain French Fries",                                         image: "imff.jpg",              cat: "instant",                  subcat: "MaCain",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 120, count: 0, unit: "420g" } } },
                            { id: 9010, name: "MaCain Veggie Fingers",                                       image: "mcvf.jpg",              cat: "instant",                  subcat: "MaCain",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 180, count: 0, unit: "400g" } } },
+                           { id: 9011, name: "MaCain Chili Cheese Nuggets",                                       image: "ifccn.jpg",              cat: "instant",                  subcat: "MaCain",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 265, count: 0, unit: "400g" } } },
+                           { id: 9012, name: "MaCain Potato Cheese Shotz",                                       image: "ifpcs.jpg",              cat: "instant",                  subcat: "MaCain",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 265, count: 0, unit: "400g" } } },
+                           { id: 9013, name: "MaCain Crazy Fries Masala Mix, Herb N Garlic",                                       image: "ifcfmm.jpg",              cat: "instant",                  subcat: "MaCain",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 170, count: 0, unit: "400g" } } },
+                           { id: 9014, name: "McCain French Fries - Pepper Crunch",                                       image: "ifmfpc.jpg",              cat: "instant",                  subcat: "MaCain",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 175, count: 0, unit: "420g" } } },
+                           { id: 9015, name: "McCain Masala Fries - Hot n Spicy",                                       image: "ifmf.jpg",              cat: "instant",                  subcat: "MaCain",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 175, count: 0, unit: "420g" } } },
+                           { id: 9016, name: "McCain Chilli Garlic Potato Bites",                                       image: "ifcgpb.jpg",              cat: "instant",                  subcat: "MaCain",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 160, count: 0, unit: "420g" } } },
+                           { id: 9017, name: "McCain Emotibites - Crispy Happy Potato Snack",                                       image: "ife.jpg",              cat: "instant",                  subcat: "MaCain",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 150, count: 0, unit: "415g" } } },
+                           { id: 9018, name: "McCain Smiles Crispy Happy Potatoes",                                       image: "ifs.jpg",              cat: "instant",                  subcat: "MaCain",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 150, count: 0, unit: "415g" } } },
+                           { id: 9019, name: "Mccain Veggie Burger Patty",                                       image: "ifvbp.jpg",              cat: "instant",                  subcat: "MaCain",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 150, count: 0, unit: "420g" } } },
+                           { id: 9020, name: "McCain Super Wedges",                                       image: "ifsw.jpg",              cat: "instant",                  subcat: "MaCain",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 170, count: 0, unit: "400g" } } },
 
-                           { id: 9015, name: "Corn Flakes Kellogg's real strawberry puree",                 image: "rcfs.jpg",              cat: "instant",                  subcat: "All",                       selectedVariant: "Qty",          variants: { "Qty":     { price: 90, count: 0, unit: "251g" } } },
-                           { id: 9016, name: "Corn Flakes Kellogg's original",                              image: "rcfo.jpg",              cat: "instant",                  subcat: "All",                       selectedVariant: "Qty",          variants: { "Qty":     { price: 90, count: 0, unit: "251g" } } },
+                           { id: 9115, name: "Corn Flakes Kellogg's real strawberry puree",                 image: "rcfs.jpg",              cat: "instant",                  subcat: "All",                       selectedVariant: "Qty",          variants: { "Qty":     { price: 90, count: 0, unit: "251g" } } },
+                           { id: 9116, name: "Corn Flakes Kellogg's original",                              image: "rcfo.jpg",              cat: "instant",                  subcat: "All",                       selectedVariant: "Qty",          variants: { "Qty":     { price: 90, count: 0, unit: "251g" } } },
 
 /*bakery*/                { id: 1001,   name: "Atta Biscuit",                                               image: "omiattab.jpg",          cat: "partneromi",               subcat: "Bakery",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 40, count: 0, unit: "1pkt" } } },
                           { id: 1002,   name: "Biscuit Round",                                              image: "omibr.jpg",             cat: "partneromi",               subcat: "Bakery",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 40, count: 0, unit: "1pkt" } } },
@@ -1183,11 +1218,16 @@ let kmCharges = 0;
 
 // Logic: Only calculate if items exist AND location is tagged
 if (itemsTotal > 0 && locationTagged) {
-    // Check if the location is Kharkuli or Bhatta first
-    if (firstLocationWord === "kharkuli" || firstLocationWord === "bhatta") {
+    // 1. Check if the Woodstock Checkbox is ticked (Highest Priority)
+    if (woodstockCheckbox.checked) {
+        kmCharges = 80;
+    } 
+    // 2. Check for specific area names
+    else if (firstLocationWord === "kharkuli" || firstLocationWord === "bhatta") {
         kmCharges = 100;
-    } else {
-        // Standard distance-based logic
+    } 
+    // 3. Standard distance-based logic
+    else {
         if (currentDistance <= 1) kmCharges = 30;
         else if (currentDistance <= 2) kmCharges = 50; 
         else if (currentDistance <= 3) kmCharges = 80;
