@@ -180,18 +180,20 @@ startAutoPlay();
         { q: "3. Do you sell these products?", a: "No, we don't sell any products as of now, we are just your delivery partner." },
         { q: "4. Can you run an errand for me?", a: "Maybe, errands like post, pick-drop, assistance can be provided for a little fee (We can run major errand till Dehradun, but price may vary.)." },
         { q: "5. Why should I book an homestay through you?", a: "We have a tie-up with hotel and homestays and the customers who book through us get a 5% discount. " },
-        { q: "6. Do you delivery Grocery?", a: "Yes, we do delivery grocery around the town." },
+        { q: "6. Will you charge for the carry bag?", a: "If the order is being delivered in our companies carry bag, rs 10 will be charges. If it's the normal carry bag no money for the same shall be charged." },
         { q: "7. Are Taxi and Scooty services available?", a: "Yes, the real value in booking through us is that we only connect you with the most reliable and high-quality services. We hand-pick partners who truly offer great value for your money and provide a warm sense of belonging that you won't find just anywhere." },
         { q: "8. What else services do you provide?", a: "At Wink It, we always encourage our cutomers to ask before they assume, the 'Request' button is a custom button for you to explore." },
         { q: "9. Who are you Collaborate Store?", a: "We have a wide variety of Collaboraters on of the most famouse are Omi's Sweets in Landour and Chacha ka Dhabba in Kulri." },
         { q: "10. Will the food be just as the images show?", a: "While the images provide you a general view of the product, we don't promise to deliver the exact thing shown in the images." },
-        { q: "11. Know more about ordering veggies and fruits.", a: "The following clauses apply to <i>Fruits and Veggies</i> category.<br><b>1. Mandatory Inspection:</b> Please check the quality of fruits and veggies carefully when they arrive.<br><b>2. Confirmed Satisfaction:</b> Our delivery partner will wait for your confirmation before finalizing the drop-off.<br><b>3. No Post-Delivery Returns:</b> Acceptance of the order constitutes a final sale; no refunds or returns are available once the delivery is finalized,." }
+        { q: "11. Know more about ordering veggies and fruits.", a: "The following clauses apply to <i>Fruits and Veggies</i> category.<br><b>1. Mandatory Inspection:</b> Please check the quality of fruits and veggies carefully when they arrive.<br><b>2. Confirmed Satisfaction:</b> Our delivery partner will wait for your confirmation before finalizing the drop-off.<br><b>3. No Post-Delivery Returns:</b> Acceptance of the order constitutes a final sale; no refunds or returns are available once the delivery is finalized.<br><i>Note: Prices of veggies and fruits might vary from the ones shown on the website.." }
     ];
     const collections = [
         { id: "partneromi", name: "Omi's Sweets",                   previews: ["omi.jpg"] },
         { id: "partneromif", name: "Omi's Food",                    previews: ["omifo.jpg"] },
         { id: "garrison", name: "The Garrison",                     previews: ["glogo.jpg"] },
+        { id: "garrison", name: "The Garrison",                     previews: ["glogo.jpg"] },
         { id: "tou", name: "Taste of Uttarakhand",                     previews: ["gad.jpg"] },
+        { id: "tos", name: "Taste of South",                     previews: ["tos.jpg"] },
         /*{ id: "aavi", name: "Aavi Everyday Store",                  previews: ["aavi.jpg"] },*/
         { id: "beverages", name: "Drinks and Juices",               previews: ["dj.jpg"] },
         { id: "snacks", name: "Chips and Namkeens",                 previews: ["cn.jpg"] },
@@ -327,7 +329,7 @@ startAutoPlay();
                         { id: 4004, name: "Kurkure Puffcorn",                                               image: "skurkurep.jpg",         cat: "snacks",                   subcat: "Kurkure",                    selectedVariant: "L",           variants: { "L":        { price: 25, count: 0, unit: "75g" } } },
                         { id: 4005, name: "Kurkure Schezwan Chutney",                                       image: "skurkuresc.jpg",        cat: "snacks",                   subcat: "Kurkure",                    selectedVariant: "L",           variants: { "L":        { price: 25, count: 0, unit: "75g" } } },
 
-/*Lays*/                { id: 4006, name: "Lay's India's M",                                                image: "slaysb.jpg",            cat: "snacks",                   subcat: "Lays",                       selectedVariant: "L",           variants: { "L":        { price: 25, count: 0, unit: "200g" } } },
+/*Lays*/                { id: 4006, name: "Lay's India's Masala",                                                image: "slaysb.jpg",            cat: "snacks",                   subcat: "Lays",                       selectedVariant: "L",           variants: { "L":        { price: 25, count: 0, unit: "200g" } } },
                         { id: 4007, name: "Lay's American",                                                 image: "slaysg.jpg",            cat: "snacks",                   subcat: "Lays",                       selectedVariant: "L",           variants: { "L":        { price: 25, count: 0, unit: "200g" } } },
                         { id: 4008, name: "Lay's Classic",                                                  image: "slaysy.jpg",            cat: "snacks",                   subcat: "Lays",                       selectedVariant: "L",           variants: { "L":        { price: 25, count: 0, unit: "200g" } } },
                         { id: 4009, name: "Lay's Chile Limon",                                              image: "slaysc.jpg",            cat: "snacks",                   subcat: "Lays",                       selectedVariant: "L",           variants: { "L":        { price: 25, count: 0, unit: "200g" } } },
@@ -729,6 +731,24 @@ startAutoPlay();
                             { id: 1330,   name: "Papaya",                                      image: "vfpapaya.jpg",            cat: "fresh",                     subcat: "Fruits",   selectedVariant: "Qty",           variants: { "Qty":      { price: 70, count: 0, unit: "1kg" } } },             
                             { id: 1331,   name: "Watermelon",                                      image: "vfwmelon.jpg",            cat: "fresh",                     subcat: "Fruits",   selectedVariant: "Qty",           variants: { "Qty":      { price: 80, count: 0, unit: "1kg" } } },             
 
+                            { id: 1401,   name: "Paper Plain Dosa",                                      image: "tospd.jpg",            cat: "tos",                     subcat: "Paper",   selectedVariant: "Qty",           variants: { "Qty":      { price: 340, count: 0, unit: "1" } } },             
+                            { id: 1402,   name: "Paper Masala Dosa",                                      image: "tosfd.jpg",            cat: "tos",                     subcat: "Paper",   selectedVariant: "Qty",           variants: { "Qty":      { price: 400, count: 0, unit: "1" } } },             
+                            { id: 1403,   name: "Paper Onion Masala Dosa",                                      image: "tosfd.jpg",            cat: "tos",                     subcat: "Paper",   selectedVariant: "Qty",           variants: { "Qty":      { price: 430, count: 0, unit: "1" } } },             
+                            { id: 1404,   name: "Paper Paneer Masala Dosa",                                      image: "tosfd.jpg",            cat: "tos",                     subcat: "Paper",   selectedVariant: "Qty",           variants: { "Qty":      { price: 460, count: 0, unit: "1" } } },             
+
+                            { id: 1405,   name: "Rava Plain Dosa",                                      image: "tospd.jpg",            cat: "tos",                     subcat: "Rava",   selectedVariant: "Qty",           variants: { "Qty":      { price: 220, count: 0, unit: "1" } } },             
+                            { id: 1406,   name: "Rava Onion Plain Dosa",                                      image: "tosfd.jpg",            cat: "tos",                     subcat: "Rava",   selectedVariant: "Qty",           variants: { "Qty":      { price: 240, count: 0, unit: "1" } } },             
+                            { id: 1407,   name: "Rava Masala Dosa",                                      image: "tosfd.jpg",            cat: "tos",                     subcat: "Rava",   selectedVariant: "Qty",           variants: { "Qty":      { price: 250, count: 0, unit: "1" } } },             
+                            { id: 1408,   name: "Rava Ghee Podi Plain Masala Dosa",                                      image: "tosfd.jpg",            cat: "tos",                     subcat: "Rava",   selectedVariant: "Qty",           variants: { "Qty":      { price: 260, count: 0, unit: "1" } } },             
+                            { id: 1409,   name: "Rava Panner Masala Dosa",                                      image: "tosfd.jpg",            cat: "tos",                     subcat: "Rava",   selectedVariant: "Qty",           variants: { "Qty":      { price: 320, count: 0, unit: "1" } } },     
+
+                            { id: 1410,   name: "Benne Masala Dosa",                                      image: "tosfd.jpg",            cat: "tos",                     subcat: "Benne",   selectedVariant: "Qty",           variants: { "Qty":      { price: 260, count: 0, unit: "1" } } },             
+                            { id: 1411,   name: "Benne Dosa",                                      image: "tosfd.jpg",            cat: "tos",                     subcat: "Benne",   selectedVariant: "Qty",           variants: { "Qty":      { price: 280, count: 0, unit: "1" } } },             
+
+                            { id: 1412,   name: "Onion Uttappam",                                      image: "tosu.jpg",            cat: "tos",                     subcat: "Uttappam",   selectedVariant: "Qty",           variants: { "Qty":      { price: 280, count: 0, unit: "1" } } },             
+                            { id: 1413,   name: "Tomato Uttappam",                                      image: "tosu.jpg",            cat: "tos",                     subcat: "Uttappam",   selectedVariant: "Qty",           variants: { "Qty":      { price: 280, count: 0, unit: "1" } } },             
+                            { id: 1414,   name: "Onion Tomato Uttappam",                                      image: "tosu.jpg",            cat: "tos",                     subcat: "Uttappam",   selectedVariant: "Qty",           variants: { "Qty":      { price: 280, count: 0, unit: "1" } } },             
+
 
 
 
@@ -932,10 +952,10 @@ window.addEventListener('resize', updateUI);
     // Map the index to the heading you want displayed ABOVE that card
     const sectionHeadings = {
         0: "Collaborate Stores",
-        4:  "Drinks & Snacks", /*3 */
-        10:  "Grocery & Kitchen",/*9 */
-        14: "Beauty and Personal Care",/*10 */
-        20: "House Hold Essentials"/*18 */
+        6:  "Drinks & Snacks", /*3 */
+        12:  "Grocery & Kitchen",/*9 */
+        16: "Beauty and Personal Care",/*10 */
+        22: "House Hold Essentials"/*18 */
     };
 
     collectionGrid.innerHTML = collections.map((c, i) => {
@@ -1213,7 +1233,8 @@ if (statsSection) {
     }
 
     function updateSidebar() {
-    let itemsTotal = 0, totalItems = 0, totalTax = 0; // Added totalTax
+    let itemsTotal = 0, totalItems = 0, totalTax = 0;
+    const paperBagCharge = 10; // Defined Bag Charge
     let html = "";
 
     products.forEach(p => {
@@ -1224,9 +1245,7 @@ if (statsSection) {
                 itemsTotal += lineTotal;
                 totalItems += v.count;
 
-                // Calculate 5% GST only for Omi's Sweets
                 let itemTax = 0;
-                // Checks if the category matches Sweets (partneromi) or Food (partneromifood)
                 if (p.cat === "partneromi" || p.cat === "partneromif" || p.cat === "garrison") {
                     itemTax = lineTotal * 0.05;
                     totalTax += itemTax;
@@ -1250,71 +1269,81 @@ if (statsSection) {
     });
 
     // --- 1. BASE DELIVERY LOGIC ---
-    // Standard rule: Under 300->50, 300-1000->100, 1000+ -> 200
-    let baseDelivery = itemsTotal > 0 ? (itemsTotal < 0 ? 0 : (itemsTotal <= 0 ? 0 : 0)) : 0;
+    let baseDelivery = 0; // Keeping your existing logic structure
 
-// --- 2. KM BASED CHARGES ---
-let kmCharges = 0;
-
-// Logic: Only calculate if items exist AND location is tagged
-if (itemsTotal > 0 && locationTagged) {
-    // 1. Check if the Woodstock Checkbox is ticked (Highest Priority)
-    if (woodstockCheckbox.checked) {
-        kmCharges = 80;
-    } 
-    // 2. Check for specific area names
-    else if (firstLocationWord === "kharkuli" || firstLocationWord === "bhatta") {
-        kmCharges = 100;
-    } 
-    // 3. Standard distance-based logic
-    else {
-        if (currentDistance <= 1) kmCharges = 30;
-        else if (currentDistance <= 2) kmCharges = 50; 
-        else if (currentDistance <= 3) kmCharges = 80;
-        else if (currentDistance <= 4) kmCharges = 90;
-        else if (currentDistance <= 5) kmCharges = 100;
-        else kmCharges = 120; 
+    // --- 2. KM BASED CHARGES ---
+    let kmCharges = 0;
+    if (itemsTotal > 0 && locationTagged) {
+        if (woodstockCheckbox.checked) {
+            kmCharges = 80;
+        } else if (firstLocationWord === "kharkuli" || firstLocationWord === "bhatta") {
+            kmCharges = 100;
+        } else {
+            if (currentDistance <= 1) kmCharges = 30;
+            else if (currentDistance <= 2) kmCharges = 50; 
+            else if (currentDistance <= 3) kmCharges = 80;
+            else if (currentDistance <= 4) kmCharges = 90;
+            else if (currentDistance <= 5) kmCharges = 100;
+            else kmCharges = 120; 
+        }
     }
-}
 
-// --- 3. NIGHT CHARGES LOGIC (8PM to 7AM) ---
-let nightCharges = 0;
-const now = new Date();
-const hour = now.getHours(); 
-
-if (itemsTotal > 0) {
-    if (hour >= 20) { 
-        nightCharges = Math.min((hour - 19) * 10, 50);
-    } else if (hour < 7) { 
-        nightCharges = 50;
+    // --- 3. NIGHT CHARGES LOGIC ---
+    let nightCharges = 0;
+    const now = new Date();
+    const hour = now.getHours(); 
+    if (itemsTotal > 0) {
+        if (hour >= 20) { 
+            nightCharges = Math.min((hour - 19) * 10, 50);
+        } else if (hour < 7) { 
+            nightCharges = 50;
+        }
     }
-}
 
-const totalDelivery = baseDelivery + kmCharges + nightCharges;
-const finalGrandTotal = itemsTotal + totalTax + (locationTagged ? totalDelivery : 0);
+    // --- 4. CALCULATE TOTALS ---
+    const totalDelivery = baseDelivery + kmCharges + nightCharges;
 
-// --- UPDATE UI ---
-document.getElementById('sidebar-content').innerHTML = html || "<p>Cart is empty</p>";
-document.getElementById('subtotal-val').innerText = itemsTotal.toFixed(2);
+// Apply bag charge only if the total count of items is greater than 5
+    const activeBagCharge = totalItems > 5 ? paperBagCharge : 0;
 
-const taxValDisplay = document.getElementById('tax-val');
-const taxRow = document.getElementById('tax-row');
-if (taxValDisplay) {
-    taxValDisplay.innerText = totalTax.toFixed(2);
-}
+    // Updated Grand Total including the bag charge
+    const finalGrandTotal = itemsTotal + totalTax + activeBagCharge + (locationTagged ? totalDelivery : 0);
 
-if (taxRow) {
-    taxRow.style.display = totalTax > 0 ? "block" : "none";
-}
+    // --- UPDATE UI ---
+    document.getElementById('sidebar-content').innerHTML = html || "<p>Cart is empty</p>";
+    document.getElementById('subtotal-val').innerText = itemsTotal.toFixed(2);
 
-const deliveryDisplay = document.getElementById('delivery-val');
-deliveryDisplay.innerText = locationTagged ? totalDelivery : "Tag Location";
-deliveryDisplay.style.color = locationTagged ? "" : "#ff9800"; 
+    // Update Bag Charge UI
+    const bagValDisplay = document.getElementById('bag-val');
+    const bagRow = document.getElementById('bag-row'); // The parent paragraph tag
 
-document.getElementById('total-price').innerText = Math.round(finalGrandTotal);
+    if (bagValDisplay) {
+        bagValDisplay.innerText = activeBagCharge;
+    }
 
-// Store breakdown
-window.deliveryBreakdown = { base: baseDelivery, km: kmCharges, night: nightCharges };
+    // Optional: Hide the entire Paper Bag row if charges are 0
+    if (bagRow) {
+        bagRow.style.display = activeBagCharge > 0 ? "block" : "none";
+    }
+
+    const taxValDisplay = document.getElementById('tax-val');
+    const taxRow = document.getElementById('tax-row');
+    if (taxValDisplay) taxValDisplay.innerText = totalTax.toFixed(2);
+    if (taxRow) taxRow.style.display = totalTax > 0 ? "block" : "none";
+
+    const deliveryDisplay = document.getElementById('delivery-val');
+    deliveryDisplay.innerText = locationTagged ? totalDelivery : "Tag Location";
+    deliveryDisplay.style.color = locationTagged ? "" : "#ff9800"; 
+
+    document.getElementById('total-price').innerText = Math.round(finalGrandTotal);
+
+    // Store breakdown (added bag to breakdown for WhatsApp logic later)
+    window.deliveryBreakdown = { 
+        base: baseDelivery, 
+        km: kmCharges, 
+        night: nightCharges,
+        bag: activeBagCharge 
+    };
 
     // Update Cart Counter & Popup
     const cartCount = document.getElementById('cart-count');
@@ -1704,6 +1733,10 @@ whatsappBtn.addEventListener('click', () => {
     const address = custAddressInput.value;
     const subtotal = document.getElementById('subtotal-val').innerText;
     const delivery = document.getElementById('delivery-val').innerText;
+    
+    // Pull the Bag Charge from the UI
+    const bagCharge = document.getElementById('bag-val') ? document.getElementById('bag-val').innerText : "0";
+    
     const total = document.getElementById('total-price').innerText;
     
     if (total == "0" || total == "") { alert("Cart is empty!"); return; }
@@ -1756,6 +1789,10 @@ whatsappBtn.addEventListener('click', () => {
     msg += divider;
     msg += `Subtotal: ₹${subtotal}\n`;
     if (totalGst > 0) msg += `GST Total(5%): ₹${totalGst.toFixed(2)}\n`;
+    
+    // Added Paper Bag to WhatsApp Message
+    if (parseFloat(bagCharge) > 0) msg += `Paper Bag: ₹${bagCharge}\n`;
+    
     msg += `Delivery: ₹${delivery}\n`;
     msg += `*TOTAL AMOUNT: ₹${total}*\n`; 
     msg += divider;
@@ -1770,7 +1807,8 @@ whatsappBtn.addEventListener('click', () => {
             name: name,
             address: address,
             items: itemsForSheet,
-            delivery: delivery, // Added delivery here
+            bagCharge: bagCharge, // Added bag charge to the sheet data
+            delivery: delivery,
             total: total,
             location: locationLink
         })
@@ -1778,8 +1816,7 @@ whatsappBtn.addEventListener('click', () => {
     
     const encodedMsg = encodeURIComponent(msg);
     window.location.href = `https://api.whatsapp.com/send?phone=917983427187&text=${encodedMsg}`;
-});    
-    /** * Infinite Review Slider Module
+});    /** * Infinite Review Slider Module
  */
 (function() {
     const container = document.getElementById('slider-container');
