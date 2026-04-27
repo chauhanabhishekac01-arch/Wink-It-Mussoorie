@@ -194,7 +194,7 @@ startAutoPlay();
         { id: "garrison", name: "The Garrison",                     previews: ["glogo.jpg"] },
         { id: "tou", name: "Taste of Uttarakhand",                     previews: ["gad.jpg"] },
         { id: "tos", name: "Taste of South",                     previews: ["tos.jpg"] },
-        /*{ id: "aavi", name: "Aavi Everyday Store",                  previews: ["aavi.jpg"] },*/
+        { id: "aavi", name: "Aavi Everyday Store",                  previews: ["aavi.jpg"] },
         { id: "beverages", name: "Drinks and Juices",               previews: ["dj.jpg"] },
         { id: "snacks", name: "Chips and Namkeens",                 previews: ["cn.jpg"] },
         { id: "biscuits", name: "Bakery and Biscuits",              previews: ["bb.jpg"] },
@@ -1085,7 +1085,7 @@ if (statsSection) {
         sliderTitle.innerText = catName + " (Store GST 5% will be added)";
     } else if (catName === "Aavi Everyday Store" || catName === "Taste of Uttarakhand") {
         // Appends info prompt for Aavi Everyday Store
-        sliderTitle.innerText = catName + " (tap image for more info) Average Waiting time 5 hrs";
+        sliderTitle.innerText = catName + " (tap image for more info)";
     } else {
         // Default behavior for all other categories
         sliderTitle.innerText = catName;
