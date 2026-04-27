@@ -952,10 +952,10 @@ window.addEventListener('resize', updateUI);
     // Map the index to the heading you want displayed ABOVE that card
     const sectionHeadings = {
         0: "Collaborate Stores",
-        6:  "Drinks & Snacks", /*3 */
-        12:  "Grocery & Kitchen",/*9 */
-        16: "Beauty and Personal Care",/*10 */
-        22: "House Hold Essentials"/*18 */
+        7:  "Drinks & Snacks", /*3 */
+        13:  "Grocery & Kitchen",/*9 */
+        17: "Beauty and Personal Care",/*10 */
+        23: "House Hold Essentials"/*18 */
     };
 
     collectionGrid.innerHTML = collections.map((c, i) => {
