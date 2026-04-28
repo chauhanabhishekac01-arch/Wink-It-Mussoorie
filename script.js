@@ -191,7 +191,6 @@ startAutoPlay();
         { id: "partneromi", name: "Omi's Sweets",                   previews: ["omi.jpg"] },
         { id: "partneromif", name: "Omi's Food",                    previews: ["omifo.jpg"] },
         { id: "garrison", name: "The Garrison",                     previews: ["glogo.jpg"] },
-        { id: "garrison", name: "The Garrison",                     previews: ["glogo.jpg"] },
         { id: "tou", name: "Taste of Uttarakhand",                     previews: ["gad.jpg"] },
         { id: "tos", name: "Taste of South",                     previews: ["tos.jpg"] },
         { id: "aavi", name: "Aavi Everyday Store",                  previews: ["aavi.jpg"] },
