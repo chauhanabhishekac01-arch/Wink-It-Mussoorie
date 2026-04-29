@@ -769,11 +769,14 @@ startAutoPlay();
                             { id: 1609,   name: "Black Currant - Flavour",                                      image: "bakerybc.jpg",            cat: "bakery",                     subcat: "Cake",   selectedVariant: "Qty",           variants: { "Qty":      { price: 550, count: 0, unit: "1pnd" },"Qty.":        { price: 1100, count: 0, unit: "2pnd" } } },             
                             { id: 1610,   name: "Strawberry - Flavour",                                      image: "bakerys.jpg",            cat: "bakery",                     subcat: "Cake",   selectedVariant: "Qty",           variants: { "Qty":      { price: 550, count: 0, unit: "1pnd" },    "Qty.":        { price: 1100, count: 0, unit: "2pnd" } } },             
 
-                            { id: 1611,   name: "Paty Popper - Paper Contti",                               image: "bakerypp.jpg",            cat: "bakery",                     subcat: "Popper",   selectedVariant: "Qty",           variants: { "Qty":      { price: 150, count: 0, unit: "1" } } },             
+                            { id: 1611,   name: "Party Popper - Paper Confetti",                               image: "bakerypp.jpg",            cat: "bakery",                     subcat: "Popper",   selectedVariant: "Qty",           variants: { "Qty":      { price: 150, count: 0, unit: "1" } } },             
                             { id: 1612,   name: "Happy Birthday decor",                               image: "bakeryhb.jpg",            cat: "bakery",                     subcat: "Decor",   selectedVariant: "Qty",           variants: { "Qty":      { price: 180, count: 0, unit: "1" } } },             
-                            { id: 1613,   name: "Baloon Pack - Red, White, Black, and Gold",                               image: "bakeryhb.jpg",            cat: "bakery",                     subcat: "Decor",   selectedVariant: "Qty",           variants: { "Qty":      { price: 150, count: 0, unit: "1" } } },                                                                                                                                                                                                                                                                                                                                                                                                                                              
+                            { id: 1613,   name: "Baloon Pack - Red, White, Black, and Gold",                               image: "bakerybl.jpg",            cat: "bakery",                     subcat: "Decor",   selectedVariant: "Qty",           variants: { "Qty":      { price: 150, count: 0, unit: "1" } } },                                                                                                                                                                                                                                                                                                                                                                                                                                              
 
-
+                            { id: 1614,   name: "Lotus Bescooff Chese Cake Slice",                                      image: "bakerylbs.jpg",            cat: "bakery",                     subcat: "Slice",   selectedVariant: "Qty",           variants: { "Qty":      { price: 250, count: 0, unit: "1" } } },             
+                            { id: 1615,   name: "Blueberry Chese Cake Slice",                                      image: "bakerybcc.jpg",            cat: "bakery",                     subcat: "Slice",   selectedVariant: "Qty",           variants: { "Qty":      { price: 250, count: 0, unit: "1" } } },             
+                            { id: 1616,   name: "Pistacwio Kunafa Chese Cake Slice",                                      image: "bakerypkc.jpg",            cat: "bakery",                     subcat: "Slice",   selectedVariant: "Qty",           variants: { "Qty":      { price: 250, count: 0, unit: "1" } } },             
+                            { id: 1617,   name: "Truffle Slice",                                      image: "bakeryts.jpg",            cat: "bakery",                     subcat: "Slice",   selectedVariant: "Qty",           variants: { "Qty":      { price: 150, count: 0, unit: "1" } } },             
 
 
 /* need to know if omi is cool with this                { id: 1018,   name: "Hot Tea",                      image: "omiht.jpg",             cat: "partneromi",               subcat: "Beverages",                selectedVariant: "Qty",           variants: { "Qty":      { price: 42, count: 0, unit: "300ml" } } },
@@ -1100,22 +1103,23 @@ if (statsSection) {
     activeCategory = catId;
     const sliderTitle = document.getElementById('slider-title');
     
-   if (sliderTitle) {
-    if (catName === "Fresh") {
-        // Appends FAQ notice for Fresh category
-        sliderTitle.innerText = catName + " (Please read F&Q no: 11 before ordering items from this list)";
-    } else if (catName === "Omi's Sweets" || catName === "Omi's Food" || catName === "The Garrison") {
-        // Appends GST notice for food categories
-        sliderTitle.innerText = catName + " (Store GST 5% will be added)";
-    } else if (catName === "Aavi Everyday Store" || catName === "Taste of Uttarakhand") {
-        // Appends info prompt for Aavi Everyday Store
-        sliderTitle.innerText = catName + " (tap image for more info)";
-    } else {
-        // Default behavior for all other categories
-        sliderTitle.innerText = catName;
-    }
-
-
+if (sliderTitle) {
+        if (catName === "Fresh") {
+            // Appends FAQ notice for Fresh category
+            sliderTitle.innerText = catName + " (Please read F&Q no: 11 before ordering items from this list)";
+        } else if (catName === "Cake Shop") {
+            // Appends making time notice for Cake Shop
+            sliderTitle.innerText = catName + " (2 Pound cake has a making time of 5 hrs)";
+        } else if (catName === "Omi's Sweets" || catName === "Omi's Food" || catName === "The Garrison") {
+            // Appends GST notice for food categories
+            sliderTitle.innerText = catName + " (Store GST 5% will be added)";
+        } else if (catName === "Aavi Everyday Store" || catName === "Taste of Uttarakhand") {
+            // Appends info prompt for Aavi Everyday Store
+            sliderTitle.innerText = catName + " (tap image for more info)";
+        } else {
+            // Default behavior for all other categories
+            sliderTitle.innerText = catName;
+        }
     }
 
     // Reset scroll position
