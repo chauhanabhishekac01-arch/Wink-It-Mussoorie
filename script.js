@@ -190,10 +190,11 @@ startAutoPlay();
     const collections = [
         { id: "partneromi", name: "Omi's Sweets",                   previews: ["omi.jpg"] },
         { id: "partneromif", name: "Omi's Food",                    previews: ["omifo.jpg"] },
-        { id: "garrison", name: "The Garrison",                     previews: ["glogo.jpg"] },
+        { id: "bakery", name: "Cake Shop",                          previews: ["bakery.jpg"] },
         { id: "tou", name: "Taste of Uttarakhand",                     previews: ["gad.jpg"] },
         { id: "tos", name: "Taste of South",                     previews: ["tos.jpg"] },
         { id: "aavi", name: "Aavi Everyday Store",                  previews: ["aavi.jpg"] },
+        { id: "garrison", name: "The Garrison",                     previews: ["glogo.jpg"] },
         { id: "beverages", name: "Drinks and Juices",               previews: ["dj.jpg"] },
         { id: "snacks", name: "Chips and Namkeens",                 previews: ["cn.jpg"] },
         { id: "biscuits", name: "Bakery and Biscuits",              previews: ["bb.jpg"] },
@@ -739,7 +740,7 @@ startAutoPlay();
                             { id: 1325,   name: "Tori",                                      image: "vftori.jpg",            cat: "fresh",                     subcat: "Veggies",   selectedVariant: "Qty",           variants: { "Qty":      { price: 100, count: 0, unit: "1kg" } } },             
 
                             { id: 1326,   name: "Apple",                                      image: "vfapple.jpg",            cat: "fresh",                     subcat: "Fruits",   selectedVariant: "Qty",           variants: { "Qty":      { price: 300, count: 0, unit: "12p" } } },             
-                            { id: 1327,   name: "Banana",                                      image: "vfbanana.jpg",            cat: "fresh",                     subcat: "Fruits",   selectedVariant: "Qty",           variants: { "Qty":      { price: 80, count: 0, unit: "1kg" } } },             
+                            { id: 1327,   name: "Banana",                                      image: "vfbanana.jpg",            cat: "fresh",                     subcat: "Fruits",   selectedVariant: "Qty",           variants: { "Qty":      { price: 80, count: 0, unit: "1dzn" } } },             
                             { id: 1328,   name: "Grapes",                                      image: "vfgrapes.jpg",            cat: "fresh",                     subcat: "Fruits",   selectedVariant: "Qty",           variants: { "Qty":      { price: 200, count: 0, unit: "1kg" } } },             
                             { id: 1329,   name: "Muskmelon",                                      image: "vfmuskm.jpg",            cat: "fresh",                     subcat: "Fruits",   selectedVariant: "Qty",           variants: { "Qty":      { price: 120, count: 0, unit: "1kg" } } },             
                             { id: 1330,   name: "Papaya",                                      image: "vfpapaya.jpg",            cat: "fresh",                     subcat: "Fruits",   selectedVariant: "Qty",           variants: { "Qty":      { price: 70, count: 0, unit: "1kg" } } },             
@@ -757,6 +758,20 @@ startAutoPlay();
                             { id: 1412,   name: "Onion Uttappam",                                      image: "tosu.jpg",            cat: "tos",                     subcat: "Uttappam",   selectedVariant: "Qty",           variants: { "Qty":      { price: 280, count: 0, unit: "1" } } },             
                             { id: 1413,   name: "Tomato Uttappam",                                      image: "tosu.jpg",            cat: "tos",                     subcat: "Uttappam",   selectedVariant: "Qty",           variants: { "Qty":      { price: 280, count: 0, unit: "1" } } },             
                             { id: 1414,   name: "Onion Tomato Uttappam",                                      image: "tosu.jpg",            cat: "tos",                     subcat: "Uttappam",   selectedVariant: "Qty",           variants: { "Qty":      { price: 280, count: 0, unit: "1" } } },             
+
+                            { id: 1600,   name: "Pineapple  - Flavour",                                      image: "bakerypc.jpg",            cat: "bakery",                     subcat: "Cake",   selectedVariant: "Qty",           variants: { "Qty":      { price: 350, count: 0, unit: "1pnd" },   "Qty.":        { price: 700, count: 0, unit: "2pnd" } } },             
+                            { id: 1601,   name: "Black Forest",                                      image: "bakerybfc.jpg",            cat: "bakery",                     subcat: "Cake",   selectedVariant: "Qty",           variants: { "Qty":      { price: 450, count: 0, unit: "1pnd" },          "Qty.":        { price: 900, count: 0, unit: "2pnd" } } },             
+                            { id: 1602,   name: "Butter Scotch",                                      image: "bakerybs.jpg",            cat: "bakery",                     subcat: "Cake",   selectedVariant: "Qty",           variants: { "Qty":      { price: 450, count: 0, unit: "1pnd" },          "Qty.":        { price: 900, count: 0, unit: "2pnd" } } },             
+                            { id: 1603,   name: "Chocolate",                                      image: "bakerycc.jpg",            cat: "bakery",                     subcat: "Cake",   selectedVariant: "Qty",           variants: { "Qty":      { price: 550, count: 0, unit: "1pnd" },              "Qty.":        { price: 1100, count: 0, unit: "2pnd" } } },             
+                            { id: 1605,   name: "Walnut Chocolate",                                      image: "bakerycw.jpg",            cat: "bakery",                     subcat: "Cake",   selectedVariant: "Qty",           variants: { "Qty":      { price: 550, count: 0, unit: "1pnd" },       "Qty.":        { price: 1100, count: 0, unit: "2pnd" } } },             
+                            { id: 1606,   name: "Red Velvet",                                      image: "bakeryrv.jpg",            cat: "bakery",                     subcat: "Cake",   selectedVariant: "Qty",           variants: { "Qty":      { price: 550, count: 0, unit: "1pnd" },             "Qty.":        { price: 1100, count: 0, unit: "2pnd" } } },             
+                            { id: 1608,   name: "Mango - Flavour",                                      image: "bakerym.jpg",            cat: "bakery",                     subcat: "Cake",   selectedVariant: "Qty",           variants: { "Qty":      { price: 550, count: 0, unit: "1pnd" },         "Qty.":        { price: 1100, count: 0, unit: "2pnd" } } },             
+                            { id: 1609,   name: "Black Currant - Flavour",                                      image: "bakerybc.jpg",            cat: "bakery",                     subcat: "Cake",   selectedVariant: "Qty",           variants: { "Qty":      { price: 550, count: 0, unit: "1pnd" },"Qty.":        { price: 1100, count: 0, unit: "2pnd" } } },             
+                            { id: 1610,   name: "Strawberry - Flavour",                                      image: "bakerys.jpg",            cat: "bakery",                     subcat: "Cake",   selectedVariant: "Qty",           variants: { "Qty":      { price: 550, count: 0, unit: "1pnd" },    "Qty.":        { price: 1100, count: 0, unit: "2pnd" } } },             
+
+                            { id: 1611,   name: "Paty Popper - Paper Contti",                               image: "bakerypp.jpg",            cat: "bakery",                     subcat: "Popper",   selectedVariant: "Qty",           variants: { "Qty":      { price: 150, count: 0, unit: "1" } } },             
+                            { id: 1612,   name: "Happy Birthday decor",                               image: "bakeryhb.jpg",            cat: "bakery",                     subcat: "Decor",   selectedVariant: "Qty",           variants: { "Qty":      { price: 180, count: 0, unit: "1" } } },             
+                            { id: 1613,   name: "Baloon Pack - Red, White, Black, and Gold",                               image: "bakeryhb.jpg",            cat: "bakery",                     subcat: "Decor",   selectedVariant: "Qty",           variants: { "Qty":      { price: 150, count: 0, unit: "1" } } },                                                                                                                                                                                                                                                                                                                                                                                                                                              
 
 
 
@@ -961,10 +976,10 @@ window.addEventListener('resize', updateUI);
     // Map the index to the heading you want displayed ABOVE that card
     const sectionHeadings = {
         0: "Collaborate Stores",
-        6:  "Drinks & Snacks", /*3 */
-        12:  "Grocery & Kitchen",/*9 */
-        16: "Beauty and Personal Care",/*10 */
-        22: "House Hold Essentials"/*18 */
+        7:  "Drinks & Snacks", /*3 */
+        13:  "Grocery & Kitchen",/*9 */
+        17: "Beauty and Personal Care",/*10 */
+        23: "House Hold Essentials"/*18 */
     };
 
     collectionGrid.innerHTML = collections.map((c, i) => {
