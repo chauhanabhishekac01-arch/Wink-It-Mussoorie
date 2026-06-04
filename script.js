@@ -1306,8 +1306,8 @@ if (sliderTitle) {
             if (currentDistance <= 1) kmCharges = 30;
             else if (currentDistance <= 2) kmCharges = 50; 
             else if (currentDistance <= 3) kmCharges = 80;
-            else if (currentDistance <= 4) kmCharges = 90;
-            else if (currentDistance <= 5) kmCharges = 100;
+            else if (currentDistance <= 4) kmCharges = 150;
+            else if (currentDistance <= 5) kmCharges = 200;
             else kmCharges = 500; 
         }
     }
@@ -1318,7 +1318,7 @@ if (sliderTitle) {
     const hour = now.getHours(); 
     if (itemsTotal > 0) {
         if (hour >= 20) { 
-            nightCharges = Math.min((hour - 19) * 10, 50);
+            nightCharges = Math.min((hour - 19) * 20, 50);
         } else if (hour < 7) { 
             nightCharges = 50;
         }
