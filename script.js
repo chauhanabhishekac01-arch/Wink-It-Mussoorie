@@ -188,6 +188,7 @@ startAutoPlay();
         { q: "11. Know more about ordering veggies and fruits.", a: "The following clauses apply to <i>Fruits and Veggies</i> category.<br><b>1. Mandatory Inspection:</b> Please check the quality of fruits and veggies carefully when they arrive.<br><b>2. Confirmed Satisfaction:</b> Our delivery partner will wait for your confirmation before finalizing the drop-off.<br><b>3. No Post-Delivery Returns:</b> Acceptance of the order constitutes a final sale; no refunds or returns are available once the delivery is finalized.<br><i>Note: Prices of veggies and fruits might vary from the ones shown on the website.." }
     ];
     const collections = [
+        { id: "fined", name: "Fine Dine Deluex",                     previews: ["fd.jpg"] },
         { id: "tou", name: "Taste of Uttarakhand",                     previews: ["gad.jpg"] },
         { id: "bakery", name: "Cake Shop",                          previews: ["bakery.jpg"] },
         { id: "partneromi", name: "Omi's Sweets",                   previews: ["omi.jpg"] },
@@ -774,6 +775,24 @@ startAutoPlay();
                             { id: 1616,   name: "Pistacwio Kunafa Chese Cake Slice",                                      image: "bakerypkc.jpg",            cat: "bakery",                     subcat: "Slice",   selectedVariant: "Qty",           variants: { "Qty":      { price: 250, count: 0, unit: "1" } } },             
                             { id: 1617,   name: "Truffle Slice",                                      image: "bakeryts.jpg",            cat: "bakery",                     subcat: "Slice",   selectedVariant: "Qty",           variants: { "Qty":      { price: 150, count: 0, unit: "1" } } },             
 
+                            { id: 1701,   name: "BBQ Tandoori Chicken",                                     image: "fdtc.jpg",            cat: "fined",                     subcat: "BBQ",          selectedVariant: "Qty",           variants: { "Qty":      { price: 799, count: 0, unit: "1Full" },    "Qty.":        { price: 499, count: 0, unit: "1Half" } } },
+                            { id: 1702,   name: "BBQ Afgani Chicken",                                       image: "fdac.jpg",            cat: "fined",                     subcat: "BBQ",          selectedVariant: "Qty",           variants: { "Qty":      { price: 699, count: 0, unit: "1Full" },    "Qty.":        { price: 399, count: 0, unit: "1Half" } } },
+                            { id: 1703,   name: "Chicken Tikka",                                            image: "fdct.jpg",            cat: "fined",                     subcat: "BBQ",          selectedVariant: "Qty",           variants: { "Qty":      { price: 499, count: 0, unit: "1Full" } } },
+                            { id: 1704,   name: "Paneer Tikka",                                             image: "fdpt.jpg",            cat: "fined",                     subcat: "BBQ",          selectedVariant: "Qty",           variants: { "Qty":      { price: 449, count: 0, unit: "1Full" } } },
+                            { id: 1705,   name: "Butter Chicken",                                           image: "fdbc.jpg",            cat: "fined",                     subcat: "Gravy",        selectedVariant: "Qty",           variants: { "Qty":      { price: 899, count: 0, unit: "1Full" },    "Qty.":        { price: 549, count: 0, unit: "1Half" } } },
+                            { id: 1706,   name: "Kadhai Chciken",                                           image: "fdkc.jpg",            cat: "fined",                     subcat: "Gravy",        selectedVariant: "Qty",           variants: { "Qty":      { price: 899, count: 0, unit: "1Full" },    "Qty.":        { price: 549, count: 0, unit: "1Half" } } },
+                            { id: 1707,   name: "Chicken Biryani",                                          image: "fdcb.jpg",            cat: "fined",                     subcat: "Biryani",      selectedVariant: "Qty",           variants: { "Qty":      { price: 499, count: 0, unit: "1Full" } } },
+                            { id: 1708,   name: "Veg Biryani",                                              image: "fdvb.jpg",            cat: "fined",                     subcat: "Biryani",      selectedVariant: "Qty",           variants: { "Qty":      { price: 449, count: 0, unit: "1Full" } } },
+                            { id: 1709,   name: "Dal Makhni",                                               image: "fddm.jpg",            cat: "fined",                     subcat: "Gravy",        selectedVariant: "Qty",           variants: { "Qty":      { price: 499, count: 0, unit: "1Full" } } },
+                            { id: 1710,   name: "Shahi Paneer",                                             image: "fdsp.jpg",            cat: "fined",                     subcat: "Gravy",        selectedVariant: "Qty",           variants: { "Qty":      { price: 399, count: 0, unit: "1Full" } } },
+                            { id: 1711,   name: "Kadhai Paneer",                                            image: "fdkp.jpg",            cat: "fined",                     subcat: "Gravy",        selectedVariant: "Qty",           variants: { "Qty":      { price: 399, count: 0, unit: "1Full" } } },
+                            { id: 1712,   name: "Tandori Roti",                                             image: "fdtr.jpg",            cat: "fined",                     subcat: "Roti Naan",    selectedVariant: "Qty",           variants: { "Qty":      { price: 49, count: 0, unit: "1" } } },
+                            { id: 1713,   name: "Tandori Butter Roti",                                      image: "fdtrb.jpg",           cat: "fined",                     subcat: "Roti Naan",    selectedVariant: "Qty",           variants: { "Qty":      { price: 59, count: 0, unit: "1" } } },
+                            { id: 1714,   name: "Naan",                                                     image: "fdn.jpg",             cat: "fined",                     subcat: "Roti Naan",    selectedVariant: "Qty",           variants: { "Qty":      { price: 89, count: 0, unit: "1" } } },
+                            { id: 1715,   name: "Naan Butter",                                              image: "fdbn.jpg",            cat: "fined",                     subcat: "Roti Naan",    selectedVariant: "Qty",           variants: { "Qty":      { price: 99, count: 0, unit: "1" } } },
+                            { id: 1716,   name: "Steamed Rice",                                             image: "fdsr.jpg",            cat: "fined",                     subcat: "Rice",         selectedVariant: "Qty",           variants: { "Qty":      { price: 249, count: 0, unit: "1Full" } } },
+                            { id: 1717,   name: "Jeera Rice",                                               image: "fdjr.jpg",            cat: "fined",                     subcat: "Rice",         selectedVariant: "Qty",           variants: { "Qty":      { price: 299, count: 0, unit: "1Full" } } },
+
 
 /* need to know if omi is cool with this                { id: 1018,   name: "Hot Tea",                      image: "omiht.jpg",             cat: "partneromi",               subcat: "Beverages",                selectedVariant: "Qty",           variants: { "Qty":      { price: 42, count: 0, unit: "300ml" } } },
                               { id: 1019,   name: "Black Cofee",                                            image: "omibc.jpg",             cat: "partneromi",               subcat: "Beverages",                selectedVariant: "Qty",           variants: { "Qty":      { price: 52.5, count: 0, unit: "300ml" } } },
@@ -975,10 +994,10 @@ window.addEventListener('resize', updateUI);
     // Map the index to the heading you want displayed ABOVE that card
     const sectionHeadings = {
         0: "Collaborate Stores",
-        7:  "Drinks & Snacks", /*3 */
-        13:  "Grocery & Kitchen",/*9 */
-        17: "Beauty and Personal Care",/*10 */
-        23: "House Hold Essentials"/*18 */
+        8:  "Drinks & Snacks", /*3 */
+        14:  "Grocery & Kitchen",/*9 */
+        18: "Beauty and Personal Care",/*10 */
+        24: "House Hold Essentials"/*18 */
     };
 
     collectionGrid.innerHTML = collections.map((c, i) => {
