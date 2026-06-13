@@ -792,6 +792,7 @@ startAutoPlay();
                             { id: 1715,   name: "Naan Butter",                                              image: "fdbn.jpg",            cat: "fined",                     subcat: "Roti Naan",    selectedVariant: "Qty",           variants: { "Qty":      { price: 99, count: 0, unit: "1" } } },
                             { id: 1716,   name: "Steamed Rice",                                             image: "fdsr.jpg",            cat: "fined",                     subcat: "Rice",         selectedVariant: "Qty",           variants: { "Qty":      { price: 249, count: 0, unit: "1Full" } } },
                             { id: 1717,   name: "Jeera Rice",                                               image: "fdjr.jpg",            cat: "fined",                     subcat: "Rice",         selectedVariant: "Qty",           variants: { "Qty":      { price: 299, count: 0, unit: "1Full" } } },
+                            { id: 1718,   name: "Chow Mien",                                               image: "fdcm.jpg",            cat: "fined",                     subcat: "Noodles",         selectedVariant: "Qty",           variants: { "Qty":      { price: 200, count: 0, unit: "1Full" } } },
 
 
 /* need to know if omi is cool with this                { id: 1018,   name: "Hot Tea",                      image: "omiht.jpg",             cat: "partneromi",               subcat: "Beverages",                selectedVariant: "Qty",           variants: { "Qty":      { price: 42, count: 0, unit: "300ml" } } },
