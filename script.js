@@ -188,7 +188,8 @@ startAutoPlay();
         { q: "11. Know more about ordering veggies and fruits.", a: "The following clauses apply to <i>Fruits and Veggies</i> category.<br><b>1. Mandatory Inspection:</b> Please check the quality of fruits and veggies carefully when they arrive.<br><b>2. Confirmed Satisfaction:</b> Our delivery partner will wait for your confirmation before finalizing the drop-off.<br><b>3. No Post-Delivery Returns:</b> Acceptance of the order constitutes a final sale; no refunds or returns are available once the delivery is finalized.<br><i>Note: Prices of veggies and fruits might vary from the ones shown on the website.." }
     ];
     const collections = [
-        { id: "fined", name: "Fine Dine Deluex",                     previews: ["fd.jpg"] },
+        { id: "fined", name: "👑 Fine Dine Deluex",                     previews: ["fd.jpg"] },
+        { id: "pahadoka", name: "Pahado Ka",                     previews: ["pklogo.jpg"] },
         { id: "tou", name: "Taste of Uttarakhand",                     previews: ["gad.jpg"] },
         { id: "bakery", name: "Cake Shop",                          previews: ["bakery.jpg"] },
         { id: "partneromi", name: "Omi's Sweets",                   previews: ["omi.jpg"] },
@@ -794,6 +795,19 @@ startAutoPlay();
                             { id: 1717,   name: "Jeera Rice",                                               image: "fdjr.jpg",            cat: "fined",                     subcat: "Rice",         selectedVariant: "Qty",           variants: { "Qty":      { price: 299, count: 0, unit: "1Full" } } },
                             { id: 1718,   name: "Chow Mien",                                               image: "fdcm.jpg",            cat: "fined",                     subcat: "Noodles",         selectedVariant: "Qty",           variants: { "Qty":      { price: 200, count: 0, unit: "1Full" } } },
 
+                            { id: 1801,   name: "Orange Cleansing Oil",                                     image: "pkoo.jpg",            cat: "pahadoka",                     subcat: "Oils",         selectedVariant: "Qty",           variants: { "Qty":      { price: 699, count: 0, unit: "100ML" } } },
+                            { id: 1800,   name: "Pure Apricot Oil",                                         image: "pkao.jpg",            cat: "pahadoka",                     subcat: "Oils",         selectedVariant: "Qty",           variants: { "Qty":      { price: 699, count: 0, unit: "100ML" } } },
+                            { id: 1802,   name: "Pure Castor Oil",                                          image: "pkco.jpg",            cat: "pahadoka",                     subcat: "Oils",         selectedVariant: "Qty",           variants: { "Qty":      { price: 699, count: 0, unit: "100ML" } } },
+                            { id: 1803,   name: "After Bath Body and Face oil",                             image: "pkbfo.jpg",           cat: "pahadoka",                     subcat: "Oils",         selectedVariant: "Qty",           variants: { "Qty":      { price: 699, count: 0, unit: "100ML" } } },
+                            { id: 1804,   name: "Pink Glass Skin - Korean",                                 image: "pkpgs.jpg",           cat: "pahadoka",                     subcat: "Skin Clay",    selectedVariant: "Qty",           variants: { "Qty":      { price: 499, count: 0, unit: "80ML" } } },
+                            { id: 1805,   name: "Lemon Orange Peel",                                        image: "pklop.jpg",           cat: "pahadoka",                     subcat: "Scrub",        selectedVariant: "Qty",           variants: { "Qty":      { price: 499, count: 0, unit: "80ML" } } },
+                            { id: 1806,   name: "Apricot Scrub",                                            image: "pkas.jpg",            cat: "pahadoka",                     subcat: "Scrub",        selectedVariant: "Qty",           variants: { "Qty":      { price: 499, count: 0, unit: "80ML" } } },
+                            { id: 1807,   name: "Pure Aloe Vera",                                           image: "pkpa.jpg",            cat: "pahadoka",                     subcat: "Moistu rizer", selectedVariant: "Qty",           variants: { "Qty":      { price: 399, count: 0, unit: "50ML" } } },
+                            { id: 1808,   name: "Organic Vit C Cream",                                      image: "pkvc.jpg",            cat: "pahadoka",                     subcat: "Cream",        selectedVariant: "Qty",           variants: { "Qty":      { price: 599, count: 0, unit: "50ML" } } },
+                            { id: 1809,   name: "Organic Apricot Cream with Serum",                         image: "pkacs.jpg",           cat: "pahadoka",                     subcat: "Combo",        selectedVariant: "Qty",           variants: { "Qty":      { price: 1599, count: 0, unit: "50ML" } } },
+                            { id: 1810,   name: "Lip Balm",                                                 image: "pklb.jpg",            cat: "pahadoka",                     subcat: "Lip Balm",     selectedVariant: "Qty",           variants: { "Qty":      { price: 199, count: 0, unit: "5ML" } } },
+                            { id: 1811,   name: "Beetroot Lip Balms",                                       image: "pkbl.jpg",            cat: "pahadoka",                     subcat: "Lip Balm",     selectedVariant: "Qty",           variants: { "Qty":      { price: 299, count: 0, unit: "5ML" } } },                                                                                                                                                                                                                                                 
+
 
 /* need to know if omi is cool with this                { id: 1018,   name: "Hot Tea",                      image: "omiht.jpg",             cat: "partneromi",               subcat: "Beverages",                selectedVariant: "Qty",           variants: { "Qty":      { price: 42, count: 0, unit: "300ml" } } },
                               { id: 1019,   name: "Black Cofee",                                            image: "omibc.jpg",             cat: "partneromi",               subcat: "Beverages",                selectedVariant: "Qty",           variants: { "Qty":      { price: 52.5, count: 0, unit: "300ml" } } },
@@ -995,10 +1009,10 @@ window.addEventListener('resize', updateUI);
     // Map the index to the heading you want displayed ABOVE that card
     const sectionHeadings = {
         0: "Collaborate Stores",
-        8:  "Drinks & Snacks", /*3 */
-        14:  "Grocery & Kitchen",/*9 */
-        18: "Beauty and Personal Care",/*10 */
-        24: "House Hold Essentials"/*18 */
+        9:  "Drinks & Snacks", /*3 */
+        15:  "Grocery & Kitchen",/*9 */
+        19: "Beauty and Personal Care",/*10 */
+        25: "House Hold Essentials"/*18 */
     };
 
     collectionGrid.innerHTML = collections.map((c, i) => {
@@ -1320,8 +1334,8 @@ if (sliderTitle) {
     if (itemsTotal > 0 && locationTagged) {
         if (woodstockCheckbox.checked) {
             kmCharges = 80;
-        } else if (firstLocationWord === "kharkuli" || firstLocationWord === "bhatta") {
-            kmCharges = 100;
+        } else if (firstLocationWord === "kharkuli" || firstLocationWord === "bhatta" || firstLocationWord === "Semwala") {
+            kmCharges = 80;
         } else {
             if (currentDistance <= 1) kmCharges = 30;
             else if (currentDistance <= 2) kmCharges = 50; 
