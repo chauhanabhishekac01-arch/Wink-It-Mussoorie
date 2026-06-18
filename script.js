@@ -1137,6 +1137,9 @@ if (sliderTitle) {
         if (catName === "Fresh") {
             // Appends FAQ notice for Fresh category
             sliderTitle.innerText = catName + " (Please read F&Q no: 11 before ordering items from this list)";
+        } else if (catName === "Pahado Ka") {
+            // Appends making time notice for Cake Shop
+            sliderTitle.innerText = catName + " (Organic Products made in Nainital)";
         } else if (catName === "Cake Shop") {
             // Appends making time notice for Cake Shop
             sliderTitle.innerText = catName + " (2 Pound cake has a making time of 5 hrs)";
@@ -1146,7 +1149,8 @@ if (sliderTitle) {
         } else if (catName === "Aavi Everyday Store" || catName === "Taste of Uttarakhand") {
             // Appends info prompt for Aavi Everyday Store
             sliderTitle.innerText = catName + " (tap image for more info)";
-        } else {
+        }
+         else {
             // Default behavior for all other categories
             sliderTitle.innerText = catName;
         }
