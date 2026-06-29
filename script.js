@@ -190,12 +190,12 @@ startAutoPlay();
     const collections = [
         { id: "fined", name: "👑 Fine Dine Deluex",                     previews: ["fd.jpg"] },
         { id: "bakery", name: "Cake Shop",                          previews: ["bakery.jpg"] },
+        { id: "aavi", name: "Aavi Collection and Gift Store",                  previews: ["aavi.jpg"] },
         { id: "pahadoka", name: "Pahado Ka",                     previews: ["pklogo.jpg"] },
         { id: "tou", name: "Taste of Uttarakhand",                     previews: ["gad.jpg"] },
         { id: "partneromi", name: "Omi's Sweets",                   previews: ["omi.jpg"] },
         { id: "partneromif", name: "Omi's Food",                    previews: ["omifo.jpg"] },
         { id: "tos", name: "Taste of South",                     previews: ["tos.jpg"] },
-        { id: "aavi", name: "Aavi Collection and Gift Store",                  previews: ["aavi.jpg"] },
         { id: "garrison", name: "The Garrison",                     previews: ["glogo.jpg"] },
         { id: "beverages", name: "Drinks and Juices",               previews: ["dj.jpg"] },
         { id: "snacks", name: "Chips and Namkeens",                 previews: ["cn.jpg"] },
