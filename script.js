@@ -195,7 +195,7 @@ startAutoPlay();
         { id: "partneromi", name: "Omi's Sweets",                   previews: ["omi.jpg"] },
         { id: "partneromif", name: "Omi's Food",                    previews: ["omifo.jpg"] },
         { id: "tos", name: "Taste of South",                     previews: ["tos.jpg"] },
-        { id: "aavi", name: "Aavi Everyday Store",                  previews: ["aavi.jpg"] },
+        { id: "aavi", name: "Aavi Collection and Gift Store",                  previews: ["aavi.jpg"] },
         { id: "garrison", name: "The Garrison",                     previews: ["glogo.jpg"] },
         { id: "beverages", name: "Drinks and Juices",               previews: ["dj.jpg"] },
         { id: "snacks", name: "Chips and Namkeens",                 previews: ["cn.jpg"] },
