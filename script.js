@@ -188,7 +188,7 @@ startAutoPlay();
         { q: "11. Know more about ordering veggies and fruits.", a: "The following clauses apply to <i>Fruits and Veggies</i> category.<br><b>1. Mandatory Inspection:</b> Please check the quality of fruits and veggies carefully when they arrive.<br><b>2. Confirmed Satisfaction:</b> Our delivery partner will wait for your confirmation before finalizing the drop-off.<br><b>3. No Post-Delivery Returns:</b> Acceptance of the order constitutes a final sale; no refunds or returns are available once the delivery is finalized.<br><i>Note: Prices of veggies and fruits might vary from the ones shown on the website.." }
     ];
     const collections = [
-        { id: "fined", name: "👑 Fine Dine Deluex",                     previews: ["fd.jpg"] },
+        { id: "fined", name: "👑 Fine Dine Deluxe",                     previews: ["fd.jpg"] },
         { id: "bakery", name: "Cake Shop",                          previews: ["bakery.jpg"] },
         { id: "aavi", name: "Aavi Collection and Gift Store",                  previews: ["aavi.jpg"] },
         { id: "pahadoka", name: "Pahado Ka",                     previews: ["pklogo.jpg"] },
