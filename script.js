@@ -188,6 +188,7 @@ startAutoPlay();
         { q: "11. Know more about ordering veggies and fruits.", a: "The following clauses apply to <i>Fruits and Veggies</i> category.<br><b>1. Mandatory Inspection:</b> Please check the quality of fruits and veggies carefully when they arrive.<br><b>2. Confirmed Satisfaction:</b> Our delivery partner will wait for your confirmation before finalizing the drop-off.<br><b>3. No Post-Delivery Returns:</b> Acceptance of the order constitutes a final sale; no refunds or returns are available once the delivery is finalized.<br><i>Note: Prices of veggies and fruits might vary from the ones shown on the website.." }
     ];
     const collections = [
+        { id: "rs", name: "🌧️ Rainy Season Essentials",                     previews: ["rs.jpg"] },
         { id: "fined", name: "👑 Fine Dine Deluxe",                     previews: ["fd.jpg"] },
         { id: "bakery", name: "Cake Shop",                          previews: ["bakery.jpg"] },
         { id: "wc", name: "🍽️ Wink Cafe",                          previews: ["wc.jpg"] },
@@ -838,6 +839,13 @@ startAutoPlay();
                             { id: 1905,   name: "Banana Milk Shake",                                       image: "wcbs.jpg",            cat: "wc",                     subcat: "Shakes",     selectedVariant: "Qty",           variants: { "Qty":      { price: 59, count: 0, unit: "1gl" } } },                                                                                                                                                                                                                                                 
                             { id: 1906,   name: "Oreo Milk Shake",                                       image: "wcos.jpg",            cat: "wc",                     subcat: "Shakes",     selectedVariant: "Qty",           variants: { "Qty":      { price: 79, count: 0, unit: "1gl" } } },                                                                                                                                                                                                                                                 
 
+                            { id: 20001,   name: "Black Umbrella 40 Inch",                                       image: "rsu.jpg",            cat: "rs",                     subcat: "Umbrel la",     selectedVariant: "Qty",           variants: { "Qty":      { price: 220, count: 0, unit: "1gl" } } },                                                                                                                                                                                                                                                 
+                            { id: 20002,   name: "Disposable Rain Coat",                                       image: "rsr.jpg",            cat: "rs",                     subcat: "Rain Coat",     selectedVariant: "Qty",           variants: { "Qty":      { price: 99, count: 0, unit: "1gl" } } },                                                                                                                                                                                                                                                 
+                            { id: 20003, name: "Vicks Inhaler Keychain",                                       image: "chvi.jpg",              cat: "rs",                        subcat: "General",                   selectedVariant: "Qty",          variants: { "Qty":      { price: 60, count: 0, unit: "0.5ml" } } },
+                            { id: 20004, name: "Cofsils Orange Flavour, 10 Lozenges",                          image: "chcough.jpg",           cat: "rs",                        subcat: "General",                   selectedVariant: "Qty",          variants: { "Qty":      { price: 35, count: 0, unit: "1pk" } } },
+                            { id: 20005, name: "Control D N95 Mask",                                           image: "chn95.jpg",             cat: "rs",                        subcat: "General",                   selectedVariant: "Qty",          variants: { "Qty":      { price: 60, count: 0, unit: "1pc" } } },
+                            { id: 20006, name: "Dettol Antiseptic Liquid",                                    image: "cdettol.jpg",             cat: "rs",                        subcat: "General",                   selectedVariant: "Qty",          variants: { "Qty":      { price: 83, count: 0, unit: "125ml" } } },
+
 
 /* need to know if omi is cool with this                { id: 1018,   name: "Hot Tea",                      image: "omiht.jpg",             cat: "partneromi",               subcat: "Beverages",                selectedVariant: "Qty",           variants: { "Qty":      { price: 42, count: 0, unit: "300ml" } } },
                               { id: 1019,   name: "Black Cofee",                                            image: "omibc.jpg",             cat: "partneromi",               subcat: "Beverages",                selectedVariant: "Qty",           variants: { "Qty":      { price: 52.5, count: 0, unit: "300ml" } } },
@@ -1038,7 +1046,8 @@ window.addEventListener('resize', updateUI);
     function renderCollections() {
     // Map the index to the heading you want displayed ABOVE that card
     const sectionHeadings = {
-        0: "Collaborate Stores",
+        0: "Rainy Season Essentials",
+        1: "Collaborate Stores",
         9:  "Drinks & Snacks", /*3 */
         15:  "Grocery & Kitchen",/*9 */
         19: "Beauty and Personal Care",/*10 */
