@@ -472,7 +472,7 @@ startAutoPlay();
 /*Milk*/                 { id: 8134, name: "Amul Taaza Toned Milk Tetrapack",                                        image: "rmilkat.jpg",           cat: "dbm",                      subcat: "Milk",                      selectedVariant: "Qty",          variants: { "Qty":     { price: 77, count: 0, unit: "1L" } } },
 /*Milk*/                 { id: 8135, name: "Amul Gold",                                        image: "rmulkag.jpg",           cat: "dbm",                      subcat: "Milk",                      selectedVariant: "Qty",          variants: { "Qty":     { price: 83, count: 0, unit: "1L" } } },
                          /*{ id: 8035, name: "Ananda-Milk",                                                   image: "rananda.jpg",           cat: "dbm",                      subcat: "Milk",                      selectedVariant: "Qty",          variants: { "Qty":     { price: 22, count: 0, unit: "1pkt" } } },*/
-                         { id: 8036, name: "Egg Crate",                                                     image: "regg.jpg",              cat: "dbm",                      subcat: "Egg",                       selectedVariant: "Qty",          variants: { "Qty":     { price: 230, count: 0, unit: "1crt" } } },
+                         { id: 8036, name: "Egg Crate",                                                     image: "regg.jpg",              cat: "dbm",                      subcat: "Egg",                       selectedVariant: "Qty",          variants: { "Qty":     { price: 250, count: 0, unit: "1crt" } } },
                          { id: 8037, name: "White Bread",                                                   image: "rbreadw.jpg",           cat: "dbm",                      subcat: "Bread",                     selectedVariant: "Qty",          variants: { "Qty":     { price: 25, count: 0, unit: "350g" } } },
                          { id: 8038, name: "Amul Cheese 10 Slices X 20 gm",                                 image: "rcheese.jpg",           cat: "dbm",                      subcat: "Cheese",                     selectedVariant: "Qty",          variants: { "Qty":     { price: 145, count: 0, unit: "200g" } } },
                          { id: 8039, name: "Amul Curd",                                                     image: "rcurd.jpg",           cat: "dbm",                      subcat: "Curd",                     selectedVariant: "Qty",          variants: { "Qty":     { price: 47, count: 0, unit: "400g" } } },
@@ -1929,11 +1929,11 @@ whatsappBtn.addEventListener('click', () => {
 /*☆*/
     const referenceDate = new Date("2026-02-19"); /*★★★★☆*/
     const reviews = [
-        { name: "-Sahlani K-", img: "r2.jpg", stars: "★★★★☆(4/5)", text: "Our location was 11km away from Main Market, the order came on time ", from: "JW Marriott, Mussoorie", date: "2026-04-01" },
-        { name: "-Ronit Roy-", img: "r5.jpg", stars: "★★★★★(5/5)", text: "The delivery person made sure we were informed through out the order and delivery process", from: "Saint George's School, Barloganj, Mussoorie", date: "2026-03-26" },
-        { name: "-Mannu Paswan-", img: "r1.jpg", stars: "★★★★★(5/5)", text: "Excellent timing, and afordable prices.", from: "LBSNAA, Charleville, Mussoorie", date: "2026-03-20" },
-        { name: "-Priyanka Thapa-", img: "r3.jpg", stars: "★★★★★(5/5)", text: "ek item ka price zayada tha inke portal p pr delivery karte time inhone MRP p hi paise liye, hard to find such honesty as tourists can be over charges for anything", from: "Char Dukan, Landour, Mussoorie", date: "2026-03-23" },
-        { name: "-Bennet Johns-", img: "r4.jpg", stars: "★★★★☆(4/5)", text: "The delivery was 5 mins late but the delivery boy was always reachable and made sure we received all the items of demand", from: "Woodstock School, Tehri Road, Landour", date: "2026-03-25" }
+        { name: "-Sumaira Vishanathan-", img: "r2.png", stars: "★★★★★(5/5)", text: "The Delivery person was polite and followed all ", from: "English Country, Kaflani", date: "2026-06-01" },
+        { name: "-Alok Nath-", img: "r5.png", stars: "★★★★☆(4/5)", text: "Our delivery was 15mins late but the app made sure we were always updated", from: "GNFC School, Mussoorie", date: "2026-05-26" },
+        { name: "-Ramsharan Aggarwal-", img: "r1.png", stars: "★★★★☆(4/5)", text: "Very nice service for hilly areas", from: "Savoy Welcome Hotels, Mussoorie", date: "2026-05-20" },
+        { name: "-Anjali Negi-", img: "r3.png", stars: "★★★☆☆(3/5)", text: "Please find routes to beat the traffic and be more fast", from: "Natur's Lap, Mussoorie", date: "2026-06-23" },
+        { name: "-Martin-", img: "r4.png", stars: "★★★★★(5/5)", text: "The order was half and hour late but the quality and service were definatly worth the wait.", from: "Woodstock School, Tehri Road, Landour", date: "2026-06-25" }
         
     ];
     const reviewContainer = document.querySelector('.rbox');
