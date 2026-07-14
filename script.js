@@ -1929,7 +1929,7 @@ whatsappBtn.addEventListener('click', () => {
 /*☆*/
     const referenceDate = new Date("2026-02-19"); /*★★★★☆*/
     const reviews = [
-        { name: "-Sumaira Vishanathan-", img: "r2.png", stars: "★★★★★(5/5)", text: "The Delivery person was polite and followed all ", from: "English Country, Kaflani", date: "2026-06-01" },
+        { name: "-Sumaira Vishanathan-", img: "r2.png", stars: "★★★★★(5/5)", text: "The Delivery person was polite and followed all instructions", from: "English Country, Kaflani", date: "2026-06-01" },
         { name: "-Alok Nath-", img: "r5.png", stars: "★★★★☆(4/5)", text: "Our delivery was 15mins late but the app made sure we were always updated", from: "GNFC School, Mussoorie", date: "2026-05-26" },
         { name: "-Ramsharan Aggarwal-", img: "r1.png", stars: "★★★★☆(4/5)", text: "Very nice service for hilly areas", from: "Savoy Welcome Hotels, Mussoorie", date: "2026-05-20" },
         { name: "-Anjali Negi-", img: "r3.png", stars: "★★★☆☆(3/5)", text: "Please find routes to beat the traffic and be more fast", from: "Natur's Lap, Mussoorie", date: "2026-06-23" },
