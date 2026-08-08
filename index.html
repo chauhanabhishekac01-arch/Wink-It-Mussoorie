@@ -180,7 +180,7 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 16px;
-            margin-bottom: 40px;
+            margin-bottom: 28px;
         }
 
         .countdown-card {
@@ -213,6 +213,30 @@
             color: var(--text-muted);
         }
 
+        /* Contact Support Call Link Button */
+        .support-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 30px;
+            box-shadow: 0 4px 16px rgba(245, 158, 11, 0.35);
+            transition: all 0.3s ease;
+            margin: 8px 0 16px 0;
+        }
+
+        .support-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 22px rgba(245, 158, 11, 0.5);
+            background: linear-gradient(135deg, #fbbf24, #d97706);
+        }
+
         .footer-note {
             font-size: 0.8rem;
             color: rgba(255, 255, 255, 0.3);
@@ -235,6 +259,7 @@
             .time-number { font-size: 1.75rem; }
             .countdown-card { padding: 16px 4px; }
             .maintenance-container { padding: 30px 16px; margin: 16px; }
+            .support-btn { width: 100%; }
         }
     </style>
 </head>
@@ -277,6 +302,14 @@
                 <div class="time-label">Seconds</div>
             </div>
         </div>
+
+        <!-- Call Link Button -->
+        <a href="tel:+917983427187" class="support-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            Contact Support
+        </a>
 
         <p class="footer-note">&copy; 2026 Wink It Mussoorie. All rights reserved.</p>
     </div>
