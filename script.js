@@ -189,9 +189,9 @@ startAutoPlay();
         { q: "12. Where is The Fine Dine Deluxe restraunt?", a: "The Fine Dine is not a restraunt, the Fine Dine Deluxe is an experience where we deliver the meals from the restraunt which has good review for the added item.." }
     ];
     const collections = [
-        { id: "rs", name: "🌧️ Rainy Season Essentials",                     previews: ["rs.jpg"] },
-        { id: "bakery", name: "Cake Shop",                          previews: ["bakery.jpg"] },
+        { id: "rakshab", name: "Raksha Bandhan Special",                     previews: ["rak.jpg"] },
         { id: "aavi", name: "👑 Gift Store",                  previews: ["aavi.jpg"] },
+        { id: "bakery", name: "Cake Shop",                          previews: ["bakery.jpg"] },
         { id: "fined", name: "Fine Dine Deluxe",                     previews: ["fd.jpg"] },
         { id: "wc", name: "🍽️ Wink Cafe",                          previews: ["wc.jpg"] },
         { id: "pahadoka", name: "Pahado Ka",                     previews: ["pklogo.jpg"] },
@@ -584,7 +584,7 @@ startAutoPlay();
                           { id: 1063,   name: "Rasmalai",                                                   image: "omirmalai.jpg",         cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 50, count: 0, unit: "1pc" } } },
                           /*{ id: 1064,   name: "Boondi Ladoo",                                               image: "omibladoo.jpg",         cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 80, count: 0, unit: "250g" }, "Qty.": { price: 320, count: 0, unit: "1kg" } } },*/
                           { id: 1066,   name: "Imarti",                                                     image: "omiimarti.jpg",         cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 25, count: 0, unit: "1pc" }, "Qty.": { price: 370, count: 0, unit: "1kg" } } },
-                          { id: 1067,   name: "Mix Sweets",                                                 image: "omimsweet.jpg",         cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 250, count: 0, unit: "500g" }, "Qty.": { price: 500, count: 0, unit: "1kg" } } },
+                          /*{ id: 1067,   name: "Mix Sweets",                                                 image: "omimsweet.jpg",         cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 250, count: 0, unit: "500g" }, "Qty.": { price: 500, count: 0, unit: "1kg" } } },*/
                           { id: 1068,   name: "Motichoor Ladoo",                                            image: "omimcl.jpg",            cat: "partneromi",               subcat: "Sweets",                    selectedVariant: "Qty",          variants: { "Qty":     { price: 50, count: 0, unit: "4pc" }, "Qty.": { price: 160, count: 0, unit: "500g" } } },
                           { id: 10691,  name: "Malai Ghewar",                                               image: "omimg.jpg",             cat: "partneromi",               subcat: "All",                       selectedVariant: "Qty",          variants: { "Qty":     { price: 300, count: 0, unit: "500g" }, "Qty.": { price: 600, count: 0, unit: "1kg" } } },
 
@@ -852,12 +852,17 @@ startAutoPlay();
                             { id: 1905,   name: "Banana Milk Shake",                                       image: "wcbs.jpg",            cat: "wc",                     subcat: "Shakes",     selectedVariant: "Qty",           variants: { "Qty":      { price: 59, count: 0, unit: "1gl" } } },                                                                                                                                                                                                                                                 
                             { id: 1906,   name: "Oreo Milk Shake",                                       image: "wcos.jpg",            cat: "wc",                     subcat: "Shakes",     selectedVariant: "Qty",           variants: { "Qty":      { price: 79, count: 0, unit: "1gl" } } },                                                                                                                                                                                                                                                 
 
-                            { id: 20001,   name: "Black Umbrella 40 Inch",                                       image: "rsu.jpg",            cat: "rs",                     subcat: "Umbrel la",     selectedVariant: "Qty",           variants: { "Qty":      { price: 220, count: 0, unit: "1pc" } } },                                                                                                                                                                                                                                                 
+                            /*{ id: 20001,   name: "Black Umbrella 40 Inch",                                       image: "rsu.jpg",            cat: "rs",                     subcat: "Umbrel la",     selectedVariant: "Qty",           variants: { "Qty":      { price: 220, count: 0, unit: "1pc" } } },                                                                                                                                                                                                                                                 
                             { id: 20002,   name: "Disposable Rain Coat",                                       image: "rsr.jpg",            cat: "rs",                     subcat: "Rain Coat",     selectedVariant: "Qty",           variants: { "Qty":      { price: 149, count: 0, unit: "1pc" } } },                                                                                                                                                                                                                                                 
                             { id: 20003, name: "Vicks Inhaler Keychain",                                       image: "chvi.jpg",              cat: "rs",                        subcat: "General",                   selectedVariant: "Qty",          variants: { "Qty":      { price: 60, count: 0, unit: "0.5ml" } } },
                             { id: 20004, name: "Cofsils Orange Flavour, 10 Lozenges",                          image: "chcough.jpg",           cat: "rs",                        subcat: "General",                   selectedVariant: "Qty",          variants: { "Qty":      { price: 35, count: 0, unit: "1pk" } } },
                             { id: 20005, name: "Control D N95 Mask",                                           image: "chn95.jpg",             cat: "rs",                        subcat: "General",                   selectedVariant: "Qty",          variants: { "Qty":      { price: 60, count: 0, unit: "1pc" } } },
-                            { id: 20006, name: "Dettol Antiseptic Liquid",                                    image: "cdettol.jpg",             cat: "rs",                        subcat: "General",                   selectedVariant: "Qty",          variants: { "Qty":      { price: 83, count: 0, unit: "125ml" } } },
+                            { id: 20006, name: "Dettol Antiseptic Liquid",                                    image: "cdettol.jpg",             cat: "rs",                        subcat: "General",                   selectedVariant: "Qty",          variants: { "Qty":      { price: 83, count: 0, unit: "125ml" } } },*/
+
+                            { id: 20001,   name: "Gift Hamper",                                           image: "rakham.jpg",            cat: "rakshab",                    subcat: "All",    description: "Lotte Choco Pie Rs 10, Milky Bar Rs 20, Paper Boat Rs 10, Gems Rs 10, Crispello Rs 20, Smooth Rs 10, Kitkat Rs 20, Oreo Rs 10 and, Chupa Chup Rs 10 or \n*Customize Hamper in whatsapp chat*",    gallery: ["rakham.jpg"],   selectedVariant: "Qty",           variants: { "Qty":     { price: 100, count: 0, unit: "250g" }, "Qty.": { price: 200, count: 0, unit: "500g" } } },
+                            { id: 20002,   name: "Rakhee",                                                image: "rakr.jpg",            cat: "rakshab",                     subcat: "All",    description: "A simple rakhee or \n*Customize Rakhee in whatsapp chat* ",    gallery: ["rakR.jpg"],      selectedVariant: "Qty",           variants: { "Qty":      { price: 25, count: 0, unit: "1"}, "Qty.": { price: 0, count: 0, unit: "Custom" } } },
+                            { id: 20003,   name: "Photo Frame",                                           image: "rakpf.jpg",            cat: "rakshab",                     subcat: "All",   description: "A photo frame of 3X4 Inch demension or \n*Customize Frame in whatsapp chat* ",    gallery: ["rakPF.jpg"],       selectedVariant: "Qty",           variants: { "Qty":      { price: 299, count: 0, unit: "3X4inc"}, "Qty.": { price: 0, count: 0, unit: "Custom" } } },
+                            { id: 1067,   name: "Omi's Mix Sweets",                                       image: "omimsweet.jpg",            cat: "rakshab",                    subcat: "All",   description: "Mix Sweets the best festive choice or \n*Customize Sweet in whatsapp chat* ",    gallery: ["omimsweet.jpg"],      selectedVariant: "Qty",           variants: { "Qty":      { price: 250, count: 0, unit: "500g"}, "Qty.": { price: 0, count: 0, unit: "Custom" } } },
 
 
 /* need to know if omi is cool with this                { id: 1018,   name: "Hot Tea",                      image: "omiht.jpg",             cat: "partneromi",               subcat: "Beverages",                selectedVariant: "Qty",           variants: { "Qty":      { price: 42, count: 0, unit: "300ml" } } },
@@ -1059,8 +1064,8 @@ window.addEventListener('resize', updateUI);
     function renderCollections() {
     // Map the index to the heading you want displayed ABOVE that card
     const sectionHeadings = {
-        0: "Rainy Season Essentials",
-        1: "Collaborate Stores",
+        0: "Festive Season",
+        2: "Collaborate Stores",
         9:  "Drinks & Snacks", /*3 */
         15:  "Grocery & Kitchen",/*9 */
         19: "Beauty and Personal Care",/*10 */
@@ -1201,6 +1206,9 @@ if (sliderTitle) {
         } else if (catName === "Aavi Everyday Store" || catName === "Taste of Uttarakhand") {
             // Appends info prompt for Aavi Everyday Store
             sliderTitle.innerText = catName + " (tap image for more info)";
+        } else if (catName === "Raksha Bandhan Special") {
+            // Appends info prompt for Raksha Bandhan Special
+            sliderTitle.innerText = catName + " (Note: Delivery on 27th Aug only)";
         }
          else {
             // Default behavior for all other categories
@@ -1539,7 +1547,7 @@ productGrid.addEventListener('click', (e) => {
     if (card && (target.classList.contains('iimg') || target.tagName === 'H4')) {
         const p = products.find(prod => prod.id == card.dataset.prodId);
         
-        if (p && (p.cat === 'aavi' || p.cat === 'tou')) {
+        if (p && (p.cat === 'aavi' || p.cat === 'rakshab')) {
             activeGallery = p.gallery || [p.image]; 
             currentSlideIndex = 0;
             
