@@ -70,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtn = document.getElementById('nextBtn');
     const serviceDots = document.querySelectorAll('.dota');
     const woodstockCheckbox = document.getElementById('woodstock-student');
+    const itmCheckbox = document.getElementById('itm-student');
     const locationBtn = document.getElementById('location-btn');
     // --- WINK IT CONFIGUadc ---
     // These coordinates are set to the heart of Mussoorie (approx Kulri/Mall Rd area)
@@ -146,6 +147,9 @@ woodstockCheckbox.addEventListener('change', () => {
     const display = document.getElementById('location-display');
     
     if (woodstockCheckbox.checked) {
+        // Uncheck the other checkbox
+        itmCheckbox.checked = false;
+
         // Disable and style the button
         locationBtn.disabled = true;
         locationBtn.classList.add('disabled-grey'); 
@@ -154,6 +158,33 @@ woodstockCheckbox.addEventListener('change', () => {
         firstLocationWord = "woodstock";
         custAddressInput.value = "Woodstock School, Mussoorie, 248179";
         display.innerText = "✅ Woodstock Student Applied";
+    } else {
+        // Re-enable the button
+        locationBtn.disabled = false;
+        locationBtn.classList.remove('disabled-grey');
+        
+        locationTagged = false;
+        custAddressInput.value = "";
+        display.innerText = "";
+    }
+    updateSidebar();
+});
+
+itmCheckbox.addEventListener('change', () => {
+    const display = document.getElementById('location-display');
+    
+    if (itmCheckbox.checked) {
+        // Uncheck the other checkbox
+        woodstockCheckbox.checked = false;
+
+        // Disable and style the button
+        locationBtn.disabled = true;
+        locationBtn.classList.add('disabled-grey'); 
+        
+        locationTagged = true;
+        firstLocationWord = "itm";
+        custAddressInput.value = "ITM Cantt, Char Dukan, Mussoorie, 248179";
+        display.innerText = "✅ ITM Cantt Applied";
     } else {
         // Re-enable the button
         locationBtn.disabled = false;
@@ -1398,7 +1429,11 @@ if (sliderTitle) {
     if (itemsTotal > 0 && locationTagged) {
         if (woodstockCheckbox.checked) {
             kmCharges = 80;
-        } else if (firstLocationWord === "kharkuli" || firstLocationWord === "bhatta" || firstLocationWord === "Semwala") {
+        }
+        else if (itmCheckbox.checked) {
+            kmCharges = 50;
+        }
+        else if (firstLocationWord === "kharkuli" || firstLocationWord === "bhatta" || firstLocationWord === "Semwala") {
             kmCharges = 80;
         } else {
             if (currentDistance <= 1) kmCharges = 30;
