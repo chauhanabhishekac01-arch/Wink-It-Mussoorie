@@ -248,6 +248,7 @@ startAutoPlay();
         { id: "face", name: "Face",                                 previews: ["f.jpg"] },
         { id: "g", name: "General",                                 previews: ["g.jpg"] },
         { id: "cleaningessentials", name: "Cleaners and Freshners", previews: ["cf.jpg"] },
+        { id: "gng", name: "Games and Gym",                         previews: ["gng.jpg"] },
         
         
         
@@ -407,6 +408,7 @@ startAutoPlay();
                         { id: 5017, name: "Garnier Men Acno Fight Anti-Pimple Face Wash ",                  image: "chgarniersh.jpg",       cat: "face",                     subcat: "Facewash",                   selectedVariant: "Qty",         variants: { "Qty":      { price: 125, count: 0, unit: "50g" } } },
                         { id: 5020, name: "Face Ice Roller, silicone container, reuseable ",                  image: "faceir.jpg",       cat: "face",                     subcat: "Roller",                   selectedVariant: "Qty",         variants: { "Qty":      { price: 120, count: 0, unit: "120ml" } } },
                         { id: 5021, name: "Garnier Vitamin C serum mask",                                     image: "gfm.jpg",       cat: "face",                     subcat: "Masks",                   selectedVariant: "Qty",         variants: { "Qty":      { price: 115, count: 0, unit: "28g" } } },
+                        { id: 7103, name: "Pilgrim Korean Rice Hydra Glow Moisturizer",                  image: "facep.jpg",              cat: "face",                        subcat: "Premium",                   selectedVariant: "Qty",          variants: { "Qty":      { price: 275, count: 0, unit: "50gm" } } },
 
 
 /*Grooming*/            { id: 5010, name: "Scissors 2 X 4.25inch",                                          image: "pcscissors.jpg",        cat: "g",                        subcat: "Grooming",                   selectedVariant: "Size",        variants: { "Size":     { price: 50, count: 0, unit: "2x4inch" } } },
@@ -894,6 +896,10 @@ startAutoPlay();
                             { id: 20002,   name: "Rakhee",                                                image: "rakr.jpg",            cat: "rakshab",                     subcat: "All",    description: "A simple rakhee or \n*Customize Rakhee in whatsapp chat* ",    gallery: ["rakr.jpg"],      selectedVariant: "Qty",           variants: { "Qty":      { price: 25, count: 0, unit: "1"}, "Qty.": { price: 0, count: 0, unit: "Custom" } } },
                             { id: 20003,   name: "Photo Frame",                                           image: "rakpf.jpg",            cat: "rakshab",                     subcat: "All",   description: "A photo frame of 3X4 Inch demension or \n*Customize Frame in whatsapp chat* ",    gallery: ["rakpf.jpg"],       selectedVariant: "Qty",           variants: { "Qty":      { price: 299, count: 0, unit: "3X4inc"}, "Qty.": { price: 0, count: 0, unit: "Custom" } } },
                             { id: 1067,   name: "Omi's Mix Sweets",                                       image: "omimsweet.jpg",            cat: "rakshab",                    subcat: "All",   description: "Mix Sweets the best festive choice or \n*Customize Sweet in whatsapp chat* ",    gallery: ["omimsweet.jpg"],      selectedVariant: "Qty",           variants: { "Qty":      { price: 250, count: 0, unit: "500g"}, "Qty.": { price: 0, count: 0, unit: "Custom" } } },
+
+                            { id: 30001,   name: "Tambola 48 Reusable punch cards",                                       image: "gngt.jpg",            cat: "gng",                     subcat: "Games",     selectedVariant: "Qty",           variants: { "Qty":      { price: 440, count: 0, unit: "1" } } },                                                                                                                                                                                                                                                 
+                            { id: 30002,   name: "Hand Gripper Unisex Adjustable",                                       image: "gym.jpg",            cat: "gng",                     subcat: "Games",     selectedVariant: "Qty",           variants: { "Qty":      { price: 499, count: 0, unit: "1" } } },                                                                                                                                                                                                                                                 
+                            { id: 30000,   name: "Uno Cards",                                       image: "uno.jpg",            cat: "gng",                     subcat: "Card Games",     selectedVariant: "Qty",           variants: { "Qty":      { price: 149, count: 0, unit: "1" } } },                                                                                                                                                                                                                                                 
 
 
 /* need to know if omi is cool with this                { id: 1018,   name: "Hot Tea",                      image: "omiht.jpg",             cat: "partneromi",               subcat: "Beverages",                selectedVariant: "Qty",           variants: { "Qty":      { price: 42, count: 0, unit: "300ml" } } },
