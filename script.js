@@ -220,8 +220,7 @@ startAutoPlay();
         { q: "12. Where is The Fine Dine Deluxe restraunt?", a: "The Fine Dine is not a restraunt, the Fine Dine Deluxe is an experience where we deliver the meals from the restraunt which has good review for the added item.." }
     ];
     const collections = [
-        { id: "rakshab", name: "Raksha Bandhan Special",                     previews: ["rak.jpg"] },
-        { id: "aavi", name: "👑 Gift Store",                  previews: ["aavi.jpg"] },
+        { id: "gng", name: "Games and Gym",                         previews: ["gng.jpg"] },
         { id: "bakery", name: "Cake Shop",                          previews: ["bakery.jpg"] },
         { id: "fined", name: "Fine Dine Deluxe",                     previews: ["fd.jpg"] },
         { id: "wc", name: "🍽️ Wink Cafe",                          previews: ["wc.jpg"] },
@@ -230,6 +229,7 @@ startAutoPlay();
         { id: "partneromi", name: "Omi's Sweets",                   previews: ["omi.jpg"] },
         { id: "partneromif", name: "Omi's Food",                    previews: ["omifo.jpg"] },
         { id: "tos", name: "Taste of South",                     previews: ["tos.jpg"] },
+        { id: "aavi", name: "👑 Gift Store",                  previews: ["aavi.jpg"] },
         /*{ id: "garrison", name: "The Garrison",                     previews: ["glogo.jpg"] },*/
         { id: "beverages", name: "Drinks and Juices",               previews: ["dj.jpg"] },
         { id: "snacks", name: "Chips and Namkeens",                 previews: ["cn.jpg"] },
@@ -248,7 +248,7 @@ startAutoPlay();
         { id: "face", name: "Face",                                 previews: ["f.jpg"] },
         { id: "g", name: "General",                                 previews: ["g.jpg"] },
         { id: "cleaningessentials", name: "Cleaners and Freshners", previews: ["cf.jpg"] },
-        { id: "gng", name: "Games and Gym",                         previews: ["gng.jpg"] },
+        
         
         
         
@@ -1101,8 +1101,8 @@ window.addEventListener('resize', updateUI);
     function renderCollections() {
     // Map the index to the heading you want displayed ABOVE that card
     const sectionHeadings = {
-        0: "Festive Season",
-        2: "Collaborate Stores",
+        0: "Latest Additions",
+        1: "Collaborate Stores",
         9:  "Drinks & Snacks", /*3 */
         15:  "Grocery & Kitchen",/*9 */
         19: "Beauty and Personal Care",/*10 */
