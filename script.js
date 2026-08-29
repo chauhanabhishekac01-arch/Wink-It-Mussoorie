@@ -221,6 +221,7 @@ startAutoPlay();
     ];
     const collections = [
         { id: "gng", name: "Games and Gym",                         previews: ["gng.jpg"] },
+        { id: "dp", name: "Discounted Items",                        previews: ["dp.jpg"] },
         { id: "bakery", name: "Cake Shop",                          previews: ["bakery.jpg"] },
         { id: "fined", name: "Fine Dine Deluxe",                     previews: ["fd.jpg"] },
         { id: "wc", name: "🍽️ Wink Cafe",                          previews: ["wc.jpg"] },
@@ -423,7 +424,7 @@ startAutoPlay();
 
 /*cloths*/                { id: 6001, name: "Ariel Power Gel Front Load Liquid Detergent",                  image: "clarielb.jpg",          cat: "cleaningessentials",       subcat: "Detergent",                  selectedVariant: "Qty",         variants: { "Qty":      { price: 215, count: 0, unit: "950ml" } } },
                           { id: 6002, name: "Comfort After Wash Fabric Conditioner -Lily Fresh",            image: "clcomforlf.jpg",        cat: "cleaningessentials",       subcat: "Detergent",                  selectedVariant: "Qty",         variants: { "Qty":      { price: 235, count: 0, unit: "860ml" } } },
-                          { id: 6003, name: "Comfort After Wash Fabric Conditioner -Morning Fresh",         image: "clcomfortmf.jpg",       cat: "cleaningessentials",       subcat: "Detergent",                  selectedVariant: "Qty",         variants: { "Qty":      { price: 235, count: 0, unit: "860ml" } } },
+                          /*{ id: 6003, name: "Comfort After Wash Fabric Conditioner -Morning Fresh",         image: "clcomfortmf.jpg",       cat: "cleaningessentials",       subcat: "Detergent",                  selectedVariant: "Qty",         variants: { "Qty":      { price: 235, count: 0, unit: "860ml" } } },*/
 
 /*Toilet & Bathroom*/     { id: 6004, name: "Harpic Advanced Disinfectant Toilet Cleaner",                 image: "clharpic.jpg",          cat: "cleaningessentials",       subcat: "Toilet & Bathroom",         selectedVariant: "Qty",          variants: { "Qty":      { price: 110, count: 0, unit: "500ml" } } },
                           { id: 6010, name: "Harpic Disinfectant Bathroom Cleaner (Floral)",                image: "clharpicr.jpg",         cat: "cleaningessentials",       subcat: "Toilet & Bathroom",         selectedVariant: "Qty",          variants: { "Qty":      { price: 115, count: 0, unit: "1kg" } } },
@@ -432,7 +433,7 @@ startAutoPlay();
 /*Room Freshners*/        { id: 6006, name: "Odonil Lavender Mist Room Freshener (Lavender)",               image: "clodonill.jpg",         cat: "cleaningessentials",       subcat: "Room Freshners",            selectedVariant: "Qty",          variants: { "Qty":      { price: 170, count: 0, unit: "220ml" } } },
         
 /*Surface Cleaners*/      { id: 6007, name: "Colin Glass Cleaner ",                                         image: "clcolin.jpg",           cat: "cleaningessentials",       subcat: "Surface Cleaners",          selectedVariant: "Qty",          variants: { "Qty":      { price: 120, count: 0, unit: "500ml" } } },
-                          { id: 6008, name: "Lizol Disinfectant Surface and Floor Cleaner ",                image: "cllizol.jpg",           cat: "cleaningessentials",       subcat: "Surface Cleaners",          selectedVariant: "Qty",          variants: { "Qty":      { price: 260, count: 0, unit: "1L" } } },
+                          /*{ id: 6008, name: "Lizol Disinfectant Surface and Floor Cleaner ",                image: "cllizol.jpg",           cat: "cleaningessentials",       subcat: "Surface Cleaners",          selectedVariant: "Qty",          variants: { "Qty":      { price: 260, count: 0, unit: "1L" } } },*/
                           { id: 6009, name: "Feather's Premium Paper Napkin(ply 2) ",                       image: "clfeathern.jpg",        cat: "cleaningessentials",       subcat: "Surface Cleaners",          selectedVariant: "Qty",          variants: { "Qty":      { price: 90, count: 0, unit: "105gm" } } },
                           { id: 6010, name: "Floor Mat - Grey",                                             image: "clfmgr.jpg",            cat: "cleaningessentials",       subcat: "Floor Mat",                 selectedVariant: "Qty",          variants: { "Qty":      { price: 199, count: 0, unit: "1pc" } } },
                           { id: 6011, name: "Floor Mat - Green",                                            image: "clfmg.jpg",             cat: "cleaningessentials",       subcat: "Floor Mat",                 selectedVariant: "Qty",          variants: { "Qty":      { price: 299, count: 0, unit: "1pc" } } },
@@ -901,6 +902,9 @@ startAutoPlay();
                             { id: 30002,   name: "Hand Gripper Unisex Adjustable",                                       image: "gym.jpg",            cat: "gng",                     subcat: "Games",     selectedVariant: "Qty",           variants: { "Qty":      { price: 499, count: 0, unit: "1" } } },                                                                                                                                                                                                                                                 
                             { id: 30000,   name: "Uno Cards",                                       image: "uno.jpg",            cat: "gng",                     subcat: "Card Games",     selectedVariant: "Qty",           variants: { "Qty":      { price: 149, count: 0, unit: "1" } } },                                                                                                                                                                                                                                                 
 
+                            { id: 6003, name: "Comfort After Wash Fabric Conditioner -Morning Fresh<br>MRP:Rs 245",         image: "clcomfortmf.jpg",       cat: "dp",       subcat: "Detergent",                  selectedVariant: "Qty",         variants: { "Qty":      { price: 229, count: 0, unit: "860ml" } } },
+                            { id: 6008, name: "Lizol Disinfectant Surface and Floor Cleaner<br>MRP:Rs 260",                image: "cllizol.jpg",           cat: "dp",       subcat: "Surface Cleaners",          selectedVariant: "Qty",          variants: { "Qty":      { price: 239, count: 0, unit: "1L" } } },
+
 
 /* need to know if omi is cool with this                { id: 1018,   name: "Hot Tea",                      image: "omiht.jpg",             cat: "partneromi",               subcat: "Beverages",                selectedVariant: "Qty",           variants: { "Qty":      { price: 42, count: 0, unit: "300ml" } } },
                               { id: 1019,   name: "Black Cofee",                                            image: "omibc.jpg",             cat: "partneromi",               subcat: "Beverages",                selectedVariant: "Qty",           variants: { "Qty":      { price: 52.5, count: 0, unit: "300ml" } } },
@@ -1102,7 +1106,7 @@ window.addEventListener('resize', updateUI);
     // Map the index to the heading you want displayed ABOVE that card
     const sectionHeadings = {
         0: "Latest Additions",
-        1: "Collaborate Stores",
+        2: "Collaborate Stores",
         9:  "Drinks & Snacks", /*3 */
         15:  "Grocery & Kitchen",/*9 */
         19: "Beauty and Personal Care",/*10 */
@@ -1243,9 +1247,9 @@ if (sliderTitle) {
         } else if (catName === "Aavi Everyday Store" || catName === "Taste of Uttarakhand") {
             // Appends info prompt for Aavi Everyday Store
             sliderTitle.innerText = catName + " (tap image for more info)";
-        } else if (catName === "Raksha Bandhan Special") {
-            // Appends info prompt for Raksha Bandhan Special
-            sliderTitle.innerText = catName + " (Note: Delivery on 27th Aug only)";
+        } else if (catName === "Discounted Items") {
+            // Appends info prompt for Discounted Items
+            sliderTitle.innerText = catName + " (Note: Only canceled order products are sold in Discount)";
         }
          else {
             // Default behavior for all other categories
