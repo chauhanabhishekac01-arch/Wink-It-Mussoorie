@@ -419,7 +419,8 @@ startAutoPlay();
                         { id: 5013,  name: "Nail Clipper",                                                  image: "pcnc.jpg",              cat: "g",                        subcat: "Grooming",                   selectedVariant: "Qty",       variants: { "Qty":    { price: 80, count: 0, unit: "1pc" } } },
 
 
-/*Dental*/              { id: 5014, name: "Colgate",                                                        image: "pccolgate.jpg",         cat: "g",                        subcat: "Dental",                     selectedVariant: "Tube",        variants: { "Tube":     { price: 135, count: 0, unit: "180ml" } } },
+/*Dental*/              { id: 5014, name: "Colgate",                                                        image: "pccolgate.jpg",         cat: "g",                        subcat: "Dental",                     selectedVariant: "Tube",        variants: { "Tube":     { price: 135, count: 0, unit: "180g" } } },
+/*Dental*/              { id: 5026, name: "Colgate Total",                                                        image: "colgatet.jpg",         cat: "g",                        subcat: "Dental",                     selectedVariant: "Tube",        variants: { "Tube":     { price: 50, count: 0, unit: "25g" } } },
                         { id: 5015, name: "Oral-B Pro Clean",                                               image: "pcoralb.jpg",           cat: "g",                        subcat: "Dental",                     selectedVariant: "Qty",       variants: { "Qty":    { price: 55, count: 0, unit: "1pc" } } },
 
 
