@@ -224,7 +224,6 @@ startAutoPlay();
         { id: "dp", name: "Discounted Items",                        previews: ["dp.jpg"] },
         { id: "bakery", name: "Cake Shop",                          previews: ["bakery.jpg"] },
         { id: "fined", name: "Fine Dine Deluxe",                     previews: ["fd.jpg"] },
-        { id: "wc", name: "🍽️ Wink Cafe",                          previews: ["wc.jpg"] },
         { id: "pahadoka", name: "Pahado Ka",                     previews: ["pklogo.jpg"] },
         /*{ id: "tou", name: "Taste of Uttarakhand",                     previews: ["gad.jpg"] },*/
         { id: "partneromi", name: "Omi's Sweets",                   previews: ["omi.jpg"] },
