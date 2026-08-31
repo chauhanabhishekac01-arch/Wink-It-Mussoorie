@@ -249,6 +249,7 @@ startAutoPlay();
         { id: "face", name: "Face",                                 previews: ["f.jpg"] },
         { id: "g", name: "General",                                 previews: ["g.jpg"] },
         { id: "cleaningessentials", name: "Cleaners and Freshners", previews: ["cf.jpg"] },
+        { id: "other", name: "Others",                              previews: ["cell.jpg"] },
         
         
         
@@ -503,7 +504,7 @@ startAutoPlay();
                         { id: 8024, name: "Fortune Sunflower Oil",                                         image: "rfsl.jpg",              cat: "mo",                       subcat: "Oil",                       selectedVariant: "L",            variants: { "L":       { price: 185, count: 0, unit: "800g" } } },
                         { id: 8910, name: "TilMoti Sesame Oil",                                         image: "rsoil.jpg",              cat: "mo",                       subcat: "Oil",                       selectedVariant: "L",            variants: { "L":       { price: 250, count: 0, unit: "1L" } } },
                         { id: 8124, name: "Nilons Ginger Garlic Paste",                                    image: "rngg.jpg",              cat: "mo",                       subcat: "Ginger Garlic",             selectedVariant: "L",            variants: { "L":       { price: 60, count: 0, unit: "200g" } } },
-                        { id: 8125, name: "Snapin Oregano",                                    image: "rnsoregano.jpg",              cat: "mo",                       subcat: "Spices",             selectedVariant: "L",            variants: { "L":       { price: 109, count: 0, unit: "20g" } } },
+                        { id: 8125, name: "MDH Chunky Chat Masala",                                    image: "mdhchunky.jpg",              cat: "mo",                       subcat: "Spices",             selectedVariant: "L",            variants: { "L":       { price: 94, count: 0, unit: "100g" } } },
                         { id: 8126, name: "Snapin Chilli Flakes",                                    image: "rnschillif.jpg",              cat: "mo",                       subcat: "Spices",             selectedVariant: "L",            variants: { "L":       { price: 95, count: 0, unit: "38g" } } },
 
 /*General*/              { id: 8025, name: "Poha",                                                          image: "rpoha.jpg",             cat: "adc",                      subcat: "General",                   selectedVariant: "Qty",          variants: { "Qty":     { price: 60, count: 0, unit: "500g" } } },
@@ -904,6 +905,8 @@ startAutoPlay();
 
                             { id: 6003, name: "Comfort After Wash Fabric Conditioner -Morning Fresh<br>MRP:Rs 245",         image: "clcomfortmf.jpg",       cat: "dp",       subcat: "Detergent",                  selectedVariant: "Qty",         variants: { "Qty":      { price: 229, count: 0, unit: "860ml" } } },
                             { id: 6008, name: "Lizol Disinfectant Surface and Floor Cleaner<br>MRP:Rs 260",                image: "cllizol.jpg",           cat: "dp",       subcat: "Surface Cleaners",          selectedVariant: "Qty",          variants: { "Qty":      { price: 239, count: 0, unit: "1L" } } },
+
+                            { id: 40008, name: "Duracell AA Cell",                image: "cell.jpg",           cat: "other",       subcat: "All",          selectedVariant: "Qty",          variants: { "Qty":      { price: 25, count: 0, unit: "1" } } },
 
 
 /* need to know if omi is cool with this                { id: 1018,   name: "Hot Tea",                      image: "omiht.jpg",             cat: "partneromi",               subcat: "Beverages",                selectedVariant: "Qty",           variants: { "Qty":      { price: 42, count: 0, unit: "300ml" } } },
