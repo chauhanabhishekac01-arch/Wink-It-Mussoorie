@@ -1919,42 +1919,140 @@ whatsappBtn.addEventListener('click', () => {
     const locationLink = userCoords ? `https://www.google.com/maps?q=${userCoords.lat},${userCoords.lon}` : `(Location not tagged)`;
     const divider = "--------------------------\n"; 
     
-    let msg = `🛍️ *NEW ORDER - WINK IT*\n`;
+    let msg = `*🛍️ NEW ORDER - WINK IT*\n`;
     msg += divider;
     msg += `📅 Date: ${dateStr} | ${timeStr}\n`;
     msg += `👤 Name: ${name}\n📍 Address: ${address}\n🗺️ Location: ${locationLink}\n\n`;
-    msg += `🛒 *ITEMS:*\n`;
+    msg += `*🛒 ITEMS:*\n\n`;
     
     let itemIndex = 1;
     let totalGst = 0; 
     let itemsForSheet = ""; 
 
     const categoryNames = {
+        "gng": "Games and Gym",
+        "dp": "Discounted Items",
+        "bakery": "Cake Shop",
+        "fined": "Fine Dine Deluxe",
+        "pahadoka": "Pahado Ka",
+        "tou": "Taste of Uttarakhand",
         "partneromi": "Omi's Sweets",
-        "partneromifood": "Omi's Food",
-        "omipartnerf": "Omi's Food",
-        "partneromif": "Omi's Sweets",
-        "garrison": "The Garrison"
+        "partneromif": "Omi's Food",
+        "tos": "Taste of South",
+        "aavi": "👑 Gift Store",
+        "garrison": "The Garrison",
+        "beverages": "Drinks and Juices",
+        "snacks": "Chips and Namkeens",
+        "biscuits": "Bakery and Biscuits",
+        "chocolates": "Sweet and Chocolates",
+        "instant": "Instant Food and Noodles",
+        "candies": "Candies",
+        "fresh": "Fresh",
+        "adc": "Aata, Dal, and Rice",
+        "dbm": "Dairy, Bread, and Milk",
+        "mo": "Masalas and Oils",
+        "bc": "Baby Care",
+        "fw": "Female Wellness",
+        "hair": "Hair",
+        "bnb": "Bath and Body",
+        "face": "Face",
+        "g": "General",
+        "cleaningessentials": "Cleaners and Freshners",
+        "other": "Others"
     };
+
+    // 1. Group items by category name
+    const groupedItems = {};
 
     products.forEach(p => {
         const collectionName = categoryNames[p.cat] || "Store";
+        if (!groupedItems[collectionName]) {
+            groupedItems[collectionName] = [];
+        }
+
         Object.keys(p.variants).forEach(vName => {
             const v = p.variants[vName];
             if (v && v.count > 0) {
                 const linePrice = v.price * v.count;
                 let gstNote = "";
-                if (categoryNames.hasOwnProperty(p.cat)) {
+                
+                // Only Omi's Sweets and Omi's Food incur GST (5%)
+                if (p.cat === 'partneromi' || p.cat === 'partneromif') {
                     const itemGst = linePrice * 0.05;
                     totalGst += itemGst;
-                    gstNote = ` (${collectionName} GST 5%: ₹${itemGst.toFixed(2)})`;
+                    gstNote = ` (GST 5%: ₹${itemGst.toFixed(2)})`;
                 }
-                msg += `${itemIndex}. ${p.name} (${v.unit}) x${v.count} - ₹${linePrice}${gstNote}\n`;
+
+                groupedItems[collectionName].push({
+                    name: p.name,
+                    unit: v.unit,
+                    count: v.count,
+                    price: linePrice,
+                    gstNote: gstNote
+                });
+
                 itemsForSheet += `${p.name} (${v.unit}) x${v.count}; `;
-                itemIndex++; 
             }
         });
     });
+
+    // 2. Append grouped categories using Braille Blank spaces (\u2800) to prevent WhatsApp trimming
+    const brailleSpace = "\u2800";
+    const categoryIndent = `${brailleSpace}\u00A0`; 
+    const itemDetailIndent = `${brailleSpace}\u00A0\u00A0\u00A0\u00A0\u00A0`; 
+
+   // Helper to manually soft-wrap product names so line breaks include WhatsApp-safe indents
+function formatIndentedName(name, prefix, hangIndent, maxChars = 22) {
+    const words = name.split(' ');
+    let lines = [];
+    let currentLine = '';
+
+    words.forEach(word => {
+        if ((currentLine + ' ' + word).trim().length > maxChars) {
+            if (currentLine) lines.push(currentLine);
+            currentLine = word;
+        } else {
+            currentLine = currentLine ? `${currentLine} ${word}` : word;
+        }
+    });
+    if (currentLine) lines.push(currentLine);
+
+    return lines.map((line, idx) => {
+        return idx === 0 ? `${prefix}${line}` : `${hangIndent}${line}`;
+    }).join('\n');
+}
+
+Object.keys(groupedItems).forEach(cat => {
+    if (groupedItems[cat].length > 0) {
+        msg += `✦ ${cat.toUpperCase()}\n`;
+        groupedItems[cat].forEach(item => {
+            const brailleSpace = "\u2800";
+            const categoryIndent = `${brailleSpace}\u00A0`; 
+            const prefix = `${categoryIndent}${itemIndex}.\u00A0`;
+            
+            // Indent for wrapped product name lines (aligns right under the name)
+            const nameHangIndent = `${brailleSpace}\u00A0\u00A0\u00A0\u00A0`;
+            
+            // Indent for unit/price details
+            const itemDetailIndent = `${brailleSpace}\u00A0\u00A0\u00A0\u00A0\u00A0`; 
+
+            // Format product name with explicit wrapped indents
+            const formattedName = formatIndentedName(item.name, prefix, nameHangIndent, 22);
+            msg += `${formattedName}\n`;
+
+            // Build details string
+            let detailText = `(${item.unit}) x${item.count} - ₹${item.price}\n${item.gstNote ? item.gstNote.trim() : ""}`;
+
+            // Split details by line break and apply detail indent
+            detailText.split('\n').filter(line => line.trim() !== "").forEach(line => {
+                msg += `${itemDetailIndent}${line}\n`;
+            });
+
+            itemIndex++;
+        });
+        msg += `\n`;
+    }
+});
 
     msg += divider;
     msg += `Subtotal: ₹${subtotal}\n`;
@@ -1964,9 +2062,9 @@ whatsappBtn.addEventListener('click', () => {
     if (parseFloat(bagCharge) > 0) msg += `Paper Bag: ₹${bagCharge}\n`;
     
     msg += `Delivery: ₹${delivery}\n`;
-    msg += `*TOTAL AMOUNT: ₹${total}*\n`; 
+    msg += `*TOTAL AMOUNT: ₹${total}*\n`;
     msg += divider;
-    msg += `Cash or UPI on Delivery, our delivery partner will call you shortly.`;
+    msg += `_Cash or UPI on Delivery, our delivery partner will call you shortly._`;
 
     // --- SAVE TO GOOGLE SHEETS ---
     fetch('https://script.google.com/macros/s/AKfycbwa1ItNiI0pxItnMhMRr6WG2vmiJWz0rLbciDkKeP-se79yueaGSC_qfPl4_kxSuEOd/exec', {
@@ -1977,7 +2075,7 @@ whatsappBtn.addEventListener('click', () => {
             name: name,
             address: address,
             items: itemsForSheet,
-            bagCharge: bagCharge, // Added bag charge to the sheet data
+            bagCharge: bagCharge,
             delivery: delivery,
             total: total,
             location: locationLink
