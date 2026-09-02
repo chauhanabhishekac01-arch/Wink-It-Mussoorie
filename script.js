@@ -903,8 +903,8 @@ startAutoPlay();
                             { id: 30002,   name: "Hand Gripper Unisex Adjustable",                                       image: "gym.jpg",            cat: "gng",                     subcat: "Games",     selectedVariant: "Qty",           variants: { "Qty":      { price: 499, count: 0, unit: "1" } } },                                                                                                                                                                                                                                                 
                             { id: 30000,   name: "Uno Cards",                                       image: "uno.jpg",            cat: "gng",                     subcat: "Card Games",     selectedVariant: "Qty",           variants: { "Qty":      { price: 149, count: 0, unit: "1" } } },                                                                                                                                                                                                                                                 
 
-                            { id: 6003, name: "Comfort After Wash Fabric Conditioner -Morning Fresh<br>MRP:Rs 245",         image: "clcomfortmf.jpg",       cat: "dp",       subcat: "Detergent",                  selectedVariant: "Qty",         variants: { "Qty":      { price: 229, count: 0, unit: "860ml" } } },
-                            { id: 6008, name: "Lizol Disinfectant Surface and Floor Cleaner<br>MRP:Rs 260",                image: "cllizol.jpg",           cat: "dp",       subcat: "Surface Cleaners",          selectedVariant: "Qty",          variants: { "Qty":      { price: 239, count: 0, unit: "1L" } } },
+                            { id: 6003, name: "Comfort After Wash Fabric Conditioner -Morning Fresh MRP:Rs 245",         image: "clcomfortmf.jpg",       cat: "dp",       subcat: "Detergent",                  selectedVariant: "Qty",         variants: { "Qty":      { price: 229, count: 0, unit: "860ml" } } },
+                            { id: 6008, name: "Lizol Disinfectant Surface and Floor Cleaner MRP:Rs 260",                image: "cllizol.jpg",           cat: "dp",       subcat: "Surface Cleaners",          selectedVariant: "Qty",          variants: { "Qty":      { price: 239, count: 0, unit: "1L" } } },
 
                             { id: 40008, name: "Duracell AA Cell",                image: "cell.jpg",           cat: "other",       subcat: "All",          selectedVariant: "Qty",          variants: { "Qty":      { price: 25, count: 0, unit: "1" } } },
 
@@ -2024,7 +2024,7 @@ function formatIndentedName(name, prefix, hangIndent, maxChars = 22) {
 
 Object.keys(groupedItems).forEach(cat => {
     if (groupedItems[cat].length > 0) {
-        msg += `✦ ${cat.toUpperCase()}\n`;
+        msg += `✦ *${cat.toUpperCase()}*\n`;
         groupedItems[cat].forEach(item => {
             const brailleSpace = "\u2800";
             const categoryIndent = `${brailleSpace}\u00A0`; 
