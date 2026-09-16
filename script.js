@@ -222,6 +222,7 @@ startAutoPlay();
     const collections = [
         { id: "gng", name: "Games and Gym",                         previews: ["gng.jpg"] },
         { id: "dp", name: "Discounted Items",                        previews: ["dp.jpg"] },
+        { id: "shbs", name: "Second Hand Books",                    previews: ["shbs.jpg"] },
         { id: "bakery", name: "Cake Shop",                          previews: ["bakery.jpg"] },
         { id: "fined", name: "Fine Dine Deluxe",                     previews: ["fd.jpg"] },
         { id: "tos", name: "Swad South Indian",                     previews: ["tos.jpg"] },
@@ -907,6 +908,9 @@ startAutoPlay();
 
                             { id: 40008, name: "Duracell AA Cell",                image: "cell.jpg",           cat: "other",       subcat: "All",          selectedVariant: "Qty",          variants: { "Qty":      { price: 25, count: 0, unit: "1" } } },
 
+                            { id: 50001, name: "1984 George Orwell",                image: "shbmgo.jpg",           cat: "shbs",       subcat: "All",          selectedVariant: "Qty",          variants: { "Qty":      { price: 49, count: 0, unit: "1" } } },
+                            { id: 50002, name: "The Alchemist Paulo Coelho",                image: "shbmpc.jpg",           cat: "shbs",       subcat: "All",          selectedVariant: "Qty",          variants: { "Qty":      { price: 49, count: 0, unit: "1" } } },
+
 
 /* need to know if omi is cool with this                { id: 1018,   name: "Hot Tea",                      image: "omiht.jpg",             cat: "partneromi",               subcat: "Beverages",                selectedVariant: "Qty",           variants: { "Qty":      { price: 42, count: 0, unit: "300ml" } } },
                               { id: 1019,   name: "Black Cofee",                                            image: "omibc.jpg",             cat: "partneromi",               subcat: "Beverages",                selectedVariant: "Qty",           variants: { "Qty":      { price: 52.5, count: 0, unit: "300ml" } } },
@@ -1108,11 +1112,11 @@ window.addEventListener('resize', updateUI);
     // Map the index to the heading you want displayed ABOVE that card
     const sectionHeadings = {
         0: "Latest Additions",
-        2: "Collaborate Stores",
-        9:  "Drinks & Snacks", /*3 */
-        15:  "Grocery & Kitchen",/*9 */
-        19: "Beauty and Personal Care",/*10 */
-        25: "House Hold Essentials"/*18 */
+        3: "Collaborate Stores",
+        10:  "Drinks & Snacks", /*3 */
+        16:  "Grocery & Kitchen",/*9 */
+        20: "Beauty and Personal Care",/*10 */
+        26: "House Hold Essentials"/*18 */
     };
 
     collectionGrid.innerHTML = collections.map((c, i) => {
