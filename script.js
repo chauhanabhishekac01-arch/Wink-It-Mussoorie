@@ -1117,7 +1117,7 @@ window.addEventListener('resize', updateUI);
     const sectionHeadings = {
         0: "Latest Additions",
         3: "Collaborate Stores",
-        10:  "Drinks & Snacks", /*3 */
+        11:  "Drinks & Snacks", /*3 */
         17:  "Grocery & Kitchen",/*9 */
         23: "Beauty and Personal Care",/*10 */
         29: "House Hold Essentials"/*18 */
