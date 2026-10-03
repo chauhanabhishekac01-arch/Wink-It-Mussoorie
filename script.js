@@ -225,6 +225,7 @@ startAutoPlay();
         { id: "shbs", name: "Second Hand Books",                    previews: ["shbs.jpg"] },
         { id: "bakery", name: "Cake Shop",                          previews: ["bakery.jpg"] },
         { id: "fined", name: "Fine Dine Deluxe",                     previews: ["fd.jpg"] },
+        { id: "nofu", name: "National Food Supplement",                     previews: ["nofu.jpeg"] },
         { id: "tos", name: "Swad South Indian",                     previews: ["tos.jpg"] },
         { id: "pahadoka", name: "Pahado Ka",                     previews: ["pklogo.jpg"] },
         /*{ id: "tou", name: "Taste of Uttarakhand",                     previews: ["gad.jpg"] },*/
@@ -345,6 +346,12 @@ startAutoPlay();
                         { id: 2027, name: "Toblerone Milk Chocolate Bar",                                   image: "ctob.jpg",              cat: "chocolates",               subcat: "Imported",                   selectedVariant: "Qty.",        variants: { "Qty.":     { price: 400, count: 0, unit: "100g" } } },
                         /*{ id: 2028, name: "NERDS Grape and Strawberry Toffee",                              image: "cngs.jpg",              cat: "candies",                  subcat: "Nerds",                      selectedVariant: "Qty.",        variants: { "Qty.":     { price: 270, count: 0, unit: "141g" } } },*/
                         { id: 2029, name: "NERDS Watermelon and Cherry Tofee",                              image: "cnwc.jpg",              cat: "candies",                  subcat: "Nerds",                      selectedVariant: "Qty.",        variants: { "Qty.":     { price: 249, count: 0, unit: "46g" } } },
+
+                        { id: 2051, name: "NoFoSu Sea Buckthorn Gummies 30pc",                              image: "nofusb.jpeg",              cat: "nofu",                  subcat: "Health",   description: "",                     gallery: ["nofusb1.jpeg", "nofusb2.jpeg"],                   selectedVariant: "Qty.",        variants: { "Qty.":     { price: 999, count: 0, unit: "400g" } } },
+                        { id: 2052, name: "NoFoSu Multivitamin Gummies 30pc",                              image: "nofumv.jpeg",              cat: "nofu",                  subcat: "Health",   description: "",                     gallery: ["nofumv1.jpeg", "nofumv2.jpeg"],                   selectedVariant: "Qty.",        variants: { "Qty.":     { price: 999, count: 0, unit: "400g" } } },
+                        { id: 2053, name: "NoFoSu Weight Management Gummies 30pc",                              image: "nofuwm.jpeg",              cat: "nofu",                  subcat: "Health",    description: "",                     gallery: ["nofuwm1.jpeg", "nofuwm2.jpeg"],                  selectedVariant: "Qty.",        variants: { "Qty.":     { price: 999, count: 0, unit: "400g" } } },
+                        { id: 2054, name: "NoFoSu Shilajit Energy Gummies 30pc",                              image: "nofuse.jpeg",              cat: "nofu",                  subcat: "Health",      description: "",                     gallery: ["nofuse1.jpeg", "nofuse2.jpeg"],                selectedVariant: "Qty.",        variants: { "Qty.":     { price: 999, count: 0, unit: "400g" } } },
+                          
                         { id: 2030, name: "Pocky Chocolate Biscuit Sticks",                                 image: "cpockyred.jpg",         cat: "chocolates",               subcat: "Imported",                   selectedVariant: "Qty.",        variants: { "Qty.":     { price: 199, count: 0, unit: "47g" } } },
                         { id: 2031, name: "Pocky Strawberry Biscuit Sticks",                                image: "cpockys.jpg",           cat: "chocolates",               subcat: "Imported",                   selectedVariant: "Qty.",        variants: { "Qty.":     { price: 199, count: 0, unit: "45g" } } },
                         { id: 2032, name: "Pocky Double Chocolate Biscuit Sticks",                          image: "cpockydc.jpg",          cat: "chocolates",               subcat: "Imported",                   selectedVariant: "Qty.",        variants: { "Qty.":     { price: 199, count: 0, unit: "47g" } } },
@@ -1111,9 +1118,9 @@ window.addEventListener('resize', updateUI);
         0: "Latest Additions",
         3: "Collaborate Stores",
         10:  "Drinks & Snacks", /*3 */
-        16:  "Grocery & Kitchen",/*9 */
-        22: "Beauty and Personal Care",/*10 */
-        28: "House Hold Essentials"/*18 */
+        17:  "Grocery & Kitchen",/*9 */
+        23: "Beauty and Personal Care",/*10 */
+        29: "House Hold Essentials"/*18 */
     };
 
     collectionGrid.innerHTML = collections.map((c, i) => {
@@ -1595,7 +1602,7 @@ productGrid.addEventListener('click', (e) => {
     if (card && (target.classList.contains('iimg') || target.tagName === 'H4')) {
         const p = products.find(prod => prod.id == card.dataset.prodId);
         
-        if (p && (p.cat === 'aavi' || p.cat === 'rakshab')) {
+        if (p && (p.cat === 'aavi' || p.cat === 'nofu')) {
             activeGallery = p.gallery || [p.image]; 
             currentSlideIndex = 0;
             
