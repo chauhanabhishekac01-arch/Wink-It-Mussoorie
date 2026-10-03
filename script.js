@@ -347,7 +347,7 @@ startAutoPlay();
                         /*{ id: 2028, name: "NERDS Grape and Strawberry Toffee",                              image: "cngs.jpg",              cat: "candies",                  subcat: "Nerds",                      selectedVariant: "Qty.",        variants: { "Qty.":     { price: 270, count: 0, unit: "141g" } } },*/
                         { id: 2029, name: "NERDS Watermelon and Cherry Tofee",                              image: "cnwc.jpg",              cat: "candies",                  subcat: "Nerds",                      selectedVariant: "Qty.",        variants: { "Qty.":     { price: 249, count: 0, unit: "46g" } } },
 
-                        { id: 2051, name: "NoFoSu Sea Buckthorn Gummies 30pc",                              image: "nofusb.jpeg",              cat: "nofu",                  subcat: "Health",   description: "",                     gallery: ["nofusb1.jpeg", "nofusb2.jpeg"],                   selectedVariant: "Qty.",        variants: { "Qty.":     { price: 999, count: 0, unit: "400g" } } },
+                        { id: 2051, name: "NoFoSu Sea Buckthorn Gummies 30pc",                              image: "nofusb.jpeg",              cat: "nofu",                  subcat: "Health",   description: "",                     gallery: ["nofusb1.jpeg"],                   selectedVariant: "Qty.",        variants: { "Qty.":     { price: 999, count: 0, unit: "400g" } } },
                         { id: 2052, name: "NoFoSu Multivitamin Gummies 30pc",                              image: "nofumv.jpeg",              cat: "nofu",                  subcat: "Health",   description: "",                     gallery: ["nofumv1.jpeg", "nofumv2.jpeg"],                   selectedVariant: "Qty.",        variants: { "Qty.":     { price: 999, count: 0, unit: "400g" } } },
                         { id: 2053, name: "NoFoSu Weight Management Gummies 30pc",                              image: "nofuwm.jpeg",              cat: "nofu",                  subcat: "Health",    description: "",                     gallery: ["nofuwm1.jpeg", "nofuwm2.jpeg"],                  selectedVariant: "Qty.",        variants: { "Qty.":     { price: 999, count: 0, unit: "400g" } } },
                         { id: 2054, name: "NoFoSu Shilajit Energy Gummies 30pc",                              image: "nofuse.jpeg",              cat: "nofu",                  subcat: "Health",      description: "",                     gallery: ["nofuse1.jpeg", "nofuse2.jpeg"],                selectedVariant: "Qty.",        variants: { "Qty.":     { price: 999, count: 0, unit: "400g" } } },
@@ -1612,7 +1612,7 @@ productGrid.addEventListener('click', (e) => {
 
             // Populate Description
             const lightboxDesc = document.getElementById('lightbox-description');
-            if (lightboxDesc) lightboxDesc.innerText = p.description || "Freshly prepared.";
+            if (lightboxDesc) lightboxDesc.innerText = p.description || "Premium Product.";
             
             // --- NEW: Render the Dynamic Controls ---
             renderLightboxControls(p);
