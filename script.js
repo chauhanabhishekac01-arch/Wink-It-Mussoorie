@@ -225,7 +225,7 @@ startAutoPlay();
         { id: "shbs", name: "Second Hand Books",                    previews: ["shbs.jpg"] },
         { id: "bakery", name: "Cake Shop",                          previews: ["bakery.jpg"] },
         { id: "fined", name: "Fine Dine Deluxe",                     previews: ["fd.jpg"] },
-        { id: "nufosu", name: "National Food Supplement",                     previews: ["nofu.jpeg"] },
+        { id: "nufosu", name: "Nutitional Food Supplement",                     previews: ["nofu.jpeg"] },
         { id: "tos", name: "Swad South Indian",                     previews: ["tos.jpg"] },
         { id: "pahadoka", name: "Pahado Ka",                     previews: ["pklogo.jpg"] },
         /*{ id: "tou", name: "Taste of Uttarakhand",                     previews: ["gad.jpg"] },*/
@@ -347,10 +347,10 @@ startAutoPlay();
                         /*{ id: 2028, name: "NERDS Grape and Strawberry Toffee",                              image: "cngs.jpg",              cat: "candies",                  subcat: "Nerds",                      selectedVariant: "Qty.",        variants: { "Qty.":     { price: 270, count: 0, unit: "141g" } } },*/
                         { id: 2029, name: "NERDS Watermelon and Cherry Tofee",                              image: "cnwc.jpg",              cat: "candies",                  subcat: "Nerds",                      selectedVariant: "Qty.",        variants: { "Qty.":     { price: 249, count: 0, unit: "46g" } } },
 
-                        { id: 2051, name: "NoFoSu Sea Buckthorn Gummies 30pc",                              image: "nofusb.jpeg",              cat: "nufosu",                  subcat: "Health",   description: "",                     gallery: ["nofusb1.jpeg"],                   selectedVariant: "Qty.",        variants: { "Qty.":     { price: 999, count: 0, unit: "400g" } } },
-                        { id: 2052, name: "NoFoSu Multivitamin Gummies 30pc",                              image: "nofumv.jpeg",              cat: "nufosu",                  subcat: "Health",   description: "",                     gallery: ["nofumv1.jpeg", "nofumv2.jpeg"],                   selectedVariant: "Qty.",        variants: { "Qty.":     { price: 999, count: 0, unit: "400g" } } },
-                        { id: 2053, name: "NoFoSu Weight Management Gummies 30pc",                              image: "nofuwm.jpeg",              cat: "nufosu",                  subcat: "Health",    description: "",                     gallery: ["nofuwm1.jpeg", "nofuwm2.jpeg"],                  selectedVariant: "Qty.",        variants: { "Qty.":     { price: 999, count: 0, unit: "400g" } } },
-                        { id: 2054, name: "NoFoSu Shilajit Energy Gummies 30pc",                              image: "nofuse.jpeg",              cat: "nufosu",                  subcat: "Health",      description: "",                     gallery: ["nofuse1.jpeg", "nofuse2.jpeg"],                selectedVariant: "Qty.",        variants: { "Qty.":     { price: 999, count: 0, unit: "400g" } } },
+                        { id: 2051, name: "NuFoSu Sea Buckthorn Gummies 30pc",                              image: "nofusb.jpeg",              cat: "nufosu",                  subcat: "Health",   description: "",                     gallery: ["nofusb1.jpeg"],                   selectedVariant: "Qty.",        variants: { "Qty.":     { price: 999, count: 0, unit: "1Jar" } } },
+                        { id: 2052, name: "NuFoSu Multivitamin Gummies 30pc",                              image: "nofumv.jpeg",              cat: "nufosu",                  subcat: "Health",   description: "",                     gallery: ["nofumv1.jpeg", "nofumv2.jpeg"],                   selectedVariant: "Qty.",        variants: { "Qty.":     { price: 999, count: 0, unit: "1Jar" } } },
+                        { id: 2053, name: "NuFoSu Weight Management Gummies 30pc",                              image: "nofuwm.jpeg",              cat: "nufosu",                  subcat: "Health",    description: "",                     gallery: ["nofuwm1.jpeg", "nofuwm2.jpeg"],                  selectedVariant: "Qty.",        variants: { "Qty.":     { price: 999, count: 0, unit: "1Jar" } } },
+                        { id: 2054, name: "NuFoSu Shilajit Energy Gummies 30pc",                              image: "nofuse.jpeg",              cat: "nufosu",                  subcat: "Health",      description: "",                     gallery: ["nofuse1.jpeg", "nofuse2.jpeg"],                selectedVariant: "Qty.",        variants: { "Qty.":     { price: 999, count: 0, unit: "1Jar" } } },
                           
                         { id: 2030, name: "Pocky Chocolate Biscuit Sticks",                                 image: "cpockyred.jpg",         cat: "chocolates",               subcat: "Imported",                   selectedVariant: "Qty.",        variants: { "Qty.":     { price: 199, count: 0, unit: "47g" } } },
                         { id: 2031, name: "Pocky Strawberry Biscuit Sticks",                                image: "cpockys.jpg",           cat: "chocolates",               subcat: "Imported",                   selectedVariant: "Qty.",        variants: { "Qty.":     { price: 199, count: 0, unit: "45g" } } },
@@ -1254,7 +1254,7 @@ if (sliderTitle) {
         } else if (catName === "Omi's Sweets" || catName === "Omi's Food" || catName === "The Garrison") {
             // Appends GST notice for food categories
             sliderTitle.innerText = catName + " (Store GST 5% will be added)";
-        } else if (catName === "Aavi Everyday Store" || catName === "National Food Supplement") {
+        } else if (catName === "Aavi Everyday Store" || catName === "Nutitional Food Supplement") {
             // Appends info prompt for Aavi Everyday Store
             sliderTitle.innerText = catName + " (tap image for more info)";
         } else if (catName === "Discounted Items") {
