@@ -225,7 +225,7 @@ startAutoPlay();
         { id: "shbs", name: "Second Hand Books",                    previews: ["shbs.jpg"] },
         { id: "bakery", name: "Cake Shop",                          previews: ["bakery.jpg"] },
         { id: "fined", name: "Fine Dine Deluxe",                     previews: ["fd.jpg"] },
-        { id: "nufosu", name: "Nutitional Food Supplement",                     previews: ["nofu.jpeg"] },
+        { id: "nufosu", name: "Nutritional Food Supplement",                     previews: ["nofu.jpeg"] },
         { id: "tos", name: "Swad South Indian",                     previews: ["tos.jpg"] },
         { id: "pahadoka", name: "Pahado Ka",                     previews: ["pklogo.jpg"] },
         /*{ id: "tou", name: "Taste of Uttarakhand",                     previews: ["gad.jpg"] },*/
