@@ -1254,7 +1254,7 @@ if (sliderTitle) {
         } else if (catName === "Omi's Sweets" || catName === "Omi's Food" || catName === "The Garrison") {
             // Appends GST notice for food categories
             sliderTitle.innerText = catName + " (Store GST 5% will be added)";
-        } else if (catName === "Aavi Everyday Store" || catName === "Nutitional Food Supplement") {
+        } else if (catName === "Aavi Everyday Store" || catName === "Nutritional Food Supplement") {
             // Appends info prompt for Aavi Everyday Store
             sliderTitle.innerText = catName + " (tap image for more info)";
         } else if (catName === "Discounted Items") {
