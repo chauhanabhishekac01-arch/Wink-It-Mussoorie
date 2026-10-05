@@ -364,6 +364,10 @@ startAutoPlay();
 /*sunfest*/             /*{ id: 3001, name: "Dark Fantasy Choco Fills",                                       image: "bidf.jpg",              cat: "biscuits",                 subcat: "Sunfeast",                   selectedVariant: "L",           variants: { "L":        { price: 44, count: 0, unit: "69g" } } },*/
 
 /*Parle*/               
+                         { id: 3001, name: "Pintola Brown Rice Cake Unsalted",                                                        image: "pintolaus.jpg",          cat: "biscuits",                 subcat: "All",                      selectedVariant: "L",           variants: { "L":        { price: 160, count: 0, unit: "130g" } } },
+                        { id: 3002, name: "Rice Cake Whole Grain Brown",                                                        image: "ricecake.jpg",          cat: "biscuits",                 subcat: "All",                      selectedVariant: "L",           variants: { "L":        { price: 190, count: 0, unit: "150g" } } },
+                        { id: 3003, name: "Pintola Brown Rice Cake Salted",                                                        image: "pintolas.jpg",          cat: "biscuits",                 subcat: "All",                      selectedVariant: "L",           variants: { "L":        { price: 160, count: 0, unit: "130g" } } },
+      
                         { id: 3008, name: "Parle-G",                                                        image: "biparleg.jpg",          cat: "biscuits",                 subcat: "Parle",                      selectedVariant: "L",           variants: { "L":        { price: 10, count: 0, unit: "50g" } } },
                         { id: 3006, name: "Hide and Seek",                                                  image: "bihideandseek.jpg",     cat: "biscuits",                 subcat: "Parle",                      selectedVariant: "L",           variants: { "L":        { price: 30, count: 0, unit: "100g" } } },
                         { id: 3007, name: "Oreo",                                                           image: "bioreo.jpg",            cat: "biscuits",                 subcat: "Parle",                      selectedVariant: "S",           variants: { "S":        { price: 10, count: 0, unit: "42g" } } },  
@@ -384,7 +388,7 @@ startAutoPlay();
                         { id: 3015, name: "Good Day Fruit and Nut Cookies",                                 image: "bigooddayfn.jpg",       cat: "biscuits",                 subcat: "Britannia",                  selectedVariant: "L",           variants: { "L":        { price: 100, count: 0, unit: "450g" } } },
                         { id: 3016, name: "Britannia Bourbon ",                                             image: "bibritanniab.jpg",      cat: "biscuits",                 subcat: "Britannia",                  selectedVariant: "L",           variants: { "L":        { price: 35, count: 0, unit: "100g" } } },
                         { id: 3017, name: "Britannia Nice Time Coconut Biscuit",                            image: "bibritanniant.jpg",     cat: "biscuits",                 subcat: "Britannia",                  selectedVariant: "L",           variants: { "L":        { price: 25, count: 0, unit: "136g" } } },
-                        { id: 3018, name: "Britannia Croissant",                                            image: "ccroissant.jpg",        cat: "biscuits",                 subcat: "Britannia",                  selectedVariant: "L",           variants: { "L":        { price: 30, count: 0, unit: "45g" } } },
+                        { id: 3018, name: "Treat Croissant Dubai Kunafa",                                            image: "ccroissant.jpg",        cat: "biscuits",                 subcat: "All",                  selectedVariant: "L",           variants: { "L":        { price: 60, count: 0, unit: "45g" } } },
                         { id: 3019, name: "Britannia Marigold",                                             image: "bimari.jpg",            cat: "biscuits",                 subcat: "Britannia",                  selectedVariant: "L",           variants: { "L":        { price: 40, count: 0, unit: "208g" } } },
                         /*{ id: 3020, name: "Britannia Milk Bikis",                                           image: "bimb.jpg",              cat: "biscuits",                 subcat: "Britannia",                  selectedVariant: "L",           variants: { "L":        { price: 70, count: 0, unit: "500g" } }  },*/
                 
@@ -411,6 +415,10 @@ startAutoPlay();
 
                         { id: 4032, name: "Crax Rings",                                       image: "crings.jpg",            cat: "snacks",                   subcat: "Crax",                       selectedVariant: "L",           variants: { "L":        { price: 30, count: 0, unit: "58g" } } },
                         { id: 4031, name: "Crax Tomato Twist",                                       image: "ctomatotwist.jpg",            cat: "snacks",                   subcat: "Crax",                       selectedVariant: "L",           variants: { "L":        { price: 30, count: 0, unit: "54g" } } },
+
+                        { id: 4033, name: "Crax Biggies Swiss Cheese",                                       image: "craxbiggies.jpg",            cat: "snacks",                   subcat: "Crax",                       selectedVariant: "L",           variants: { "L":        { price: 60, count: 0, unit: "65g" } } },
+
+                        { id: 4034, name: "Cheetos Puffs",                                       image: "cheetos.jpg",            cat: "snacks",                   subcat: "All",                       selectedVariant: "L",           variants: { "L":        { price: 134, count: 0, unit: "135g" } } },
 
                         
 /*Pingles */            { id: 4014, name: "Pringles Sour Cream and Onion Potato - Imported",                           image: "spinglessc.jpg",        cat: "snacks",                   subcat: "Pingles",                    selectedVariant: "L",           variants: { "L":        { price: 449, count: 0, unit: "165g" } } },
@@ -462,6 +470,8 @@ startAutoPlay();
 
 /*cloths*/                { id: 6001, name: "Ariel Power Gel Front Load Liquid Detergent",                  image: "clarielb.jpg",          cat: "cleaningessentials",       subcat: "Detergent",                  selectedVariant: "Qty",         variants: { "Qty":      { price: 179, count: 0, unit: "950ml" } } },
                           { id: 6002, name: "Comfort After Wash Fabric Conditioner -Lily Fresh",            image: "clcomforlf.jpg",        cat: "cleaningessentials",       subcat: "Detergent",                  selectedVariant: "Qty",         variants: { "Qty":      { price: 235, count: 0, unit: "860ml" } } },
+
+                          { id: 6026, name: "Ezee Godrej Liquid Detergent",            image: "ezee.jpg",        cat: "cleaningessentials",       subcat: "Detergent",                  selectedVariant: "Qty",         variants: { "Qty":      { price: 225, count: 0, unit: "900gm" } } },
                           
 
 /*Toilet & Bathroom*/     { id: 6004, name: "Harpic Advanced Disinfectant Toilet Cleaner",                 image: "clharpic.jpg",          cat: "cleaningessentials",       subcat: "Toilet & Bathroom",         selectedVariant: "Qty",          variants: { "Qty":      { price: 110, count: 0, unit: "500ml" } } },
@@ -487,6 +497,10 @@ startAutoPlay();
                           { id: 6016, name: "Round Mop With Spin Dry and Bucket",                           image: "clbfm.jpg",             cat: "cleaningessentials",       subcat: "Brushes and Mops",          selectedVariant: "Qty",          variants: { "Qty":      { price: 1199, count: 0, unit: "1pc" } } },
                           { id: 6017, name: "Viper and Brush",                                              image: "clbnv.jpg",             cat: "cleaningessentials",       subcat: "Brushes and Mops",          selectedVariant: "Qty",          variants: { "Qty":      { price: 349, count: 0, unit: "1pc" } } },
                           { id: 6018, name: "Dust Pan",                                                     image: "cldp.jpg",              cat: "cleaningessentials",       subcat: "Brushes and Mops",          selectedVariant: "Qty",          variants: { "Qty":      { price: 49, count: 0, unit: "1pc" } } },
+
+                          { id: 6024, name: "Floor Mat Pattern Grey",                                                     image: "cl6040mat.jpg",              cat: "cleaningessentials",       subcat: "Floor Mat",          selectedVariant: "Qty",          variants: { "Qty":      { price: 299, count: 0, unit: "1pc" } } },
+                          { id: 6025, name: "Floor Mat Solid Brown",                                                     image: "cl5838matb.jpg",              cat: "cleaningessentials",       subcat: "Floor Mat",          selectedVariant: "Qty",          variants: { "Qty":      { price: 199, count: 0, unit: "1pc" } } },
+                          { id: 6026, name: "Floor Mat Brown Stiped",                                                     image: "cl5838mat.jpg",              cat: "cleaningessentials",       subcat: "Floor Mat",          selectedVariant: "Qty",          variants: { "Qty":      { price: 199, count: 0, unit: "1pc" } } },
 
    
   /*General*/             { id: 7003, name: "Moov Instant Pain Relief Spray",                               image: "chmoov.jpg",            cat: "g",                        subcat: "General",                   selectedVariant: "Qty",          variants: { "Qty":      { price: 230, count: 0, unit: "50g" } } },
