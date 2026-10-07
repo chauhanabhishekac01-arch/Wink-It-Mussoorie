@@ -1041,7 +1041,7 @@ body.dark-mode .stat-group:nth-child(2) {
 .slider-container { display: flex; align-items: center; justify-content: space-between; }
 
 #collection-grid > *:nth-child(4) {
-    animation: greenFlash 3s ease forwards;
+    animation: greenFlash 6s ease forwards;
 }
 
 @keyframes greenFlash {
