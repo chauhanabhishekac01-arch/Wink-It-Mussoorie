@@ -222,7 +222,8 @@ startAutoPlay();
     const collections = [
         { id: "gng", name: "Games and Gym",                         previews: ["gng.jpg"] },
         { id: "dp", name: "Discounted Items",                        previews: ["dp.jpg"] },
-        { id: "shbs", name: "Second Hand Books",                    previews: ["shbs.jpg"] },
+        { id: "la", name: "Latest Arrivals",                        previews: ["la.jpg"] },
+        
         { id: "bakery", name: "Cake Shop",                          previews: ["bakery.jpg"] },
         { id: "fined", name: "Fine Dine Deluxe",                     previews: ["fd.jpg"] },
         { id: "nufosu", name: "Nutritional Food Supplement",                     previews: ["nofu.jpeg"] },
@@ -252,6 +253,7 @@ startAutoPlay();
         { id: "face", name: "Face",                                 previews: ["f.jpg"] },
         { id: "g", name: "General",                                 previews: ["g.jpg"] },
         { id: "cleaningessentials", name: "Cleaners and Freshners", previews: ["cf.jpg"] },
+        { id: "shbs", name: "Second Hand Books",                    previews: ["shbs.jpg"] },
         { id: "other", name: "Others",                              previews: ["cell.jpg"] },
         
         
@@ -261,7 +263,18 @@ startAutoPlay();
     ];
 
     const products = [
-/*Drink*/                
+/*Drink*/                { id: 60001,   name: "Britannia Strawberry Flavour Wafers",                                                image: "btsf.jpg",            cat: "la",               subcat: "Shampoo",                   selectedVariant: "L",          variants: { "L":        { price: 50, count: 0, unit: "55gm" } } },
+                        { id: 60002,   name: "Dove Daily Shine Shampoo",                                                image: "doves.jpg",            cat: "la",               subcat: "Wafers",                   selectedVariant: "L",          variants: { "L":        { price: 172, count: 0, unit: "180ml" } } },
+                        { id: 60003, name: "Cheetos Puffs",                                       image: "cheetos.jpg",            cat: "snacks",                   subcat: "Snack",                       selectedVariant: "L",           variants: { "L":        { price: 134, count: 0, unit: "135g" } } },
+                        { id: 60004, name: "Crax Biggies Swiss Cheese",                                       image: "craxbiggies.jpg",            cat: "snacks",                   subcat: "Snack",                       selectedVariant: "L",           variants: { "L":        { price: 60, count: 0, unit: "65g" } } },
+                        { id: 60005, name: "Treat Croissant Dubai Kunafa",                                            image: "ccroissant.jpg",        cat: "biscuits",                 subcat: "Wafer",                  selectedVariant: "L",           variants: { "L":        { price: 60, count: 0, unit: "45g" } } },
+                        { id: 60006, name: "Pintola Brown Rice Cake Unsalted",                                                        image: "pintolaus.jpg",          cat: "biscuits",                 subcat: "Rice Cake",                      selectedVariant: "L",           variants: { "L":        { price: 160, count: 0, unit: "130g" } } },
+                        { id: 60007, name: "Rice Cake Whole Grain Brown",                                                        image: "ricecake.jpg",          cat: "biscuits",                 subcat: "Rice Cake",                      selectedVariant: "L",           variants: { "L":        { price: 190, count: 0, unit: "150g" } } },
+                        { id: 60008, name: "Pintola Brown Rice Cake Salted",                                                        image: "pintolas.jpg",          cat: "biscuits",                 subcat: "Rice Cake",                      selectedVariant: "L",           variants: { "L":        { price: 160, count: 0, unit: "130g" } } },
+                        { id: 60009,  name: "Real Fruit Power Apple Juice",                                   image: "dreall.jpg",            cat: "beverages",               subcat: "Juices",                       selectedVariant: "L",          variants: { "L":        { price: 110, count: 0, unit: "1L" } } },
+                        { id: 60010, name: "Ezee Godrej Liquid Detergent",            image: "ezee.jpg",        cat: "cleaningessentials",       subcat: "Detergent",                  selectedVariant: "Qty",         variants: { "Qty":      { price: 225, count: 0, unit: "900gm" } } },
+
+      
                          { id: 1,   name: "Bottle-Coca-Cola",                                                image: "dcokeb.jpg",            cat: "beverages",               subcat: "Cold Drink",                   selectedVariant: "S",          variants: { "S":        { price: 40, count: 0, unit: "750ml" }, "L": { price: 99, count: 0, unit: "2L" } } },
                          { id: 33,   name: "Thumbs up",                                                image: "djthumbsup.jpg",            cat: "beverages",               subcat: "Cold Drink",                   selectedVariant: "L",          variants: { "L":        { price: 99, count: 0, unit: "2L" } } },
                          { id: 2,   name: "Fanta",                                                image: "djfanta.jpg",            cat: "beverages",               subcat: "Cold Drink",                   selectedVariant: "L",          variants: { "L":        { price: 99, count: 0, unit: "2L" } } },
@@ -427,7 +440,7 @@ startAutoPlay();
                         
 /*Namkeen*/             { id: 4017, name: "Haldirams Punjabi Tadka",                                        image: "spunjabi.jpg",          cat: "snacks",                   subcat: "Haldiram's",                 selectedVariant: "S",           variants: { "S":        { price: 20, count: 0, unit: "75g" }, "L": { price: 55, count: 0, unit: "210g" } } },
                         { id: 4018, name: "Haldirams Bhujia",                                               image: "sbhujia.jpg",           cat: "snacks",                   subcat: "Haldiram's",                 selectedVariant: "S",           variants: { "S":        { price: 20, count: 0, unit: "75g" }, "L": { price: 60, count: 0, unit: "200g" } } },
-                        { id: 4019, name: "Haldirams Salted Peanuts",                                       image: "ssalted.jpg",           cat: "snacks",                   subcat: "Haldiram's",                 selectedVariant: "S",           variants: { "S":        { price: 20, count: 0, unit: "75g" }, "L": { price: 55, count: 0, unit: "200g" } } },
+                        { id: 4019, name: "Haldirams Salted Peanuts",                                       image: "ssalted.jpg",           cat: "snacks",                   subcat: "Haldiram's",                 selectedVariant: "S",           variants: { "S":        { price: 20, count: 0, unit: "75g" }, "L": { price: 60, count: 0, unit: "200g" } } },
                         { id: 4021, name: "Haldirams Moong Dal",                                            image: "shaldirammd.jpg",       cat: "snacks",                   subcat: "Haldiram's",                 selectedVariant: "S",           variants: { "S":        { price: 20, count: 0, unit: "75g" }, "L": { price: 60, count: 0, unit: "200g" } } },
                         
 
@@ -586,7 +599,7 @@ startAutoPlay();
 /*Milk*/                 { id: 8135, name: "Amul Gold",                                        image: "rmulkag.jpg",           cat: "dbm",                      subcat: "Milk",                      selectedVariant: "Qty",          variants: { "Qty":     { price: 83, count: 0, unit: "1L" } } },
                          /*{ id: 8035, name: "Ananda-Milk",                                                   image: "rananda.jpg",           cat: "dbm",                      subcat: "Milk",                      selectedVariant: "Qty",          variants: { "Qty":     { price: 22, count: 0, unit: "1pkt" } } },*/
                          { id: 8036, name: "Egg Crate",                                                     image: "regg.jpg",              cat: "dbm",                      subcat: "Egg",                       selectedVariant: "Qty",          variants: { "Qty":     { price: 240, count: 0, unit: "1crt" } } },
-                         { id: 8037, name: "White Bread",                                                   image: "rbreadw.jpg",           cat: "dbm",                      subcat: "Bread",                     selectedVariant: "Qty",          variants: { "Qty":        { price: 30, count: 0, unit: "1 S" }, "Qty.": { price: 60, count: 0, unit: "1 L" } } },
+                         { id: 8037, name: "White Bread",                                                   image: "rbreadw.jpg",           cat: "dbm",                      subcat: "Bread",                     selectedVariant: "Qty",          variants: { "Qty":        { price: 30, count: 0, unit: "1 S" }, "Qty.": { price: 65, count: 0, unit: "1 L" } } },
                          { id: 8042, name: "Amul Cheese slices",                                 image: "rcheese.jpg",           cat: "dbm",                      subcat: "Cheese",                     selectedVariant: "Qty",          variants: { "Qty":     { price: 145, count: 0, unit: "200g" } } },
                          { id: 8052, name: "Amul Cheese spread",                                 image: "mdacheese.jpg",           cat: "dbm",                      subcat: "Cheese",                     selectedVariant: "Qty",          variants: { "Qty":     { price: 115, count: 0, unit: "200g" } } },
                          { id: 8044, name: "Amul Curd",                                                     image: "rcurd.jpg",           cat: "dbm",                      subcat: "Curd",                     selectedVariant: "Qty",          variants: { "Qty":     { price: 35, count: 0, unit: "380g" } } },
