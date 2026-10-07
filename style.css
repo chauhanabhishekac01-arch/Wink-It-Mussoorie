@@ -1040,6 +1040,22 @@ body.dark-mode .stat-group:nth-child(2) {
 }
 .slider-container { display: flex; align-items: center; justify-content: space-between; }
 
+#collection-grid > *:nth-child(4) {
+    animation: greenFlash 3s ease forwards;
+}
+
+@keyframes greenFlash {
+    0% {
+        background-color: #22c55e; /* Green color */
+    }
+    80% {
+        background-color: #22c55e; /* Hold green */
+    }
+    100% {
+        background-color:  rgb(230, 182, 230); /* Returns to original background */
+    }
+}
+
 
 body.dark-mode .slider-container { background-color: white; }
 
