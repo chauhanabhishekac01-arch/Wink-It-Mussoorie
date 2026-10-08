@@ -270,9 +270,14 @@ startAutoPlay();
                         { id: 60005, name: "Treat Croissant Dubai Kunafa",                                            image: "ccroissant.jpg",        cat: "la",                 subcat: "Wafer",                  selectedVariant: "L",           variants: { "L":        { price: 60, count: 0, unit: "45g" } } },
                         { id: 60006, name: "Pintola Brown Rice Cake Unsalted",                                                        image: "pintolaus.jpg",          cat: "la",                 subcat: "Rice Cake",                      selectedVariant: "L",           variants: { "L":        { price: 160, count: 0, unit: "130g" } } },
                         { id: 60007, name: "Rice Cake Whole Grain Brown",                                                        image: "ricecake.jpg",          cat: "la",                 subcat: "Rice Cake",                      selectedVariant: "L",           variants: { "L":        { price: 190, count: 0, unit: "150g" } } },
-                        { id: 60008, name: "Pintola Brown Rice Cake Salted",                                                        image: "pintolas.jpg",          cat: "la",                 subcat: "Rice Cake",                      selectedVariant: "L",           variants: { "L":        { price: 160, count: 0, unit: "130g" } } },
+                        /*{ id: 60008, name: "Pintola Brown Rice Cake Salted",                                                        image: "pintolas.jpg",          cat: "la",                 subcat: "Rice Cake",                      selectedVariant: "L",           variants: { "L":        { price: 160, count: 0, unit: "130g" } } },*/
                         { id: 60009,  name: "Real Fruit Power Apple Juice",                                   image: "dreall.jpg",            cat: "la",               subcat: "Juices",                       selectedVariant: "L",          variants: { "L":        { price: 110, count: 0, unit: "1L" } } },
                         { id: 60010, name: "Ezee Godrej Liquid Detergent",            image: "ezee.jpg",        cat: "la",       subcat: "Detergent",                  selectedVariant: "Qty",         variants: { "Qty":      { price: 225, count: 0, unit: "900gm" } } },
+
+                        { id: 60011, name: "Local Ankle Socks - Black",                image: "socksbl.jpg",           cat: "la",       subcat: "Socks",          selectedVariant: "Qty",          variants: { "Qty":      { price: 49, count: 0, unit: "1" } } },
+                        { id: 60014, name: "Local Ankle Socks - Blue",                image: "socksb.jpg",           cat: "la",       subcat: "Socks",          selectedVariant: "Qty",          variants: { "Qty":      { price: 49, count: 0, unit: "1" } } },
+                        { id: 60012, name: "Local Ankle Socks - White",                image: "socksw.jpg",           cat: "la",       subcat: "Socks",          selectedVariant: "Qty",          variants: { "Qty":      { price: 49, count: 0, unit: "1" } } },
+                        { id: 60013, name: "Local Ankle Socks - Grey",                image: "socksg.jpg",           cat: "la",       subcat: "Socks",          selectedVariant: "Qty",          variants: { "Qty":      { price: 49, count: 0, unit: "1" } } },
 
       
                          { id: 1,   name: "Bottle-Coca-Cola",                                                image: "dcokeb.jpg",            cat: "beverages",               subcat: "Cold Drink",                   selectedVariant: "S",          variants: { "S":        { price: 40, count: 0, unit: "750ml" }, "L": { price: 99, count: 0, unit: "2L" } } },
@@ -379,7 +384,7 @@ startAutoPlay();
 /*Parle*/               
                          { id: 3001, name: "Pintola Brown Rice Cake Unsalted",                                                        image: "pintolaus.jpg",          cat: "biscuits",                 subcat: "All",                      selectedVariant: "L",           variants: { "L":        { price: 160, count: 0, unit: "130g" } } },
                         { id: 3002, name: "Rice Cake Whole Grain Brown",                                                        image: "ricecake.jpg",          cat: "biscuits",                 subcat: "All",                      selectedVariant: "L",           variants: { "L":        { price: 190, count: 0, unit: "150g" } } },
-                        { id: 3003, name: "Pintola Brown Rice Cake Salted",                                                        image: "pintolas.jpg",          cat: "biscuits",                 subcat: "All",                      selectedVariant: "L",           variants: { "L":        { price: 160, count: 0, unit: "130g" } } },
+                       /* { id: 3003, name: "Pintola Brown Rice Cake Salted",                                                        image: "pintolas.jpg",          cat: "biscuits",                 subcat: "All",                      selectedVariant: "L",           variants: { "L":        { price: 160, count: 0, unit: "130g" } } },*/
       
                         { id: 3008, name: "Parle-G",                                                        image: "biparleg.jpg",          cat: "biscuits",                 subcat: "Parle",                      selectedVariant: "L",           variants: { "L":        { price: 10, count: 0, unit: "50g" } } },
                         { id: 3006, name: "Hide and Seek",                                                  image: "bihideandseek.jpg",     cat: "biscuits",                 subcat: "Parle",                      selectedVariant: "L",           variants: { "L":        { price: 30, count: 0, unit: "100g" } } },
@@ -401,7 +406,7 @@ startAutoPlay();
                         { id: 3015, name: "Good Day Fruit and Nut Cookies",                                 image: "bigooddayfn.jpg",       cat: "biscuits",                 subcat: "Britannia",                  selectedVariant: "L",           variants: { "L":        { price: 100, count: 0, unit: "450g" } } },
                         { id: 3016, name: "Britannia Bourbon ",                                             image: "bibritanniab.jpg",      cat: "biscuits",                 subcat: "Britannia",                  selectedVariant: "L",           variants: { "L":        { price: 35, count: 0, unit: "100g" } } },
                         { id: 3017, name: "Britannia Nice Time Coconut Biscuit",                            image: "bibritanniant.jpg",     cat: "biscuits",                 subcat: "Britannia",                  selectedVariant: "L",           variants: { "L":        { price: 25, count: 0, unit: "136g" } } },
-                        { id: 3018, name: "Treat Croissant Dubai Kunafa",                                            image: "ccroissant.jpg",        cat: "biscuits",                 subcat: "All",                  selectedVariant: "L",           variants: { "L":        { price: 60, count: 0, unit: "45g" } } },
+                        { id: 3018, name: "Treat Croissant Dubai Kunafa",                                            image: "croissantk.jpg",        cat: "biscuits",                 subcat: "All",                  selectedVariant: "L",           variants: { "L":        { price: 60, count: 0, unit: "45g" } } },
                         { id: 3019, name: "Britannia Marigold",                                             image: "bimari.jpg",            cat: "biscuits",                 subcat: "Britannia",                  selectedVariant: "L",           variants: { "L":        { price: 40, count: 0, unit: "208g" } } },
                         /*{ id: 3020, name: "Britannia Milk Bikis",                                           image: "bimb.jpg",              cat: "biscuits",                 subcat: "Britannia",                  selectedVariant: "L",           variants: { "L":        { price: 70, count: 0, unit: "500g" } }  },*/
                 
@@ -962,6 +967,10 @@ startAutoPlay();
                             
 
                             { id: 40008, name: "Duracell AA Cell",                image: "cell.jpg",           cat: "other",       subcat: "All",          selectedVariant: "Qty",          variants: { "Qty":      { price: 25, count: 0, unit: "1" } } },
+                            { id: 40009, name: "Local Ankle Socks - Black",                image: "socksbl.jpg",           cat: "other",       subcat: "Socks",          selectedVariant: "Qty",          variants: { "Qty":      { price: 49, count: 0, unit: "1" } } },
+                            { id: 40010, name: "Local Ankle Socks - Grey",                image: "socksg.jpg",           cat: "other",       subcat: "Socks",          selectedVariant: "Qty",          variants: { "Qty":      { price: 49, count: 0, unit: "1" } } },
+                            { id: 40011, name: "Local Ankle Socks - Blue",                image: "socksb.jpg",           cat: "other",       subcat: "Socks",          selectedVariant: "Qty",          variants: { "Qty":      { price: 49, count: 0, unit: "1" } } },
+                            { id: 40012, name: "Local Ankle Socks - White",                image: "socksw.jpg",           cat: "other",       subcat: "Socks",          selectedVariant: "Qty",          variants: { "Qty":      { price: 49, count: 0, unit: "1" } } },
 
                             { id: 50001, name: "1984 George Orwell",                image: "shbmgo.jpg",           cat: "shbs",       subcat: "All",          selectedVariant: "Qty",          variants: { "Qty":      { price: 49, count: 0, unit: "1" } } },
                             { id: 50002, name: "The Alchemist Paulo Coelho",                image: "shbmpc.jpg",           cat: "shbs",       subcat: "All",          selectedVariant: "Qty",          variants: { "Qty":      { price: 49, count: 0, unit: "1" } } },
@@ -1968,8 +1977,11 @@ whatsappBtn.addEventListener('click', () => {
         "dp": "Discounted Items",
         "bakery": "Cake Shop",
         "fined": "Fine Dine Deluxe",
+        "df": "Dry Fruits",
+        "sak": "Spreads and Ketchup",
         "pahadoka": "Pahado Ka",
         "tou": "Taste of Uttarakhand",
+        "la": "Latest Arrivals",
         "partneromi": "Omi's Sweets",
         "partneromif": "Omi's Food",
         "tos": "Taste of South",
