@@ -274,6 +274,9 @@ startAutoPlay();
                         { id: 60009,  name: "Real Fruit Power Apple Juice",                                   image: "dreall.jpg",            cat: "la",               subcat: "Juices",                       selectedVariant: "L",          variants: { "L":        { price: 110, count: 0, unit: "1L" } } },
                         { id: 60010, name: "Ezee Godrej Liquid Detergent",            image: "ezee.jpg",        cat: "la",       subcat: "Detergent",                  selectedVariant: "Qty",         variants: { "Qty":      { price: 225, count: 0, unit: "900gm" } } },
 
+                        { id: 60016, name: "Orion Snow Dazzle pie Blueberry Flavour 2 Packs",            image: "orions.jpg",        cat: "la",       subcat: "All",                  selectedVariant: "Qty",         variants: { "Qty":      { price: 60, count: 0, unit: "2pc" } } },
+                        { id: 60015, name: "Pringles Combo - Red Hot Chilli + Pizza + Sour cream n Onion Flavours - 102gm X 3pc",            image: "ipringels.jpg",        cat: "la",       subcat: "All",                  selectedVariant: "Qty",         variants: { "Qty":      { price: 330, count: 0, unit: "3pc" } } },
+
                         { id: 60011, name: "Local Ankle Socks - Black",                image: "socksbl.jpg",           cat: "la",       subcat: "Socks",          selectedVariant: "Qty",          variants: { "Qty":      { price: 49, count: 0, unit: "1" } } },
                         { id: 60014, name: "Local Ankle Socks - Blue",                image: "socksb.jpg",           cat: "la",       subcat: "Socks",          selectedVariant: "Qty",          variants: { "Qty":      { price: 49, count: 0, unit: "1" } } },
                         { id: 60012, name: "Local Ankle Socks - White",                image: "socksw.jpg",           cat: "la",       subcat: "Socks",          selectedVariant: "Qty",          variants: { "Qty":      { price: 49, count: 0, unit: "1" } } },
