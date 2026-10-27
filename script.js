@@ -220,6 +220,9 @@ startAutoPlay();
         { q: "12. Where is The Fine Dine Deluxe restraunt?", a: "The Fine Dine is not a restraunt, the Fine Dine Deluxe is an experience where we deliver the meals from the restraunt which has good review for the added item.." }
     ];
     const collections = [
+        { id: "diwali", name: "Diwali Special",                         previews: ["diwalis.jpg"] },
+        { id: "dfruits", name: "Dry Fruits",                       previews: ["dfruits.jpg"] },
+      
         { id: "gng", name: "Games and Gym",                         previews: ["gng.jpg"] },
         { id: "dp", name: "Discounted Items",                        previews: ["dp.jpg"] },
         { id: "la", name: "Latest Arrivals",                        previews: ["la.jpg"] },
@@ -244,7 +247,7 @@ startAutoPlay();
         { id: "adc", name: "Aa, Dal, and Rice",                   previews: ["adr.jpg"] },
         { id: "dbm", name: "Dairy, Bread, and Milk",                previews: ["dbm.jpg"] },
         { id: "mo", name: "Masalas and Oils",                       previews: ["mo.jpg"] },
-        { id: "dfruits", name: "Dry Fruits",                       previews: ["dfruits.jpg"] },
+        
         { id: "sak", name: "Spreads and Ketchup",                       previews: ["sak.jpg"] },
         { id: "bc", name: "Baby Care",                              previews: ["bc.jpg"] },
         { id: "fw", name: "Female Wellness",                        previews: ["fw.jpg"] },
@@ -263,6 +266,14 @@ startAutoPlay();
     ];
 
     const products = [
+
+                        { id: 70001,   name: "Bikano Rosagolla",                                                image: "dir.jpg",            cat: "diwali",               subcat: "Sweets",                   selectedVariant: "L",          variants: { "L":        { price: 240, count: 0, unit: "1bx" } } },
+                        { id: 70002,   name: "Bikano Gulab Jamun",                                                image: "digj.jpg",            cat: "diwali",               subcat: "Sweets",                   selectedVariant: "L",          variants: { "L":        { price: 240, count: 0, unit: "1bx" } } },
+                        { id: 70003,   name: "Bikano Besan Ladu",                                                image: "dibl.jpg",            cat: "diwali",               subcat: "Sweets",                   selectedVariant: "L",          variants: { "L":        { price: 400, count: 0, unit: "280" } } },
+                        { id: 70004,   name: "Bikano Dry Petha",                                                image: "didp.jpg",            cat: "diwali",               subcat: "Sweets",                   selectedVariant: "L",          variants: { "L":        { price: 120, count: 0, unit: "400g" } } },
+                        { id: 70005,   name: "Bikano Kaju Doodha Barfi",                                                image: "dikdb.jpg",            cat: "diwali",               subcat: "Sweets",                   selectedVariant: "L",          variants: { "L":        { price: 450, count: 0, unit: "400" } } },
+                        { id: 70006,   name: "Bikano Panjeeri Ladu",                                                image: "dipl.jpg",            cat: "diwali",               subcat: "Sweets",                   selectedVariant: "L",          variants: { "L":        { price: 280, count: 0, unit: "400g" } } },
+      
 /*Drink*/                { id: 60001,   name: "Britannia Strawberry Flavour Wafers",                                                image: "btsf.jpg",            cat: "la",               subcat: "Wafer",                   selectedVariant: "L",          variants: { "L":        { price: 50, count: 0, unit: "55gm" } } },
                         { id: 60002,   name: "Dove Daily Shine Shampoo",                                                image: "doves.jpg",            cat: "la",               subcat: "Shampoo",                   selectedVariant: "L",          variants: { "L":        { price: 172, count: 0, unit: "180ml" } } },
                         { id: 60003, name: "Cheetos Puffs",                                       image: "cheetos.jpg",            cat: "la",                   subcat: "Snack",                       selectedVariant: "L",           variants: { "L":        { price: 134, count: 0, unit: "135g" } } },
@@ -410,7 +421,7 @@ startAutoPlay();
                         { id: 3017, name: "Britannia Nice Time Coconut Biscuit",                            image: "bibritanniant.jpg",     cat: "biscuits",                 subcat: "Britannia",                  selectedVariant: "L",           variants: { "L":        { price: 25, count: 0, unit: "136g" } } },
                         { id: 3018, name: "Treat Croissant Dubai Kunafa",                                            image: "croissantk.jpg",        cat: "biscuits",                 subcat: "All",                  selectedVariant: "L",           variants: { "L":        { price: 60, count: 0, unit: "45g" } } },
                         { id: 3019, name: "Britannia Marigold",                                             image: "bimari.jpg",            cat: "biscuits",                 subcat: "Britannia",                  selectedVariant: "L",           variants: { "L":        { price: 40, count: 0, unit: "208g" } } },
-                        /*{ id: 3020, name: "Britannia Milk Bikis",                                           image: "bimb.jpg",              cat: "biscuits",                 subcat: "Britannia",                  selectedVariant: "L",           variants: { "L":        { price: 70, count: 0, unit: "500g" } }  },*/
+                        { id: 60016, name: "Orion Snow Dazzle pie Blueberry Flavour 2 Packs",            image: "orions.jpg",        cat: "biscuits",       subcat: "All",                  selectedVariant: "Qty",         variants: { "Qty":      { price: 60, count: 0, unit: "2pc" } } },
                 
 
 /*Kurkure*/             { id: 4001, name: "Kurkure Chutney",                                                image: "skurkurec.jpg",         cat: "snacks",                   subcat: "Kurkure",                    selectedVariant: "L",           variants: { "L":        { price: 25, count: 0, unit: "75g" } } },
@@ -441,9 +452,8 @@ startAutoPlay();
                         { id: 4034, name: "Cheetos Puffs",                                       image: "cheetos.jpg",            cat: "snacks",                   subcat: "All",                       selectedVariant: "L",           variants: { "L":        { price: 134, count: 0, unit: "135g" } } },
 
                         
-/*Pingles */            { id: 4014, name: "Pringles Sour Cream and Onion Potato - Imported",                           image: "spinglessc.jpg",        cat: "snacks",                   subcat: "Pingles",                    selectedVariant: "L",           variants: { "L":        { price: 449, count: 0, unit: "165g" } } },
-                        { id: 4015, name: "Pringles Original Potato Chips - Imported",                                 image: "spingleo.jpg",          cat: "snacks",                   subcat: "Pingles",                    selectedVariant: "L",           variants: { "L":        { price: 449, count: 0, unit: "165g" } } },
-                        { id: 4016, name: "Pringles Pizza Flavoured Potato Chips - Imported",                          image: "spinglep.jpg",          cat: "snacks",                   subcat: "Pingles",                    selectedVariant: "L",           variants: { "L":        { price: 449, count: 0, unit: "165g" } } },
+/*Pingles */            { id: 60015, name: "Pringles Combo - Red Hot Chilli + Pizza + Sour cream n Onion Flavours - 102gm X 3pc",            image: "ipringels.jpg",        cat: "snacks",       subcat: "All",                  selectedVariant: "Qty",         variants: { "Qty":      { price: 330, count: 0, unit: "3pc" } } },
+                        
                         
 /*Namkeen*/             { id: 4017, name: "Haldirams Punjabi Tadka",                                        image: "spunjabi.jpg",          cat: "snacks",                   subcat: "Haldiram's",                 selectedVariant: "S",           variants: { "S":        { price: 20, count: 0, unit: "75g" }, "L": { price: 55, count: 0, unit: "210g" } } },
                         { id: 4018, name: "Haldirams Bhujia",                                               image: "sbhujia.jpg",           cat: "snacks",                   subcat: "Haldiram's",                 selectedVariant: "S",           variants: { "S":        { price: 20, count: 0, unit: "75g" }, "L": { price: 60, count: 0, unit: "200g" } } },
@@ -1153,12 +1163,13 @@ window.addEventListener('resize', updateUI);
     function renderCollections() {
     // Map the index to the heading you want displayed ABOVE that card
     const sectionHeadings = {
-        0: "Latest Additions",
-        3: "Collaborate Stores",
-        11:  "Drinks & Snacks", /*3 */
-        17:  "Grocery & Kitchen",/*9 */
-        23: "Beauty and Personal Care",/*10 */
-        29: "House Hold Essentials"/*18 */
+        0: "Diwali Special",
+        2: "Latest Additions",
+        5: "Collaborate Stores",
+        13:  "Drinks & Snacks", /*3 */
+        19:  "Grocery & Kitchen",/*9 */
+        24: "Beauty and Personal Care",/*10 */
+        30: "House Hold Essentials"/*18 */
     };
 
     collectionGrid.innerHTML = collections.map((c, i) => {
@@ -1975,6 +1986,7 @@ whatsappBtn.addEventListener('click', () => {
     let itemsForSheet = ""; 
 
     const categoryNames = {
+        "diwali": "Diwali Special",
         "gng": "Games and Gym",
         "dp": "Discounted Items",
         "bakery": "Cake Shop",
