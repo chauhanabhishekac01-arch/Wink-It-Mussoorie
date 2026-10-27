@@ -1040,8 +1040,9 @@ body.dark-mode .stat-group:nth-child(2) {
 }
 .slider-container { display: flex; align-items: center; justify-content: space-between; }
 
-#collection-grid > *:nth-child(4) {
-    animation: greenFlash 6s ease forwards;
+#collection-grid > *:nth-child(2),
+#collection-grid > *:nth-child(3) {
+    animation: greenFlash 3s ease forwards, gentleSway 3s ease-in-out forwards;
 }
 
 @keyframes greenFlash {
@@ -1052,10 +1053,21 @@ body.dark-mode .stat-group:nth-child(2) {
         background-color: #22c55e; /* Hold green */
     }
     100% {
-        background-color:  rgb(230, 182, 230); /* Returns to original background */
+        background-color: rgb(230, 182, 230); /* Returns to original background */
     }
 }
 
+@keyframes gentleSway {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    30% {
+        transform: translateY(-3px) rotate(-0.5deg); /* Soft upward lift */
+    }
+    70% {
+        transform: translateY(2px) rotate(0.5deg);  /* Soft downward settle */
+    }
+}
 
 body.dark-mode .slider-container { background-color: white; }
 
