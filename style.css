@@ -1042,7 +1042,7 @@ body.dark-mode .stat-group:nth-child(2) {
 
 #collection-grid > *:nth-child(2),
 #collection-grid > *:nth-child(3) {
-    animation: greenFlash 3s ease forwards, gentleSway 3s ease-in-out forwards;
+    animation: greenFlash 6s ease forwards, gentleSway 6s ease-in-out forwards;
 }
 
 @keyframes greenFlash {
