@@ -221,7 +221,7 @@ startAutoPlay();
     ];
     const collections = [
         /*{ id: "diwali", name: "Diwali Special",                         previews: ["diwalis.jpg"] },*/
-        { id: "dfruits", name: "Dry Fruits",                       previews: ["dfruits.jpg"] },
+        
       
         { id: "gng", name: "Games and Gym",                         previews: ["gng.jpg"] },
         { id: "dp", name: "Discounted Items",                        previews: ["dp.jpg"] },
