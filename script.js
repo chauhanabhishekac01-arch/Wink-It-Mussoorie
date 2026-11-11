@@ -220,7 +220,7 @@ startAutoPlay();
         { q: "12. Where is The Fine Dine Deluxe restraunt?", a: "The Fine Dine is not a restraunt, the Fine Dine Deluxe is an experience where we deliver the meals from the restraunt which has good review for the added item.." }
     ];
     const collections = [
-        { id: "diwali", name: "Diwali Special",                         previews: ["diwalis.jpg"] },
+        /*{ id: "diwali", name: "Diwali Special",                         previews: ["diwalis.jpg"] },*/
         { id: "dfruits", name: "Dry Fruits",                       previews: ["dfruits.jpg"] },
       
         { id: "gng", name: "Games and Gym",                         previews: ["gng.jpg"] },
@@ -247,6 +247,7 @@ startAutoPlay();
         { id: "adc", name: "Aa, Dal, and Rice",                   previews: ["adr.jpg"] },
         { id: "dbm", name: "Dairy, Bread, and Milk",                previews: ["dbm.jpg"] },
         { id: "mo", name: "Masalas and Oils",                       previews: ["mo.jpg"] },
+        { id: "dfruits", name: "Dry Fruits",                       previews: ["dfruits.jpg"] },
         
         { id: "sak", name: "Spreads and Ketchup",                       previews: ["sak.jpg"] },
         { id: "bc", name: "Baby Care",                              previews: ["bc.jpg"] },
@@ -267,7 +268,7 @@ startAutoPlay();
 
     const products = [
 
-                        { id: 70001,   name: "Bikano Rosagolla",                                                image: "dir.jpg",            cat: "diwali",               subcat: "Sweets",                   selectedVariant: "L",          variants: { "L":        { price: 240, count: 0, unit: "1bx" } } },
+                        /*{ id: 70001,   name: "Bikano Rosagolla",                                                image: "dir.jpg",            cat: "diwali",               subcat: "Sweets",                   selectedVariant: "L",          variants: { "L":        { price: 240, count: 0, unit: "1bx" } } },
                         { id: 70002,   name: "Bikano Gulab Jamun",                                                image: "digj.jpg",            cat: "diwali",               subcat: "Sweets",                   selectedVariant: "L",          variants: { "L":        { price: 240, count: 0, unit: "1bx" } } },
                         { id: 70003,   name: "Bikano Besan Ladu",                                                image: "dibl.jpg",            cat: "diwali",               subcat: "Sweets",                   selectedVariant: "L",          variants: { "L":        { price: 400, count: 0, unit: "280" } } },
                         { id: 70004,   name: "Bikano Dry Petha",                                                image: "didp.jpg",            cat: "diwali",               subcat: "Sweets",                   selectedVariant: "L",          variants: { "L":        { price: 120, count: 0, unit: "400g" } } },
@@ -277,9 +278,9 @@ startAutoPlay();
                         { id: 70007,   name: "Warm Light 8 Meter",                                                image: "dlight.jpg",            cat: "diwali",               subcat: "Decor",                   selectedVariant: "L",          variants: { "L":        { price: 170, count: 0, unit: "1pc" } } },
                         { id: 70008,   name: "Color Candle 12",                                                image: "dcandel.jpg",            cat: "diwali",               subcat: "Decor",                   selectedVariant: "L",          variants: { "L":        { price: 80, count: 0, unit: "1pc" } } },
                         { id: 70009,   name: "Wicks / Battis",                                                image: "dbatti.jpg",            cat: "diwali",               subcat: "Decor",                   selectedVariant: "L",          variants: { "L":        { price: 40, count: 0, unit: "1pc" } } },
-                        /*{ id: 700010,   name: "Happy Diwali",                                                image: ".jpg",            cat: "diwali",               subcat: "Sweets",                   selectedVariant: "L",          variants: { "L":        { price: 60, count: 0, unit: "1pc" } } },*/
+                        { id: 700010,   name: "Happy Diwali",                                                image: ".jpg",            cat: "diwali",               subcat: "Sweets",                   selectedVariant: "L",          variants: { "L":        { price: 60, count: 0, unit: "1pc" } } },
                         { id: 700011,   name: "Lakshmi Charan",                                                image: "dlc.jpg",            cat: "diwali",               subcat: "Decor",                   selectedVariant: "L",          variants: { "L":        { price: 20, count: 0, unit: "1pc" } } },
-                        { id: 700012,   name: "Diya ",                                                image: "ddiyas.jpg",            cat: "diwali",               subcat: "Decor",                   selectedVariant: "L",          variants: { "L":        { price: 5, count: 0, unit: "1pc" } } },
+                        { id: 700012,   name: "Diya ",                                                image: "ddiyas.jpg",            cat: "diwali",               subcat: "Decor",                   selectedVariant: "L",          variants: { "L":        { price: 5, count: 0, unit: "1pc" } } },*/
       
 /*Drink*/                { id: 60001,   name: "Britannia Strawberry Flavour Wafers",                                                image: "btsf.jpg",            cat: "la",               subcat: "Wafer",                   selectedVariant: "L",          variants: { "L":        { price: 50, count: 0, unit: "55gm" } } },
                         { id: 60002,   name: "Dove Daily Shine Shampoo",                                                image: "doves.jpg",            cat: "la",               subcat: "Shampoo",                   selectedVariant: "L",          variants: { "L":        { price: 172, count: 0, unit: "180ml" } } },
@@ -1179,13 +1180,12 @@ window.addEventListener('resize', updateUI);
     function renderCollections() {
     // Map the index to the heading you want displayed ABOVE that card
     const sectionHeadings = {
-        0: "Diwali Special",
-        2: "Latest Additions",
-        5: "Collaborate Stores",
-        13:  "Drinks & Snacks", /*3 */
-        19:  "Grocery & Kitchen",/*9 */
-        24: "Beauty and Personal Care",/*10 */
-        30: "House Hold Essentials"/*18 */
+        0: "Latest Additions",
+        3: "Collaborate Stores",
+        11:  "Drinks & Snacks", /*3 */
+        17:  "Grocery & Kitchen",/*9 */
+        23: "Beauty and Personal Care",/*10 */
+        29: "House Hold Essentials"/*18 */
     };
 
     collectionGrid.innerHTML = collections.map((c, i) => {
